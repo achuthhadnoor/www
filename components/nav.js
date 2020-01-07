@@ -4,18 +4,40 @@ import Router from 'next/router'
 import styled from 'styled-components'
 
 const Nav = () => {
-    const [menu, setMenu] = useState(false)
+    const [menu, setMenu] = useState(true)
     return (
-        <NavWrapper> 
-                <Logo /> 
-            <ul>
-                <li>UI</li>
-                <li>UX</li>
-                <li>DX</li>
+        <NavWrapper>
+            <Logo />
+            <ul className="desk-nav">
+                <li>
+                    <Link href="/about">
+                        <a>UI</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/about">
+                        <a>UX</a>
+                    </Link></li>
+                <li>
+                    <Link href="/about">
+                        <a>DX</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/about">
+                        <a>PROJECTS</a>
+                    </Link>
+                </li>
             </ul>
             <MenuIcon onClick={() => { setMenu(!menu) }} />
             {menu && <MenuSheet>
                 <span onClick={() => { setMenu(!menu) }}>close</span>
+                <ul>
+                    <li>UI</li>
+                    <li>UX</li>
+                    <li>DX</li>
+                    <li>Projects</li>
+                </ul>
             </MenuSheet>}
         </NavWrapper>
     )
@@ -38,17 +60,17 @@ const NavWrapper = styled.nav`
     flex:1; 
     margin:auto;
     padding:10px;
-    ul{
+    .desk-nav{
         display:flex;
         list-style:none;
-        flex:0.3;
+        flex:0.5;
         font-size:.7em;
         @media (max-width: 600px) {
           display:none;
       }
       li{
           padding:10px;
-          flex:1;
+          flex:1; 
       }
     }
 `;
@@ -78,14 +100,35 @@ const MenuIcon = styled.span`
 `
 
 const MenuSheet = styled.div` 
-position:fixed;
-z-index:9999;
-background:#fff;
-color:#000;
-height:100vh;
-width:100vh;
-transition:all 1s ease-in-out;
-   @media (min-width: 600px) {
-          display:none;
-      }
+    display:flex; 
+    align-items:center;
+    text-align:center;
+    justify-content:center;
+    position:fixed;
+    z-index:9999;
+    background:#000;
+    top:0;
+    left:0;
+    color:#fff;
+    height:100%;
+    width:100%;
+    transition:all 1s ease-in-out;
+    @media (min-width: 600px) {
+            display:none;
+        }
+    span{
+       position:absolute;
+       top:10%;
+       right:10%; 
+    }
+    ul{
+        list-style:none;
+        flex:1;
+        margin:0;
+        padding:0px 20px;
+        li{
+            padding:10px 0px; 
+            flex:1;
+        }
+    }
 `

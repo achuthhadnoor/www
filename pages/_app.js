@@ -12,6 +12,7 @@ html,body{
   height:100%;
   width:100%;
   font-size:24px;
+  transition:.3s ease-in-out;
 }
 #__next{
   padding:0;
@@ -30,6 +31,9 @@ input[type="submit"] {
       text-decoration:none;
       color:inherit;
       outline:none;
+    }
+    a:visited{
+        font-weight:600;
     }
     .themeChanger{
         position:absolute;
