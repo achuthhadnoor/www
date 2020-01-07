@@ -16,7 +16,7 @@ html,body{
 }
 #__next{
   padding:0;
-  margin:0;  
+  margin:0;   
   font-family:monospace;
 }
 input[type="submit"] {
@@ -72,11 +72,9 @@ class Mainapp extends App {
         const { Component } = this.props;
         return (
             <>
-            <GlobalStyle/>
-            <div>
+            <GlobalStyle/> 
                 <Nav />
-                <Component />
-            </div>
+                <Component /> 
             </>
         );
     }

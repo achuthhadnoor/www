@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Nav from '../components/nav'
 import styled from 'styled-components'
 import Human from './../components/ilustrations/human_thought'
+import Icon from 'react-icons-kit'
+import { instagram, facebook, twitter } from 'react-icons-kit/feather'
 class Home extends React.Component {
     render() {
         return (
@@ -16,12 +18,15 @@ class Home extends React.Component {
                             </div>
                     </Intro>
                     <Illustration>
-                       <Human/>
+                        <Human />
                     </Illustration>
                 </Content>
                 <Urls>
-                    ewee
+                    <Icon icon={instagram} style={{ padding: 10 }} />
+                    <Icon icon={facebook} style={{ padding: 10 }} />
+                    <Icon icon={twitter} style={{ padding: 10 }} /> 
                 </Urls>
+
             </Wrapper>
         )
     }
@@ -32,7 +37,10 @@ export default Home
 
 const Wrapper = styled.div`
     display:flex;
-    
+    max-width:1200px;
+    margin:auto;
+    max-height:700px;
+    min-height:500px;
 `;
 const Content = styled.div`
     display:flex;
@@ -44,9 +52,12 @@ const Content = styled.div`
 const Intro = styled.div`
     display:flex;
     flex-direction:column;
-    max-width:600px;
+    max-width:500px;
     padding:10px 20px;
     justify-content:center;
+    h3{
+        font-size:.9em;
+    }
     div{
         font-size:.7em;
     }
@@ -60,4 +71,6 @@ const Illustration = styled.div`
 const Urls = styled.div`
     display:flex;
     flex-direction:column;
+    justify-content:center;
+    align-items:center;
 `
