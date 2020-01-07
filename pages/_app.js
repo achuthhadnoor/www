@@ -1,6 +1,7 @@
 import App from 'next/app';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import Icon from 'react-icons-kit'
+import {moon} from 'react-icons-kit/feather'
 import Nav from '../components/nav';
 // Global Styles
 const GlobalStyle = createGlobalStyle`
@@ -67,14 +68,29 @@ input[type="submit"] {
         transform: rotate(3deg) translate(0px, -4px);
       }
 `;
+const dark = {
+    primary : '#000',
+    color:'#fff'
+} 
+const light = {
+    primary : '#fff',
+    color:'#000'
+} 
 class Mainapp extends App {
+    constructor(){
+        this.state = {
+            theme:light
+        }
+    }
     render() {
         const { Component } = this.props;
         return (
             <>
-            <GlobalStyle/> 
+            <ThemeProvider theme={this.state.theme}>
+                <GlobalStyle/> 
                 <Nav />
                 <Component /> 
+            </ThemeProvider>
             </>
         );
     }

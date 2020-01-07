@@ -32,12 +32,27 @@ const Nav = () => {
             <MenuIcon onClick={() => { setMenu(!menu) }} />
             {menu && <MenuSheet>
                 <span onClick={() => { setMenu(!menu) }}>close</span>
-                <ul>
-                    <li>UI</li>
-                    <li>UX</li>
-                    <li>DX</li>
-                    <li>Projects</li>
-                </ul>
+            <ul>
+                <li>
+                    <Link href="/about">
+                        <a>UI</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/about">
+                        <a>UX</a>
+                    </Link></li>
+                <li>
+                    <Link href="/about">
+                        <a>DX</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/about">
+                        <a>PROJECTS</a>
+                    </Link>
+                </li>
+            </ul>
             </MenuSheet>}
         </NavWrapper>
     )

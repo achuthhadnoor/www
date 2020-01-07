@@ -14,7 +14,7 @@ class Home extends React.Component {
                         <h3>On a mission to create digital
                             experiences more fluid and human </h3>
                         <div>
-                            we create Apps that help you foucs on your productivity by removing the complex UI and UX to manage your thoughts and ideas.
+                            We create Apps that help you foucs on your productivity by removing the complex UI and UX to manage your thoughts and ideas.
                             </div>
                     </Intro>
                     <Illustration>
@@ -47,6 +47,7 @@ const Content = styled.div`
     flex:1;
     @media (max-width: 600px) {
         flex-direction:column-reverse;
+        text-align:center;
     }
 `;
 const Intro = styled.div`
@@ -71,6 +72,9 @@ const Illustration = styled.div`
 const Urls = styled.div`
     display:flex;
     flex-direction:column;
+    @media (min -width: 600px) {
+        
     justify-content:center;
     align-items:center;
+    }
 `
