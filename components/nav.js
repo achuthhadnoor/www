@@ -1,56 +1,91 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
+import styled from 'styled-components'
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+const Nav = () => {
+    const [menu, setMenu] = useState(false)
+    return (
+        <NavWrapper> 
+                <Logo /> 
+            <ul>
+                <li>UI</li>
+                <li>UX</li>
+                <li>DX</li>
+            </ul>
+            <MenuIcon onClick={() => { setMenu(!menu) }} />
+            {menu && <MenuSheet>
+                <span onClick={() => { setMenu(!menu) }}>close</span>
+            </MenuSheet>}
+        </NavWrapper>
+    )
+}
 
 export default Nav
+const Logo = () => <LogoWrapper>UIUXDX</LogoWrapper>
+const LogoWrapper = styled.h3`
+    flex:1;
+    font-size:24px;
+    font-family: monospace;
+    font-weight:900; 
+     @media (max-width: 600px) {
+        margin:0;
+      }
+`
+
+const NavWrapper = styled.nav`
+    display:flex;
+    flex:1; 
+    margin:auto;
+    padding:10px;
+    ul{
+        display:flex;
+        list-style:none;
+        flex:0.3;
+        font-size:.7em;
+        @media (max-width: 600px) {
+          display:none;
+      }
+      li{
+          padding:10px;
+          flex:1;
+      }
+    }
+`;
+
+const MenuIcon = styled.span`
+@media (min-width: 600px) {
+    display:none;
+}
+&::before{
+    content:'';
+    margin:5px; 
+    display:block;
+    height:3px;
+    background:#000;
+    width:20px;
+    border-radius:5px;
+}
+&::after{
+    content:'';
+    margin:5px; 
+    display:block;
+    height:3px;
+    background:#000;
+    width:10px;
+    border-radius:5px;
+}
+`
+
+const MenuSheet = styled.div` 
+position:fixed;
+z-index:9999;
+background:#fff;
+color:#000;
+height:100vh;
+width:100vh;
+transition:all 1s ease-in-out;
+   @media (min-width: 600px) {
+          display:none;
+      }
+`
