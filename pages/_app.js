@@ -17,6 +17,45 @@ html,body{
   color:${props=>props.theme.color};
   transition:.3s ease-in-out;
 }
+
+*,:after,:before {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent
+}
+
+::-webkit-scrollbar-thumb,::-webkit-scrollbar-track {
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: ${props=>props.theme.color}
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent
+}
 #__next{
   padding:0;
   margin:0;   
@@ -46,7 +85,9 @@ input[type="submit"] {
         background:transparent;
         z-index:999999
     }
-    
+    i{
+        cursor:pointer;
+    }
     #nprogress {
         pointer-events: none;
       }
@@ -82,7 +123,7 @@ class Mainapp extends App {
     constructor(){
         super();
         this.state = {
-            theme:light
+            theme:dark
         }
     }
     render() {
@@ -90,9 +131,8 @@ class Mainapp extends App {
         return (
             <>
             <ThemeProvider theme={this.state.theme}>
-            <Icon icon={moon} onClick={()=>{this.setState({theme: this.state.theme === light ? dark : light})}}/>
-                <GlobalStyle/> 
-                <Nav />
+                 <GlobalStyle/> 
+                <Nav OnThemeChange = {()=>{this.setState({theme: this.state.theme === light ? dark : light})}}/>
                 <Component /> 
             </ThemeProvider>
             </>
