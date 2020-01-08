@@ -99,7 +99,7 @@ const MenuIcon = styled.span`
     margin:5px; 
     display:block;
     height:3px;
-    background:#000;
+    background:${props=>props.theme.primary};
     width:20px;
     border-radius:5px;
 }
@@ -108,7 +108,7 @@ const MenuIcon = styled.span`
     margin:5px; 
     display:block;
     height:3px;
-    background:#000;
+    background:${props=>props.theme.primary};
     width:10px;
     border-radius:5px;
 }
@@ -121,10 +121,10 @@ const MenuSheet = styled.div`
     justify-content:center;
     position:fixed;
     z-index:9999;
-    background:#000;
+    background:${props=>props.theme.primary};
     top:0;
     left:0;
-    color:#fff;
+    color:${props=>props.theme.color};
     height:100%;
     width:100%;
     transition:all 1s ease-in-out;

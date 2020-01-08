@@ -13,12 +13,14 @@ html,body{
   height:100%;
   width:100%;
   font-size:24px;
+  background:${props=>props.theme.primary};
+  color:${props=>props.theme.color};
   transition:.3s ease-in-out;
 }
 #__next{
   padding:0;
   margin:0;   
-  font-family:monospace;
+  font-family:sans-serif;
 }
 input[type="submit"] {
       padding: 5px 15px;
@@ -78,6 +80,7 @@ const light = {
 } 
 class Mainapp extends App {
     constructor(){
+        super();
         this.state = {
             theme:light
         }
@@ -87,6 +90,7 @@ class Mainapp extends App {
         return (
             <>
             <ThemeProvider theme={this.state.theme}>
+            <Icon icon={moon} onClick={()=>{this.setState({theme: this.state.theme === light ? dark : light})}}/>
                 <GlobalStyle/> 
                 <Nav />
                 <Component /> 
