@@ -99,7 +99,7 @@ const MenuIcon = styled.span`
     margin:5px; 
     display:block;
     height:3px;
-    background:${props=>props.theme.primary};
+    background:${props=>props.theme.color};
     width:20px;
     border-radius:5px;
 }
@@ -108,7 +108,7 @@ const MenuIcon = styled.span`
     margin:5px; 
     display:block;
     height:3px;
-    background:${props=>props.theme.primary};
+    background:${props=>props.theme.color};
     width:10px;
     border-radius:5px;
 }
