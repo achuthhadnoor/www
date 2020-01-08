@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Nav from '../components/nav'
 import styled from 'styled-components'
-import Human from './../components/ilustrations/ui-mobile'
+import Human from './../components/ilustrations/lamp'
 import MainContent from './../components/mainContent'
 class Home extends React.Component {
     render() {
