@@ -1,75 +1,46 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
-import Nav from '../components/nav'
-import styled from 'styled-components'
-import Human from './../components/ilustrations/human_thought'
-import MainContent from './../components/mainContent'
-class Home extends React.Component {
-    render() {
-        // const intro = ()=>;
-        return (
-            <Wrapper>
-                <MainContent 
-                    Intro={<>
-                            <h3>On a mission to create digital experiences more fluid and human </h3>
-                            <br></br>
-                            <div>
-                                We create Apps that help you foucs on your productivity 
-                                by removing the complex UI and UX to manage your thoughts and ideas.
-                            </div>
-                            </>} 
-                    Illustration={<Human />} />
-                    <ScrollerWrapper>
-                        <a className="text">Scroll</a>
-                        <span/>
-                    </ScrollerWrapper>
+import Page from '../layouts/page'
+export default () => {
+    const [projects] = React.useState([{
+        title: 'Snipper',
+        link: 'https://producthunt.com/posts/snipper',
+        description: 'A simple snippet manager on menubar.'
+    },
+    {
+        title: 'Snip',
+        link: 'https://producthunt.com/posts/snip',
+        description: 'A single line snippets manager on your menubar.'
 
-            </Wrapper>
-        )
-    }
+    }])
+    return (
+        <Page>
+            <main>
+                <h1 className='title'>
+                    Hey, i'm Achuth Hadnoor
+        </h1>
+                <p> I am a developer , occational UI/UX designer and maker.
+                    If you would like to know about my work or more. you can find them here.</p>
+
+                <Link href="/blog/2020/intro-to-next"><a>Go to the post</a></Link>
+                <h1>Projects </h1>
+                <div className="grid">
+                    {
+                        projects.map((project, i) => (
+                            <a href={project.link} className="card" key={`project-${i}`}  index={i}>
+                                <h3>{project.title} &rarr;</h3>
+                                <p>{project.description}</p>
+                            </a>
+                        ))
+                    }
+                </div>
+            </main>
+
+            <footer>
+
+            </footer>
+
+
+        </Page>
+    )
 }
-export default Home
-
-const ScrollerWrapper = styled.div`
-    display: flex;
-    text-align: center;
-    flex-direction: column; 
-    .text{
-        font-size:.5em;
-    }
-    span{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &::before{
-            content:'';
-            display:block;
-            height:50px;
-            width:40px;
-            border:1px solid ${props=>props.theme.color};
-            border-radius:20px;
-        }
-        &::after{
-            content:'';
-            display:block;
-            background:${props=>props.theme.color};
-            height:15px;
-            width:5px;
-            left:-22px;
-            top:10px;
-            border-radius:25px;
-            position:relative; 
-        } 
-    }
-`
-
-const Wrapper = styled.div`
-    display:flex;
-    flex-direction:column;
-    max-width:1200px;
-    margin:auto;
-    max-height:700px;
-    min-height:500px;
-    text-align:center;
-    justify-content:center;
-`;

@@ -1,14 +1,12 @@
-import App from 'next/app';  
-import Page from './../layouts/page'
-class Mainapp extends App { 
-    render() {
-        const { Component } = this.props;
-        return ( 
-            <Page>
-                 <Component />  
-            </Page> 
-        );
-    }
-}
+import React  from 'react';
+import { ThemeWrapper } from '../Theme';
 
-export default Mainapp;
+const App = ({ Component, pageProps }) => {
+    return (
+        <ThemeWrapper>
+            <Component {...pageProps} />
+        </ThemeWrapper>
+    );
+};
+
+export default App;
