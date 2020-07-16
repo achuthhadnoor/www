@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 .lock
-.mdx-data
+/.mdx-data/*.json
 
 # testing
 /coverage
