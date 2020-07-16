@@ -15,7 +15,13 @@ export default () => {
           margin: 'auto'
         }}
       >
-        <h3 style={{ fontFamily: 'monospace', flex: 1 }}> -///- </h3>
+        <h3 style={{ fontFamily: 'monospace', flex: 1, fontWeight: 700 }}>
+          {' '}
+          <NavLink href="/">
+            <a>-///-</a>
+          </NavLink>
+        </h3>
+
         <NavWrapper>
           <NavLink href="/">
             <a style={{ padding: '10px 15px' }}>Home</a>

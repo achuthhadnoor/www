@@ -18,7 +18,6 @@ export default (frontMatter) => {
   return ({ children }) => {
     return (
       <>
-        <Nav />
         <BlogSeo url={`https://achuth.now.sh/blog/${slug}`} {...frontMatter} />
         {children}
       </>
