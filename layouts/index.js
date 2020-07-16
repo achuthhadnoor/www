@@ -1,6 +1,6 @@
 import React from 'react';
 import { parseISO, format } from 'date-fns';
-// import BlogSeo from '../components/BlogSeo';
+import BlogSeo from '../components/BlogSeo';
 import Nav from '../components/Nav';
 import Link from 'next/link';
 const editUrl = (slug) =>
@@ -19,7 +19,7 @@ export default (frontMatter) => {
     return (
       <>
         <Nav />
-        {/* <BlogSeo url={`https://achuth.now.sh/blog/${slug}`} {...frontMatter} /> */}
+        <BlogSeo url={`https://achuth.now.sh/blog/${slug}`} {...frontMatter} />
         {children}
       </>
     );

@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
 
     // Step 2: Retrieve styles from components in the page
     const pages = renderPage((App) => (props) =>
-      sheet.collectStyles(<App {...props} />),
+      sheet.collectStyles(<App {...props} />)
     );
 
     // Step 3: Extract the styles as <style> tags

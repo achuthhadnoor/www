@@ -1,5 +1,5 @@
 const readingTime = require('reading-time');
-const mdxPrism = require('mdx-prism');
+// const mdxPrism = require('mdx-prism');
 const withMdxEnhanced = require('next-mdx-enhanced');
 
 module.exports = withMdxEnhanced({
@@ -8,10 +8,9 @@ module.exports = withMdxEnhanced({
   remarkPlugins: [
     require('remark-autolink-headings'),
     require('remark-slug'),
-    require('remark-code-titles'),
-    require('./utils/title-style')
+    require('remark-code-titles')
   ],
-  rehypePlugins: [mdxPrism],
+  //   rehypePlugins: [mdxPrism],
   extendFrontMatter: {
     process: (mdxContent) => ({
       wordCount: mdxContent.split(/\s+/gu).length,

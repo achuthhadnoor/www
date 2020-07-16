@@ -1,6 +1,5 @@
 const title = 'Achuth Hadnoor – Developer, writer, maker.';
-const description =
-  'Developer, JavaScript enthusiast, and product maker.';
+const description = 'Developer, JavaScript enthusiast, and product maker.';
 
 const SEO = {
   title,
