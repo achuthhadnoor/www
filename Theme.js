@@ -126,11 +126,10 @@ export const GlobalStyle = createGlobalStyle`
           font-size: 1.2rem;
         }
 
-        code {
-          background: #fafafa;
+        code { 
+            border: 1px solid aaa;
           border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
+          padding: 0.75rem; 
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }

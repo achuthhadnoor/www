@@ -1,10 +1,87 @@
 ---
-title: 'Introduction to nextJs'
+title: 'Chrome extension using reactJs '
 publishedAt: '2020-07-16'
-summary: 'A Creative wey to get your portfolio up and '
+summary: 'Chrome extensions are the plugins that make your life easy'
 image: '/static/images/10-days-in-norway/banner.png'
-slug: '/blog/intro-to-next-mdx'
-tags: ['reactjs', 'nextjs', 'javascript', 'mdx', 'md']
+slug: '/blog/chrome-extension-reactjs'
+tags: ['reactjs', 'nextjs', 'javascript', 'chrome']
 ---
 
-# Introduction to NextJs
+# What is a chrome extension ?
+
+Extensions are small software programs that customize the browsing experience. They enable users to tailor Chrome functionality and behavior to individual needs or preferences. They are built on web technologies such as HTML, JavaScript, and CSS.
+
+# What actions does extensions do?
+
+Extension either do **_page actions_** or **browser actions**. But they can't do both at once.
+
+**Page actions :** Is specific to certain pages. You will usually see a UI added in the google chrome’s address bar .
+
+**Browser actions :** These actions are not specific to a page . They can run in background also.
+
+For this tutorial we will keep it simple and build a **New Tab extension** . more documentation can be found on [chrome developers](http://developer.chrome.com/extensions).
+
+# What are we building ?
+
+For this tutorial we will build basic motivational new tab where u can display your T**o-Do's** and N**otes**
+
+**What files Do you need?
+—** index.html
+
+— manifest.json
+
+— icon.png
+
+**Manifest.json**
+
+All the properties of a chrome app are defined in manifest file .
+
+below is the sample file representation
+
+```json
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Daily tab",
+  "description": " A simple todo and notes productivity app",
+  "author": "Achuth Hadnoor",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "browser_action": {
+    "default_icon": "splash.png"
+  },
+  "permissions": ["tabs"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
+```
+
+**index.html**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Quote of the day</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  </head>
+  <body>
+    sample body
+  </body>
+</html>
+```
+
+**background.js**
+
+```jsx
+chrome.browserAction.onClicked.addListener(function () {
+  chrome.tabs.create({ url: 'chrome://newtab' });
+});
+```
