@@ -126,6 +126,13 @@ export const GlobalStyle = createGlobalStyle`
           font-size: 1.2rem;
         }
 
+        pre{
+            background:${(props) => props.theme.background};
+            border:1px solid #aaa;
+            overflow:auto;
+            max-width:800px;
+        }
+
         code { 
             border: 1px solid aaa;
           border-radius: 5px;

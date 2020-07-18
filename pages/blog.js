@@ -42,9 +42,17 @@ const Blog = () => {
               <h3>{b.title}</h3>
               <p>{b.summary}</p>
               <div style={{ display: 'flex' }}>
-                <span>{b.readingTime.text}</span>
-                <span>{b.readingTime.words}</span>
-                <span>Published at {b.publistedAt}</span>
+                <span style={{ padding: '0px 10px ' }}>
+                  {b.readingTime.text}
+                </span>{' '}
+                {` `}
+                <span style={{ padding: '0px 10px ' }}>
+                  {b.readingTime.words} words{' '}
+                </span>
+                {` `}
+                <span style={{ padding: '0px 10px ' }}>
+                  Published at {b.publishedAt}
+                </span>
               </div>
             </a>
           </Link>

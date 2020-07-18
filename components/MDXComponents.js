@@ -1,6 +1,4 @@
-const Heading = (props) => (
-  <h1 style={{ color: 'palegreen' }}>{props.children}</h1>
-);
+const Heading = (props) => <h1>{props.children}</h1>;
 const MDXComponents = {
   h1: (props) => <Heading {...props} />
   //   h2: (props) => <DocsHeading as="h2" fontWeight="bold" size="lg" {...props} />,
