@@ -7,11 +7,12 @@ export default () => {
       <nav
         style={{
           display: 'flex',
+          flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
           alignContent: 'center',
           padding: '20px 0px',
-          maxWidth: '800px',
+          maxWidth: '1024px',
           margin: 'auto'
         }}
       >
@@ -56,4 +57,6 @@ const Header = styled.header`
   background: ${(props) => props.theme.tint};
   color: ${(props) => props.theme.color};
   backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
 `;

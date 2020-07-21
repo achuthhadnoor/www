@@ -118,6 +118,7 @@ export const GlobalStyle = createGlobalStyle`
           margin: 0;
           line-height: 1.15;
           font-size: 2rem;
+          color:${(props) => props.theme.accent};
         }
  
 
@@ -129,10 +130,8 @@ export const GlobalStyle = createGlobalStyle`
         pre{
             background:${(props) => props.theme.background};
             border:1px solid #aaa;
-            overflow:auto;
-            max-width:800px;
+            max-width:1024px;
         }
-
         code { 
             border: 1px solid aaa;
           border-radius: 5px;
@@ -147,7 +146,7 @@ export const GlobalStyle = createGlobalStyle`
           justify-content: center;
           flex-wrap: wrap;
 
-          max-width: 800px;
+          max-width: 1024px;
           margin-top: 3rem;
         }
 
@@ -254,7 +253,7 @@ export const ThemeWrapper = ({ children }) => {
 const Wrapper = styled.div`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
-  max-width: 800px;
+  max-width: 1024px;
   margin: auto;
   min-height: 100vh;
   padding: 0 0.5rem;
