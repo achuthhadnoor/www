@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { ThemedButton } from '../Theme';
 import NavLink from 'next/link';
+import Icon from 'react-icons-kit';
+import { dribbble } from 'react-icons-kit/fa';
+import { instagram } from 'react-icons-kit/fa';
+import { linkedin } from 'react-icons-kit/fa';
+import { twitter } from 'react-icons-kit/fa';
 export default () => {
   return (
     <Header>
@@ -31,9 +36,28 @@ export default () => {
           <NavLink href="/blog">
             <a style={{ padding: '10px 15px' }}>Blog</a>
           </NavLink>
-          <NavLink href="/now">
+          {/* <NavLink href="/now">
             <a style={{ padding: '10px 15px' }}>Now</a>
-          </NavLink>
+          </NavLink> */}
+          <LinkA
+            href="https://dribbble.com/achuth_hadnoor"
+            target="_blank"
+            color=""
+          >
+            <Icon icon={dribbble} />
+          </LinkA>
+          <LinkA href="https://instagram.com/uiuxdx" target="_blank">
+            <Icon icon={instagram} />
+          </LinkA>
+          <LinkA
+            href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
+            target="_blank"
+          >
+            <Icon icon={linkedin} />
+          </LinkA>
+          <LinkA href="https://twitter.com/achuth_hadnoor/" target="_blank">
+            <Icon icon={twitter} />
+          </LinkA>
         </NavWrapper>
         <ThemedButton />
       </nav>
@@ -59,4 +83,10 @@ const Header = styled.header`
   backdrop-filter: saturate(180%) blur(20px);
   display: flex;
   align-items: center;
+`;
+const LinkA = styled.a`
+  padding: 10px;
+  &:hover {
+    color: ${(props) => props.color};
+  }
 `;

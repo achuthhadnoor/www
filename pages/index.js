@@ -18,17 +18,17 @@ export default () => {
       <main>
         <h1 className="title">Achuth Hadnoor </h1>
         <h3>
-          {'Full stack developer and UI/UX designer '}
+          {'Developer and UI/UX designer '}
           {/* I am a developer , UI/UX designer and maker. If you would like to know
           about my work or more. you can find them here. */}
         </h3>
       </main>
-      <h1>Projects </h1>
+
       <div className="grid">
         {projects.map((project, i) => (
           <a
             href={project.link}
-            className="card"
+            className="project-card"
             key={`project-${i}`}
             index={i}
           >
@@ -38,7 +38,20 @@ export default () => {
         ))}
       </div>
 
-      <footer></footer>
+      <style jsx="true">{`
+        .project-card {
+          padding: 10px;
+          width: 100%;
+          border: 1px solid #121212;
+          margin: 10px;
+          transition: 0.31s ease-in-out;
+          border-radius: 5px;
+        }
+        .project-card:hover {
+          border: 1px solid #fff;
+          transition: 0.31s ease-in-out;
+        }
+      `}</style>
     </>
   );
 };
