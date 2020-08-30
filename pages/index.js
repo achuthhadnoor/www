@@ -37,21 +37,6 @@ export default () => {
           </a>
         ))}
       </div>
-
-      <style jsx="true">{`
-        .project-card {
-          padding: 10px;
-          width: 100%;
-          border: 1px solid #121212;
-          margin: 10px;
-          transition: 0.31s ease-in-out;
-          border-radius: 5px;
-        }
-        .project-card:hover {
-          border: 1px solid #fff;
-          transition: 0.31s ease-in-out;
-        }
-      `}</style>
     </>
   );
 };

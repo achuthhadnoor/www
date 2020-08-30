@@ -150,6 +150,18 @@ export const GlobalStyle = createGlobalStyle`
           margin-top: 3rem;
         }
 
+        .project-card {
+          padding: 10px;
+          width: 100%;
+          border: 1px solid #121212;
+          margin: 10px;
+          transition: 0.31s ease-in-out;
+          border-radius: 5px;
+        }
+        .project-card:hover {
+          border: 1px solid #fff;
+          transition: 0.31s ease-in-out;
+        }
         .card {
           margin: 1rem;
           flex-basis: 45%;
