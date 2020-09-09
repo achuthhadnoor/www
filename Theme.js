@@ -234,18 +234,18 @@ const Button = styled.button`
 `;
 
 export const ThemeWrapper = ({ children }) => {
-  const [themed, setThemed] = React.useState(theme.dark);
+  const [themed, setThemed] = React.useState(theme.light);
 
-  React.useEffect(() => {
-    const _theme = localStorage.getItem('theme');
-    if (_theme === 'light') {
-      setThemed(theme.light);
-      localStorage.setItem('theme', 'light');
-    } else {
-      setThemed(theme.dark);
-      localStorage.setItem('theme', 'dark');
-    }
-  }, [themed]);
+  //   React.useEffect(() => {
+  //     const _theme = localStorage.getItem('theme');
+  //     if (_theme === 'light') {
+  //       setThemed(theme.light);
+  //       localStorage.setItem('theme', 'light');
+  //     } else {
+  //       setThemed(theme.dark);
+  //       localStorage.setItem('theme', 'dark');
+  //     }
+  //   }, [themed]);
 
   return (
     <>
