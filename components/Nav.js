@@ -31,13 +31,13 @@ export default () => {
 
         <NavWrapper>
           <Link to="/" label="home" />
+          <Link to="/projects" label="Projects" />
           <Link to="/blog" label="articles" />
-          <Link to="/blog" label="Now" />
           {/* <NavLink href="/now">
             <a style={{ padding: '10px 15px' }}>Now</a>
           </NavLink> */}
         </NavWrapper>
-        <ThemedButton />
+        {/* <ThemedButton /> */}
       </nav>
     </Header>
   );
@@ -62,29 +62,3 @@ const Header = styled.header`
   display: flex;
   align-items: center;
 `;
-const LinkA = styled.a`
-  padding: 10px;
-  &:hover {
-    color: ${(props) => props.color};
-  }
-`;
-
-const SocialLinks = () => (
-  <>
-    <LinkA href="https://dribbble.com/achuth_hadnoor" target="_blank" color="">
-      <Icon icon={dribbble} />
-    </LinkA>
-    <LinkA href="https://instagram.com/uiuxdx" target="_blank">
-      <Icon icon={instagram} />
-    </LinkA>
-    <LinkA
-      href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
-      target="_blank"
-    >
-      <Icon icon={linkedin} />
-    </LinkA>
-    <LinkA href="https://twitter.com/achuth_hadnoor/" target="_blank">
-      <Icon icon={twitter} />
-    </LinkA>
-  </>
-);
