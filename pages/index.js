@@ -1,6 +1,14 @@
 import React from 'react';
 import Social from './../components/social';
 import styled from 'styled-components';
+import {
+  Title,
+  SubTitle,
+  P,
+  Section,
+  Ul,
+  Row
+} from '../components/mdx_components';
 export default () => {
   const [projects] = React.useState([
     {
@@ -16,7 +24,7 @@ export default () => {
   ]);
   return (
     <main>
-      <section id="hero">
+      <Section id="hero">
         <div
           style={{ maxWidth: '300px', display: 'flex', alignItems: 'center' }}
         >
@@ -24,12 +32,8 @@ export default () => {
           <Social />
         </div>
         <div style={{ padding: '10px 0px ' }}>
-          <div style={{ margin: '10px 0px', fontSize: '48px' }}>
-            Achuth Hadnoor{' '}
-          </div>
-          <div style={{ fontSize: '36px', margin: '10px 0px' }}>
-            Developer and UI/UX designer{' '}
-          </div>
+          <Title>Achuth Hadnoor</Title>
+          <SubTitle>Developer and UI/UX designer</SubTitle>
           <P>
             I create digital products thar are targeted to boost productivity.
             Through these experiences, I've had the opportunity to create
@@ -43,32 +47,60 @@ export default () => {
             Resume`
           </ActionButton>
         </div>
-      </section>
-      <div className="grid">
-        {projects.map((project, i) => (
-          <a
-            href={project.link}
-            className="project-card"
-            key={`project-${i}`}
-            index={i}
-          >
-            <h3>{project.title} &rarr;</h3>
-            <p>{project.description}</p>
-          </a>
-        ))}
-      </div>
+      </Section>
+      <Section id="skills">
+        <SubTitle>Skills</SubTitle>
+        <P>
+          Through my studies, I've gained a solid understanding of computer
+          science and web development concepts, and have dedicated a lot of my
+          free time to apply these concepts to real-world scenarios and
+          applications.
+        </P>
+        <Ul>
+          <Row>
+            <li>Javascript ES6</li>
+            <li>React Native</li>
+            <li>Styled-Components</li>
+            <li>Git</li>
+            <li>Firebase</li>
+          </Row>
+          <Row>
+            <li>ElectronJS</li>
+            <li>NodeJS</li>
+            <li>JAM Stack</li>
+            <li>Travis CI / Circle CI</li>
+            <li>Styled-Components</li>
+          </Row>
+        </Ul>
+      </Section>
+      <Section id="projects">
+        <SubTitle>What am i working on now?</SubTitle>
+        <P>
+          I like to stay busy and always have a project in the works. Take a
+          look at some of the applications, articles, and companies I've
+          dedicated my time to.
+        </P>
+        <Ul>
+          {projects.map((project, i) => (
+            <Row key={`project-${i}`}>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a
+                href={project.link}
+                key={`project-${i}`}
+                index={i}
+                className="readmore"
+              >
+                Visit Site <span className="arrow">&rarr;</span>
+              </a>
+            </Row>
+          ))}
+        </Ul>
+      </Section>
     </main>
   );
 };
 
-const P = styled.p`
-  font-size: 16px;
-  color: #4d4d4d;
-  max-width: 400px;
-  width: 100%;
-  line-height: 2;
-  margin: 40px 0px;
-`;
 const ActionButton = styled.a`
   border: none;
   background: #121221;
