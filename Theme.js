@@ -27,7 +27,7 @@ export const theme = {
 };
 
 export const ThemeContext = React.createContext({
-  themed: theme.dark,
+  themed: {},
   setThemed: () => {}
 });
 

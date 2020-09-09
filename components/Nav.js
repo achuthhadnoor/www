@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ThemedButton } from '../Theme';
 import NavLink from 'next/link';
+import Link from './Link';
 import Icon from 'react-icons-kit';
 import { dribbble } from 'react-icons-kit/fa';
 import { instagram } from 'react-icons-kit/fa';
@@ -17,8 +18,6 @@ export default () => {
           alignItems: 'center',
           alignContent: 'center',
           padding: '20px 0px',
-          maxWidth: '1024px',
-          margin: 'auto',
           textTransform: 'uppercase',
           opacity: 0,
           animation: ' bcCCNc 0.6s 0.3s ease-in-out forwards'
@@ -31,16 +30,9 @@ export default () => {
         </h3>
 
         <NavWrapper>
-          <NavLink href="/">
-            <a style={{ padding: '10px 15px' }}>Home</a>
-          </NavLink>
-          {/* <NavLink href="/projects"><a style={{ padding: '5px 10px' }}>Projects</a></NavLink> */}
-          <NavLink href="/blog">
-            <a style={{ padding: '10px 15px' }}>Articles</a>
-          </NavLink>
-          <NavLink href="/blog">
-            <a style={{ padding: '10px 15px' }}>Projects</a>
-          </NavLink>
+          <Link to="/" label="home" />
+          <Link to="/blog" label="articles" />
+          <Link to="/blog" label="Now" />
           {/* <NavLink href="/now">
             <a style={{ padding: '10px 15px' }}>Now</a>
           </NavLink> */}
@@ -77,7 +69,7 @@ const LinkA = styled.a`
   }
 `;
 
-const CustomLink = () => (
+const SocialLinks = () => (
   <>
     <LinkA href="https://dribbble.com/achuth_hadnoor" target="_blank" color="">
       <Icon icon={dribbble} />
