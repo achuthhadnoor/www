@@ -18,11 +18,13 @@ export default () => {
           alignContent: 'center',
           padding: '20px 0px',
           maxWidth: '1024px',
-          margin: 'auto'
+          margin: 'auto',
+          textTransform: 'uppercase',
+          opacity: 0,
+          animation: ' bcCCNc 0.6s 0.3s ease-in-out forwards'
         }}
       >
         <h3 style={{ fontFamily: 'monospace', flex: 1, fontWeight: 700 }}>
-          {' '}
           <NavLink href="/">
             <a>-///-</a>
           </NavLink>
@@ -34,30 +36,14 @@ export default () => {
           </NavLink>
           {/* <NavLink href="/projects"><a style={{ padding: '5px 10px' }}>Projects</a></NavLink> */}
           <NavLink href="/blog">
-            <a style={{ padding: '10px 15px' }}>Blog</a>
+            <a style={{ padding: '10px 15px' }}>Articles</a>
+          </NavLink>
+          <NavLink href="/blog">
+            <a style={{ padding: '10px 15px' }}>Projects</a>
           </NavLink>
           {/* <NavLink href="/now">
             <a style={{ padding: '10px 15px' }}>Now</a>
           </NavLink> */}
-          <LinkA
-            href="https://dribbble.com/achuth_hadnoor"
-            target="_blank"
-            color=""
-          >
-            <Icon icon={dribbble} />
-          </LinkA>
-          <LinkA href="https://instagram.com/uiuxdx" target="_blank">
-            <Icon icon={instagram} />
-          </LinkA>
-          <LinkA
-            href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
-            target="_blank"
-          >
-            <Icon icon={linkedin} />
-          </LinkA>
-          <LinkA href="https://twitter.com/achuth_hadnoor/" target="_blank">
-            <Icon icon={twitter} />
-          </LinkA>
         </NavWrapper>
         <ThemedButton />
       </nav>
@@ -90,3 +76,23 @@ const LinkA = styled.a`
     color: ${(props) => props.color};
   }
 `;
+
+const CustomLink = () => (
+  <>
+    <LinkA href="https://dribbble.com/achuth_hadnoor" target="_blank" color="">
+      <Icon icon={dribbble} />
+    </LinkA>
+    <LinkA href="https://instagram.com/uiuxdx" target="_blank">
+      <Icon icon={instagram} />
+    </LinkA>
+    <LinkA
+      href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
+      target="_blank"
+    >
+      <Icon icon={linkedin} />
+    </LinkA>
+    <LinkA href="https://twitter.com/achuth_hadnoor/" target="_blank">
+      <Icon icon={twitter} />
+    </LinkA>
+  </>
+);
