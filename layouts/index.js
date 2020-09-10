@@ -3,7 +3,7 @@ import { parseISO, format } from 'date-fns';
 import BlogSeo from '../components/BlogSeo';
 import Nav from '../components/Nav';
 import Link from 'next/link';
-import { Row } from '../components/mdx_components';
+import { Row, P, SubTitle, H3, H1 } from '../components/mdx_components';
 import Icon from 'react-icons-kit';
 import { pencil } from 'react-icons-kit/fa';
 import { messageCircle } from 'react-icons-kit/feather';
@@ -23,6 +23,18 @@ export default (frontMatter) => {
     return (
       <>
         <BlogSeo url={`https://achuth.now.sh/blog/${slug}`} {...frontMatter} />
+        <H3>&larr; BACK</H3>
+        <div
+          style={{
+            maxWidth: '600px',
+            marginTop: 20,
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          <hr style={{ flex: 1 }} />
+          <SubTitle>{slug}</SubTitle>
+        </div>
         <a href={editUrl(slug)}>
           <Icon icon={pencil} style={{ padding: 10 }} />
         </a>
