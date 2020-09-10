@@ -50,7 +50,7 @@ const Blog = () => {
               </span>
               <span style={{ paddingRight: 20 }}>{b.readingTime.text}</span>
               <Link href={b.slug}>
-                <a style={{ paddingRight: 20 }}>
+                <a style={{ paddingRight: 20, fontWeight: 500 }}>
                   <span className="readmore">
                     Read more <span className="arrow">&rarr;</span>
                   </span>
