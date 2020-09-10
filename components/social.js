@@ -2,8 +2,8 @@ import Icon from 'react-icons-kit';
 import { dribbble, linkedin } from 'react-icons-kit/fa';
 import Link from 'next/link';
 
-export default () => (
-  <div style={{ flex: 1 }}>
+export default (props) => (
+  <div style={{ flex: 1 }} {...props}>
     <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
       <a
         href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
@@ -107,6 +107,24 @@ export default () => (
           <path
             d="M12 8.527a3 3 0 11-5.935.88A3 3 0 0112 8.528zM13.125 4.875h.008"
             stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </a>
+      <a
+        href="https://github.com/achuthhadnoor"
+        target="_blank"
+        style={{ padding: '10px' }}
+      >
+        <svg width={18} height={18} viewBox="0 0 18 18" fill="none">
+          <path
+            d="M18 13.5c0 4.142-2.502 4-6.645 4-4.142 0-8.355.142-8.355-4S8.858 7 13 7s5 2.358 5 6.5z"
+            fill="#FFC188"
+          />
+          <path
+            d="M12 16.5v-2.902a2.53 2.53 0 00-.705-1.958c2.355-.263 4.83-1.155 4.83-5.25A4.08 4.08 0 0015 3.578 3.803 3.803 0 0014.932.75S14.047.487 12 1.86a10.035 10.035 0 00-5.25 0C4.702.487 3.817.75 3.817.75a3.803 3.803 0 00-.067 2.827 4.08 4.08 0 00-1.125 2.835c0 4.065 2.475 4.958 4.83 5.25a2.528 2.528 0 00-.705 1.935V16.5m0-2.25C3 15.375 3 12.375 1.5 12l5.25 2.25z"
+            stroke="#000"
             strokeLinecap="round"
             strokeLinejoin="round"
           />

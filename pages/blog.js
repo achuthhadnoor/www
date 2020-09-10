@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { frontMatter as blogPosts } from './blog/**/*.mdx';
+import {
+  H1,
+  Title,
+  SubTitle,
+  H3,
+  P,
+  H2,
+  Row,
+  Ul
+} from '../components/mdx_components';
 
 const url = 'https://achuth.now.sh/blog';
 const title = 'Blog – Achuth hadnoor';
@@ -23,41 +33,33 @@ const Blog = () => {
           description
         }}
       />
-      <div>
-        <h1>Blog</h1>
-        <p>{`
-            I am Focust on creating content for designers , developers and makers to give the community.
-        `}</p>
-        <h1>All Posts</h1>
-        {blogPosts.map((b, i) => (
-          <Link key={`blog-${i}`} href={b.slug}>
-            <a
-              style={{
-                display: 'block',
-                border: '1px solid #aaa',
-                padding: '5px 10px ',
-                borderRadius: '5px'
-              }}
-            >
-              <h3>{b.title}</h3>
-              <p>{b.summary}</p>
-              <div style={{ display: 'flex' }}>
-                <span style={{ padding: '0px 10px ' }}>
-                  {b.readingTime.text}
-                </span>{' '}
-                {` `}
-                <span style={{ padding: '0px 10px ' }}>
-                  {b.readingTime.words} words{' '}
-                </span>
-                {` `}
-                <span style={{ padding: '0px 10px ' }}>
-                  Published at {b.publishedAt}
-                </span>
-              </div>
-            </a>
-          </Link>
-        ))}
+      <div style={{ maxWidth: '300px', display: 'flex', alignItems: 'center' }}>
+        <hr style={{ flex: 1 }} />
+        <Title style={{ padding: '0px 10px' }}>Articles</Title>
       </div>
+      <H1 style={{ margin: '40px 10px' }}>Recently published</H1>
+      <Ul>
+        {blogPosts.map((b, i) => (
+          <Row key={`blog-${i}`}>
+            <H2 style={{ fontWeight: '600' }}>{b.title}</H2>
+            <P style={{ margin: '10px 0px' }}>{b.summary}</P>
+            <div style={{ display: 'flex' }}>
+              <span style={{ paddingRight: 20 }}>{b.publishedAt}</span>
+              <span style={{ paddingRight: 20 }}>
+                {b.readingTime.words} words
+              </span>
+              <span style={{ paddingRight: 20 }}>{b.readingTime.text}</span>
+              <Link href={b.slug}>
+                <a style={{ paddingRight: 20 }}>
+                  <span className="readmore">
+                    Read more <span className="arrow">&rarr;</span>
+                  </span>
+                </a>
+              </Link>
+            </div>
+          </Row>
+        ))}
+      </Ul>
     </>
   );
 };

@@ -9,7 +9,9 @@ import Icon from 'react-icons-kit';
 import { moon, sun } from 'react-icons-kit/feather';
 
 import MDXComponents from './components/MDXComponents';
+import Social from './components/social';
 import Nav from './components/Nav';
+import { H3 } from './components/mdx_components';
 
 export const theme = {
   light: {
@@ -256,6 +258,10 @@ export const ThemeWrapper = ({ children }) => {
             <Nav />
             <DefaultSeo {...SEO} />
             <MDXProvider components={MDXComponents}>{children}</MDXProvider>
+            <footer>
+              <H3 style={{ flex: 1, fontWeight: 800 }}>-///-</H3>
+              <Social style={{ alignItems: 'right' }} />
+            </footer>
           </Wrapper>
         </ThemeProvider>
       </ThemeContext.Provider>

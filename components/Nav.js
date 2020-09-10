@@ -31,8 +31,9 @@ export default () => {
 
         <NavWrapper>
           <Link to="/" label="home" />
-          <Link to="/projects" label="Projects" />
           <Link to="/blog" label="articles" />
+          <Link to="/#projects" label="Projects" />
+          <Link to="/#contact" label="Contact" />
           {/* <NavLink href="/now">
             <a style={{ padding: '10px 15px' }}>Now</a>
           </NavLink> */}

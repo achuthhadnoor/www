@@ -7,7 +7,8 @@ import {
   P,
   Section,
   Ul,
-  Row
+  Row,
+  H3
 } from '../components/mdx_components';
 export default () => {
   const [projects] = React.useState([
@@ -96,6 +97,21 @@ export default () => {
             </Row>
           ))}
         </Ul>
+      </Section>
+      <Section id="contact">
+        <SubTitle>Let's build something togeather</SubTitle>
+        <P>
+          Feel free to reach out if you're looking for a developer, have a
+          question, or just want to connect.
+        </P>
+        <P>
+          <a
+            style={{ color: '#000', textDecoration: 'underline' }}
+            href="mailto:achuth.hadnoor123@gmail.com"
+          >
+            achuth.hadnoor123@gmail.com
+          </a>
+        </P>
       </Section>
     </main>
   );
