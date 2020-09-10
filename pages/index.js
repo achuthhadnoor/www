@@ -36,7 +36,7 @@ export default () => {
           <Title>Achuth Hadnoor</Title>
           <SubTitle>Developer & UI/UX designer</SubTitle>
           <P>
-            I create digital products thar are targeted to boost productivity.
+            I create digital products that are targeted to boost productivity.
             Through these experiences, I've had the opportunity to create
             memorable products that are not only enjoyable to use but are
             written in code that's maintainable and easy to understand.
@@ -70,7 +70,7 @@ export default () => {
             <li>NodeJS</li>
             <li>JAM Stack</li>
             <li>Travis CI / Circle CI</li>
-            <li>Styled-Components</li>
+            <li>GraphQl</li>
           </Row>
         </Ul>
       </Section>
@@ -99,7 +99,7 @@ export default () => {
         </Ul>
       </Section>
       <Section id="contact">
-        <SubTitle>Let's build something togeather</SubTitle>
+        <SubTitle>Let's build something together</SubTitle>
         <P>
           Feel free to reach out if you're looking for a developer, have a
           question, or just want to connect.
