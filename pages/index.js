@@ -34,7 +34,7 @@ export default () => {
         </div>
         <div style={{ padding: '10px 0px ' }}>
           <Title>Achuth Hadnoor</Title>
-          <SubTitle>Developer and UI/UX designer</SubTitle>
+          <SubTitle>Developer & UI/UX designer</SubTitle>
           <P>
             I create digital products thar are targeted to boost productivity.
             Through these experiences, I've had the opportunity to create

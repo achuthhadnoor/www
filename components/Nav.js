@@ -47,10 +47,6 @@ export default () => {
 const NavWrapper = styled.div`
   display: flex;
   list-style: none;
-  a:hover {
-    background: ${(props) => props.theme.tint};
-    border-radius: 5px;
-  }
 `;
 
 const Header = styled.header`
