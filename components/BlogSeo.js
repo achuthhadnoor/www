@@ -4,7 +4,7 @@ import { NextSeo, ArticleJsonLd } from 'next-seo';
 const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
   const date = new Date(publishedAt).toISOString();
   const featuredImage = {
-    url: `https://achuth.now${image}`,
+    url: `https://achuth.now.sh/${image}`,
     alt: title
   };
 
@@ -33,7 +33,7 @@ const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
         description={summary}
         images={[featuredImage]}
         publisherLogo="/static/favicons/android-chrome-192x192.png"
-        publisherName="Achuth hadnoor"
+        publisherName="Achuth Hadnoor"
         title={title}
         url={url}
       />

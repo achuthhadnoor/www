@@ -1,7 +1,3 @@
-import Icon from 'react-icons-kit';
-import { dribbble, linkedin } from 'react-icons-kit/fa';
-import Link from 'next/link';
-
 export default (props) => (
   <div style={{ flex: 1 }} {...props}>
     <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
@@ -9,6 +5,7 @@ export default (props) => (
         href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
         target="_blank"
         style={{ padding: '10px' }}
+        title="Linkedin"
       >
         <svg width={18} height={18} viewBox="0 0 18 18" fill="none">
           <g clipPath="url(#prefix__clip0)">
@@ -34,6 +31,7 @@ export default (props) => (
         href="mailto:achuth.hadnoor123@gmail.com"
         target="_blank"
         style={{ padding: '10px' }}
+        title="Email"
       >
         <svg width={18} height={18} viewBox="0 0 18 18" fill="none">
           <path
@@ -58,6 +56,7 @@ export default (props) => (
         href="https://twitter.com/achuth_hadnoor"
         target="_blank"
         style={{ padding: '10px' }}
+        title="Twitter"
       >
         <svg width={18} height={18} viewBox="0 0 18 18" fill="none">
           <path
@@ -76,6 +75,7 @@ export default (props) => (
         href="https://dribbble.com/achuth_hadnoor"
         target="_blank"
         style={{ padding: '10px' }}
+        title="Dribbble"
       >
         <svg width={18} height={18} viewBox="0 0 18 18" fill="none">
           <path
@@ -92,6 +92,7 @@ export default (props) => (
         href="https://instagram.com/uiuxdx"
         target="_blank"
         style={{ padding: '10px' }}
+        title="instagram"
       >
         <svg width={18} height={18} viewBox="0 0 18 18" fill="none">
           <path
@@ -116,6 +117,7 @@ export default (props) => (
         href="https://github.com/achuthhadnoor"
         target="_blank"
         style={{ padding: '10px' }}
+        title="Github"
       >
         <svg width={18} height={18} viewBox="0 0 18 18" fill="none">
           <path

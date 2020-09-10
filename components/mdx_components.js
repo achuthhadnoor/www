@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export const Title = styled.div`
   font-size: 48px;
   margin: 10px 0px;
@@ -61,3 +62,24 @@ export const Ul = styled.ul`
 export const Row = styled.div`
   padding: 20px 0px;
 `;
+
+export const MDXComponents = {
+  h1: (props) => <Title {...props} />,
+  h2: (props) => <SubTitle {...props} />,
+  h3: (props) => <H3 {...props} />,
+  // inlineCode: (props) => (
+  //   <Code variantColor="yellow" fontSize="0.84em" {...props} />
+  // ),
+  // kbd: Kbd,
+  // br: (props) => <Box height="24px" {...props} />,
+  // hr: Hr,
+  // table: Table,
+  // th: THead,
+  // td: TData,
+  // a: CustomLink,
+  p: (props) => <P {...props} style={{ maxWidth: 800 }} />
+  // ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
+  // ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
+  // li: (props) => <Box as="li" pb={1} {...props} />,
+  // blockquote: Quote
+};

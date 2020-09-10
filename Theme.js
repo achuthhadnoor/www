@@ -8,7 +8,7 @@ import SEO from './next-seo.config';
 import Icon from 'react-icons-kit';
 import { moon, sun } from 'react-icons-kit/feather';
 
-import MDXComponents from './components/MDXComponents';
+import { MDXComponents } from './components/mdx_components';
 import Social from './components/social';
 import Nav from './components/Nav';
 import { H3 } from './components/mdx_components';

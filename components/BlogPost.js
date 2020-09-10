@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import format from 'comma-number';
 
 import fetcher from '../lib/fetcher';
+import { H3, P, Row } from './mdx_components';
 
 const BlogPost = (frontMatter) => {
   const { title, summary } = frontMatter;
@@ -18,15 +19,13 @@ const BlogPost = (frontMatter) => {
   return (
     <NextLink href={`blog/${slug}`} passHref>
       <a>
-        <div>
+        <Row>
           <Flex>
-            <h1 size="md" as="h3" mb={2} fontWeight="medium">
-              {title}
-            </h1>
-            <p>{`${views ? format(views) : '–––'} views`}</p>
+            <H3>{title}</H3>
+            <P>{`${views ? format(views) : '–––'} views`}</P>
           </Flex>
-          <p>{summary}</p>
-        </div>
+          <P>{summary}</P>
+        </Row>
       </a>
     </NextLink>
   );
