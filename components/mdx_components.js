@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 
 export const Title = styled.div`
   font-size: 48px;
   margin: 10px 0px;
 `;
 export const SubTitle = styled.div`
-  margin: 10px 0px;
+  margin: 10px 3px;
   font-size: 36px;
 `;
 export const H1 = styled.div`
@@ -37,6 +38,7 @@ export const Ul = styled.ul`
   grid-gap: 10px;
   display: flex;
   flex-direction: column;
+  padding: 0;
   div {
     flex: 1;
   }
@@ -62,14 +64,32 @@ export const Ul = styled.ul`
 export const Row = styled.div`
   padding: 20px 0px;
 `;
-
+const Code = ({ children, className }) => {
+  const language = className.replace(/language-/, '');
+  return (
+    <>
+      {language}
+      <Highlight {...defaultProps} code={children} language={language}>
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className={className} style={{ ...style, padding: '20px' }}>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        )}
+      </Highlight>
+    </>
+  );
+};
 export const MDXComponents = {
   h1: (props) => <Title {...props} />,
   h2: (props) => <SubTitle {...props} />,
   h3: (props) => <H3 {...props} />,
-  // inlineCode: (props) => (
-  //   <Code variantColor="yellow" fontSize="0.84em" {...props} />
-  // ),
+  code: Code,
   // kbd: Kbd,
   // br: (props) => <Box height="24px" {...props} />,
   // hr: Hr,

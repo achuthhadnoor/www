@@ -254,107 +254,15 @@ export const ThemeWrapper = ({ children }) => {
       <ThemeContext.Provider value={{ themed, setThemed }}>
         <ThemeProvider theme={themed}>
           <GlobalStyle />
-          <Wrapper>
-            <Nav />
-            <DefaultSeo {...SEO} />
-            <MDXProvider components={MDXComponents}>{children}</MDXProvider>
-            <footer>
-              <H3 style={{ flex: 1, fontWeight: 800 }}>-///-</H3>
-              <Social style={{ alignItems: 'right' }} />
-            </footer>
-          </Wrapper>
+          <Nav />
+          <DefaultSeo {...SEO} />
+          <MDXProvider components={MDXComponents}>{children}</MDXProvider>
+          <footer style={{ maxWidth: '1200px', margin: 'auto' }}>
+            <H3 style={{ flex: 1, fontWeight: 800 }}>-///-</H3>
+            <Social style={{ alignItems: 'right' }} />
+          </footer>
         </ThemeProvider>
       </ThemeContext.Provider>
     </>
   );
 };
-const Wrapper = styled.div`
-  background: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.color};
-  min-height: 100vh;
-  padding: 20px;
-  margin: auto;
-  opacity: 0;
-  animation: bcCCNc 0.6s 0.3s ease-in-out forwards;
-  @media (min-width: 960px) {
-    & {
-      max-width: 940px;
-      padding: 20px;
-      margin: auto;
-    }
-  }
-  @media (min-width: 1200px) {
-    & {
-      max-width: 1200px;
-      padding: 20px;
-    }
-  }
-
-  /* sc-component-id: sc-keyframes-bcCCNc */
-  @-webkit-keyframes bcCCNc {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes bcCCNc {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  /* sc-component-id: sc-keyframes-iuhkkK */
-  @-webkit-keyframes iuhkkK {
-    from {
-      width: 0px;
-      opacity: 0;
-    }
-    to {
-      width: 200px;
-      opacity: 1;
-    }
-  }
-  @keyframes iuhkkK {
-    from {
-      width: 0px;
-      opacity: 0;
-    }
-    to {
-      width: 200px;
-      opacity: 1;
-    }
-  }
-  /* sc-component-id: sc-keyframes-gztygP */
-  @-webkit-keyframes gztygP {
-    from {
-      -webkit-transform: translateY(30px);
-      -ms-transform: translateY(30px);
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    to {
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  @keyframes gztygP {
-    from {
-      -webkit-transform: translateY(30px);
-      -ms-transform: translateY(30px);
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    to {
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-`;

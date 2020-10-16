@@ -12,6 +12,7 @@ import {
   Row,
   Ul
 } from '../components/mdx_components';
+import styled from 'styled-components';
 
 const url = 'https://achuth.now.sh/blog';
 const title = 'Blog – Achuth hadnoor';
@@ -19,10 +20,8 @@ const description =
   'My Insights on Software Industry , programming ,tech , Design and personal life';
 
 const Blog = () => {
-  console.log(blogPosts);
-
   return (
-    <>
+    <Wrapper>
       <NextSeo
         title={title}
         description={description}
@@ -40,27 +39,123 @@ const Blog = () => {
       <H1 style={{ margin: '40px 10px' }}>Recently published</H1>
       <Ul>
         {blogPosts.map((b, i) => (
-          <Row key={`blog-${i}`}>
-            <H2 style={{ fontWeight: '600' }}>{b.title}</H2>
-            <P style={{ margin: '10px 0px' }}>{b.summary}</P>
-            <div style={{ display: 'flex' }}>
-              <span style={{ paddingRight: 20 }}>{b.publishedAt}</span>
-              <span style={{ paddingRight: 20 }}>
-                {b.readingTime.words} words
-              </span>
-              <span style={{ paddingRight: 20 }}>{b.readingTime.text}</span>
-              <Link href={b.slug}>
-                <a style={{ paddingRight: 20, fontWeight: 500 }}>
-                  <span className="readmore">
-                    Read more <span className="arrow">&rarr;</span>
-                  </span>
-                </a>
-              </Link>
-            </div>
-          </Row>
+          <BlogPostDiv i={i} b={b} />
         ))}
       </Ul>
-    </>
+    </Wrapper>
   );
 };
+
 export default Blog;
+
+const BlogPostDiv = ({ i, b }) => {
+  return (
+    <Row key={`blog-${i}`}>
+      <H2 style={{ fontWeight: '600' }}>{b.title}</H2>
+      <P style={{ margin: '10px 0px' }}>{b.summary}</P>
+      <div style={{ display: 'flex' }}>
+        <span style={{ paddingRight: 20 }}>{b.publishedAt}</span>
+        <span style={{ paddingRight: 20 }}>{b.readingTime.words} words</span>
+        <span style={{ paddingRight: 20 }}>{b.readingTime.text}</span>
+        <Link href={b.slug}>
+          <a style={{ paddingRight: 20, fontWeight: 500 }}>
+            <span className="readmore">
+              Read more <span className="arrow">&rarr;</span>
+            </span>
+          </a>
+        </Link>
+      </div>
+    </Row>
+  );
+};
+
+const Wrapper = styled.div`
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
+  min-height: 100vh;
+  padding: 20px;
+  margin: auto;
+  opacity: 0;
+  animation: bcCCNc 0.6s 0.3s ease-in-out forwards;
+  @media (min-width: 960px) {
+    & {
+      max-width: 940px;
+      padding: 20px;
+      margin: auto;
+    }
+  }
+  @media (min-width: 1200px) {
+    & {
+      max-width: 1200px;
+      padding: 20px;
+    }
+  }
+
+  /* sc-component-id: sc-keyframes-bcCCNc */
+  @-webkit-keyframes bcCCNc {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes bcCCNc {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* sc-component-id: sc-keyframes-iuhkkK */
+  @-webkit-keyframes iuhkkK {
+    from {
+      width: 0px;
+      opacity: 0;
+    }
+    to {
+      width: 200px;
+      opacity: 1;
+    }
+  }
+  @keyframes iuhkkK {
+    from {
+      width: 0px;
+      opacity: 0;
+    }
+    to {
+      width: 200px;
+      opacity: 1;
+    }
+  }
+  /* sc-component-id: sc-keyframes-gztygP */
+  @-webkit-keyframes gztygP {
+    from {
+      -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes gztygP {
+    from {
+      -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+`;
