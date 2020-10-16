@@ -1,34 +1,28 @@
 import styled from 'styled-components';
 import NavLink from 'next/link';
 import Link from './Link';
-import Icon from 'react-icons-kit';
-import { menu } from 'react-icons-kit/feather';
-import { x } from 'react-icons-kit/feather';
 export default () => {
-  const [Nav, setNav] = React.useState(false);
   return (
-    <>
-      <DeskTopNav>
-        <Header>
-          <h3 style={{ fontFamily: 'monospace', flex: 1, fontWeight: 700 }}>
-            <NavLink href="/">
-              <a>-///-</a>
-            </NavLink>
-          </h3>
-          <span style={{ flex: 1 }} />
-          <NavWrapper>
-            <Link to="/" label="home" />
-            <Link to="/blog" label="articles" />
-            <Link to="/#projects" label="Projects" />
-            <Link to="/#contact" label="Contact" />
-            {/* <NavLink href="/now">
+    <DeskTopNav>
+      <Header>
+        <h3 style={{ fontFamily: 'monospace', flex: 1, fontWeight: 700 }}>
+          <NavLink href="/">
+            <a>-///-</a>
+          </NavLink>
+        </h3>
+        <span style={{ flex: 1 }} />
+        <NavWrapper>
+          <Link to="/" label="home" />
+          <Link to="/blog" label="articles" />
+          <Link to="/#projects" label="Projects" />
+          <Link to="/#contact" label="Contact" />
+          {/* <NavLink href="/now">
                             <a style={{ padding: '10px 15px' }}>Now</a>
                         </NavLink> */}
-          </NavWrapper>
-          {/* <ThemedButton /> */}
-        </Header>
-      </DeskTopNav>
-    </>
+        </NavWrapper>
+        {/* <ThemedButton /> */}
+      </Header>
+    </DeskTopNav>
   );
 };
 
@@ -55,9 +49,15 @@ const Header = styled.header`
   padding: 5px;
   flex: 1;
   max-width: 1200px;
+  display: flex;
   background: ${(props) => props.theme.tint};
   color: ${(props) => props.theme.color};
   backdrop-filter: saturate(180%) blur(20px);
   display: flex;
   align-items: center;
+  @media (max-width: 960px) {
+    & {
+      flex-direction: column;
+    }
+  }
 `;

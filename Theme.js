@@ -123,25 +123,13 @@ export const GlobalStyle = createGlobalStyle`
           color:${(props) => props.theme.accent};
         }
  
-
         .description {
           line-height: 1.5;
           font-size: 1.2rem;
         }
-
         pre{
-            background:${(props) => props.theme.background};
-            border:1px solid #aaa;
-            max-width:1024px;
+            overflow:auto;
         }
-        code { 
-            border: 1px solid aaa;
-          border-radius: 5px;
-          padding: 0.75rem; 
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
         .grid {
           display: flex;
           align-items: center;
