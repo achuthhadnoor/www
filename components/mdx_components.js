@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-
+import github from 'prism-react-renderer/themes/github';
 export const Title = styled.div`
   font-size: 48px;
   margin: 10px 0px;
@@ -64,12 +64,18 @@ export const Ul = styled.ul`
 export const Row = styled.div`
   padding: 20px 0px;
 `;
+
 const Code = ({ children, className }) => {
   const language = className.replace(/language-/, '');
   return (
     <>
       {language}
-      <Highlight {...defaultProps} code={children} language={language}>
+      <Highlight
+        {...defaultProps}
+        code={children}
+        language={language}
+        theme={github}
+      >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={{ ...style, padding: '20px' }}>
             {tokens.map((line, i) => (
