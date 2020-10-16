@@ -24,7 +24,9 @@ export default (frontMatter) => {
     return (
       <Wrapper>
         <BlogSeo url={`https://achuth.now.sh/blog/${slug}`} {...frontMatter} />
-        <H3>&larr; BACK</H3>
+        <Link href="/blog">
+          <H3 style={{ cursor: 'pointer' }}>&larr; BACK</H3>
+        </Link>
         <div
           style={{
             maxWidth: '600px',

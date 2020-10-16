@@ -103,7 +103,7 @@ export const MDXComponents = {
   // th: THead,
   // td: TData,
   // a: CustomLink,
-  p: (props) => <P {...props} style={{ maxWidth: 800 }} />
+  p: (props) => <P {...props} style={{ maxWidth: 800, padding: 5 }} />
   // ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
   // ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
   // li: (props) => <Box as="li" pb={1} {...props} />,
