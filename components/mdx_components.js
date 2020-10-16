@@ -25,7 +25,7 @@ export const P = styled.p`
   max-width: 500px;
   width: 100%;
   line-height: 2;
-  margin: 40px 0px;
+  margin-bottom: 10px;
 `;
 
 export const Section = styled.section`
@@ -103,7 +103,7 @@ export const MDXComponents = {
   // th: THead,
   // td: TData,
   // a: CustomLink,
-  p: (props) => <P {...props} style={{ maxWidth: 800, padding: 5 }} />
+  p: (props) => <P {...props} style={{ maxWidth: 800 }} />
   // ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
   // ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
   // li: (props) => <Box as="li" pb={1} {...props} />,

@@ -39,7 +39,7 @@ const Blog = () => {
       <H1 style={{ margin: '40px 10px' }}>Recently published</H1>
       <Ul>
         {blogPosts.map((b, i) => (
-          <BlogPostDiv i={i} b={b} />
+          <BlogPostDiv i={i} b={b} key={`blog-${i}`} />
         ))}
       </Ul>
     </Wrapper>
@@ -48,9 +48,9 @@ const Blog = () => {
 
 export default Blog;
 
-const BlogPostDiv = ({ i, b }) => {
+const BlogPostDiv = ({ i, b, ...props }) => {
   return (
-    <Row key={`blog-${i}`}>
+    <Row {...props}>
       <H2 style={{ fontWeight: '600' }}>{b.title}</H2>
       <P style={{ margin: '10px 0px' }}>{b.summary}</P>
       <div style={{ display: 'flex' }}>
