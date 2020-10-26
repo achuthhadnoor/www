@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import github from 'prism-react-renderer/themes/github';
+import github from 'prism-react-renderer/themes/oceanicNext';
 export const Title = styled.div`
   font-size: 48px;
   margin: 10px 0px;
@@ -69,7 +69,18 @@ const Code = ({ children, className }) => {
   const language = className.replace(/language-/, '');
   return (
     <>
-      {language}
+      <span
+        style={{
+          padding: '10px',
+          background: '#282c34',
+          color: '#fff',
+          padding: '10px',
+          borderRadius: '5px'
+        }}
+      >
+        {' '}
+        {language}
+      </span>
       <Highlight
         {...defaultProps}
         code={children}
@@ -77,7 +88,10 @@ const Code = ({ children, className }) => {
         theme={github}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={{ ...style, padding: '20px' }}>
+          <pre
+            className={className}
+            style={{ ...style, padding: '20px', marginTop: '0px' }}
+          >
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
@@ -91,6 +105,13 @@ const Code = ({ children, className }) => {
     </>
   );
 };
+
+const Quote = styled.div`
+  border-left: 2px solid #222;
+  padding-left: 10px;
+  background: #eee;
+`;
+
 export const MDXComponents = {
   h1: (props) => <Title {...props} />,
   h2: (props) => <SubTitle {...props} />,
@@ -103,9 +124,9 @@ export const MDXComponents = {
   // th: THead,
   // td: TData,
   // a: CustomLink,
-  p: (props) => <P {...props} style={{ maxWidth: 800 }} />
+  p: (props) => <P {...props} style={{ maxWidth: 800 }} />,
   // ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
   // ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
   // li: (props) => <Box as="li" pb={1} {...props} />,
-  // blockquote: Quote
+  blockquote: (props) => <Quote {...props} />
 };

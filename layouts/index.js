@@ -35,7 +35,7 @@ export default (frontMatter) => {
             alignItems: 'center'
           }}
         >
-          <hr style={{ flex: 1 }} />
+          <hr style={{ maxWidth: '100px', width: '100%' }} />
           <div>
             <SubTitle>{frontMatter.title}</SubTitle>
             <div>

@@ -1,12 +1,11 @@
 ---
-title:  'Beginners Guide to Testing in ReactJs'
-publishedAt:  '2020-10-22'
+title: 'Beginners Guide to Testing in ReactJs'
+publishedAt: '2020-10-22'
 summary: 'Create a simple react component and test using react testing library'
 image: '/static/images/10-days-in-norway/banner.png'
 slug: '/blog/testing-react-js'
 tags: ['reactjs', 'javascript', 'jest', 'testing']
 ---
-# Beginners Guide to Testing in ReactJs
 
 > Simple and complete React DOM testing utilities that encourage good testing practices.
 
@@ -22,40 +21,36 @@ npm install --save-dev @testing-library/react   // install react testing library
 cd src mkdir components && cd components && touch Header.js && cd .. & cd ..
 ```
 
-let's open Header.js  component in Vs code or your favorite editor
+let's open Header.js component in Vs code or your favorite editor
 
 ```jsx
 // Header.js
 
 import React from 'react';
 
-export default function Header({text}){
-	return(
-		<h2>
-			{text}
-		</h2>
-	)
+export default function Header({ text }) {
+  return <h2>{text}</h2>;
 }
 ```
 
-Now let's create a text file for this component 
+Now let's create a text file for this component
 
 ```jsx
 // Header.test.js
 
 import React from 'react';
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import Header from './Header';
 
-it('renders',()=>{
-	const { asFragment } = render(<Header text="Hello!"/>);
-	expect(asFragment()).toMatchSnapshot(); // A snapshot is created with which it will compare the HTML generated 
-})
+it('renders', () => {
+  const { asFragment } = render(<Header text="Hello!" />);
+  expect(asFragment()).toMatchSnapshot(); // A snapshot is created with which it will compare the HTML generated
+});
 ```
 
-React testing library produces garbage wich can be cleaned up using 
+React testing library produces garbage wich can be cleaned up using
 
 `forEach(cleanup) [//cleanup](//cleanup) is imported from react testing library`
 
@@ -87,7 +82,7 @@ return(
 
 ...
 it('inserts H1 tag',()=>{
-	const { getByTestId, getByText } = render(<Header text="Hello!"/> 
+	const { getByTestId, getByText } = render(<Header text="Hello!"/>
 
 	expect(getBytestId('h1tag')).toHaveContent('Hello!');
 })
@@ -95,4 +90,4 @@ it('inserts H1 tag',()=>{
 
 I hope you have understood the basic of using react testing library.
 
-Thanks for reading 
+Thanks for reading

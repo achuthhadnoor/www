@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
-import { frontMatter as blogPosts } from './blog/**/*.mdx';
+import { frontMatter as blogPosts } from './blog/*.mdx';
 import {
   H1,
   Title,
