@@ -12,6 +12,7 @@ import {
   Row,
   Ul
 } from '../components/mdx_components';
+import { Twitter } from '../icons';
 import styled from 'styled-components';
 
 const url = 'https://achuth.now.sh/blog';
@@ -37,7 +38,7 @@ const Blog = () => {
         <Title style={{ padding: '0px 10px' }}>Articles</Title>
       </div>
       <H1 style={{ margin: '40px 10px' }}>Recently published</H1>
-      <Ul>
+      <Ul style={{ flexDirection: 'column' }}>
         {blogPosts.map((b, i) => (
           <BlogPostDiv i={i} b={b} key={`blog-${i}`} />
         ))}
@@ -51,19 +52,29 @@ export default Blog;
 const BlogPostDiv = ({ i, b, ...props }) => {
   return (
     <Row {...props}>
-      <H2 style={{ fontWeight: '600' }}>{b.title}</H2>
-      <P style={{ margin: '10px 0px' }}>{b.summary}</P>
-      <div style={{ display: 'flex' }}>
-        <span style={{ paddingRight: 20 }}>{b.publishedAt}</span>
-        <span style={{ paddingRight: 20 }}>{b.readingTime.words} words</span>
-        <span style={{ paddingRight: 20 }}>{b.readingTime.text}</span>
-        <Link href={b.slug}>
-          <a style={{ paddingRight: 20, fontWeight: 500 }}>
-            <span className="readmore">
-              Read more <span className="arrow">&rarr;</span>
-            </span>
-          </a>
-        </Link>
+      <Link href={b.slug}>
+        <a>
+          <H2 style={{ fontWeight: '600' }}>{b.title}</H2>
+        </a>
+      </Link>
+      <P style={{ margin: '10px 0px', maxWidth: '800px' }}>{b.summary}</P>
+      <div style={{ display: 'flex', alignItems: 'center', maxWidth: '450px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <span style={{ paddingRight: 20 }}>{b.publishedAt}</span>
+          <span style={{ paddingRight: 20 }}>{b.readingTime.text}</span>
+        </div>
+        <div style={{ display: 'flex', flex: 1 }}>
+          <span style={{ paddingRight: 20 }}>
+            <Twitter />
+          </span>
+          <Link href={b.slug}>
+            <a style={{ paddingRight: 20, fontWeight: 500 }}>
+              <span className="readmore">
+                Read more <span className="arrow">&rarr;</span>
+              </span>
+            </a>
+          </Link>
+        </div>
       </div>
     </Row>
   );

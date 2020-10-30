@@ -1,13 +1,12 @@
 import React from 'react';
-import { parseISO, format } from 'date-fns';
 import BlogSeo from '../components/BlogSeo';
-import Nav from '../components/Nav';
 import Link from 'next/link';
-import { Row, P, SubTitle, H3, H1 } from '../components/mdx_components';
+import { Row, SubTitle, H3 } from '../components/mdx_components';
 import Icon from 'react-icons-kit';
-import { pencil } from 'react-icons-kit/fa';
-import { messageCircle } from 'react-icons-kit/feather';
+import { Twitter } from '../icons';
 import styled from 'styled-components';
+import { share2 } from 'react-icons-kit/feather';
+import { Share } from '../icons';
 
 export default (frontMatter) => {
   const slug = frontMatter.__resourcePath
@@ -36,14 +35,19 @@ export default (frontMatter) => {
           }}
         >
           <hr style={{ maxWidth: '100px', width: '100%' }} />
-          <div>
+          <div
+            style={{
+              alignItems: 'center'
+            }}
+          >
             <SubTitle>{frontMatter.title}</SubTitle>
             <div>
-              <a href={editUrl(slug)}>
-                <Icon icon={pencil} style={{ padding: 10 }} />
+              <Tag>Chrome Extension</Tag>
+              <a href={editUrl(slug)} style={{ padding: '10px' }}>
+                <Twitter />
               </a>
-              <a href={discussUrl(slug)}>
-                <Icon icon={messageCircle} style={{ padding: 10 }} />
+              <a href={discussUrl(slug)} style={{ padding: '10px' }}>
+                <Share />
               </a>
             </div>
           </div>
@@ -54,7 +58,18 @@ export default (frontMatter) => {
   };
 };
 
-const Wrapper = styled.div`
+const Tag = styled.span`
+  padding: 5px 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #e1e1e1;
+  color: #121212;
+  border: 1px solid #121212;
+  font-size: 10px;
+  font-weight: 600;
+`;
+
+const Wrapper = styled.article`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   min-height: 100vh;
