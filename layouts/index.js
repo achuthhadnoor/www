@@ -42,6 +42,9 @@ export default (frontMatter) => {
           >
             <SubTitle>{frontMatter.title}</SubTitle>
             <div>
+              {frontMatter.tags.map((t, i) => (
+                <Tag key={i}>{t}</Tag>
+              ))}
               <Tag>Chrome Extension</Tag>
               <a href={editUrl(slug)} style={{ padding: '10px' }}>
                 <Twitter />
@@ -67,6 +70,7 @@ const Tag = styled.span`
   border: 1px solid #121212;
   font-size: 10px;
   font-weight: 600;
+  margin-left: 10px;
 `;
 
 const Wrapper = styled.article`
