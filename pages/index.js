@@ -41,12 +41,12 @@ export default () => {
             memorable products that are not only enjoyable to use but are
             written in code that's maintainable and easy to understand.
           </P>
-          <ActionButton
+          {/* <ActionButton
             href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
             target="_blank"
           >
             Resume`
-          </ActionButton>
+          </ActionButton> */}
         </div>
       </Section>
       <Section id="skills">
