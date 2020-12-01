@@ -12,7 +12,7 @@ export default () => {
       <span style={{ flex: 1 }} />
       <NavWrapper>
         <Link to="/" label="home" />
-        <Link to="/blog" label="articles" />
+        <Link to="/blog" label="blog" />
         <Link to="/#projects" label="Projects" />
         <Link to="/#contact" label="Contact" />
         {/* <NavLink href="/now">

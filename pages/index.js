@@ -36,10 +36,11 @@ export default () => {
           <Title>Achuth Hadnoor</Title>
           <SubTitle>Developer {'&'} UI/UX designer</SubTitle>
           <P style={{ padding: '20px 0px' }}>
-            I create digital products that are targeted to boost productivity.
-            Through these experiences, I've had the opportunity to create
-            memorable products that are not only enjoyable to use but are
-            written in code that's maintainable and easy to understand.
+            I <b>design and develop</b> digital products. Through these
+            experiences, I've had the opportunity to create
+            <b> products</b> that are not only <b>enjoyable to use by design</b>{' '}
+            but are also <b>written in code that's maintainable</b> and easy to
+            understand.
           </P>
           {/* <ActionButton
             href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
