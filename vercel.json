@@ -1,38 +1,36 @@
 {
   "redirects": [
-    { "source": "/links/portfolio", "destination": "/" },
     {
-      "source": "/links/twitter",
+      "source": "/twitter",
       "destination": "https://twitter.com/achuth_hadnoor"
     },
-    { "source": "/links/dev", "destination": "https://dev.to/achuthhadnoor" },
+    { "source": "/dev", "destination": "https://dev.to/achuthhadnoor" },
     {
-      "source": "/links/twitter",
+      "source": "/github",
       "destination": "https://github.com/achuthhadnoor"
     },
     {
-      "source": "/links/buymeacoffee",
-      "destination": "/api/user",
-      "permanent": false
+      "source": "/buymeacoffee",
+      "destination": "https://www.buymeacoffee.com/achuthhadnoor"
     },
     {
-      "source": "/links/dribbble",
+      "source": "/dribbble",
       "destination": "https://dribbble.com/achuth_hadnoor"
     },
     {
-      "source": "/links/medium",
+      "source": "/medium",
       "destination": "https://medium.com/@achuth.hadnoor"
     },
     {
-      "source": "/links/instagram",
+      "source": "/instagram",
       "destination": "https://instagram.com/uiuxdx"
     },
     {
-      "source": "/links/producthunt",
+      "source": "/producthunt",
       "destination": "https://www.producthunt.com/@achuthhadnoor"
     },
     {
-      "source": "/links/f6s",
+      "source": "/f6s",
       "destination": "https://www.f6s.com/achuthhadnoor"
     }
   ]
