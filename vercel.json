@@ -1,0 +1,39 @@
+{
+  "redirects": [
+    { "source": "/links/portfolio", "destination": "/" },
+    {
+      "source": "/links/twitter",
+      "destination": "https://twitter.com/achuth_hadnoor"
+    },
+    { "source": "/links/dev", "destination": "https://dev.to/achuthhadnoor" },
+    {
+      "source": "/links/twitter",
+      "destination": "https://github.com/achuthhadnoor"
+    },
+    {
+      "source": "/links/buymeacoffee",
+      "destination": "/api/user",
+      "permanent": false
+    },
+    {
+      "source": "/links/dribbble",
+      "destination": "https://dribbble.com/achuth_hadnoor"
+    },
+    {
+      "source": "/links/medium",
+      "destination": "https://medium.com/@achuth.hadnoor"
+    },
+    {
+      "source": "/links/instagram",
+      "destination": "https://instagram.com/uiuxdx"
+    },
+    {
+      "source": "/links/producthunt",
+      "destination": "https://www.producthunt.com/@achuthhadnoor"
+    },
+    {
+      "source": "/links/f6s",
+      "destination": "https://www.f6s.com/achuthhadnoor"
+    }
+  ]
+}
