@@ -42,12 +42,12 @@ export default () => {
             but are also <b>written in code that's maintainable</b> and easy to
             understand.
           </P>
-          {/* <ActionButton
+          <ActionButton
             href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
             target="_blank"
           >
-            Resume`
-          </ActionButton> */}
+            👉 Get in touch
+          </ActionButton>
         </div>
       </Section>
       <Section id="skills">

@@ -44,6 +44,7 @@ const Header = styled.header`
   padding: 20px 0px;
   text-transform: uppercase;
   animation: bcCCNc 0.6s 0.3s ease-in-out forwards;
+  z-index: 9999;
   @media (max-width: 960px) {
     & {
       flex-direction: column;

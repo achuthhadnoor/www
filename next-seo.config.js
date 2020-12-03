@@ -4,16 +4,16 @@ const description = 'Developer, JavaScript enthusiast, and product maker.';
 const SEO = {
   title,
   description,
-  canonical: 'https://achuth.now.sh',
+  canonical: 'https://achuth.dev',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://achuth.now.sh',
+    url: 'https://achuth.dev',
     title,
     description,
     images: [
       {
-        url: 'https://achuth.now.sh/static/images/og.jpg',
+        url: 'https://achuth.dev/icons/android-chrome-192.png',
         alt: title,
         width: 1280,
         height: 720

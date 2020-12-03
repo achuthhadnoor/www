@@ -22,7 +22,7 @@ const prettier = require('prettier');
                 const route = path === '/index' ? '' : path;
                 return `
                         <url>
-                            <loc>${`https://achuth.now.sh/${route}`}</loc>
+                            <loc>${`https://achuth.dev/${route}`}</loc>
                         </url>
                     `;
               })
