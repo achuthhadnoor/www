@@ -32,6 +32,10 @@
     {
       "source": "/f6s",
       "destination": "https://www.f6s.com/achuthhadnoor"
+    },
+    {
+      "source": "/hashnode",
+      "destination": "https://www.hashnode.com/@achuth"
     }
   ]
 }
