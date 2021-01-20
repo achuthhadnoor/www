@@ -1,7 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 // Import styled components ServerStyleSheet
 import { ServerStyleSheet } from 'styled-components';
-import { initGA, logPageView } from '../utils/analytics';
 
 export default class MyDocument extends Document {
   componentDidMount() {
