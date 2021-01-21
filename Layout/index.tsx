@@ -1,12 +1,14 @@
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle,ThemeProvider } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     // this is the shared style
   html {
     box-sizing: border-box;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:16px;
   }
 
   * {
@@ -16,16 +18,45 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration:none;
       color:inherit;
   }
+  
+  ::-webkit-scrollbar {
+            width: 14px;
+            height: 14px
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent
+        }
+        ::-webkit-scrollbar-thumb,::-webkit-scrollbar-track {
+            border: 4px solid transparent;
+            background-clip: padding-box;
+            border-radius: 8px
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: ${(props) => props.theme.accent}
+        }
+        ::-webkit-scrollbar-button {
+            display: none;
+            width: 0;
+            height: 0
+        }
+        ::-webkit-scrollbar-corner {
+            background-color: transparent
+        }
 `;
 
-const Layout = ({children}: { children: any })=>{
-    return(
-        <>
-        <GlobalStyle />
-        <Header/>
-        {children}
-        <Footer/>
-        </>
+const theme = {
+    accent: 'lightblue',
+
+}
+
+const Layout = ({ children }: { children: any }) => {
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <Header />
+            {children}
+            <Footer />
+        </ThemeProvider>
     )
 }
 

@@ -58,6 +58,7 @@ const HeaderWrapper = styled.header`
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   z-index: 999;
+  font-size:.8em;
 `;
 const NavWrapper = styled.div`
   display: flex;

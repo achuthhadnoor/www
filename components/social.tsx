@@ -41,7 +41,7 @@ const Social = (props:any) => (
         style={{ padding: '10px' }}
         title="Linkedin"
       >
-        <Icon name="Linked" />
+        <Icon name="Linkedin" />
       </a>
       <a
         href="mailto:achuth.hadnoor123@gmail.com"
@@ -49,7 +49,7 @@ const Social = (props:any) => (
         style={{ padding: '10px' }}
         title="Email"
       >
-        <Icon name="Email" />
+        <Icon name="Mail" />
       </a>
     </div>
   </div>
