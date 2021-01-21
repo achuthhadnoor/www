@@ -1,13 +1,12 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Social from '../components/social';
+import Layout from '../Layout';
 
 const Home = () => (
-  <div>
-    <Header />
-    <Social />
-    <Footer />
-  </div>
+ <Layout>
+   sample
+ </Layout>
 );
 
 export default Home;
