@@ -1,15 +1,14 @@
 import Icon from '../icons'
 
 const Social = (props:any) => (
-  <div style={{ flex: 1 }} {...props}>
-    <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
+   <div style={{ flex: 1, display: 'flex', alignItems: 'center',justifyContent:'center' }} {...props}>
       <a
         href="https://dribbble.com/achuth_hadnoor"
         target="_blank"
         style={{ padding: '10px' }}
         title="Dribbble"
       >
-        <Icon name="Dribble" />
+        <Icon name="Dribbble" />
       </a>
       <a
         href="https://instagram.com/uiuxdx"
@@ -52,7 +51,7 @@ const Social = (props:any) => (
         <Icon name="Mail" />
       </a>
     </div>
-  </div>
+  
 );
 
 export default Social;

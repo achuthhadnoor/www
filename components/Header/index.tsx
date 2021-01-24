@@ -4,8 +4,7 @@ import { useRouter } from 'next/router';
 import Icon from 'react-icons-kit';
 import { send } from 'react-icons-kit/feather/send';
 const Header = () => {
-  const router = useRouter();
-  console.log(router.pathname);
+  const router = useRouter(); 
   return (
     <HeaderWrapper>
       <NavWrapper>

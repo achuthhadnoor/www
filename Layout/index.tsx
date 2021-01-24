@@ -1,7 +1,7 @@
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 
-import { createGlobalStyle,ThemeProvider } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     // this is the shared style
@@ -45,8 +45,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const theme = {
-    accent: 'lightblue',
-
+    accent: 'black',
 }
 
 const Layout = ({ children }: { children: any }) => {
@@ -54,10 +53,18 @@ const Layout = ({ children }: { children: any }) => {
         <ThemeProvider theme={theme}>
             <GlobalStyle />
             <Header />
-            {children}
+            <Content>
+                {children}
+            </Content>
             <Footer />
         </ThemeProvider>
     )
 }
+
+const Content = styled.main`
+  max-width:1024px;
+  margin:0 auto;
+  text-align:center;
+`;
 
 export default Layout;

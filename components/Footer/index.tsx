@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Social from '../social';
 const Footer = () => {
-  const router = useRouter();
-  console.log(router.pathname);
+  const router = useRouter(); 
   return (
     <HeaderWrapper>
       <NavWrapper>
@@ -14,6 +13,7 @@ const Footer = () => {
         <span style={{ flex: 1 }} />
         <Social style={{ textAlign: 'right' }} />
       </NavWrapper>
+      <Seperator/>
     </HeaderWrapper>
   );
 };
@@ -26,6 +26,13 @@ const HeaderWrapper = styled.footer`
   z-index: 999;
 `;
 
+const Seperator = styled.div`
+height:3px;
+background-image: linear-gradient(to right,var(--tw-gradient-stops));
+    --tw-gradient-from: #f90;
+    --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(255,153,0,0));
+    --tw-gradient-to: #ff007a;
+`;
 const NavWrapper = styled.div`
   display: flex;
   align-items: center;
