@@ -2,8 +2,7 @@ import Social from '../components/social';
 import Layout from '../Layout';
 import styled from 'styled-components'
 import { EDEADLK } from 'constants';
-const Home = () => (
-  <Layout>
+const Home = () => ( 
     <Section>
       <Name>Achuth Hadnoor</Name>
       <Role>Developer & UI/UX designer</Role>
@@ -12,8 +11,7 @@ const Home = () => (
         not only enjoyable to use by design but are also written in code that's maintainable and easy to understand.
      </Details>
       <Social style={{paddingTop:'30px'}}/>
-    </Section>
-  </Layout>
+    </Section> 
 );
 
 const Section = styled.div`

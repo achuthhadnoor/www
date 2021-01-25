@@ -1,25 +1,25 @@
 import Footer from "../components/Footer"
-import Header from "../components/Header"
+import Header from "../components/Header/mobile"
 
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     // this is the shared style
-  html {
-    box-sizing: border-box;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:16px;
-  }
+        html {
+            box-sizing: border-box;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size:16px;
+        }
 
-  * {
-    box-sizing: inherit;
-  }
-  a{
-      text-decoration:none;
-      color:inherit;
-  }
+        * {
+            box-sizing: inherit;
+        }
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
   
-  ::-webkit-scrollbar {
+        ::-webkit-scrollbar {
             width: 14px;
             height: 14px
         }
