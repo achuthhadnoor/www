@@ -1,14 +1,14 @@
-import { Linkedin, Mail, Instagram, Github, Dribbble, Twitter } from '../icons';
-export default (props) => (
-  <div style={{ flex: 1 }} {...props}>
-    <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
+import Icon from '../icons'
+
+const Social = (props:any) => (
+   <div style={{ flex: 1, display: 'flex', alignItems: 'center',justifyContent:'center' }} {...props}>
       <a
         href="https://dribbble.com/achuth_hadnoor"
         target="_blank"
         style={{ padding: '10px' }}
         title="Dribbble"
       >
-        <Dribbble />
+        <Icon name="Dribbble" />
       </a>
       <a
         href="https://instagram.com/uiuxdx"
@@ -16,7 +16,7 @@ export default (props) => (
         style={{ padding: '10px' }}
         title="instagram"
       >
-        <Instagram />
+        <Icon name="Instagram" />
       </a>
       <a
         href="https://github.com/achuthhadnoor"
@@ -24,7 +24,7 @@ export default (props) => (
         style={{ padding: '10px' }}
         title="Github"
       >
-        <Github />
+        <Icon name="Github" />
       </a>
       <a
         href="https://twitter.com/achuth_hadnoor"
@@ -32,7 +32,7 @@ export default (props) => (
         style={{ padding: '10px' }}
         title="Twitter"
       >
-        <Twitter />
+        <Icon name="Twitter" />
       </a>
       <a
         href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
@@ -40,7 +40,7 @@ export default (props) => (
         style={{ padding: '10px' }}
         title="Linkedin"
       >
-        <Linkedin />
+        <Icon name="Linkedin" />
       </a>
       <a
         href="mailto:achuth.hadnoor123@gmail.com"
@@ -48,8 +48,10 @@ export default (props) => (
         style={{ padding: '10px' }}
         title="Email"
       >
-        <Mail />
+        <Icon name="Mail" />
       </a>
     </div>
-  </div>
+  
 );
+
+export default Social;
