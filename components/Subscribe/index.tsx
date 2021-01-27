@@ -1,27 +1,48 @@
 import Icon from "react-icons-kit";
-import {chevronRight} from 'react-icons-kit/feather/chevronRight'
+import { chevronRight } from 'react-icons-kit/feather/chevronRight'
 import styled from 'styled-components'
 
-function Subscribe (){
+function Subscribe() {
 
-const _subscribe = (e)=>{
-    e.preventDefault();
-}
+    const _subscribe = (e) => {
+        e.preventDefault();
+    }
 
-    return(
+    return (
         <FormWrapper>
             <Form onSubmit={_subscribe}>
-                <Input/>
+                <Input placeholder="Stay in loop with me " />
                 <Button type="submit">
-                    <Icon icon={chevronRight}/>
+                    <Icon icon={chevronRight} />
                 </Button>
             </Form>
         </FormWrapper>
     )
 }
 
-    const FormWrapper = styled.div``
-    const Form = styled.form``
-    const Input = styled.input``
-    const Button = styled.button``
+const FormWrapper = styled.div`
+        padding:10px;
+    `;
+const Form = styled.form`
+    padding:30px;
+`;
+const Input = styled.input`
+        margin:10px 0px;
+        padding: 5px 10px;
+        max-width: 300px;
+        width: 100%;
+        border-radius:5px 0px 0px 5px;
+        border:1px solid ${({ theme }) => theme.accent};
+        background:${({ theme }) => theme.bg};
+        color:${({ theme }) => theme.accent};
+        outline:none;
+    `;
+const Button = styled.button`
+        padding:5px 10px;
+        background:${({ theme }) => theme.accent};
+        color:${({ theme }) => theme.bg2};
+        border:1px solid ${({ theme }) => theme.accent} ;
+        border-radius:0px 5px 5px 0px;
+        outline:none;
+    `;
 export default Subscribe;

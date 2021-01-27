@@ -1,7 +1,5 @@
-import Social from '../components/social';
-import Layout from '../Layout';
-import styled from 'styled-components'
-import { EDEADLK } from 'constants';
+import Social from '../components/social'; 
+import styled from 'styled-components' 
 import Subscribe from '../components/Subscribe';
 const Home = () => ( 
     <Section>

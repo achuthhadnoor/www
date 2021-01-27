@@ -1,5 +1,5 @@
 import Footer from "../components/Footer"
-import Header from "../components/Header/mobile"
+import Header from "../components/Header"
 
 import styled from "styled-components";
 import { ThemedWrapper } from "../Theme";
@@ -9,8 +9,7 @@ const Layout = ({ children }: { children: any }) => {
         <Header />
         <Content>
             {children}
-        </Content>
-        <Footer />
+        </Content> 
     </ThemedWrapper>
     )
 }

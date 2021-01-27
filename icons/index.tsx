@@ -27,31 +27,31 @@ const Share = () => (
         />
         <path
             d="M13.5 6C14.7426 6 15.75 4.99264 15.75 3.75C15.75 2.50736 14.7426 1.5 13.5 1.5C12.2574 1.5 11.25 2.50736 11.25 3.75C11.25 4.99264 12.2574 6 13.5 6Z"
-            stroke="black"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
         <path
             d="M4.5 11.25C5.74264 11.25 6.75 10.2426 6.75 9C6.75 7.75736 5.74264 6.75 4.5 6.75C3.25736 6.75 2.25 7.75736 2.25 9C2.25 10.2426 3.25736 11.25 4.5 11.25Z"
-            stroke="black"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
         <path
             d="M13.5 16.5C14.7426 16.5 15.75 15.4926 15.75 14.25C15.75 13.0074 14.7426 12 13.5 12C12.2574 12 11.25 13.0074 11.25 14.25C11.25 15.4926 12.2574 16.5 13.5 16.5Z"
-            stroke="black"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
         <path
             d="M6.44238 10.1325L11.5649 13.1175"
-            stroke="black"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
         <path
             d="M11.5574 4.8825L6.44238 7.8675"
-            stroke="black"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
@@ -121,7 +121,7 @@ const Github = () => (
         />
         <path
             d="M12 16.5v-2.902a2.53 2.53 0 00-.705-1.958c2.355-.263 4.83-1.155 4.83-5.25A4.08 4.08 0 0015 3.578 3.803 3.803 0 0014.932.75S14.047.487 12 1.86a10.035 10.035 0 00-5.25 0C4.702.487 3.817.75 3.817.75a3.803 3.803 0 00-.067 2.827 4.08 4.08 0 00-1.125 2.835c0 4.065 2.475 4.958 4.83 5.25a2.528 2.528 0 00-.705 1.935V16.5m0-2.25C3 15.375 3 12.375 1.5 12l5.25 2.25z"
-            stroke="#000"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
         />

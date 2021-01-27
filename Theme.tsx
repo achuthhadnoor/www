@@ -8,6 +8,7 @@ const LightTheme = {
   bg: '#fff',
   bg2: '#eee',
   color: '#121212',
+  accent:'#0062ff',
   header: {
     bg: "rgba(255,255,255,.6)",
     color: "#121212",
@@ -19,7 +20,8 @@ const LightTheme = {
 const DarkTheme = {
   bg: '#000000',
   bg2: '#121212',
-  color: '#bdbdbd',
+  color: '#eee',
+  accent:"#cfca28",
   header: {
     bg: "rgba(0,0,0,.6)",
     color: "#f4f4f4",
