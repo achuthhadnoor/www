@@ -24,7 +24,7 @@ const FormWrapper = styled.div`
         padding:10px;
     `;
 const Form = styled.form`
-    padding:30px;
+    padding-top:30px;
 `;
 const Input = styled.input`
         margin:10px 0px;

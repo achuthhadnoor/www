@@ -71,7 +71,7 @@ const HeaderWrapper = styled.header`
   background:${({ theme }) => theme.header.bg};
   backdrop-filter: blur(3px);
   z-index: 999;
-  font-size:.8em; 
+  font-size:.9em; 
 `;
 
 const NavWrapper = styled.div`

@@ -34,8 +34,7 @@ const GlobalStyles = createGlobalStyle`   html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,
     sans-serif;
   background:${(props) => props.theme.bg};
   color:${(props) => props.theme.color};
