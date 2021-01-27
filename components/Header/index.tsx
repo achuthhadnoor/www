@@ -43,9 +43,9 @@ const Header = () => {
               bookmarks
           </NavLink>
           </Link>
-          <Link href="/awesome">
-            <NavLink isActive={router.pathname === '/awesome' ? true : false}  >
-              Awesome
+          <Link href="/resources">
+            <NavLink isActive={router.pathname === '/resources' ? true : false}  >
+              resources
           </NavLink>
           </Link>
         </Nav>

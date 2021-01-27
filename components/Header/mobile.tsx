@@ -3,13 +3,35 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Icon from 'react-icons-kit';
-import { send } from 'react-icons-kit/feather/send';
 import { barChart } from 'react-icons-kit/feather/barChart'
 import { x } from 'react-icons-kit/feather/x'
+import { LINKS } from '../../constants'
+import { ThemedButton } from '../../Theme';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const router = useRouter();
+  const renderLinks = () => (
+      <Nav>
+        {
+          LINKS.map((link, i) => (
+            <Link href={link.path} key={i}>
+              <NavLink
+                href={link.path}
+                target={link.target}
+                isActive={router.pathname === link.path ? true : false}
+                key={i}
+              >
+                {link.label}
+              </NavLink>
+            </Link>
+          ))
+        }
+      <NavLink>
+        <ThemedButton />
+      </NavLink>
+      </Nav>
+  )
   return (
     <HeaderWrapper>
       <NavWrapper>
@@ -21,77 +43,24 @@ const Header = () => {
           <Menu onClick={() => setIsOpen(!isOpen)}> <Icon icon={barChart} /></Menu>
         </Wrapper>
         <NavigationWrapper>
-          <Nav>
-            <Link href="/">
-              <NavLink isActive={router.pathname === '/' ? true : false}>
-                Home
-          </NavLink>
-            </Link>
-            <NavLink
-              href="https://blog.achuth.dev"
-              target="_blank"
-              isActive={router.pathname === '/blog' ? true : false}
-            >Blog</NavLink>
-            <Link href="/apps">
-              <NavLink isActive={router.pathname === '/apps' ? true : false}  >
-                apps
-          </NavLink>
-            </Link>
-            <Link href="/shorts">
-              <NavLink isActive={router.pathname === '/shorts' ? true : false}  >
-                Shorts
-          </NavLink>
-            </Link>
-            <Link href="/bookmarks">
-              <NavLink isActive={router.pathname === '/bookmarks' ? true : false}  >
-                bookmarks
-          </NavLink>
-            </Link>
-            <Link href="/awesome">
-              <NavLink isActive={router.pathname === '/awesome' ? true : false}  >
-                Awesome
-          </NavLink>
-            </Link>
-          </Nav>
+          {
+            renderLinks()
+          }
         </NavigationWrapper>
-        </NavWrapper>
-        {isOpen && <MobileNav>
-          <Icon icon={x} onClick={()=>{setIsOpen(!isOpen)}} style={{padding:10}}/>
-          <Nav>
+      </NavWrapper>
+      {isOpen && <MobileNav>
+        <div style={{ display: 'flex' }}>
+          <div style={{ marginTop: '20px' }}>
             <Link href="/">
-              <NavLink isActive={router.pathname === '/' ? true : false}>
-                Home
-          </NavLink>
-            </Link>
-            <NavLink
-              href="https://blog.achuth.dev"
-              target="_blank"
-              isActive={router.pathname === '/blog' ? true : false}
-            >Blog</NavLink>
-            <Link href="/apps">
-              <NavLink isActive={router.pathname === '/apps' ? true : false}  >
-                apps
-          </NavLink>
-            </Link>
-            <Link href="/shorts">
-              <NavLink isActive={router.pathname === '/shorts' ? true : false}  >
-                Shorts
-          </NavLink>
-            </Link>
-            <Link href="/bookmarks">
-              <NavLink isActive={router.pathname === '/bookmarks' ? true : false}  >
-                bookmarks
-          </NavLink>
-            </Link>
-            <Link href="/awesome">
-              <NavLink isActive={router.pathname === '/awesome' ? true : false}  >
-                Awesome
-          </NavLink>
-            </Link>
-          </Nav>
+              <Logo>-///-</Logo>
+            </Link></div>
+          <span style={{ flex: 1 }} />
+          <Icon icon={x} onClick={() => { setIsOpen(!isOpen) }} style={{ padding: 10, marginTop: 10 }} />
+        </div>
+        {renderLinks()}
 
-        </MobileNav>}
-      
+      </MobileNav>}
+
     </HeaderWrapper>
   );
 };
@@ -99,8 +68,8 @@ const Header = () => {
 const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  background:${({ theme }) => theme.header.bg};
+  backdrop-filter: blur(3px);
   z-index: 999;
   font-size:.8em; 
 `;
@@ -111,14 +80,9 @@ const NavWrapper = styled.div`
   margin: auto; 
   font-size: 0.8em;
   padding:10px 0px; 
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  @media (min-width: 800px) {
-    & { 
-      display:flex;
-      font-size: 1em;
-    } 
-  }
+  backdrop-filter: blur(3px);
+  display:flex; 
+
 `;
 
 const Wrapper = styled.div`
@@ -135,6 +99,10 @@ const Nav = styled.nav<{ isOpen: boolean }>`
         flex-direction:column;
         text-align:left;
         align-items:flex-end;
+        /* border-bottom:1px solid #aaa;
+        box-shadow: 0px 0px 1px 0px rgba(0,0,0,.4); */
+        padding-right:10px;
+        padding-bottom:10px;
     }
     a{
       flex:1;
@@ -149,11 +117,11 @@ const NavLink = styled.a`
   margin-left: 10px;
   border-radius: 5px;
   cursor:pointer;
-  background: ${(props) => (props.isActive ? 'rgb(236 244 255 / 70%)' : '')};
-  color: ${(props) => (props.isActive ? '#0062ff' : '')};
+  background: ${({isActive,theme}) => (isActive ? theme.header.activeBg : '')};
+  color: ${({isActive,theme}) => (isActive ? theme.header.active : '')};
   :hover {
-    background: rgb(236 244 255 / 70%);
-    color: #0062ff;
+    background: ${({theme})=> theme.header.activeBg};
+    color: ${({theme})=> theme.header.active} ; 
   }
 `;
 
@@ -181,13 +149,14 @@ padding-top:10px;
 const MobileNav = styled.div`
   position:absolute;
   display:flex;
-  width:100%;
-  background:#fff;
+  width:100%; 
   top:0;
   flex-direction:column;
   text-align:right;
+  font-size: 1em;
+  background:${({ theme }) => theme.bg2};
   @media (min-width: 800px) {
-  display:none;
+    display:none;
   }
 `;
 

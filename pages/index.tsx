@@ -2,6 +2,7 @@ import Social from '../components/social';
 import Layout from '../Layout';
 import styled from 'styled-components'
 import { EDEADLK } from 'constants';
+import Subscribe from '../components/Subscribe';
 const Home = () => ( 
     <Section>
       <Name>Achuth Hadnoor</Name>
@@ -11,6 +12,7 @@ const Home = () => (
         not only enjoyable to use by design but are also written in code that's maintainable and easy to understand.
      </Details>
       <Social style={{paddingTop:'30px'}}/>
+      <Subscribe/>
     </Section> 
 );
 
