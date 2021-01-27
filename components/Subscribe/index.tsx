@@ -12,7 +12,7 @@ function Subscribe() {
         <FormWrapper>
             <Form onSubmit={_subscribe}>
                 <Input placeholder="Stay in loop with me " />
-                <Button type="submit">
+                <Button type="submit" name="submit">
                     <Icon icon={chevronRight} />
                 </Button>
             </Form>

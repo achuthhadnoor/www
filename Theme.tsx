@@ -105,6 +105,7 @@ export const ThemedButton = () => (
     {({ theme, setValue }) => (
       <Button
         onClick={() => setValue(theme === LightTheme ? DarkTheme : LightTheme)}
+        name="theme"
       >
         <Icon icon={theme === LightTheme ? moon : sun} />
       </Button>
