@@ -5,12 +5,13 @@ import { moon } from "react-icons-kit/feather/moon";
 import { sun } from "react-icons-kit/feather/sun";
 
 const LightTheme = {
-  bg: '#fff',
+  bg: '#F5F5F5',
   bg2: '#eee',
+  bg3:'#ECECEC',
   color: '#121212',
   accent:'#0062ff',
   header: {
-    bg: "rgba(255,255,255,.6)",
+    bg: "rgb(242 242 242 / 60%)",
     color: "#121212",
     activeBg: "rgb(219 234 255 / 70%)",
     active: "#0062ff",
@@ -71,10 +72,7 @@ a{
     text-decoration:none;
     color:inherit;
 }
-
-
-
-`
+`;
 
 export const ThemeContext = React.createContext({
   theme: LightTheme,

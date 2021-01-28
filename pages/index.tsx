@@ -1,7 +1,11 @@
-import Social from '../components/social'; 
-import styled from 'styled-components' 
+import Social from '../components/social';
+import styled from 'styled-components'
 import Subscribe from '../components/Subscribe';
-const Home = () => ( 
+import Timeline from '../components/Timeline';
+import { MONTHS } from '../data'
+
+const Home = () => (
+  <>
     <Main>
       <Name>Achuth Hadnoor</Name>
       <Role>Developer & UI/UX designer</Role>
@@ -9,16 +13,18 @@ const Home = () => (
         I design and develop digital products. Through these experiences, I've had the opportunity to create memorable products that are
         not only enjoyable to use by design but are also written in code that's maintainable and easy to understand.
      </Details>
-      <Social style={{paddingTop:'30px'}}/>
-      <Subscribe/>
-    </Main> 
+      <Social style={{ paddingTop: '30px' }} />
+      <Subscribe />
+    </Main>
+    <Timeline months={MONTHS} />
+  </>
 );
 
 
 const Main = styled.main`
   max-width:1024px;
   margin:0 auto; 
-`; 
+`;
 const Section = styled.div`
 
 `;
