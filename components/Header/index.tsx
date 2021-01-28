@@ -21,7 +21,7 @@ const Header = () => {
                 target={link.target}
                 isActive={router.pathname === link.path ? true : false}
                 key={i}
-                rel="noopener"
+                rel="noreferrer"
               >
                 {link.label}
               </NavLink>

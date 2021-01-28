@@ -13,8 +13,8 @@ const LightTheme = {
   header: {
     bg: "rgb(242 242 242 / 60%)",
     color: "#121212",
-    activeBg: "rgb(219 234 255 / 70%)",
-    active: "#0062ff",
+    activeBg: "rgba(216, 227, 255, 0.57)",
+    active: "#104B82",
   },
 };
 
@@ -103,7 +103,7 @@ export const ThemedButton = () => (
     {({ theme, setValue }) => (
       <Button
         onClick={() => setValue(theme === LightTheme ? DarkTheme : LightTheme)}
-        name="theme"
+        aria-label="theme"
       >
         <Icon icon={theme === LightTheme ? moon : sun} />
       </Button>
