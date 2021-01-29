@@ -9,7 +9,7 @@ const Blog = (blog: IBlog) => (
         <EntryIcon>
             <Icon icon={zap} />
         </EntryIcon>
-        <BlogWrapper>
+        <BlogWrapper href={blog.link}>
             <BlogTitle>
                 {blog.title}
             </BlogTitle>
@@ -17,21 +17,25 @@ const Blog = (blog: IBlog) => (
                 {blog.summary}
             </BlogSummary>
             <BlogReadTime>
+                12 January, 2021
+            </BlogReadTime>
+            <BlogReadTime>
                 <Icon icon={eye} style={{ padding: '5px' }} />
                 {blog.readTime}
             </BlogReadTime>
-            <BlogReadTime>
-                12 January, 2021
-        </BlogReadTime>
         </BlogWrapper>
     </>
 );
 
-const BlogWrapper = styled.div`
+const BlogWrapper = styled.a`
     margin: 10px;
-    background: #fff;
+    background:${({theme})=>theme.bg3};
     padding: 10px;
     border-radius:5px;
+    transition:all .37s ease-in-out;
+    :hover{
+        box-shadow:0px 0px 10px 1px rgba(0, 0, 0, .1)
+    }
 `;
 
 const BlogTitle = styled.h3`

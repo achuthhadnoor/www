@@ -8,7 +8,7 @@ import reset from 'styled-reset'
 const LightTheme = {
   bg: '#F5F5F5',
   bg2: '#eee',
-  bg3:'#ECECEC',
+  bg3:'#fff',
   color: '#121212',
   color2:'#333',
   color3:'#aaa',
@@ -20,14 +20,19 @@ const LightTheme = {
     active: "#104B82",
   },
   blog:{
-     bg:'pink',
+     bg:'#ffe8ec',
      color:'hotpink',
+  },
+  note:{
+    bg:'#beffbe',
+    color:'green',
   }
 };
 
 const DarkTheme = {
-  bg: '#000000',
-  bg2: '#121212',
+  bg: '#121212',
+  bg2: '#222',
+  bg3:"#212121",
   color: '#eee',
   accent:"#cfca28",
   header: {
@@ -36,6 +41,14 @@ const DarkTheme = {
     activeBg: "rgb(47 44 16 / 70%)",
     active: "#cfca28",
   },
+  blog:{
+     bg:'#ffe8ec',
+     color:'hotpink',
+  },
+  note:{
+    bg:'#c7ffc7',
+    color:'green',
+  }
 };
 
 const GlobalStyles = createGlobalStyle`
