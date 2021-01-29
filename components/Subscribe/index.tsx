@@ -29,12 +29,14 @@ const Form = styled.form`
 const Input = styled.input`
         margin:10px 0px;
         padding: 5px 10px;
-        max-width: 300px;
-        width: 100%; 
+        max-width: 200px; 
         border:1px solid ${({ theme }) => theme.accent};
         background:${({ theme }) => theme.bg};
         color:${({ theme }) => theme.accent};
         outline:none;
+        &:: placeholder{
+            color:${({ theme }) => theme.color3};
+        }
     `;
 const Button = styled.button`
         padding:5px 10px;

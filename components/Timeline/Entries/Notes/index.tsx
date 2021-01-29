@@ -27,20 +27,19 @@ const Notes = (note: INotes) => (
 `;
 
 
-const NoteWrapper = styled.a`
-    margin: 10px; 
-    padding: 10px;
+const NoteWrapper = styled.a` 
+    padding: 1em ;
     border-radius:5px; 
 `;
 
 const NoteTitle = styled.h3`
     font-weight:600;
-    padding:5px 0px;
+    padding:.5em 0em;
 `;
 
-const NoteSummary = styled.p`
-    padding: 10px 5px;
+const NoteSummary = styled.p` 
     font-size:.9em;
+    line-height:1.5em;
 `;
 
 

@@ -31,8 +31,7 @@ const BlogWrapper = styled.a`
     margin: 10px;
     background:${({theme})=>theme.bg3};
     padding: 10px;
-    border-radius:5px;
-    transition:all .37s ease-in-out;
+    border-radius:5px; 
     :hover{
         box-shadow:0px 0px 10px 1px rgba(0, 0, 0, .1)
     }
@@ -40,18 +39,19 @@ const BlogWrapper = styled.a`
 
 const BlogTitle = styled.h3`
     font-weight:600;
-    padding:5px 0px;
+    padding:0em .5em;
 `;
 
 const BlogSummary = styled.p`
-    padding: 10px 5px;
+    padding:.5em;
     font-size:.9em;
+    line-height:1.5em;
 `;
 
 const BlogReadTime = styled.span`
     font-size:.7em;
     color:${({ theme }) => theme.color3};
-    padding-left:5px;
+    padding-left:.5em;
 `;
 
 const EntryIcon = styled.span`

@@ -31,7 +31,7 @@ const Section = styled.div`
 
 const Name = styled.h1`
     font-weight: 600;
-    font-size: 42px;
+    font-size: 2.5em;
     margin:0px;
     padding-top: 60px;
     padding-left:10px;
@@ -39,7 +39,7 @@ const Name = styled.h1`
 
 const Role = styled.h2`
     max-width: 400px; 
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight:400;
     padding:10px;
     padding-left:10px;
@@ -47,7 +47,7 @@ const Role = styled.h2`
 
 const Details = styled.div`
     padding:10px;
-    font-size: 1rem;
+    font-size: 1em;
     line-height: 2rem; 
     max-width:500px;
     width:100%; 

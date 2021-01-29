@@ -25,7 +25,7 @@ const Timeline = ({ months }: IProps) => (
 )
 
 const TimelineWrapper = styled.div`
-
+    margin-top:30px;
 `; 
 
 const MonthWrapper = styled.div`
