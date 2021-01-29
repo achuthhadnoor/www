@@ -1,3 +1,4 @@
+import React from 'react';
 import { IMonths } from "../../types/timeline";
 import styled from 'styled-components'
 import Entries from "./Entries";
@@ -9,19 +10,15 @@ interface IProps {
 
 const Timeline = ({ months }: IProps) => (
     <TimelineWrapper>{
-        months.map((month: IMonths) =>
-            <>
-                <h1>Timeline</h1>
+        months.map((month: IMonths,i:number) =>
+            <React.Fragment key={i}>
+                <h1 style={{padding:10,fontWeight:600,fontSize:'1.5em'}}>Timeline</h1>
                 <MonthWrapper>
-                    <Month>{month.month}, </Month><Month> {month.year}</Month>
+                    <Month>{month.month},{"  "} </Month><Month> {month.year}</Month>
                     <Division style={{ flex: 1 }} />
                 </MonthWrapper>
-                <Entry>
-                    {
-                        month.entries.map((entry, i) => <Entries {...entry} />)
-                    }
-                </Entry>
-            </>
+                <Entries entries={month.entries}/> 
+            </React.Fragment>
         )
     }
     </TimelineWrapper>
@@ -29,15 +26,12 @@ const Timeline = ({ months }: IProps) => (
 
 const TimelineWrapper = styled.div`
 
-`;
-
-const Entry = styled.div`
-    
-`;
+`; 
 
 const MonthWrapper = styled.div`
     display:flex;
     align-items:center;
+    padding:10px;
 `;
 
 const Month = styled.span`

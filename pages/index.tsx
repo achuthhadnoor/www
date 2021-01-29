@@ -41,7 +41,7 @@ const Role = styled.h2`
     max-width: 400px; 
     font-size: 24px;
     font-weight:400;
-    padding-bottom:20px;
+    padding:10px;
     padding-left:10px;
 `;
 

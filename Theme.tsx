@@ -3,12 +3,15 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Icon from "react-icons-kit";
 import { moon } from "react-icons-kit/feather/moon";
 import { sun } from "react-icons-kit/feather/sun";
+import reset from 'styled-reset'
 
 const LightTheme = {
   bg: '#F5F5F5',
   bg2: '#eee',
   bg3:'#ECECEC',
   color: '#121212',
+  color2:'#333',
+  color3:'#aaa',
   accent:'#0062ff',
   header: {
     bg: "rgb(242 242 242 / 60%)",
@@ -16,6 +19,10 @@ const LightTheme = {
     activeBg: "rgba(216, 227, 255, 0.57)",
     active: "#104B82",
   },
+  blog:{
+     bg:'pink',
+     color:'hotpink',
+  }
 };
 
 const DarkTheme = {
@@ -31,7 +38,9 @@ const DarkTheme = {
   },
 };
 
-const GlobalStyles = createGlobalStyle`   html,
+const GlobalStyles = createGlobalStyle`
+  ${reset}
+html,
 body {
   padding: 0;
   margin: 0;
