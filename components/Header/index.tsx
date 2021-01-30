@@ -12,26 +12,26 @@ const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const router = useRouter();
   const renderLinks = () => (
-      <Nav>
-        {
-          LINKS.map((link, i) => (
-            <Link href={link.path} key={i}>
-              <NavLink
-                href={link.path}
-                target={link.target}
-                isActive={router.pathname === link.path ? true : false}
-                key={i}
-                rel="noreferrer"
-              >
-                {link.label}
-              </NavLink>
-            </Link>
-          ))
-        }
+    <Nav>
+      {
+        LINKS.map((link, i) => (
+          <Link href={link.path} key={i}>
+            <NavLink
+              href={link.path}
+              target={link.target}
+              isActive={router.pathname === link.path ? true : false}
+              key={i}
+              rel="noreferrer"
+            >
+              {link.label}
+            </NavLink>
+          </Link>
+        ))
+      } 
       <NavLink>
         <ThemedButton />
       </NavLink>
-      </Nav>
+    </Nav>
   )
   return (
     <HeaderWrapper>
@@ -59,7 +59,6 @@ const Header = () => {
           <Icon icon={x} onClick={() => { setIsOpen(!isOpen) }} style={{ padding: 10, marginTop: 10 }} />
         </div>
         {renderLinks()}
-
       </MobileNav>}
 
     </HeaderWrapper>
@@ -118,11 +117,11 @@ const NavLink = styled.a`
   margin-left: 10px;
   border-radius: 5px;
   cursor:pointer;
-  background: ${({isActive,theme}) => (isActive ? theme.header.activeBg : '')};
-  color: ${({isActive,theme}) => (isActive ? theme.header.active : '')};
+  background: ${({ isActive, theme }) => (isActive ? theme.header.activeBg : '')};
+  color: ${({ isActive, theme }) => (isActive ? theme.header.active : '')};
   :hover {
-    background: ${({theme})=> theme.header.activeBg};
-    color: ${({theme})=> theme.header.active} ; 
+    background: ${({ theme }) => theme.header.activeBg};
+    color: ${({ theme }) => theme.header.active} ; 
   }
 `;
 

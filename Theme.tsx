@@ -34,6 +34,8 @@ const DarkTheme = {
   bg2: '#222',
   bg3:"#212121",
   color: '#eee',
+  color2:'#b8b8b8',
+  color3:'#6d6d6d',
   accent:"#cfca28",
   header: {
     bg: "rgba(0,0,0,.6)",
