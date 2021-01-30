@@ -20,7 +20,7 @@ export const LINKS = [
     label: '💻 resources'
   },
   {
-    path: '/bookmarks',
+    path: '/bookmarks?tab=all',
     target: '_self',
     label: '📑 bookmarks'
   },
@@ -47,5 +47,25 @@ export const BOOMARK_TABS = [
   {
     title: 'podcasts',
     link: '/bookmarks?tab=podcasts'
+  }
+];
+
+export const BOOKMARKS = [
+  {
+    type: 'link',
+    title: 'Free Quotes api',
+    link: 'http://quotes.rest/qod.json'
+  },
+  {
+    type: 'podcast',
+    title: 'Sasspirates',
+    category: 'spotify',
+    link: 'https://anchor.fm/saaspirates'
+  },
+  {
+    type: 'portfolios',
+    title: 'Achuth Hadnoor',
+    link: 'https://achuth.now.sh',
+    preview: ''
   }
 ];

@@ -38,7 +38,7 @@ const DarkTheme = {
   color3:'#6d6d6d',
   accent:"#cfca28",
   header: {
-    bg: "rgba(0,0,0,.6)",
+    bg: "rgb(18 18 18 / 30%)",
     color: "#f4f4f4",
     activeBg: "rgb(47 44 16 / 70%)",
     active: "#cfca28",

@@ -1,16 +1,11 @@
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
+import { NextRouter, useRouter } from 'next/router'
 import PageLayout from '../Layout/PageLayout'
-import { useState } from 'react'
 import Link from 'next/link'
-import { BOOMARK_TABS } from '../constants'
+import { BOOKMARKS, BOOMARK_TABS } from '../constants'
 
 const Bookmarks = () => {
-    const [activeTab, setActiveTab] = useState('All');
     const router = useRouter();
-    console.log(router.asPath);
-
-
     return (
         <PageLayout
             title="Bookmarks"
@@ -27,14 +22,48 @@ const Bookmarks = () => {
                     ))
                 }
             </TabWrapper>
+            <TabContent>
+                {renderTabs()}
+            </TabContent>
         </PageLayout>
     )
 }
 
+const renderTabs = () => {
+    const router = useRouter();
+    switch (router.query.tab) {
+        case 'all':
+            return <div>{
+                BOOKMARKS.map((bookmark, i) => <div>
+                    {bookmark.title}
+                </div>)
+            }</div>
+        case 'links':
+            return <div>links</div>
+
+        case 'portfolios':
+            return <div>portfolios</div>
+
+        case 'podcasts':
+            return <div>podcasts</div>
+
+        default:
+            return <div>not found</div>
+
+    }
+}
+ 
+
+const TabContent = styled.div`
+    padding-top:1em;
+`
 
 const TabWrapper = styled.div`
     display:flex; 
     overflow:auto;
+    max-width:400px; 
+    text-transform:uppercase;
+    font-size:.8em;
     a{
         flex:1;
         padding:10px
@@ -43,10 +72,16 @@ const TabWrapper = styled.div`
 
 const Tab = styled.a`
     text-align:center;
-    ${({ isActive, theme }) => isActive && `
-        color:${theme.color3};
-        border-bottom:1px solid ${theme.color3};
-    `}
+    cursor:pointer;
+    ${({ isActive, theme }) => isActive ? `
+    color:${theme.color2};
+        border-bottom:1px solid ${theme.color2};
+    `:
+        `
+    color:${theme.color3};
+    border-bottom:1px solid ${theme.color3};
+    `
+    }
 `;
 
 export default Bookmarks;
