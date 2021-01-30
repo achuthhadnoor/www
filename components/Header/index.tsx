@@ -1,52 +1,66 @@
+import React from 'react'
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Icon from 'react-icons-kit';
-import { send } from 'react-icons-kit/feather/send';
+import { barChart } from 'react-icons-kit/feather/barChart'
+import { x } from 'react-icons-kit/feather/x'
+import { LINKS } from '../../constants'
+import { ThemedButton } from '../../Theme';
+
 const Header = () => {
-  const router = useRouter(); 
+  const [isOpen, setIsOpen] = React.useState(false);
+  const router = useRouter();
+  const renderLinks = () => (
+    <Nav>
+      {
+        LINKS.map((link, i) => (
+          <Link href={link.path} key={i}>
+            <NavLink
+              href={link.path}
+              target={link.target}
+              isActive={router.pathname === link.path ? true : false}
+              key={i}
+              rel="noreferrer"
+            >
+              {link.label}
+            </NavLink>
+          </Link>
+        ))
+      } 
+      <NavLink>
+        <ThemedButton />
+      </NavLink>
+    </Nav>
+  )
   return (
     <HeaderWrapper>
       <NavWrapper>
-        <Link href="/">
-          <Logo>-///-</Logo>
-        </Link>
-        <span style={{ flex: 1 }} />
-        <Nav>
-          <NavLink href="/" isActive={router.pathname === '/' ? true : false}>
-            Home
-          </NavLink>
-          <NavLink
-            href="/about"
-            isActive={router.pathname === '/about' ? true : false}
-          >
-            About
-          </NavLink>
-          <NavLink
-            href="/shorts"
-            isActive={router.pathname === '/shorts' ? true : false}
-          >
-            Shorts
-          </NavLink>
-          <NavLink
-            href="/bookmarks"
-            isActive={router.pathname === '/bookmarks' ? true : false}
-          >
-            bookmarks
-          </NavLink>
-          <NavLink
-            href="/awesome"
-            isActive={router.pathname === '/awesome' ? true : false}
-          >
-            Awesome
-          </NavLink>
-        </Nav>
-        <Send style={{ paddingLeft: 10 }}>
-          <a>
-            <Icon icon={send} />
-          </a>
-        </Send>
+        <Wrapper>
+          <Link href="/">
+            <Logo>-///-</Logo>
+          </Link>
+          <span style={{ flex: 1 }} />
+          <Menu onClick={() => setIsOpen(!isOpen)}> <Icon icon={barChart} /></Menu>
+        </Wrapper>
+        <NavigationWrapper>
+          {
+            renderLinks()
+          }
+        </NavigationWrapper>
       </NavWrapper>
+      {isOpen && <MobileNav>
+        <div style={{ display: 'flex' }}>
+          <div style={{ marginTop: '20px' }}>
+            <Link href="/">
+              <Logo>-///-</Logo>
+            </Link></div>
+          <span style={{ flex: 1 }} />
+          <Icon icon={x} onClick={() => { setIsOpen(!isOpen) }} style={{ padding: 10, marginTop: 10 }} />
+        </div>
+        {renderLinks()}
+      </MobileNav>}
+
     </HeaderWrapper>
   );
 };
@@ -54,33 +68,45 @@ const Header = () => {
 const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  background:${({ theme }) => theme.header.bg};
+  backdrop-filter: blur(3px);
   z-index: 999;
-  font-size:.8em;
-`;
-const NavWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  max-width: 1024px;
-  margin: auto;
-  padding: 20px 0px;
-  flex-direction: column;
-  font-size: 0.8em;
-  @media (min-width: 800px) {
-    & {
-      flex-direction: row;
-      font-size: 1em;
-    }
-  }
+  font-size:.9em; 
 `;
 
-const Nav = styled.nav`
+const NavWrapper = styled.div`
+  align-items: center;
+  max-width: 1024px;
+  margin: auto; 
+  font-size: 0.8em;
+  padding:10px 0px; 
+  backdrop-filter: blur(3px);
+  display:flex; 
+
+`;
+
+const Wrapper = styled.div`
+  flex:1;
+  display:flex;
+`;
+
+const Nav = styled.nav<{ isOpen: boolean }>`
   display: flex;
   text-align: right;
+  align-items:center; 
   @media (max-width: 800px) {
-    & {
-      padding-top: 20px;
+    & {  
+        flex-direction:column;
+        text-align:left;
+        align-items:flex-end;
+        /* border-bottom:1px solid #aaa;
+        box-shadow: 0px 0px 1px 0px rgba(0,0,0,.4); */
+        padding-right:10px;
+        padding-bottom:10px;
+    }
+    a{
+      flex:1;
+      margin-top:10px;
     }
   }
 `;
@@ -90,25 +116,48 @@ const NavLink = styled.a`
   text-transform: uppercase;
   margin-left: 10px;
   border-radius: 5px;
-  background: ${(props) => (props.isActive ? 'rgb(236 244 255 / 70%)' : '')};
-  color: ${(props) => (props.isActive ? '#0062ff' : '')};
+  cursor:pointer;
+  background: ${({ isActive, theme }) => (isActive ? theme.header.activeBg : '')};
+  color: ${({ isActive, theme }) => (isActive ? theme.header.active : '')};
   :hover {
-    background: rgb(236 244 255 / 70%);
-    color: #0062ff;
+    background: ${({ theme }) => theme.header.activeBg};
+    color: ${({ theme }) => theme.header.active} ; 
   }
 `;
 
 const Logo = styled.a`
   padding: 10px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 5px;
   cursor: pointer;
 `;
-const Send = styled.span`
-  transition: all 0.5s ease-in-out;
-  transform: translate3d(0px, 0px, 0px);
-  :hover {
-    transform: translate3d(10px, -5px, 0px);
+
+const Menu = styled.span`
+  transition: all 0.5s ease-in-out; 
+  transform:rotate(-90deg); 
+  padding:10px;
+  @media (min-width: 800px) {
+  display:none;
   }
 `;
+const NavigationWrapper = styled.div`
+padding-top:10px;
+  @media (max-width: 800px) {
+    display:none;
+  }
+`;
+const MobileNav = styled.div`
+  position:absolute;
+  display:flex;
+  width:100%; 
+  top:0;
+  flex-direction:column;
+  text-align:right;
+  font-size: 1em;
+  background:${({ theme }) => theme.bg2};
+  @media (min-width: 800px) {
+    display:none;
+  }
+`;
+
 export default Header;

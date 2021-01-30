@@ -1,41 +1,56 @@
 import Social from '../components/social';
-import Layout from '../Layout';
 import styled from 'styled-components'
-import { EDEADLK } from 'constants';
+import Subscribe from '../components/Subscribe';
+import Timeline from '../components/Timeline';
+import { MONTHS } from '../data'
+
 const Home = () => (
-  <Layout>
-    <Section>
+  <>
+    <Main>
       <Name>Achuth Hadnoor</Name>
       <Role>Developer & UI/UX designer</Role>
       <Details>
         I design and develop digital products. Through these experiences, I've had the opportunity to create memorable products that are
         not only enjoyable to use by design but are also written in code that's maintainable and easy to understand.
      </Details>
-      <Social style={{paddingTop:'30px'}}/>
-    </Section>
-  </Layout>
+      <Social style={{ paddingTop: '30px' }} />
+      <Subscribe />
+    </Main>
+    <Timeline months={MONTHS} />
+  </>
 );
 
+
+const Main = styled.main`
+  max-width:1024px;
+  margin:0 auto; 
+`;
 const Section = styled.div`
 
 `;
 
-const Name = styled.div`
+const Name = styled.h1`
     font-weight: 600;
-    font-size: 42px;
+    font-size: 2.5em;
+    margin:0px;
     padding-top: 60px;
+    padding-left:10px;
 `;
 
-const Role = styled.div`
-    max-width: 400px;
-    margin: 0 auto;
-    font-size: 24px;
+const Role = styled.h2`
+    max-width: 400px; 
+    font-size: 1.5em;
+    font-weight:400;
+    padding:10px;
+    padding-left:10px;
 `;
 
 const Details = styled.div`
-    max-width: 600px;
-    margin: 0 auto;
-    padding-top:20px;
+    padding:10px;
+    font-size: 1em;
+    line-height: 2rem; 
+    max-width:500px;
+    width:100%; 
 `;
 
 export default Home;
