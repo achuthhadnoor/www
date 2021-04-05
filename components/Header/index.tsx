@@ -22,6 +22,7 @@ const Header = () => {
               isActive={router.pathname === link.path ? true : false}
               key={i}
               rel="noreferrer"
+              onClick={() => { setIsOpen(!isOpen) }} 
             >
               {link.label}
             </NavLink>

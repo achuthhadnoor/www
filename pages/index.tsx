@@ -1,25 +1,32 @@
 import Social from '../components/social';
 import styled from 'styled-components'
-import Subscribe from '../components/Subscribe';
-import Timeline from '../components/Timeline';
-import { MONTHS } from '../data'
+import Subscribe from '../components/Subscribe'; 
+import Link from 'next/link';
 
 const Home = () => (
   <>
     <Main>
       <Name>Achuth Hadnoor</Name>
-      <Role>Developer & UI/UX designer</Role>
+      <Role>Developer {`&`} UI/UX designer</Role>
       <Details>
-        I design and develop digital products. Through these experiences, I've had the opportunity to create memorable products that are
+        I <Nav>design</Nav> and develop digital products. Through these experiences, I've had the opportunity to create memorable products that are
         not only enjoyable to use by design but are also written in code that's maintainable and easy to understand.
      </Details>
       <Social style={{ paddingTop: '30px' }} />
       <Subscribe />
-    </Main>
-    <Timeline months={MONTHS} />
+    </Main> 
   </>
 );
 
+const Nav = styled.a`
+  /* padding:3px 10px;
+  border-radius:5px;
+  background:${props=> props.theme.bg2};
+  &:hover{
+    background:${props=>props.theme.accent};
+    color:${props=>props.theme.color3};
+  } */
+`;
 
 const Main = styled.main`
   max-width:1024px;
@@ -39,7 +46,7 @@ const Name = styled.h1`
 
 const Role = styled.h2`
     max-width: 400px; 
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight:400;
     padding:10px;
     padding-left:10px;
