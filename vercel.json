@@ -36,11 +36,10 @@
     {
       "source": "/hashnode",
       "destination": "https://www.hashnode.com/@achuth"
-    },,
+    },
     {
       "source": "/lapse",
       "destination": "https://gumroad.com/l/lapse_app"
-    },
-    
+    }
   ]
 }
