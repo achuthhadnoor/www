@@ -1,7 +1,6 @@
 import Social from '../components/social';
 import styled from 'styled-components'
-import Subscribe from '../components/Subscribe'; 
-import Link from 'next/link';
+import Articles from './../components/Articles'
 
 const Home = () => (
   <>
@@ -12,8 +11,7 @@ const Home = () => (
         I <Nav>design</Nav> and develop digital products. Through these experiences, I've had the opportunity to create memorable products that are
         not only enjoyable to use by design but are also written in code that's maintainable and easy to understand.
      </Details>
-      <Social style={{ paddingTop: '30px' }} />
-      <Subscribe />
+      <Social style={{ paddingTop: '30px' }} /> 
     </Main> 
   </>
 );
