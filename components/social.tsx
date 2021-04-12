@@ -1,7 +1,7 @@
 import Icon from '../icons'
 
 const Social = (props:any) => (
-   <div style={{ flex: 1, display: 'flex', alignItems: 'center',justifyContent:'center' }} {...props}>
+   <div style={{ flex: 1, display: 'flex', alignItems: 'center',justifyContent:'center',color:'#000' }} {...props}>
       <a
         href="https://dribbble.com/achuth_hadnoor"
         target="_blank"

@@ -10,20 +10,30 @@ export const LINKS = [
     label: '📱 apps'
   },
   {
-    path: '/shorts',
+    path: '/donate',
     target: '_self',
-    label: '🧾 shorts'
+    label: '🎁 Donate'
   },
-  {
-    path: '/resources',
-    target: '_self',
-    label: '💻 resources'
-  },
-  {
-    path: '/bookmarks?tab=all',
-    target: '_self',
-    label: '📑 bookmarks'
-  },
+  // {
+  //   path: '/suppoters',
+  //   target: '_self',
+  //   label: '👥 suppoters'
+  // },
+  // {
+  //   path: '/shorts',
+  //   target: '_self',
+  //   label: '🧾 shorts'
+  // },
+  // {
+  //   path: '/resources',
+  //   target: '_self',
+  //   label: '💻 resources'
+  // },
+  // {
+  //   path: '/bookmarks?tab=all',
+  //   target: '_self',
+  //   label: '📑 bookmarks'
+  // },
   {
     path: 'https://blog.achuth.dev',
     target: '_blank',
