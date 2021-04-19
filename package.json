@@ -1,120 +1,20 @@
 {
-  "name": "achuthhadnoor",
-  "description": "My personal website.",
-  "version": "0.0.0",
-  "author": {
-    "name": "Achuth Hadnoor",
-    "email": "achuth.hadnoor123@gmail.com",
-    "url": "https://achuth.now.sh"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/achuthhadnoor/www.git"
-  },
+  "name": "www",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "prettier": "prettier --write \"**/*.{html,js,json,md,mdx,yml}\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{html,js,json,md,mdx,yml}": [
-      "prettier --write",
-      "git add"
-    ]
+    "start": "next start"
   },
   "dependencies": {
-    "babel-plugin-import-glob-array": "^0.2.0",
-    "next": "^10.0.5",
-    "next-seo": "4.5.0",
-    "postinstall-postinstall": "2.1.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-ga": "^3.3.0",
-    "react-icons-kit": "^1.3.1",
-    "styled-components": "^5.2.1",
-    "styled-reset": "^4.3.4"
-  },
-  "//": "This is our babel config, I prefer this over a .babelrc file",
-  "babel": {
-    "env": {
-      "development": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          [
-            "styled-components",
-            {
-              "ssr": true,
-              "displayName": true
-            }
-          ],
-          "import-glob-array"
-        ]
-      },
-      "production": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          [
-            "styled-components",
-            {
-              "ssr": true,
-              "displayName": true
-            }
-          ],
-          "import-glob-array"
-        ]
-      },
-      "test": {
-        "presets": [
-          [
-            "next/babel",
-            {
-              "preset-env": {
-                "modules": "commonjs"
-              }
-            }
-          ],
-          "import-glob-array"
-        ],
-        "plugins": [
-          [
-            "styled-components",
-            {
-              "ssr": true,
-              "displayName": true
-            }
-          ],
-          "import-glob-array"
-        ]
-      }
-    },
-    "presets": [
-      "next/babel"
-    ],
-    "plugins": [
-      "import-glob-array"
-    ]
+    "next": "10.1.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/node": "^14.14.22",
-    "@types/react": "^17.0.0",
-    "babel-plugin-styled-components": "^1.10.7",
-    "eslint-config-get-off-my-lawn": "5.0.1",
-    "globby": "11.0.0",
-    "husky": "4.2.3",
-    "lint-staged": "10.1.2",
-    "prettier": "^2.0.5",
-    "rehype": "^11.0.0",
-    "typescript": "^4.1.3"
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.10",
+    "tailwindcss": "^2.1.1"
   }
 }
