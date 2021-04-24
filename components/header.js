@@ -1,5 +1,5 @@
 const Hero = () => (
-    <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-xl  overflow-auto">
+    <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-md  overflow-auto">
         <nav className="flex items-center ">
             <span>-///-</span>
             <span className="flex-1"></span>
