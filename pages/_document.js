@@ -8,9 +8,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" className="refresh h-full bg-gray-70 snippet-html js-focus-visible">
+      <Html lang="en" className="refresh h-full bg-gray-70 snippet-html js-focus-visible" style={{scrollBehavior:'smooth'}}>
         <Head />
-        <body className="antialiased font-sans bg-gray-70">
+        <body className="antialiased font-sans bg-gray-50">
           <Main />
           <NextScript />
         </body>
