@@ -33,7 +33,7 @@ const Articles = () => {
             <div className="grid mb-10 sm:grid-cols-2 sm:mx-0 ">
                 {
                     articles.map((article, i) => (
-                        <Link href={article.link} keu={`article-${i}`}>
+                        <Link href={article.link} key={`article-${i}`}>
                             <a>
                                 <div className="mt-5 max-w-md">
                                     <div className="my-2 text-xs">
