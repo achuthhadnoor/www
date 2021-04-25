@@ -7,7 +7,7 @@ const Subscribe = ()=>(
     <form className="flex bg-green-50 rounded-xl py-4 px-1 sm:p-0 sm:flex-1 justify-center items-center " onSubmit={(e)=>{e.preventDefault()}}>
       <input 
         type="email"
-        placeholder="contact.uiuxdx.com" 
+        placeholder="contact.uiuxdx@gmai.com" 
         className="text-green-800 rounded outline-none ring-1 focus:ring-2 ring-green-100 py-1 px-1 flex:1 sm:px-4 text-md" />
       <button type="submit" className="focus:outline-none px-2 py-1 ml-1 bg-green-200 text-green-600 rounded focus:bg-green-500 focus:text-white focus:ring-green-400 focus:ring-2 hover:bg-green-500 hover:text-white hover:ring-green-400 hover:ring-2 sm:ml-2">subscribe</button>
     </form>
