@@ -19,9 +19,10 @@ function Home() {
         <h3 className="text-lg pb-5">Developer {'&'} UI/UX Designer</h3>
         <p class="text-sm max-w-prose leading-loose">
          👋 Hey, I am a
-      <a target="_blank" rel="noopener" href="https://achuth.dev/dribbble" class="p-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">designer</a>, <a target="_blank" rel="noopener" href="https://achuth.dev/github" class="p-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">developer</a>,
-      <a target="_blank" rel="noopener" href="https://achuth.dev/medium" class="p-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">writer</a>
-      and <a target="_blank" rel="noopener"  href="https://achuth.dev/producthunt" class="p-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">maker</a>. I craft digital products that are used by hundreds of creators
+      <a target="_blank" rel="noopener" href="https://achuth.dev/dribbble" class="p-1 ml-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">designer</a>, 
+      <a target="_blank" rel="noopener" href="https://achuth.dev/github" class="p-1 ml-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">developer</a>,
+      <a target="_blank" rel="noopener" href="https://achuth.dev/medium" class="p-1 ml-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">writer</a>
+      and <a target="_blank" rel="noopener"  href="https://achuth.dev/producthunt" class="p-1 ml-1 bg-yellow-50 hover:bg-yellow-100 rounded-md text-yellow-600">maker</a>. I craft digital products that are used by hundreds of creators
     </p>
         <div className="mt-5 flex items-center">
           <hr className="w-16" />
