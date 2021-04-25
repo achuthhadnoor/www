@@ -33,14 +33,14 @@ const Articles = () => {
             <div className="grid mb-10 sm:grid-cols-2 sm:mx-0 ">
                 {
                     articles.map((article, i) => (
-                        <Link href={article.link}>
+                        <Link href={article.link} keu={`article-${i}`}>
                             <a>
                                 <div className="mt-5 max-w-md">
                                     <div className="my-2 text-xs">
                                         <span className="text-gray-500">April 24,2021</span>
                                         {
-                                            article.tags.map((tag) => (
-                                                <span className={`px-1 py-1 mx-1 rounded-md ${tag.style}`}> {tag.value}</span>
+                                            article.tags.map((tag,index) => (
+                                                <span className={`px-1 py-1 mx-1 rounded-md ${tag.style}`} key={`tag-${index}`}> {tag.value}</span>
                                             )
                                             )}
                                     </div>
