@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-
+import Link from 'next/link'
 import Footer from './footer';
 
 export default function Container(props) {
@@ -22,17 +22,39 @@ export default function Container(props) {
     ...customMeta
   };
 
-  return (<>
-     <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-md  overflow-auto">
+  return (
+    <>
+      <Head>
+        <title>{meta.title}</title>
+        <meta name="robots" content="follow, index" />
+        <meta content={meta.description} name="description" />
+        <meta property="og:url" content={`https://achuth.dev${router.asPath}`} />
+        <link rel="canonical" href={`https://achuth.dev${router.asPath}`} />
+        <meta property="og:type" content={meta.type} />
+        <meta property="og:site_name" content="Lee Robinson" />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:image" content={meta.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@achuth_hadnoor" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
+        )}
+      </Head>
+      <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-md  overflow-auto">
         <nav className="flex items-center container max-w-5xl mx-auto">
-          <span>-///-</span>
+          <Link href="/#" ><p>-///-</p></Link>
           <span className="flex-1"></span>
           <div className="flex ">
-            <a href="/#" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">home</a>
-            <a href="/#articles" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">articles</a>
-            <a href="/#newsletter" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">newsletter</a>
-            <a href="/#newsletter" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">blog</a>
-          </div>  <button
+            <Link href="/" ><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">home</a></Link>
+            <Link href="/blog/personal-branding-over-portfolios"><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">articles</a></Link>
+            <Link href="/#newsletter"><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">newsletter</a></Link>
+            <a href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">blog</a>
+          </div>
+          <button
             aria-label="Toggle Dark Mode"
             type="button"
             className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
@@ -66,30 +88,10 @@ export default function Container(props) {
           </button>
         </nav>
       </header>
-     <div className="container max-w-5xl mx-auto">
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
-        <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://achuth.dev${router.asPath}`} />
-        <link rel="canonical" href={`https://achuth.dev${router.asPath}`} />
-        <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Lee Robinson" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@achuth_hadnoor" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-        {meta.date && (
-          <meta property="article:published_time" content={meta.date} />
-        )}
-      </Head>
-      {children}
-      <Footer />
-    </div>
-  </>
+      <div className="container max-w-5xl mx-auto">
+        {children}
+        <Footer />
+      </div>
+    </>
   );
 }

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 
 import Container from '../components/Container';
-import Subscribe from '../components/subscribe'; 
+import Subscribe from '../components/subscribe';
 
 const editUrl = (slug) =>
   `https://github.com/achuthhadnoor/www/edit/master/data/blog/${slug}.mdx`;
@@ -20,10 +20,15 @@ export default function BlogLayout({ children, frontMatter }) {
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
-      <article className="mx-auto max-w-mb px-4">
-        <h1 className="py-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <article className="mx-auto max-w-mb mt-10 px-4">
+      <h1 className="py-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white ">
           {frontMatter.title}
         </h1>
+        <div className="my-2">{
+          frontMatter.tags.map((tag, index) => (
+            <span className={`px-1 py-1 mx-1 rounded-md ${tag.style}`} key={`tag-${index}`}> {tag.value}</span>
+          )
+          )}</div>
         <div className="flex flex-col py-1 items-center space-x-2 md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
           <div className="flex items-center">
             <Image
