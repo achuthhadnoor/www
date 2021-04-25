@@ -1,0 +1,45 @@
+{
+  "redirects": [
+    {
+      "source": "/twitter",
+      "destination": "https://twitter.com/achuth_hadnoor"
+    },
+    { "source": "/dev", "destination": "https://dev.to/achuthhadnoor" },
+    {
+      "source": "/github",
+      "destination": "https://github.com/achuthhadnoor"
+    },
+    {
+      "source": "/buymeacoffee",
+      "destination": "https://www.buymeacoffee.com/achuthhadnoor"
+    },
+    {
+      "source": "/dribbble",
+      "destination": "https://dribbble.com/achuth_hadnoor"
+    },
+    {
+      "source": "/medium",
+      "destination": "https://achuth-hadnoor.medium.com/"
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://instagram.com/uiuxdx"
+    },
+    {
+      "source": "/producthunt",
+      "destination": "https://www.producthunt.com/@achuthhadnoor"
+    },
+    {
+      "source": "/f6s",
+      "destination": "https://www.f6s.com/achuthhadnoor"
+    },
+    {
+      "source": "/hashnode",
+      "destination": "https://www.hashnode.com/@achuth"
+    },
+    {
+      "source": "/lapse",
+      "destination": "https://gumroad.com/l/lapse_app"
+    }
+  ]
+}
