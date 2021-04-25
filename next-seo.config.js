@@ -13,7 +13,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://achuth.dev/og-personal.png',
+        url: 'https://achuth.dev/images/og-personal.png',
         alt: title,
         width: 1280,
         height: 720
