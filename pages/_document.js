@@ -8,8 +8,33 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" className="refresh h-full bg-gray-70 snippet-html js-focus-visible" style={{scrollBehavior:'smooth'}}>
-        <Head />
+      <Html lang="en" className="refresh h-full bg-gray-70 snippet-html js-focus-visible" style={{ scrollBehavior: 'smooth' }}>
+        <Head>
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/icons/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/icons/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/icons/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/icons/site.webmanifest" />
+          <meta
+            name="msapplication-config"
+            content="/icons/browserconfig.xml"
+          />
+          <meta name="msapplication-TileColor" content="#fff"></meta>
+          <meta name="theme-color" content="#fff"></meta>
+        </Head>
         <body className="antialiased font-sans bg-gray-50">
           <Main />
           <NextScript />
