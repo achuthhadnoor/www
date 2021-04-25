@@ -1,4 +1,4 @@
-const Hero = () => (
+const Header = () => (
     <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-md  overflow-auto">
         <nav className="flex items-center ">
             <span>-///-</span>
@@ -13,4 +13,4 @@ const Hero = () => (
     </header>
 )
 
-export default Hero;
+export default Header;

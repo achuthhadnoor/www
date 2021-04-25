@@ -1,4 +1,4 @@
-const social = () => (
+const Social = () => (
     <div className="flex flex:1  align-items:center  space-x-5 mx-5">
         <a href="https://dribbble.com/achuth_hadnoor" target="_blank" title="Dribbble"
         ><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -39,4 +39,4 @@ const social = () => (
     </div>
 )
 
-export default social;
+export default Social;

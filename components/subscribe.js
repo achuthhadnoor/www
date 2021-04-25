@@ -1,4 +1,4 @@
-const subscribe = ()=>(
+const Subscribe = ()=>(
 <div class="mx-auto px-1 bg-white py-2 sm:flex sm rounded-xl">
     <div class="sm:max-w-md">
       <h1 class="font-semibold text-xl py-4">Subscribe to my newsletter</h1>
@@ -13,4 +13,4 @@ const subscribe = ()=>(
     </form>
   </div>
 )
-export default subscribe;
+export default Subscribe;

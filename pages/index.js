@@ -1,24 +1,14 @@
 import Head from 'next/head'
-import { NextSeo } from 'next-seo';
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Social from '../components/social'
 import Subscribe from '../components/subscribe'
 import Articles from '../components/Home/recentArticles'
-import SEO from '../next-seo.config';
+import Container from '../components/container'
 
 function Home() {
   return (
-    <>
- <Head>
-    <title>Achuth Hadnoor – Developer, writer, maker.</title>
-    <meta name="description" content="Developer, JavaScript enthusiast, and product maker."/>
- </Head>
- <NextSeo
-      title="Simple Usage Example"
-      description="A short description goes here."
-      {...SEO}
-    />
+    <Container> 
     <div className="container max-w-5xl mx-auto">
       <Header />
       <main className="mx-auto mt-5 px-4">
@@ -44,7 +34,7 @@ function Home() {
       </section>
       <Footer />
     </div>
- </> )
+ </Container> )
 }
 
 export default Home;
