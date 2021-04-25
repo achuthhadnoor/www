@@ -24,7 +24,7 @@ export default function Container(props) {
   };
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="container max-w-5xl mx-auto">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -37,7 +37,7 @@ export default function Container(props) {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@leeerob" />
+        <meta name="twitter:site" content="@achuth_hadnoor" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -77,13 +77,8 @@ export default function Container(props) {
           )}
         </button>
      <Header/>
-      <main
-        id="skip"
-        className="flex flex-col justify-center bg-white dark:bg-black px-8"
-      >
         {children}
         <Footer />
-      </main>
     </div>
   );
 }

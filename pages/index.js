@@ -9,8 +9,6 @@ import Container from '../components/container'
 function Home() {
   return (
     <Container> 
-    <div className="container max-w-5xl mx-auto">
-      <Header />
       <main className="mx-auto mt-5 px-4">
         <h1 className="text-3xl py-2">Achuth Hadnoor</h1>
         <h3 className="text-lg pb-5">Developer {'&'} UI/UX Designer</h3>
@@ -32,8 +30,6 @@ function Home() {
       <section className="px-4 mt-10" id="newsletter">
         <Subscribe />
       </section>
-      <Footer />
-    </div>
  </Container> )
 }
 
