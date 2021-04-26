@@ -29,7 +29,7 @@ export default function BlogLayout({ children, frontMatter }) {
             <span className={`px-1 py-1 mx-1 rounded-md ${tag.style}`} key={`tag-${index}`}> {tag.value}</span>
           )
           )}</div>
-        <div className="flex flex-col py-1 items-center space-x-2 md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
+        <div className="flex flex-col py-1 md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8 sm:flex-row">
           <div className="flex items-center">
             <Image
               alt="Achuth Hadnoor"
@@ -44,7 +44,7 @@ export default function BlogLayout({ children, frontMatter }) {
               {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>
-          <p className="text-sm text-gray-500 min-w-32 mt-2 px-2 md:mt-0">
+          <p className="inline-block pl-10 pr-2 text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
             {frontMatter.readingTime.text}
             {` • `}
             {/* <ViewCounter slug={frontMatter.slug} /> */}
