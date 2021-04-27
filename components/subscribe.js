@@ -1,16 +1,48 @@
-const Subscribe = ()=>(
-<div className="mx-auto px-1 bg-white py-2 sm:flex sm:px-4 rounded-xl">
-    <div className="sm:max-w-md">
-      <h1 className="font-semibold text-xl py-4">Subscribe to my newsletter</h1>
-      <p className="text-gray-600 text-sm leading-relaxed">In this weekly newsletter I'm going to share with you what's new and cool in the world of web development, with content for everyone, from beginners to pros. There's also an interview question of the week, where you can test your skills and I'll share the results the following week. I'll also send you jokes and stories. And pics of mechanical keyboards. I won't spam though, I promise.</p>
+const Subscribe = () => (
+  <div
+    className="mx-auto p-2 sm:p-8 max-w-2xl  space-y-4 border-t border-b border-gray-300 border-dashed dark:border-gray-700 bg-elevated bg-gray-100"
+  >
+    <div className="space-y-2 ">
+      <p className="flex items-center font-semibold text-primary">
+        Subscribe to my newsletter
+    </p>
+      <p className="text-tertiary text-sm text-gray-600 leading-relaxed">
+        In this weekly newsletter I'm going to share with you what's new and cool in the world of web development, with content for everyone, from beginners to pros. There's also an interview question of the week, where you can test your skills and I'll share the results the following week. I'll also send you jokes and stories. And pics of mechanical keyboards. I won't spam though, I promise.
+        <a
+          href="https://twitter.com/achuth_hadnoor/"
+          className="ml-1 font-normal rounded-sm p-0.5 -mx-0.5 bg-blue-500 text-primary bg-opacity-20 hover:bg-opacity-30 dark:hover:bg-opacity-100"
+        >
+          follow me on Twitter
+      </a>
+      .
+    </p>
     </div>
-    <form className="flex bg-green-50 rounded-xl py-4 px-1 sm:p-0 sm:flex-1 justify-center items-center " onSubmit={(e)=>{e.preventDefault()}}>
-      <input 
-        type="email"
-        placeholder="contact.uiuxdx@gmail.com" 
-        className=" text-sm flex-1 text-green-800  rounded outline-none ring-1 focus:ring-2 ring-green-100 py-1 px-2 flex:1 sm:px-4 sm-text-md" />
-      <button type="submit" className="focus:outline-none px-2 py-1 ml-1 bg-green-200 text-green-600 rounded focus:bg-green-500 focus:text-white focus:ring-green-400 focus:ring-2 hover:bg-green-500 hover:text-white hover:ring-green-400 hover:ring-2 sm:ml-2">subscribe</button>
+    <form
+      // onSubmit={submit}
+      className="grid grid-cols-1 gap-2 mt-2 md:grid-cols-3"
+    >
+      <label className="md:col-span-2">
+        <span className="sr-only">Email address</span>
+        <input
+          // value={email}
+          // disabled={status === 'loading'}
+          // onChange={onChange}
+          placeholder="Email address"
+          type="email"
+          name="email"
+          className="px-2 py-1 w-full rounded-md"
+        />
+      </label>
+      <button
+        // onClick={submit}
+        // disabled={status === 'submitting' || !email}
+        type="submit"
+        className="w-full bg-gray-300 text-gray-600 rounded-md"
+      >
+        Subscribe
+          </button>
     </form>
   </div>
+
 )
 export default Subscribe;
