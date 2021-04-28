@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 
-import Container from '../components/container';
-import Subscribe from '../components/subscribe';
+import Container from '../components/Container';
+import Subscribe from '../components/Subscribe';
 
 const editUrl = (slug) =>
   `https://github.com/achuthhadnoor/www/edit/master/data/blog/${slug}.mdx`;
@@ -20,6 +20,9 @@ export default function BlogLayout({ children, frontMatter }) {
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
+      <div className="flex text-sm text-gray-200 ">
+        <span>{"<"} BACK</span><span className="flex-1"></span><div><span>{"<"}</span> posts <span>{">"}</span></div>
+      </div>
       <article className="mx-auto max-w-mb mt-10 px-4">
       <h1 className="py-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white ">
           {frontMatter.title}

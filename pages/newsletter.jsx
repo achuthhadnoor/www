@@ -1,5 +1,5 @@
-import Container from '../components/container'
-import Subscribe from '../components/subscribe'
+import Container from '../components/Container'
+import Subscribe from '../components/Subscribe'
 
 export default function NewsLetter(){
     return (
