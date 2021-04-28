@@ -24,7 +24,7 @@ const Articles = () => {
                                                     <span className="text-gray-500">April 24,2021</span>
                                                     {
                                                         article.tags.map((tag, index) => (
-                                                            <span className={`px-1 py-1 mx-1 rounded-md ${tag.style}`} key={`tag-${index}`}> {tag.value}</span>
+                                                            <span className={`uppercase p-1 m-1 rounded-md bg-gray-200 text-gray-600 text-xs`} key={`tag-${index}`}> {tag.value}</span>
                                                         )
                                                         )}
                                                 </div>

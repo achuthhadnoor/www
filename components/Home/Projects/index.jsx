@@ -16,8 +16,8 @@ const Projects = () => {
             </div>
             <div className="grid grid-cols-1 px-2">
                 <div className="mt-5">
-                    <a href="https://lapse.achuth.dev" target="_blank"><h1 className="font-semibold inline-block rounded-md bg-yellow-50 hover:bg-yellow-100 ">Lapse</h1></a>
-                    <p className="text-sm leading-relaxed text-gray-600">
+                    <a href="https://lapse.achuth.dev" target="_blank"><h1 className="font-semibold inline-block rounded-md bg-yellow-50 hover:bg-yellow-100 px-2">Lapse</h1></a>
+                    <p className="text-sm leading-relaxed text-gray-600  px-2">
                         An instant time-lapse screen recording app for mac and windows
                 </p>
                 </div>

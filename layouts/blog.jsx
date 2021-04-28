@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link'
 import { parseISO, format } from 'date-fns';
 
 import Container from '../components/Container';
@@ -20,16 +21,16 @@ export default function BlogLayout({ children, frontMatter }) {
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
-      <div className="flex text-sm text-gray-200 ">
-        <span>{"<"} BACK</span><span className="flex-1"></span><div><span>{"<"}</span> posts <span>{">"}</span></div>
+      <div className="flex text-sm text-gray-200 mt-10">
+        <Link href="/blog"><a className="uppercase">← Blog</a></Link><span className="flex-1"></span><div className="uppercase"><span className="px-2 py-1">←</span> posts <span className="px-2 py-1">→</span></div>
       </div>
-      <article className="mx-auto max-w-mb mt-10 px-4">
+      <article className="mx-auto max-w-mb mt-5 px-4">
       <h1 className="py-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white ">
           {frontMatter.title}
         </h1>
         <div className="my-2">{
           frontMatter.tags.map((tag, index) => (
-            <span className={`px-1 py-1 mx-1 rounded-md ${tag.style}`} key={`tag-${index}`}> {tag.value}</span>
+            <span className={`uppercase px-2 py-1 mx-1 rounded-md bg-gray-200 text-gray-600 text-xs`} key={`tag-${index}`}> {tag.value}</span>
           )
           )}</div>
         <div className="flex flex-col py-1 md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8 sm:flex-row">
