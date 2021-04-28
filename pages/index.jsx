@@ -1,13 +1,13 @@
 import Social from '../components/Social'
 import Subscribe from '../components/Subscribe'
-import Articles from '../components/Home/recentArticles'
+import Articles from '../components/Home/Articles'
 import Container from '../components/Container'
 import Projects from '../components/Home/Projects'
 
 function Home() {
   return (
     <Container>
-      <main className="mx-auto mt-5 px-5">
+      <main className="mx-auto mt-10 px-5">
         <div className="flex flex-col sm:flex-row-reverse w-lg">
           <div className="flex flex-1 sm:justify-center">
             <svg className="h-32 w-32 sm:h-48 sm-w-48" viewBox="0 0 222 239" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,11 +40,11 @@ function Home() {
       <section id="articles" className="px-4 mt-10">
         <Articles />
       </section>
-      <section className="px-4 mt-10" id="newsletter">
-        <Subscribe />
-      </section>
       <section>
         <Projects/>
+      </section>
+      <section className="px-4 mt-10" id="newsletter">
+        <Subscribe />
       </section>
     </Container>)
 }
