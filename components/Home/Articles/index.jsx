@@ -15,9 +15,9 @@ const Articles = ({ list, view }) => {
                     list.map((article, i) => (
                         <React.Fragment key={`article-${i}`}>
                             {i < 4 &&
-                                (<Link href={article.slug}>
+                                (<Link href={`/blog/${article.slug}`}>
                                     <a className="border-b-2 pb-4 sm:border-b-0 ">
-                                        <div className={`mt-5 ${view === 'grid' ? `max-w-md` : 'max-w-xl'}`}>
+                                        <div className={`mt-5 ${view === 'grid' && `max-w-md`}`}>
                                             <div>
                                                 <h3 className="font-semibold">{article.title}</h3>
                                                 <div className="my-2 text-xs">

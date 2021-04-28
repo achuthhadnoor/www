@@ -15,4 +15,8 @@
   <url>
     <loc>https://achuth.dev/newsletter</loc>
   </url>
+
+  <url>
+    <loc>https://achuth.dev/blog/[slug]</loc>
+  </url>
 </urlset>
