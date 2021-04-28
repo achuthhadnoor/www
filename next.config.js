@@ -1,6 +1,6 @@
 module.exports = {
   future: { 
-    strictPostcssConfiguration: true
+   // strictPostcssConfiguration: true
   },
   images: {
     domains: [
