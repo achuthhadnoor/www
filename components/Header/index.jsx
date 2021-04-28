@@ -10,7 +10,7 @@ export default function Header() {
     useEffect(() => setMounted(true), []);
   
     return (
-        <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-md  overflow-auto">
+        <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-sm  overflow- z-50">
             <nav className="flex items-center container max-w-5xl mx-auto">
                 <Link href="/#" ><p>-///-</p></Link>
                 <span className="flex-1"></span>

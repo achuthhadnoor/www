@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://achuth.dev/blog/affiliate-marketing</loc>
+    <loc>https://achuth.dev/404</loc>
   </url>
 
   <url>
-    <loc>https://achuth.dev/blog/personal-branding-over-portfolios</loc>
+    <loc>https://achuth.dev/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://achuth.dev</loc>
+  </url>
+
+  <url>
+    <loc>https://achuth.dev/newsletter</loc>
+  </url>
+
+  <url>
+    <loc>https://achuth.dev/blog/[slug]</loc>
   </url>
 </urlset>

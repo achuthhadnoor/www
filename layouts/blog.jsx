@@ -17,22 +17,17 @@ export default function BlogLayout({ children, frontMatter }) {
     <Container
       title={`${frontMatter.title} – Achuth Hadnoor`}
       description={frontMatter.summary}
-      image={`https://achuth.dev${frontMatter.image}`}
+      image={`https://achuth.dev${frontMatter.ogimage}`}
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
-      <div className="flex text-sm text-gray-200 mt-10">
+      <div className="flex text-sm text-gray-200 mt-10 px-4 sm:mx-0">
         <Link href="/blog"><a className="uppercase">← Blog</a></Link><span className="flex-1"></span><div className="uppercase"><span className="px-2 py-1">←</span> posts <span className="px-2 py-1">→</span></div>
       </div>
       <article className="mx-auto max-w-mb mt-5 px-4">
-      <h1 className="py-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white ">
+        <h1 className="py-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white ">
           {frontMatter.title}
         </h1>
-        <div className="my-2">{
-          frontMatter.tags.map((tag, index) => (
-            <span className={`uppercase px-2 py-1 mx-1 rounded-md bg-gray-200 text-gray-600 text-xs`} key={`tag-${index}`}> {tag.value}</span>
-          )
-          )}</div>
         <div className="flex flex-col py-1 md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8 sm:flex-row">
           <div className="flex items-center">
             <Image
@@ -54,7 +49,17 @@ export default function BlogLayout({ children, frontMatter }) {
             {/* <ViewCounter slug={frontMatter.slug} /> */}
           </p>
         </div>
-        <div className="prose dark:prose-dark max-w-none w-full">
+        <div className="my-2">{
+          frontMatter.tags.map((tag, index) => (
+            <span className={`uppercase px-2 py-1 mx-2 rounded-md bg-gray-200 text-gray-600 text-xs`} key={`tag-${index}`}> {tag.value}</span>
+          )
+          )}</div>
+          <Image
+              alt="Achuth Hadnoor" 
+              src={frontMatter.image}
+              width={1175} height={600} priority
+            />
+        <div className="prose dark:prose-dark max-w-none w-full mt-5">
           {children}
         </div>
         <div className="mt-8">

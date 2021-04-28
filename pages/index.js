@@ -1,6 +1,6 @@
 import Social from '../components/Social'
 import Subscribe from '../components/Subscribe'
-import Articles from '../components/Home/Articles'
+// import Articles from '../components/Home/Articles'
 import Container from '../components/Container'
 import Projects from '../components/Home/Projects'
 
@@ -38,7 +38,7 @@ function Home() {
         </div>
       </main>
       <section id="articles" className="px-4 mt-10">
-        <Articles />
+        {/* <Articles /> */}
       </section>
       <section>
         <Projects/>

@@ -2,6 +2,7 @@ import Link from "next/link"
 import React from "react";
 
 import list from '../../blogpostsList'
+import { parseISO, format } from 'date-fns';
 
 const Articles = () => {
     return (
@@ -21,10 +22,10 @@ const Articles = () => {
                                             <div>
                                                 <h3 className="font-semibold">{article.title}</h3>
                                                 <div className="my-2 text-xs">
-                                                    <span className="text-gray-500">April 24,2021</span>
+                                                    <span className="text-gray-500">{format(parseISO(article.publishedAt), 'MMMM dd, yyyy')}</span>
                                                     {
                                                         article.tags.map((tag, index) => (
-                                                            <span className={`uppercase p-1 m-1 rounded-md bg-gray-200 text-gray-600 text-xs`} key={`tag-${index}`}> {tag.value}</span>
+                                                            <span className={`uppercase p-1 mx-2 rounded-md bg-gray-200 text-gray-600 text-xs`} key={`tag-${index}`}> {tag.value}</span>
                                                         )
                                                         )}
                                                 </div>
