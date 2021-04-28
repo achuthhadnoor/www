@@ -9,505 +9,296 @@ slug: '/blog/personal-branding-over-portfolios'
 tags: [{ id: "design",value: "design",style: "text-indigo-400 bg-indigo-50"}, {id: "personal",value: "personal",style: "text-pink-400 bg-pink-50"}]
 ---
 
-As applications scale, you’ll inevitably reach a point where you want to write [shared reusable components](/blog/ui-component-library-with-styled-components) which can be used everywhere. Historically, we’ve had separate repositories for each package. However, this becomes a problem for a few reasons:
+Authentication verifies who a user is, while authorization controls what a user can access. Next.js supports multiple patterns for authentication, each designed for different use cases. This guide will allow you to choose your adventure based on your constraints.
 
-- It does not scale well. Before you know it, you have dozens of different package repositories repeating the same build, test, and release process.
-- It promotes bundling unnecessary components. Do we need to create a new repo for this button? Let’s put it together with this other package. Now we’ve increased the bundle size for something 95% of consumers won’t use.
-- It makes upgrading difficult. If you update a base component, you now have to update its consumers, its consumer’s consumers, etc. This problem gets worse as you scale.
+## Authentication Patterns
 
-To make our applications as performant as possible, we need to have **small bundle sizes**. This means we should only include the code we’re using in our bundle.
+The first step to identifying which authentication pattern you need is understanding the data-fetching strategy you want. We can then determine which authentication providers support this strategy. There are two main strategies:
 
-Along with this, when developing shared component libraries, we want to have [semver](https://semver.org/) over individual pieces instead of the entire package. This prevents scenarios where:
+- Use static generation to server-render a loading state, followed by fetching user data client-side.
+- Fetch user data server-side to eliminate a flash of unauthenticated content.
 
-1. Consumer A only needs the package for one component and is on `v1`.
-1. Consumer B uses the package for _all_ the components. They’ve helped create and modify other components in the package and it’s grown large. It’s now on `v8`.
-1. Consumer A now needs a bug fix for the one component they use. They have to update to `v8`.
+### Static Generation
 
-## Lerna
+Next.js automatically determines that a page is static if there are no blocking data requirements. This means the absence of `getServerSideProps` and `getInitialProps` in the page. Instead, your page can render a loading state from the server, followed by fetching the user client-side.
 
-[Lerna](https://github.com/lerna/lerna) and [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/) give us the ability to build libraries and apps in a single repo (a.k.a. [Monorepo](https://github.com/babel/babel/blob/master/doc/design/monorepo.md)) without forcing us to publish to NPM until we are ready. This makes it faster to iterate locally when building components that depend on each other.
+One advantage of this pattern is it allows pages to be served from a global CDN and [preloaded](https://nextjs.org/docs/api-reference/next/link) using `<Link />`. Depending on the size of your application, [React hydration](https://reactjs.org/docs/react-dom.html#hydrate) could take some time. If you serve a loading shell from the server, this allows React to hydrate while you're fetching user data. In practice, this results in a faster TTI ([Time to Interactive](https://web.dev/interactive/)).
 
-Lerna also provides high-level commands to optimize the management of multiple packages. For example, with one Lerna command, you can iterate through all the packages, running a series of operations (such as linting, testing, and building) on each package.
+Let's look at an example for a profile page. This will initially render a loading skeleton. Once the request for a user has finished, it will show the user's name.
 
-Several large JavaScript projects use monorepos including: [Babel](https://github.com/babel/babel), [React](https://github.com/facebook/react/tree/master/packages), [Jest](https://github.com/facebook/jest/tree/master/packages), [Vue](https://github.com/vuejs/vue/tree/dev/packages), [Angular](https://github.com/angular/angular/tree/master/packages), and more.
+```jsx:pages/profile.js
+export default Profile = () => {
+  // Fetch the user client-side
+  const { user } = useUser({ redirectTo: '/login' });
 
-## Monorepo
+  // Server-render loading skeleton
+  if (!user) {
+    return <LoadingSkeleton />;
+  }
 
-In this guide, we will be utilizing:
-
-- 🐉 [Lerna](https://lerna.js.org/) — The Monorepo manager
-- 📦 [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/) — Sane multi-package management
-- 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
-- 💅 [styled-components](https://www.styled-components.com/) — CSS in JS elegance
-- 🛠 [Babel](https://babeljs.io/) — Compiles next-gen JavaScript
-- 📖 [Storybook](https://storybook.js.org/) — UI Component Environment
-- 🃏 [Jest](https://jestjs.io/) — Unit/Snapshot Testing
-
-You can either follow along or [view the finished repo here](https://github.com/Hy-Vee/lerna-yarn-workspaces-monorepo).
-
-Okay, let’s begin! First, let’s create a new project and set up Lerna.
-
-```bash
-$ mkdir monorepo
-$ cd monorepo
-$ npx lerna init
+  // Once the user request finishes, show the user's name
+  return <p>{user.name}</p>;
+};
 ```
 
-This creates a `package.json` file for your project.
+### Server-side Rendering
 
-```json:package.json
-{
-  "name": "root",
-  "private": true,
-  "devDependencies": {
-    "lerna": "^3.22.1"
+If you export an `async` function called `getServerSideProps` from a page, Next.js will pre-render this page on each request using the data returned by `getServerSideProps`.
+
+```jsx
+export async function getServerSideProps(context) {
+  return {
+    props: {} // Will be passed to the page component as props
+  };
+}
+```
+
+Let's transform the profile example from earlier to use server-side rendering. If there's a session, return `session` as a prop to the `Profile` component in the page. Otherwise, redirect to `/login` on the server-side. Notice there is not a loading skeleton in this example.
+
+```jsx:pages/profile.js
+export default Profile = ({ session }) => {
+  return <p>{session.user.name}</p>;
+};
+
+export async function getServerSideProps({ req, res }) {
+  // Get the user's session based on the request
+  const session = await getSession(req);
+
+  if (!session) {
+    // If no user, redirect to login
+    return {
+      props: {},
+      redirect: {
+        destination: '/login',
+        permanent: false
+      }
+    };
+  }
+
+  // If there is a user, return the current session
+  return { props: { session } };
+}
+```
+
+An advantage of this pattern is preventing a flash of unauthenticated content before redirecting. It's important to note fetching user data in `getServerSideProps` will block rendering until the request to your authentication provider resolves. To prevent creating a bottleneck and decreasing your TTFB ([Time to First Byte](https://web.dev/time-to-first-byte/)), you should ensure your authentication lookup is fast. Otherwise, consider static generation.
+
+There is an [open RFC](https://github.com/vercel/next.js/discussions/14890) to improve redirecting inside `getServerSideProps`.
+
+## Providers
+
+Now that we've discussed authentication patterns, let's look at specific providers and explore how they're used with Next.js.
+
+### Firebase
+
+When using [Firebase Authentication](/blog/nextjs-firebase-serverless), I recommend using the static generation pattern.
+
+It is possible to use the Firebase Client SDK to generate an ID token and forward it directly to Firebase's REST API on the server to log-in. However, requests to Firebase might take some time to resolve, depending on your user's location.
+
+Let's look an example creating a `useUser` hook. This hook allows you to fully control where you'll call `signinWithGitHub`, or any other authentication provider with Firebase.
+
+```jsx
+import React, { useState, useEffect, useContext, createContext } from 'react';
+import firebase from './firebase';
+
+const authContext = createContext();
+
+// You can wrap your _app.js with this provider
+export function AuthProvider({ children }) {
+  const auth = useProvideAuth();
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
+}
+
+// Custom React hook to access the context
+export const useAuth = () => {
+  return useContext(authContext);
+};
+
+function useProvideAuth() {
+  // Store the user in state
+  const [user, setUser] = useState(null);
+
+  const signinWithGitHub = () => {
+    return firebase
+      .auth()
+      .signInWithPopup(new firebase.auth.GithubAuthProvider())
+      .then((response) => setUser(response.user));
+  };
+
+  const signout = () => {
+    return firebase
+      .auth()
+      .signOut()
+      .then(() => setUser(false));
+  };
+
+  useEffect(() => {
+    const unsubscribe = firebase.auth().onIdTokenChanged(() => setUser(false));
+    return () => unsubscribe();
+  }, []);
+
+  return {
+    user,
+    signinWithGitHub,
+    signout
+  };
+}
+```
+
+If you don't want to create the interface yourself, you can use [FirebaseUI](https://github.com/firebase/firebaseui-web).
+For more details, see the [`with-firebase-authentication` example](https://github.com/vercel/next.js/tree/canary/examples/with-firebase-authentication).
+
+### Bring Your Own Database
+
+If you have an existing database with user data, you'll likely want to utilize an open-source solution that's provider agnostic.
+
+- If you need email/password log-in, use `next-iron-session`.
+- If you need to persist session data on the server, use `next-auth`.
+- If you need to support social login (Google, Facebook, etc.), use `next-auth`.
+- If you want to use [JWTs](https://jwt.io/), use `next-auth`.
+
+Both of these libraries support either authentication pattern.
+
+- [with-next-auth](https://github.com/vercel/next.js/tree/canary/examples/with-next-auth)
+- [with-iron-session](https://github.com/vercel/next.js/tree/canary/examples/with-iron-session)
+
+### Magic (Passwordless)
+
+Magic, which uses [passwordless login](https://magic.link/), supports the static generation pattern. Similar to Firebase, a [unique identifier](https://w3c-ccg.github.io/did-primer/) has to be created on the client-side and then forwarded as a header to log-in.
+
+```jsx
+const did = await new Magic(
+  process.env.NEXT_PUBLIC_MAGIC_PUB_KEY
+).auth.loginWithMagicLink({ email: 'your@email.com' });
+
+const authRequest = await fetch('/api/login', {
+  method: 'POST',
+  headers: { Authorization: `Bearer ${did}` }
+});
+```
+
+Then, we can use Magic's Node SDK to exchange the unique identifier for information about the user. Finally, we'll want to persist the user's session by creating a cookie. You can either [write this logic yourself](https://github.com/vercel/next.js/blob/canary/examples/with-magic/lib/auth-cookies.js) or use [next-iron-session](https://github.com/vercel/next.js/tree/canary/examples/with-iron-session).
+
+```jsx:pages/api/login.js
+import { Magic } from '@magic-sdk/admin';
+
+let magic = new Magic(process.env.MAGIC_SECRET_KEY);
+
+export default async (req, res) => {
+  if (req.method !== 'POST') return res.status(405).end();
+
+  // Exchange the DID from Magic for some user data
+  const did = magic.utils.parseAuthorizationHeader(req.headers.authorization);
+  const user = await magic.users.getMetadataByToken(did);
+
+  // Create a cookie to persist a user's session
+
+  res.end();
+};
+```
+
+For more details, see the [`with-magic` example](https://github.com/vercel/next.js/tree/canary/examples/with-magic).
+
+### Auth0
+
+Auth0 can support both authentication patterns. You can also utilize [API routes](https://nextjs.org/docs/api-routes/introduction) for logging in/out and retrieving user information. For example, after initializing the [Auth0 SDK](@auth0/nextjs-auth0), you can log-in by calling `handleLogin`.
+
+```jsx:pages/api/login.js
+import auth0 from '../../lib/auth0';
+
+export default async function login(req, res) {
+  try {
+    await auth0.handleLogin(req, res);
+  } catch (error) {
+    console.error(error);
+    res.status(error.status || 500).end(error.message);
   }
 }
 ```
 
-You’ll notice a `lerna.json` file has also been created, as well as a `/packages` folder which will contain our libraries. Let’s now modify our `lerna.json` file to use Yarn Workspaces. We’ll use independent versioning so we can properly enforce [semver](https://semver.org/) for each package.
+Auth0 populates the session so you can utilize static generation or `getServerSideProps` for server-side rendering. Here's an example of the latter.
 
-```json:lerna.json
-{
-  "packages": ["packages/*"],
-  "npmClient": "yarn",
-  "useWorkspaces": true,
-  "version": "independent"
-}
-```
+```jsx:pages/profile.js
+import auth0 from '../../lib/auth0';
 
-We’ll also need to modify our `package.json` to define where the Yarn workspaces are located.
+export async function getServerSideProps({ req, res }) {
+  const session = await auth0.getSession(req);
 
-```json:package.json
-{
-  "name": "root",
-  "private": true,
-  "workspaces": ["packages/*"],
-  "devDependencies": {
-    "lerna": "^3.22.1"
+  if (!session || !session.user) {
+    return {
+      props: {},
+      redirect: {
+        destination: '/api/login',
+        permanent: false
+      }
+    };
   }
+
+  return { props: { user: session.user } };
 }
 ```
 
-## Babel
+For more details, see the [`auth0` example](https://github.com/vercel/next.js/tree/canary/examples/auth0).
 
-Next, let’s add all of the dependencies we will need for Babel 7.
+## Frequently Asked Questions
 
-```bash
-$ yarn add --dev -W @babel/cli @babel/core @babel/preset-react @babel/preset-env babel-core@7.0.0-bridge.0 babel-loader babel-plugin-styled-components webpack
-```
+### How can I fetch user data once for every page in my application?
 
-Using `-w` instructs Yarn to install the given dependencies for the _entire_ workspace. These dependencies are usually shared between all packages.
+To fetch data once for your entire Next.js application, create a [custom `App`](https://nextjs.org/docs/advanced-features/custom-app) and use `getInitialProps`.
+You should only use this method if you have blocking data requirements for _every single page_ in your application.
+This will disable [static optimization](https://nextjs.org/docs/advanced-features/automatic-static-optimization).
+The Next.js team is [working to add support](https://github.com/vercel/next.js/discussions/10949#discussioncomment-44898) for `getStaticProps` inside `_app.js`.
 
-Since `yarn` has ran, you have a `/node_modules` folder. We don’t want to commit any of these packages, so let’s add a `.gitignore`.
+Here's an example using a provider like Auth0.
 
-```bash:.gitignore
-.log
-.DS_Store
-.jest-*
-lib
-node_modules
-```
+```jsx:_app.js
+App.getInitialProps = async ({ req, res }) => {
+  // Only run on the server
+  if (typeof window === 'undefined') {
+    const session = await auth0.getSession(req);
+    if (!session || !session.user) {
+      res.writeHead(307, { Location: '/api/login' });
+      res.end();
 
-Okay, back to Babel. To set up the global configuration for Babel, we’ll need a `babel.config.js` file in the root of the repository.
-
-```js:babel.config.js
-module.exports = {
-  plugins: ['babel-plugin-styled-components'],
-  presets: ['@babel/preset-env', '@babel/preset-react']
-};
-```
-
-This file tells Babel how to compile our packages. Now, let’s create a script to execute Babel. We’ll add this to our `package.json`.
-
-```json:package.json
-"scripts": {
-    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js"
-}
-```
-
-Let’s dissect this command. `lerna exec` will take any command and run it over all of the different packages. This command instructs Babel to run in parallel over every package, pulling from the `/src` folder and compiling into the `/lib` folder. We don’t want to include any tests or stories (which we’ll get to later) in the compiled output.
-
-Using `--root-mode upward` is the special sauce to using Yarn workspaces. This tells Babel the `node_modules` are located in the root instead of nested inside each of the individual packages. This prevents each package from having the same `node_modules` and extracts them up to the root. We’ll be utilizing a similar approach for testing later.
-
-## React
-
-We have completed the infrastructure for a Monorepo. Let’s create some packages for it to consume. We’ll be using React and styled-components to develop our UI components, so let’s install those first.
-
-```bash
-$ yarn add --dev -W react react-dom styled-components
-```
-
-Then, inside of `/packages` let's create a folder called `/button` and set up our first package.
-
-```json:packages/button/package.json
-{
-  "name": "button",
-  "version": "1.0.0",
-  "main": "lib/index.js",
-  "module": "src/index.js",
-  "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "styled-components": "latest"
-  },
-  "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "styled-components": "^5.0.0"
-  }
-}
-```
-
-This file informs consumers the `module` will live inside the `/src` folder and the output ran through Babel (`main`) will live inside `/lib`. This will be the main entry point into the package. Listing the `peerDependencies` helps ensure consumers are including the correct packages.
-
-We’ll also want to link our root dependencies to our newly created package. Let’s create a script to do this inside our `package.json`.
-
-```json:package.json
-"scripts": {
-  "bootstrap": "lerna bootstrap --use-workspaces"
-}
-```
-
-Now we can simply run `yarn bootstrap` to install and link all dependencies.
-
-Okay, now let’s create our first component: `<Button />`.
-
-```js:packages/button/src/Button.js
-import styled from 'styled-components';
-
-const Button = styled.button`
-  background: red;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 300;
-  padding: 9px 36px;
-`;
-
-export default Button;
-```
-
-Let’s test if Babel is configured properly. We should be able to run `yarn build` and see a `/lib` folder created for our new package.
-
-```bash
-$ lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js
-lerna notice cli v3.20.2
-lerna info versioning independent
-lerna info Executing command in 1 package: "babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js"
-button: Successfully compiled 1 file with Babel.
-lerna success exec Executed command in 1 package: "babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js"
-✨  Done in 2.45s.
-```
-
-## Storybook
-
-Storybook provides us with an interactive UI playground for our components. This makes development a breeze. Let’s set up Storybook to view our newly created `Button` component.
-
-```bash
-$ yarn add --dev -W @storybook/react @storybook/addon-docs @storybook/preset-create-react-app
-```
-
-We’ll also want to configure Storybook so it knows where to find our stories.
-
-```js:.storybook/main.js
-module.exports = {
-  stories: ['../packages/**/*.stories.js'],
-  addons: ['@storybook/addon-docs']
-};
-```
-
-Then, we can create our first story for the newly created Button inside `/packages/button/src`.
-
-```js:packages/button/src/Button.stories.js
-import React from 'react';
-
-import Button from '.';
-
-export default {
-  component: Button,
-  title: 'Design System/Button'
-};
-
-export const primary = () => <Button>{'Button'}</Button>;
-```
-
-Finally, let’s add a script to start Storybook.
-
-```json:package.json
-"scripts": {
-  "dev": "start-storybook -p 5555"
-}
-```
-
-Then we can use `yarn dev` to view our Button 🎉
-
-<Image
-  alt={`Button`}
-  src={`/static/images/monorepo-lerna-yarn-workspaces/button.png`}
-  width={856}
-  height={190}
-/>
-
-## Testing
-
-Before we go any further, let’s set up our testing environment and create a simple test for our button. We’ll utilize [Jest](https://jestjs.io/) for unit testing. It will automatically pick up any files ending with `.spec.js`.
-
-```bash
-$ yarn add --dev -W jest jest-styled-components babel-jest react-test-renderer jest-resolve jest-haste-map
-```
-
-Next, let's configure our Jest setup in the root directory.
-
-```js:jest.config.js
-module.exports = {
-  cacheDirectory: '.jest-cache',
-  coverageDirectory: '.jest-coverage',
-  coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/'],
-  coverageReporters: ['html', 'text'],
-  coverageThreshold: {
-    global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100
+      return;
     }
-  },
-  testPathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib/']
-};
-```
 
-You can modify this as you see fit. We’ll also want to add some scripts to our `package.json`.
-
-```json:package.json
-"scripts": {
-  "coverage": "jest --coverage",
-  "unit": "jest"
-}
-```
-
-Finally, let’s create our first test alongside our button component. We’ll utilize Snapshot testing since this is a purely presentational component.
-For more information, [see our other post here](/blog/ui-component-library-with-styled-components).
-
-```js:packages/button/src/Button.spec.js
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
-
-import Button from '.';
-
-describe('Button', () => {
-  test('renders correctly', () => {
-    const tree = renderer.create(<Button>{'Test'}</Button>).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
-```
-
-Now we can run our test via `yarn unit`.
-
-```bash
-$ jest
- PASS  packages/button/src/Button.spec.js
-  Button
-    ✓ renders correctly (23ms)
-
- › 1 snapshot written.
-Snapshot Summary
- › 1 snapshot written from 1 test suite.
-
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   1 written, 1 total
-Time:        1.25s
-Ran all test suites.
-✨  Done in 2.48s.
-```
-
-## Multiple Packages
-
-The main reason for the Monorepo structure is to support multiple packages. This allows us to have a single lint, build, test, and release process for all packages. Let’s create an input package and add a new component.
-
-```json:packages/input/src/package.json
-{
-  "name": "input",
-  "version": "1.0.0",
-  "main": "lib/index.js",
-  "module": "src/index.js",
-  "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "styled-components": "latest"
-  },
-  "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "styled-components": "^5.0.0"
+    return { user: session.user };
   }
-}
+};
 ```
 
-```js:packages/input/src/Input.js
-import styled from 'styled-components';
+If you require some pages to render as static HTML, you should use `getServerSideProps`
+in every page requiring server-rendering. You can extract this logic to a shared function to improve code reuse.
 
-const Input = styled.input`
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 10px 40px 10px 10px;
-  width: 150px;
-`;
+```jsx:lib/auth.js
+export const requirePageAuth = (inner) => {
+  return async (context) => {
+    const session = await getSession(context.req);
 
-export default Input;
+    if (!session) {
+      return {
+        props: {},
+        redirect: {
+          destination: '/login',
+          permanent: false
+        }
+      };
+    }
+
+    return inner ? inner(context, auth) : { props: { session } };
+  };
+};
 ```
 
-Okay, now we have an `Input` component. Let’s run `yarn bootstrap` again to link our packages together and create a new story.
-
-```js:packages/input/src/Input.stories.js
-import React from 'react';
-
-import Input from '.';
-
-export default {
-  component: Input,
-  title: 'Design System/Input'
+```jsx:pages/profile.js
+export default Profile = ({ session }) => {
+  return <p>{session.user.name}</p>;
 };
 
-export const placeholder = () => <Input placeholder="user@gmail.com" />;
+export const getServerSideProps = requirePageAuth;
 ```
-
-Our Storybook instance should still be running via `yarn dev`, but if not, then re-run the command. We can observe our component was rendered correctly.
-
-<Image
-  alt={`Storybook`}
-  src={`/static/images/monorepo-lerna-yarn-workspaces/storybook.png`}
-  width={862}
-  height={482}
-/>
-
-Finally, let’s ensure Babel works as expected for multiple packages by running `yarn build`.
-
-```bash
-$ lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js
-lerna notice cli v3.20.2
-lerna info versioning independent
-lerna info Executing command in 2 packages: "babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js"
-button: Successfully compiled 1 file with Babel.
-input: Successfully compiled 1 file with Babel.
-lerna success exec Executed command in 2 packages: "babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js"
-✨  Done in 2.45s.
-```
-
-Both packages were compiled successfully 🎉 What about testing? Let’s create another test for the Input component.
-
-```js:packages/input/src/Input.spec.js
-import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
-
-import Input from '.';
-
-describe('Input', () => {
-  test('renders correctly', () => {
-    const tree = renderer
-      .create(<Input placeholder="user@gmail.com" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
-```
-
-Then we can run `yarn unit` again.
-
-```bash
-$ jest
- PASS  packages/button/src/Button.spec.js
- PASS  packages/input/src/Input.spec.js
- › 1 snapshot written.
-
-Snapshot Summary
- › 1 snapshot written from 1 test suite.
-
-Test Suites: 2 passed, 2 total
-Tests:       2 passed, 2 total
-Snapshots:   1 written, 1 passed, 2 total
-Time:        1.96s, estimated 2s
-Ran all test suites.
-✨  Done in 3.22s.
-```
-
-## Releasing
-
-**Note**: _You need to commit and push to your repository before releasing. If you haven’t done that, do it now._
-
-Let’s release the first version of our packages. We can use `npx lerna changed`to see which packages have changed. You can also use `npx lerna diff` to see specifically what lines changed.
-
-**Note:** `lerna` could be installed globally to remove the need to use `npx`. You could also add scripts in your `package.json` since `lerna` is a devDependency.
-
-```bash
-$ npx lerna changed
-lerna notice cli v3.20.2
-lerna info versioning independent
-lerna info Assuming all packages changed
-button
-input
-lerna success found 2 packages ready to publish
-```
-
-We can see it recognizes both the button and the input package. Now, let’s run `npx lerna version` to simulate releasing them.
-
-```bash
-$ npx lerna version
-lerna notice cli v3.20.2
-lerna info versioning independent
-lerna info Assuming all packages changed
-? Select a new version for button (currently 1.0.0)
-? Select a new version for button (currently 1.0.0)
-
-Changes:
- -  button: 1.0.0 => 1.0.1
- -  input: 1.0.0 => 1.0.1
-
-? Are you sure you want to create these releases? Yes
-lerna info execute Skipping GitHub releases
-lerna info git Pushing tags...
-lerna success version finished
-```
-
-Congrats! 🎉 The tags have been pushed to GitHub. If we wanted to release our packages to NPM, we would use `npx lerna publish` instead.
-
-<Image
-  alt={`Yarn Workspaces`}
-  src={`/static/images/monorepo-lerna-yarn-workspaces/tags.png`}
-  width={864}
-  height={337}
-/>
-
-## Linting & Formatting
-
-It should be as easy as possible for others to contribute. That’s why all formatting and linting is taken care of with:
-
-- [ESLint](https://eslint.org/)
-- [Stylelint](https://github.com/stylelint/stylelint)
-- [Prettier](https://prettier.io/)
-
-Thanks to git pre-commit hooks with [husky](https://github.com/typicode/husky), we’re ensured all code is formatted correctly before getting pushed to GitHub.
-Proper linting and formatting saved us time and headaches while reviewing pull requests.
-We recommend you develop and agree upon linting and formatting rules to reduce the amount of “nitpick” type code review comments. You can view our rules [here](https://github.com/Hy-Vee/lerna-yarn-workspaces-monorepo).
 
 ## Conclusion
 
-Congratulations, you now have a fully-featured monorepo! If you’d like to take this even further, here are some other ideas:
-
-- Automate [semver](https://semver.org/) on your releases using [Conventional Commits](https://www.conventionalcommits.org).
-- Create a [“theme” package](https://github.com/Hy-Vee/lerna-yarn-workspaces-monorepo/pull/2) you can share across all other packages. This could be the start of your [design system](https://forumone.com/ideas/what-is-design-system/) — sharing colors, spacing, iconography, etc.
-- Extend Storybook with a variety of [add ons](https://storybook.js.org/docs/addons/addon-gallery/).
-- Configure Webpack/Rollup to generate a `/dist` folder.
-
-## Further Reading
-
-- [Building a UI Component Library with Styled Components](/blog/ui-component-library-with-styled-components)
-- [Understand How Yarn Workspaces Works](https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/)
+That's it! Hopefully this helps demystify authentication with Next.js by providing tangible examples.
+Feel free to leave a comment below if I've missed anything.
