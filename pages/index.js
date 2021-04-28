@@ -1,10 +1,11 @@
 import Social from '../components/Social'
 import Subscribe from '../components/Subscribe'
-// import Articles from '../components/Home/Articles'
+import Articles from '../components/Home/Articles'
 import Container from '../components/Container'
 import Projects from '../components/Home/Projects'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
-function Home() {
+function Home({posts}) {
   return (
     <Container>
       <main className="mx-auto mt-10 px-5">
@@ -38,7 +39,7 @@ function Home() {
         </div>
       </main>
       <section id="articles" className="px-4 mt-10">
-        {/* <Articles /> */}
+        <Articles list={posts} view="grid"/>
       </section>
       <section>
         <Projects/>
@@ -47,6 +48,11 @@ function Home() {
         <Subscribe />
       </section>
     </Container>)
+}
+
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter('blog');
+  return { props: { posts } };
 }
 
 export default Home;

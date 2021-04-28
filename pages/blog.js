@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Container from '../components/Container';
 import BlogPost from '../components/blogPost';
 import { getAllFilesFrontMatter } from '../lib/mdx';
+import Articles from '@/components/Home/Articles';
 
 export default function Blog({ posts }) {
   const [searchValue, setSearchValue] = useState('');
@@ -74,10 +75,8 @@ export default function Blog({ posts }) {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             No posts found.
           </p>
-        }
-        {filteredBlogPosts.map((frontMatter) => (
-          <BlogPost key={frontMatter.title} {...frontMatter} />
-        ))}
+        } 
+          <Articles list={filteredBlogPosts} view="list"/> 
       </div>
     </Container>
   );
