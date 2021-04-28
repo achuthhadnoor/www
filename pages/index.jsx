@@ -1,4 +1,4 @@
-import Social from '../components/social'
+import Social from '../components/Social'
 import Subscribe from '../components/Subscribe'
 import Articles from '../components/Home/recentArticles'
 import Container from '../components/Container'
