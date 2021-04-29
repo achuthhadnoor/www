@@ -24,23 +24,21 @@ export default function Header() {
     useEffect(() => setMounted(true), []);
   
     return (
-        <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-sm  overflow- z-50">
+        <header className="p-4 sticky top-0 bg-white bg-transparent backdrop-filter backdrop-blur-sm z-50">
             <nav className="flex items-center container max-w-5xl mx-auto">
                 <Link href="/#" ><p>-///-</p></Link>
                 <span className="flex-1"></span>
-                <div className="flex ">
+                <div className="flex items-center "  style={{overflow:'auto'}}>
                     {
                         links.map((link,i)=>(
                             <Link href={link.to} key={`name-${i}`} ><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">{link.name}</a></Link>
                         ))
                     }
-                    
                     <a href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">blog</a>
-                </div>
                 <button
                     aria-label="Toggle Dark Mode"
                     type="button"
-                    className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
+                    className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10 ml-4"
                     onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
                 >
                     {mounted && (
@@ -69,6 +67,7 @@ export default function Header() {
                         </svg>
                     )}
                 </button>
+                </div>
             </nav>
         </header>
 
