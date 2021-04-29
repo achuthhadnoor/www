@@ -25,8 +25,8 @@ export default function Blog({ posts }) {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Blog
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
-          {`I've been writing online since 2014, mostly about web development and tech careers.
+        <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-xl">
+          {`I write mostly about web development and tech careers.
             In total, I've written ${posts.length} articles on this site.
             Use the search below to filter by title.`}
         </p>
@@ -53,7 +53,7 @@ export default function Blog({ posts }) {
             />
           </svg>
         </div>
-        {!searchValue && (
+        {/* {!searchValue && (
           <>
             <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
               Most Popular
@@ -67,10 +67,10 @@ export default function Blog({ posts }) {
               )
             }
           </>
-        )}
+        )} 
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           All Posts
-        </h3>
+        </h3> */}
         {!filteredBlogPosts.length &&
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             No posts found.

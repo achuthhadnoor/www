@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+a{
+  text-decoration:none;
+  color:inherit;
+}
+hr{
+  display:inline-block;
+  width:200px;
+}
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -114,7 +121,9 @@ html {
 .token.variable {
   @apply text-yellow-500;
 }
-
+pre[class*='language-']{
+  @apply text-gray-800 dark:text-gray-50 overflow-y-auto text-xs sm:text-sm p-2 bg-gray-100;
+}
 code[class*='language-'],
 pre[class*='language-'] {
   @apply text-gray-800 dark:text-gray-50 overflow-y-auto text-xs sm:text-sm ;

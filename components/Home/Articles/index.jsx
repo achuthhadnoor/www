@@ -19,7 +19,7 @@ const Articles = ({ list, view }) => {
                                     <a className="border-b-2 pb-4 sm:border-b-0 ">
                                         <div className={`mt-5 ${view === 'grid' && `max-w-md`}`}>
                                             <div>
-                                                <h3 className="font-semibold">{article.title}</h3>
+                                                <h3 className="font-semibold  hover:bg-yellow-100 inline-block">{article.title}</h3>
                                                 <div className="my-2 text-xs">
                                                     <span className="text-gray-500">{format(parseISO(article.publishedAt), 'MMMM dd, yyyy')}</span>
                                                     {
