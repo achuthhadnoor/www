@@ -5,7 +5,21 @@ import { useEffect, useState } from 'react';
 export default function Header() {
     const [mounted, setMounted] = useState(false);
     const { resolvedTheme, setTheme } = useTheme();
-  
+    const links = [
+        {
+            name:"home",
+            to:"/"
+        },{
+            name:"articles",
+            to:"/blog"
+        },{
+            name:"newsletter",
+            to:"/newsletter"
+        },{
+            name:"about",
+            to:"/about"
+        }
+    ]
     // After mounting, we have access to the theme
     useEffect(() => setMounted(true), []);
   
@@ -15,9 +29,12 @@ export default function Header() {
                 <Link href="/#" ><p>-///-</p></Link>
                 <span className="flex-1"></span>
                 <div className="flex ">
-                    <Link href="/" ><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">home</a></Link>
-                    <Link href="/blog/personal-branding-over-portfolios"><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">articles</a></Link>
-                    <Link href="/newsletter"><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">newsletter</a></Link>
+                    {
+                        links.map((link,i)=>(
+                            <Link href={link.to} key={`name-${i}`} ><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">{link.name}</a></Link>
+                        ))
+                    }
+                    
                     <a href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">blog</a>
                 </div>
                 <button
