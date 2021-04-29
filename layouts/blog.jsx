@@ -61,7 +61,7 @@ export default function BlogLayout({ children, frontMatter }) {
             width={1175} height={600} priority
             className="mt-5"
         />
-        <div className="prose dark:prose-dark max-w-none w-full mt-5">
+        <div className="prose dark:prose-dark max-w-none w-full mt-5 leading-loose">
             {children}
         </div>
         <div className="text-sm text-gray-700 dark:text-gray-300 text-center">
