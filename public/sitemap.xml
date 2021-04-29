@@ -17,6 +17,10 @@
   </url>
 
   <url>
+    <loc>https://achuth.dev/unsubscribe</loc>
+  </url>
+
+  <url>
     <loc>https://achuth.dev/blog/[slug]</loc>
   </url>
 </urlset>

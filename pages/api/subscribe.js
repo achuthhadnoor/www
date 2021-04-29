@@ -6,13 +6,13 @@ export default async (req, res) => {
     }
   
     try {
-      const API_KEY = process.env.BUTTONDOWN_API_KEY;
+      const API_KEY = "9be1beee-98d8-403b-9907-85fe826dc4aa";
       const response = await fetch(
         `https://api.buttondown.email/v1/subscribers`,
         {
           body: JSON.stringify({
             email,
-            tags: ['leerob.io']
+            tags: ['achuth.dev']
           }),
           headers: {
             Authorization: `Token ${API_KEY}`,
