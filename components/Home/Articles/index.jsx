@@ -16,7 +16,7 @@ const Articles = ({ list, view }) => {
                         <React.Fragment key={`article-${i}`}>
                             {i < 4 &&
                                 (<Link href={`/blog/${article.slug}`}>
-                                    <a className="border-b-2 pb-4 sm:border-b-0 ">
+                                    <a className="border-b-2 pb-4 sm:border-b-0 sm:pr-2">
                                         <div className={`mt-5 ${view === 'grid' && `max-w-md`}`}>
                                             <div>
                                                 <h3 className="font-semibold  hover:bg-yellow-100 inline-block">{article.title}</h3>
