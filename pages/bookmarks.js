@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import bookmarks from '../data/bookmarks.json'
-export default function Bookmarks(){
-    return(
+export default function Bookmarks() {
+    return (
         <Container
             title="Bookmarks"
             description="A collection of items on my confused mind 😜"
@@ -12,17 +12,21 @@ export default function Bookmarks(){
             <p className="px-4">
                 My collection of some randome links 😝.
             </p>
-                <div className="grid sm:grid-cols-2 mt-5">
+            <div className="grid sm:grid-cols-2 mt-5">
                 {
-                    bookmarks.map((bookmark,i)=>(
-                        <a href={bookmark.url} target="_blank" key={`bookmark-${i}`} className=" max-w-md overflow-auto">
-                            <div className="p-4 m-2 bg-white">
-                            {bookmark.title}
+                    bookmarks.map((bookmark, i) => (<>
+                        { bookmark.url &&
+                            <a href={bookmark.url} target="_blank" key={`bookmark-${i}`} className="p-4 m-2 max-w-md overflow-auto bg-white" title={bookmark.url}>
+                            <div className="p-1">
+                                {bookmark.title}
                             </div>
+                            <div className="text-xs text-gray-400">{bookmark.url}</div>
                         </a>
+                        }
+                        </>
                     ))
                 }
-                </div>
+            </div>
         </Container>
     )
 }

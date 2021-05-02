@@ -16,6 +16,9 @@ export default function Header() {
             name:"newsletter",
             to:"/newsletter"
         },{
+            name:"bookmarks",
+            to:"/bookmarks"
+        },,{
             name:"about",
             to:"/about"
         }
@@ -31,10 +34,10 @@ export default function Header() {
                 <div className="flex items-center "  style={{overflow:'auto'}}>
                     {
                         links.map((link,i)=>(
-                            <Link href={link.to} key={`name-${i}`} ><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">{link.name}</a></Link>
+                            <Link href={link.to} key={`name-${i}`} ><a className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-xs focus:bg-green-50 transform uppercase">{link.name}</a></Link>
                         ))
                     }
-                    <a href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-sm focus:bg-green-50 transform uppercase">blog</a>
+                    <a href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-xs focus:bg-green-50 transform uppercase">blog</a>
                 <button
                     aria-label="Toggle Dark Mode"
                     type="button"
