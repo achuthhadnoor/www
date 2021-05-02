@@ -4,8 +4,22 @@
         <description><![CDATA[Achuth Hadnoor]]></description>
         <link>https://achuth.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 02 May 2021 06:11:37 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 02 May 2021 07:23:20 GMT</lastBuildDate>
         <atom:link href="https://achuth.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Get Started with Affiliate marketing ]]></title>
+            <description><![CDATA[One of the many ways to make money online is with affiliate marketing.]]></description>
+            <link>https://achuth.dev/blog/affliate-marketing-tips</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/affliate-marketing-tips</guid>
+            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What is Building in public?]]></title>
+            <description><![CDATA[Have you got started on an idea and want to bootrsap it? Then build in public by showcasing what you are building feature by feature.]]></description>
+            <link>https://achuth.dev/blog/building-in-public</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/building-in-public</guid>
+            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Personal branding is more influential than long list of portfolio projects]]></title>
             <description><![CDATA[Portfolio projects help you undertand the design problems in the existing design project. but personal branding helps you create a design system]]></description>
@@ -16,8 +30,8 @@
         <item>
             <title><![CDATA[What i learned from a $1k through affiliate marketing]]></title>
             <description><![CDATA[Lessons and takeaways from my experience of bringing apps to uses using affiliate marketers]]></description>
-            <link>https://achuth.dev/blog/affiliate-marketing</link>
-            <guid isPermaLink="true">https://achuth.dev/blog/affiliate-marketing</guid>
+            <link>https://achuth.dev/blog/reaching-users-with-affiliate-marketing</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/reaching-users-with-affiliate-marketing</guid>
             <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
         </item>
     </channel>
