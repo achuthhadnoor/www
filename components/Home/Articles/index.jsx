@@ -24,7 +24,7 @@ const Articles = ({ list, view }) => {
                                                     <h3 className="font-semibold  hover:bg-yellow-100 inline-block">{article.title}</h3>
                                                     <div className="my-2 text-xs flex flex-col sm:flex-row">
                                                         <span className="text-gray-500 py-1">{format(parseISO(article.publishedAt), 'MMMM dd, yyyy')}</span>
-                                                        <div class="flex space-x-2 flex-1 flex-wrap items-center">
+                                                        <div className="flex space-x-2 flex-1 flex-wrap items-center">
                                                             {
                                                                 article.tags.map((tag, index) => (
                                                                     <span className={`uppercase p-1 mx-2 rounded-md bg-gray-200 text-gray-600 text-xs inline-block`} key={`tag-${index}`}> {tag.value}</span>
@@ -45,7 +45,7 @@ const Articles = ({ list, view }) => {
                                             <h3 className="font-semibold  hover:bg-yellow-100 inline-block">{article.title}</h3>
                                             <div className="my-2 text-xs flex flex-col sm:flex-row">
                                                 <span className="text-gray-500 py-1">{format(parseISO(article.publishedAt), 'MMMM dd, yyyy')}</span>
-                                                <div class="flex space-x-2 flex-1 flex-wrap items-center">
+                                                <div className="flex space-x-2 flex-1 flex-wrap items-center">
                                                     {
                                                         article.tags.map((tag, index) => (
                                                             <span className={`uppercase p-1 mx-2 rounded-md bg-gray-200 text-gray-600 text-xs inline-block`} key={`tag-${index}`}> {tag.value}</span>
