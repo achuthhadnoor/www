@@ -5,7 +5,8 @@ export default function Bookmarks() {
         <Container
             title="Bookmarks"
             description="A collection of items on my confused mind 😜"
-        >
+            image="/images/bookmarks.png"
+       >
             <h1 className="mt-10 px-4 py-2 text-xl sm:text-3xl font-semibold">
                 Bookmarks
             </h1>
