@@ -56,11 +56,29 @@ Resources.getInitialProps = ({ query }) => {
     if (query.tab) {
         tab = query.tab;
     }
-    console.log(tab);
+    let tabs =  [
+        "All",
+        "Books",
+        "Blog",
+        "Color",
+        "Community",
+        "Design Patterns",
+        "Design Systems",
+        "Design Studios",
+        "Emails",
+        "Gaming",
+        "Guides",
+        "Media",
+        "Newsletters",
+        "Plugins",
+        "Resources",
+        "Software & Tools",
+        "Web Standards"
+    ];
     return {
         tab: tab,
-        tabs: resourcesData.tabs,
-        resources: resourcesData.resources
+        tabs: tabs,
+        resources: resourcesData
     }
 }
 export default Resources;
