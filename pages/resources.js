@@ -25,7 +25,7 @@ const Resources = ({ tab, tabs, resources }) => {
                     <div className="grid sm:grid-cols-2 mt-5">
                         {
                             resources.map((bookmark, i) => {
-                                if (tab === 'All') {
+                                if (tab === 'All' || tab === undefined) {
                                     return (
                                         <a href={bookmark.link} target="_blank" key={`resources-${i}`} className="p-4 m-2 max-w-md overflow-auto bg-white" title={bookmark.url}>
                                             <div className="p-1">
@@ -53,9 +53,10 @@ const Resources = ({ tab, tabs, resources }) => {
 
 Resources.getInitialProps = ({ query }) => {
     let tab = 'All';
-    if (query) {
+    if (query.tab) {
         tab = query.tab;
     }
+    console.log(tab);
     return {
         tab: tab,
         tabs: resourcesData.tabs,
