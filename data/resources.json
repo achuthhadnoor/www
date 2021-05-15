@@ -1,0 +1,303 @@
+{
+    "tabs": [
+        "All",
+        "Books",
+        "Blog",
+        "Colors",
+        "Community",
+        "Design Patterns",
+        "Design Systems",
+        "Design Studios",
+        "Emails",
+        "Gaming",
+        "Guides",
+        "Media",
+        "Newsletters",
+        "Plugins",
+        "Resources",
+        "Software & Tools",
+        "Web Standards"
+    ],
+    "resources": [
+        {
+            "link": "https://www.apress.com/gp/book/9781484258132",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/designing-inclusive-mobile-apps.png?ik-sdk-version=react-1.0.9",
+            "tag": "Books",
+            "title": "Developing Inclusive Mobile Apps",
+            "description": "Building Accessible Apps for iOS andAndroid."
+        },
+        {
+            "link": "https://www.amazon.com/gp/product/148425015X/ref=ox_sc_act_title_10?smid=ATVPDKIKX0DER&amp;psc=1",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/inclusivedesign.png?ik-sdk-version=react-1.0.9",
+            "tag": "Books",
+            "title": "Inclusive Design for a Digital World - Designingwith Accessibility in Mind",
+            "description": "What is inclusive design? It issimple. It means that your product has been created with the intention of being accessible to as manydifferent users as possible."
+        },
+        {
+            "link": "https://paste.twilio.design",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/paste.png?ik-sdk-version=react-1.0.9",
+            "tag": "Design Systems",
+            "title": "Paste",
+            "description": "Design System for creating highquality, inclusive customer engagement experiences."
+        },
+        {
+            "link": "https://css-tricks.com/striking-a-balance-between-native-and-custom-select-elements/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/csstricks.png?ik-sdk-version=react-1.0.9",
+            "tag": "Design Patterns",
+            "title": "Striking a Balance Between Native and CustomSelect Elements",
+            "description": "This “hybrid” select is anotherattempt to create a good looking select while getting as many native features as possible."
+        },
+        {
+            "link": "https://www.england.nhs.uk/learning-disabilities/about/get-involved/involving-people/making-information-and-the-words-we-use-accessible/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/nhs.png?ik-sdk-version=react-1.0.9",
+            "tag": "Guides",
+            "title": "Making information and the words we useaccessible",
+            "description": "The best way to find out how to makeinformation accessible is to ask the person or the people you will be giving the information to."
+        },
+        {
+            "link": "https://feather.ca/inclusion/describing/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/feather-logo.png?ik-sdk-version=react-1.0.9",
+            "tag": "Guides",
+            "title": "Inclusive teaching - audio describing your ownpresentations",
+            "description": "Here’s some practical tips andexamples that show how some small changes in the language you use can make a significant difference forpeople in the audience that benefit from your descriptions of the visuals."
+        },
+        {
+            "link": "https://guia-wcag.com/e",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/wcag-guides.png?ik-sdk-version=react-1.0.9",
+            "tag": "Guides",
+            "title": "WCAG easy!",
+            "description": "Understand once and for all how toproperly apply WCAG in your digital products."
+        },
+        {
+            "link": "https://www.shopify.com/partners/blog/mobile-accessibility",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/shopify.png?ik-sdk-version=react-1.0.9",
+            "tag": "Mobile",
+            "title": "Mobile Accessibility - How to Build Apps thatWork for All Users",
+            "description": "On the web, we’ve made a lot ofprogress, and it’s generally accepted that accessibility is crucial in creating digital products thateveryone can use with ease. Mobile accessibility, on the other hand, is still fraught with problems."
+        },
+        {
+            "link": "https://medium.com/the-readability-group/typographic-accessibility-in-more-detail-4a11a0ef1cc2",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/brunomag.png?ik-sdk-version=react-1.0.9",
+            "tag": "Typography",
+            "title": "Typographic accessibility in more detail",
+            "description": "The three pillars of accessibility -emotional, functional and technical - can be applied to any output whether that is a product or a service.Each industry and sector will have its own specific definitions relevant to their output."
+        },
+        {
+            "link": "https://www.w3.org/TR/coga-usable/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/w3c.png?ik-sdk-version=react-1.0.9",
+            "tag": "Web Standards",
+            "title": "Making Content Usable for People with Cognitiveand Learning Disabilities",
+            "description": "This document is for people who makeweb content (web pages) and web applications. It gives advice on how to make content usable for people withcognitive and learning disabilities."
+        },
+        {
+            "link": "https://a11yalicia.medium.com/what-is-inclusive-design-anyways-23bf212e35bc",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/alicia-design.png?ik-sdk-version=react-1.0.9",
+            "tag": "Article",
+            "title": "What is Inclusive Design, anyways?",
+            "description": "Inclusive Design is design thatconsiders the full range of human diversity with respect to ability, language, culture, gender, age andother forms of human difference."
+        },
+        {
+            "link": "https://ericwbailey.design/writing/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/eric-logo.png?ik-sdk-version=react-1.0.9",
+            "tag": "Blog",
+            "title": "Eric Bailey's Blog",
+            "description": "Blog on accessible and inclusivedesign."
+        },
+        {
+            "link": "https://sarahmhigley.com/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/sarahhigley.png?ik-sdk-version=react-1.0.9",
+            "tag": "Blog",
+            "title": "Sarah Higley's Blog",
+            "description": "A collection ofaccessibility-focused articles."
+        },
+        {
+            "link": "https://fingerspelling.xyz/",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/fingerspelling.png?ik-sdk-version=react-1.0.9",
+            "tag": "Simulators",
+            "title": "Fingerspelling",
+            "description": "Learn the ABC in American SignLanguage with machine learning."
+        },
+        {
+            "link": "https://www.scottohara.me/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/scotthara.png?ik-sdk-version=react-1.0.9",
+            "tag": "Blog",
+            "title": "Scott O'Hara's Blog",
+            "description": "A collection of articles onaccessibility and UX."
+        },
+        {
+            "link": "https://www.youtube.com/watch?v=Mv_RlmAm4nc",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/hassell-inclusion.png?ik-sdk-version=react-1.0.9",
+            "tag": "Podcast",
+            "title": "Digital Accessibility Experts Podcast by HassellInclusion",
+            "description": "Whether you call it Inclusive Designor Digital Accessibility, whether you're an individual with a passion or an organisation wanting to knowmore, this podcast explores a range of topics on accessibility. Hosted by Jonathan Hassell, its aim is toshare inspiration, expertise, and hints and tips to help speed you on your digital accessibility journey."
+        },
+        {
+            "link": "https://www.hassellinclusion.com/blog/",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/hassell-inclusion.png?ik-sdk-version=react-1.0.9",
+            "tag": "Blog",
+            "title": "Hassell Inclusion Blog",
+            "description": "Regular blogs from the HassellInclusion team on a range of topics from the strategic through to the more practical."
+        },
+        {
+            "link": "https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/twenty-four-accessibility.png?ik-sdk-version=react-1.0.9",
+            "tag": "Article",
+            "title": "Pixels vs. Relative Units in CSS - why it’s stilla big deal",
+            "description": "Long live the modern browser!Browsers are getting better these days. We seem to be in a golden age where there’s a never-ending stream ofnew features added for the benefit of the users accessing the page, and really great tools for thosecreating the page."
+        },
+        {
+            "link": "https://humanebydesign.com/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/humane.png?ik-sdk-version=react-1.0.9",
+            "tag": "Resources",
+            "title": "Humane by Design",
+            "description": "A resource that provides guidancefor designing ethically humane digital products through patterns focused on user well-being."
+        },
+        {
+            "link": "https://www.figma.com/community/file/80499923712820011",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/accessible-form-fields.png?ik-sdk-version=react-1.0.9",
+            "tag": "Resources",
+            "title": "Accessible Form Fields",
+            "description": "A small figma component foraccessible form fields."
+        },
+        {
+            "link": "https://www.a11y.space/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/a11yspace.png?ik-sdk-version=react-1.0.9",
+            "tag": "Resources",
+            "title": "Webflow accessibility",
+            "description": "Make your Webflow sites accessible."
+        },
+        {
+            "link": "https://www.nngroup.com/articles/new-browser-windows-and-tabs/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/nng.png?ik-sdk-version=react-1.0.9",
+            "tag": "Article",
+            "title": "Opening Links in New Browser Windows and Tabs",
+            "description": "Carefully examine the user’scontext, task at hand, and next steps when deciding whether to open links to documents and external sites inthe same or a new browser tab."
+        },
+        {
+            "link": "https://accessibility.princeton.edu/news/introducing-editoria11",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/editoria11y.png?ik-sdk-version=react-1.0.9",
+            "tag": "Software &amp; Tools",
+            "title": "Editoria11y",
+            "description": "In many ways, Editoria11y is astopgap solution. Most of the mistakes it catches were made because we placed new expectations on contentauthors ('tag your content with good structure'), but gave them tools that encouraged the opposite.The path forward is to make accessible content creation easier, and as automatic as possible"
+        },
+        {
+            "link": "https://www.matuzo.at/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/default.png?ik-sdk-version=react-1.0.9",
+            "tag": "Blog",
+            "title": "Manuel Matuzovic Blog",
+            "description": "Follow Manuel's blog for anyfront-end accessibility guides, tutorials, and resources."
+        },
+        {
+            "link": "https://www.levelaccess.com/wp-content/uploads/2020/07/Education-2020-State-of-Digital-Accessibility-FInal-a11y.pdf",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/levelaccess.png?ik-sdk-version=react-1.0.9",
+            "tag": "Resources",
+            "title": "The 2020 State of Digital Accessibility ReportThe Education Sector",
+            "description": "This report is designed to be readas a companion to the 2020 State of Digital Accessibility Report (SODAR), published by Level Access incollaboration with G3ict and IAAP."
+        },
+        {
+            "link": "https://hiddedevries.nl/en/blog/2018-09-01-heading-structures-are-tables-of-contents",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/hiddedevries.png?ik-sdk-version=react-1.0.9",
+            "tag": "Design Patterns",
+            "title": "Heading structures are tables of contents",
+            "description": "The heading structure of a web pageis like its table of contents. It gives people who can’t see your page a way to navigate it without readingeverything."
+        },
+        {
+            "link": "https://developers.google.com/web/fundamentals/accessibility/a11y-for-teams",
+            "image": "https://images.getstark.co/tr:h-160,w-160/library-thumbnails/webdev-google.png?ik-sdk-version=react-1.0.9",
+            "tag": "Guides",
+            "title": "Accessibility for teams",
+            "description": "Making your site more accessible canbe a daunting task. If you are approaching accessibility for the first time, the sheer breadth of the topiccan leave you wondering where to start."
+        },
+        {
+            "link": "https://www.futurelearn.com/courses/digital-accessibilit",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/futurelearn.png?ik-sdk-version=react-1.0.9",
+            "tag": "Courses &amp; Certificates",
+            "title": "Digital Accessibility",
+            "description": "This course will help you tounderstand how those with sensory, physical and cognitive impairments may be disabled by barriersencountered when using digital technologies. The course will highlight how the use of accessible andinclusive design can help overcome many of these difficulties."
+        },
+        {
+            "link": "https://www.edx.org/course/information-and-communication-technology-ict-acces",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/default.png?ik-sdk-version=react-1.0.9",
+            "tag": "Courses &amp; Certificates",
+            "title": "Information and Communication Technology (ICT)Accessibility",
+            "description": "edx In this introductory course,learn how to measure an organization’s ICT accessibility and assess the importance of maintaining aninclusive workplace for both employees and customers with disabilities."
+        },
+        {
+            "link": "https://dequeuniversity.com/screenreaders/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/deque.png?ik-sdk-version=react-1.0.9",
+            "tag": "Screen Reader",
+            "title": "Screen Reader Keyboard Shortcuts and Gestures",
+            "description": "List of screen reader keyboardshortcuts and gestures."
+        },
+        {
+            "link": "https://www.tpgi.com/color-contrast-checker/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/tpgi.png?ik-sdk-version=react-1.0.9",
+            "tag": "Contrast Checker",
+            "title": "Color Contrast Checker",
+            "description": "Evaluating your design for colorcontrast is a critical aspect of accessibility testing and organizations may benefit from appropriate userexperience training and expertise to ensure proper contrast."
+        },
+        {
+            "link": "https://www.youtube.com/watch?v=Mv_RlmAm4nc",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/sara-blogs.png?ik-sdk-version=react-1.0.9",
+            "tag": "Video",
+            "title": "Applied Accessibility: Practical Tips forCreating more Accessible Front-Ends",
+            "description": "As front-end developers, we aretasked with building the front end of a Web site or application — in other words, we are building the user’send of an interface. This is why it is crucial that we ensure that the front-end foundations that we buildare as inclusive of and accessible to as many users as possible."
+        },
+        {
+            "link": "http://www.webaxe.org",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/web-axe.png?ik-sdk-version=react-1.0.9",
+            "tag": "Blog",
+            "title": "Web Axe",
+            "description": "Blog and podcast on webaccessibility"
+        },
+        {
+            "link": "https://github.com/scottaohara/accessible_components",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/default.png?ik-sdk-version=react-1.0.9",
+            "tag": "Developer Tools",
+            "title": "Accessible Components",
+            "description": "Listing of accessible components&amp; patterns."
+        },
+        {
+            "link": "http://www.webaxe.org/web-accessible-code-library-design-systems-patterns/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/web-axe.png?ik-sdk-version=react-1.0.9",
+            "tag": "Curated List",
+            "title": "Web Accessible Code Libraries and Design Patterns",
+            "description": "Within a web developmentorganization, it’s ideal to maintain (and enforce usage of) design patterns and a components library. Andthey should work together; design patterns create consistency among visual elements across projects and thecomponents library creates consistent implementation of those patterns during development."
+        },
+        {
+            "link": "https://github.com/scottaohara/a11y_styled_form_control",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/default.png?ik-sdk-version=react-1.0.9",
+            "tag": "Developer Tools",
+            "title": "The Accessibility of Styled Form Controls",
+            "description": "A repository of styled and styled form control elements and markup patterns, and how they are announced by screen readers."
+        },
+        {
+            "link": "https://design-system.service.gov.uk/patterns/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/gov-uk.png?ik-sdk-version=react-1.0.9",
+            "tag": "Design Patterns",
+            "title": "Patterns – GOV.UK Design System",
+            "description": "gov-uk Patterns are best practicedesign solutions for specific user-focused tasks and page types."
+        },
+        {
+            "link": "https://design-system.service.gov.uk/components/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/gov-uk.png?ik-sdk-version=react-1.0.9",
+            "tag": "Design Patterns",
+            "title": "Components – GOV.UK Design System",
+            "description": "Components are reusable parts of theuser interface that have been made to support a variety of applications."
+        },
+        {
+            "link": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-289/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/smashing.png?ik-sdk-version=react-1.0.9",
+            "tag": "Newsletters",
+            "title": "Smashing Newsletter: Issue #289 —Useful librariesand case studies to get Accessibility just right",
+            "description": "Building accessible pages andapplications isn’t easy. We have to keep in mind how our sites and applications work with a keyboard alone,whether navigation landmarks are properly assigned, how updates are announced by a screen reader, andwhether we avoid any inaccessible libraries or third-party scripts. And then, for every component we arebuilding, we need to ensure that we keep them accessible over time."
+        },
+        {
+            "link": "https://www-slashgear-com.cdn.ampproject.org/c/s/www.slashgear.com/hbo-max-adds-key-accessibility-feature-for-visually-impaired-users-27665777/amp/",
+            "image": " https://images.getstark.co/tr:h-160,w-160/library-thumbnails/hbo-max.png?ik-sdk-version=react-1.0.9",
+            "tag": "Article",
+            "title": "HBO Max adds key accessibility feature forvisually impaired users",
+            "description": "The service now offers audio descriptions for content, which describes what is happening on the screen beyond the dialog and soundeffects.This feature is joined by multiple other changes intended to improve accessibility."
+        }
+    ]
+}

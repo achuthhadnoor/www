@@ -18,7 +18,10 @@ export default function Header() {
         },{
             name:"bookmarks",
             to:"/bookmarks"
-        },,{
+        },{
+            name:"resources",
+            to:"/resources?tab=All"
+        },{
             name:"about",
             to:"/about"
         }
