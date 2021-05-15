@@ -32,7 +32,10 @@
     {
       "source": "/f6s",
       "destination": "https://www.f6s.com/achuthhadnoor"
-    },
+    },{
+      "source":"/keep-them-poor",
+      "destination":"https://youtu.be/azq0S0DKS50"
+},
     {
       "source": "/hashnode",
       "destination": "https://www.hashnode.com/@achuth"
@@ -40,6 +43,9 @@
     {
       "source": "/lapse",
       "destination": "https://gumroad.com/l/lapse_app"
+    },{
+      "source":"/meet",
+      "destination":"https://calendly.com/achuth-hadnoor/60min"
     }
   ]
 }
