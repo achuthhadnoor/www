@@ -4,7 +4,11 @@ import resourcesData from '../data/resources.json'
 const Resources = ({ tab, tabs, resources }) => {
     console.log(tab);
     return (
-        <Container>
+        <Container
+            title="Resources - Tools and articles"
+            description="A curated list of resources for web developers"
+            image="/images/resources.png"
+        >
             <h1 className="text-4xl font-semibold">Resources</h1>
             <div className="grid sm:grid-cols-3">
                 <div className="col-span-2 p-4 sm:col-span-1">
@@ -31,6 +35,7 @@ const Resources = ({ tab, tabs, resources }) => {
                                             <div className="p-1">
                                                 {bookmark.title}
                                             </div>
+                                            <span className={`uppercase p-1 mx-2 rounded-md bg-indigo-50 text-indigo-400 text-xs inline-block` }> {bookmark.tag}</span>
                                             <div className="p-1 text-sm text-gray-400">{bookmark.description}</div>
                                         </a>
                                     )
@@ -40,6 +45,7 @@ const Resources = ({ tab, tabs, resources }) => {
                                         <div className="p-1">
                                             {bookmark.title}
                                         </div>
+                                            <span className={`uppercase p-1 mx-2 rounded-md bg-indigo-50 text-indigo-400 text-xs inline-block` }> {bookmark.tag}</span>
                                         <div className="p-1 text-sm text-gray-400">{bookmark.description}</div>
                                     </a>
                             })
