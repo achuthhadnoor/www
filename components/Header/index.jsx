@@ -12,18 +12,12 @@ export default function Header() {
         }, {
             name: "articles",
             to: "/blog"
-        }, {
-            name: "newsletter",
-            to: "/newsletter"
-        }, {
+        },{
             name: "bookmarks",
             to: "/bookmarks"
         }, {
             name: "resources",
             to: "/resources?tab=All"
-        }, {
-            name: "about",
-            to: "/about"
         }
     ]
     // After mounting, we have access to the theme
