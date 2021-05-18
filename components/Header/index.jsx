@@ -35,7 +35,7 @@ export default function Header() {
                         ))
                     }
                     <a href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-green-600 focus:ring-1 hover:ring-1  focus:text-green-700  hover:bg-green-50 hover:text-green-700 rounded-md text-xs focus:bg-green-50 transform uppercase">blog</a>
-                    <button
+                    {/* <button
                         aria-label="Toggle Dark Mode"
                         type="button"
                         className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10 ml-4"
@@ -66,7 +66,7 @@ export default function Header() {
                                 )}
                             </svg>
                         )}
-                    </button>
+                    </button> */}
                 </div>
             </nav>
         </header>
