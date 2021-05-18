@@ -49,7 +49,7 @@ class MyDocument extends Document {
             }}
           />
         </Head>
-        <body className="antialiased font-sans bg-gray-50">
+        <body className="antialiased font-sans bg-gray-50 border-blue-900 border-8">
           <Main />
           <NextScript />
         </body>
