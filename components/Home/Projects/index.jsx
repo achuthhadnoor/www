@@ -1,4 +1,4 @@
-import { Lapse, SilentShot, Snipcode, Snippy } from '@/components/icons/apps'
+import { Lapse, SilentShot, Snipcode, Snippy, TodayHQ } from '@/components/icons/apps'
 
 const Projects = () => {
     const projects = [
@@ -7,12 +7,20 @@ const Projects = () => {
             summary: "An instant time-lapse screen recording app for mac and windows.",
             link: "https://lapse.achuth.dev",
             icon: <Lapse/>
-        }, {
-            name: 'Silentshot',
-            summary: " An instant distraction free screenshot tool",
-            link: "https://lapse.achuth.dev",
-            icon: <SilentShot/>
-        }, {
+        },
+        //  {
+        //     name: 'Silentshot',
+        //     summary: " An instant distraction free screenshot tool",
+        //     link: "https://lapse.achuth.dev",
+        //     icon: <SilentShot/>
+        // },
+        {
+            name:"TodayHq",
+            summary:"A simple Notes app ",
+            link:"todayhq.vercel.app",
+            icon:<TodayHQ/>
+        },
+         {
             name: 'Snipcode',
             summary: "Simple code snippet manager",
             link: "https://snipcode.achuth.dev",

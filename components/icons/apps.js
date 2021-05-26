@@ -140,3 +140,12 @@ export const Snipcode = () => (
         </defs>
     </svg>
 )
+
+export const TodayHQ = () => (
+<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="54.9331" height="54.9331" rx="10" fill="white" />
+    <rect x="12" y="18" width="29" height="3" rx="1" fill="black" />
+    <rect x="12" y="26" width="15" height="3" rx="1" fill="black" />
+    <rect x="12" y="33" width="26" height="3" rx="1" fill="black" />
+</svg>
+)
