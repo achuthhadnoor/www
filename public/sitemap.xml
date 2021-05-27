@@ -5,6 +5,10 @@
   </url>
 
   <url>
+    <loc>https://achuth.dev/apps</loc>
+  </url>
+
+  <url>
     <loc>https://achuth.dev/blog</loc>
   </url>
 
@@ -29,11 +33,7 @@
   </url>
 
   <url>
-    <loc>https://achuth.dev/app/[name]</loc>
-  </url>
-
-  <url>
-    <loc>https://achuth.dev/app/index</loc>
+    <loc>https://achuth.dev/apps/[slug]</loc>
   </url>
 
   <url>

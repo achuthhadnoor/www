@@ -1,25 +1,28 @@
 import Container from "@/components/Container";
+import Link from "next/link";
 
 const Apps = () => {
     return (
         <Container>
-            <h1 class="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">Apps</h1>
+            <h1 className="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">Apps</h1>
             <p className="px-2 py-4">
                 Apps that help you during the day 👻
             </p>
             <div className="container grid grid-cols-1 sm:grid-cols-2">
 
-                <div className="bg-white p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
-                    <img src="/images/pages/apps/lapse.png" className="" />
-                    <div className="flex items-center my-2">
-                        <h3 className="text-2xl font-semibold px-1">Lapse</h3>
-                        <div className="mx-2">
-                            <span className="bg-green-300 py-1 px-2 text-sm rounded mx-1">new</span>
-                            <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">macos</span>
+                <Link href="/apps/lapse">
+                    <a className="bg-white p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+                        <img src="/images/pages/apps/lapse.png" className="" />
+                        <div className="flex items-center my-2">
+                            <h3 className="text-2xl font-semibold px-1">Lapse</h3>
+                            <div className="mx-2">
+                                <span className="bg-green-300 py-1 px-2 text-sm rounded mx-1">new</span>
+                                <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">macos</span>
+                            </div>
                         </div>
-                    </div>
-                    <p className="p-1">Timelapse screen recording app </p>
-                </div>
+                        <p className="p-1">Timelapse screen recording app </p>
+                    </a>
+                </Link>
                 <div className="bg-white p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
                     <img src="/images/pages/apps/mirror-2.png" />
                     <div className="flex items-center my-2">
