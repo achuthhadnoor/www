@@ -21,11 +21,23 @@ const Apps = () => {
                     <p className="p-1">Timelapse screen recording app </p>
                 </div>
                 <div className="bg-white p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+                    <img src="/images/pages/apps/silentshot.png" />
+                    <div className="flex items-center my-2">
+                        <h3 className="text-2xl font-semibold px-1">Silentshot</h3>
+                        <div className="mx-2">
+                            <span className="bg-yellow-300 py-1 px-2 text-sm rounded mx-1">coming soon</span>
+                            <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">macos</span>
+                        </div>
+                    </div>
+                    <p className="p-1">Capture screenshot to clipboard or save them to a directory in background</p>
+                </div>
+            
+                <div className="bg-white p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
                     <img src="/images/pages/apps/mirror-2.png" />
                     <div className="flex items-center my-2">
                         <h3 className="text-2xl font-semibold px-1">Mirror</h3>
                         <div className="mx-2">
-                            <span className="bg-green-300 py-1 px-2 text-sm rounded mx-1">new</span>
+                        <span className="bg-yellow-300 py-1 px-2 text-sm rounded mx-1">coming soon</span>
                             <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">macos</span>
                         </div>
                     </div>
@@ -49,9 +61,22 @@ const Apps = () => {
                         <div className="mx-2">
                             <span className="bg-yellow-300 py-1 px-2 text-sm rounded mx-1">coming soon</span>
                             <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">macos</span>
+                            <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">web</span>
                         </div>
                     </div>
                     <p className="p-1">Capture your frequently used code snippets from any app and share to any app instantly </p>
+                </div>
+                <div className="bg-white p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+                    <img src="/images/pages/apps/snippy.png" />
+                    <div className="flex items-center my-2">
+                        <h3 className="text-2xl font-semibold px-1">Snippy</h3>
+                        <div className="mx-2">
+                            <span className="bg-yellow-300 py-1 px-2 text-sm rounded mx-1">coming soon</span>
+                            <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">macos</span>
+                            <span className="bg-gray-100 py-1 px-2 text-sm rounded mx-1">web</span>
+                        </div>
+                    </div>
+                    <p className="p-1">A space for your creative work on the web</p>
                 </div>
             </div>
         </Container>
