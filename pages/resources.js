@@ -13,7 +13,10 @@ const Resources = ({ tab, tabs, resources }) => {
             description="A curated list of resources for web developers"
             image="/images/resources.png"
         >
-            <h1 className="text-4xl font-semibold">Resources</h1>
+            <h1 class="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">Resources</h1>
+            <p className="px-2 py-4">
+              Intresting and usefull Portfolios, Articles,Videos around the web.
+            </p>
             <div className="grid sm:grid-cols-3">
                 <div className="col-span-2 p-4 sm:col-span-1">
                     <h2 className="text-indigo-600 font-semibold py-4">Categories</h2>

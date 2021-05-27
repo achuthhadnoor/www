@@ -10,6 +10,9 @@ export default function Header() {
             name: "home",
             to: "/"
         }, {
+            name: "apps",
+            to: "/apps"
+        }, {
             name: "articles",
             to: "/blog"
         },{
@@ -31,10 +34,10 @@ export default function Header() {
                 <ul className="flex items-center " style={{ overflow: 'auto' }}>
                     {
                         links.map((link, i) => (
-                            <Link href={link.to} key={`name-${i}`} ><li className="my-3 mx-2  px-2 py-1 outline-none focus:ring-indigo-600  focus:text-indigo-700    hover:text-indigo-700 rounded-md text-xs   transform uppercase">{link.name}</li></Link>
+                            <Link href={link.to} key={`name-${i}`} ><li className="my-3 mx-2  px-2 py-1 outline-none focus:ring-indigo-600  focus:text-indigo-700    hover:text-indigo-700 rounded-md text-xs   transform uppercase cursor-pointer">{link.name}</li></Link>
                         ))
                     }
-                    <li href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-indigo-600 focus:ring-1    focus:text-indigo-700   hover:text-indigo-700 rounded-md text-xs focus:bg-indigo-50 transform uppercase">blog</li>
+                    <li href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-indigo-600 focus:ring-1    focus:text-indigo-700   hover:text-indigo-700 rounded-md text-xs focus:bg-indigo-50 transform uppercase cursor-pointer">blog</li>
                     {/* <button
                         aria-label="Toggle Dark Mode"
                         type="button"
