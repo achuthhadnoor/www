@@ -34,7 +34,7 @@ export default function BlogLayout({ children, frontMatter }) {
                             alt="Achuth Hadnoor"
                             height={24}
                             width={24}
-                            src="/images/achuth.png"
+                            src="/images/avatars/achuth.png"
                             className="rounded-full"
                         />
                         <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">

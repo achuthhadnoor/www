@@ -4,27 +4,20 @@
         <description><![CDATA[Achuth Hadnoor]]></description>
         <link>https://achuth.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 27 May 2021 14:31:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 May 2021 14:45:43 GMT</lastBuildDate>
         <atom:link href="https://achuth.dev/feed.xml" rel="self" type="application/rss+xml"/>
-        <item>
-            <title><![CDATA[Automate your daily workflow]]></title>
-            <description><![CDATA[Lessons and takeaways from my experience of bringing apps to uses using affiliate marketers]]></description>
-            <link>https://achuth.dev/blog/automate-tasks-daily</link>
-            <guid isPermaLink="true">https://achuth.dev/blog/automate-tasks-daily</guid>
-            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Personal branding is more influential than long list of portfolio projects]]></title>
-            <description><![CDATA[Portfolio projects help you undertand the design problems in the existing design project. but personal branding helps you create a design system]]></description>
-            <link>https://achuth.dev/blog/personal-branding-over-portfolios</link>
-            <guid isPermaLink="true">https://achuth.dev/blog/personal-branding-over-portfolios</guid>
-            <pubDate>Wed, 28 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
         <item>
             <title><![CDATA[Use Affiliate marketing for your first project]]></title>
             <description><![CDATA[One of the many ways to make money online is with affiliate marketing.]]></description>
             <link>https://achuth.dev/blog/affliate-marketing-for-first-project</link>
             <guid isPermaLink="true">https://achuth.dev/blog/affliate-marketing-for-first-project</guid>
+            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Automate your daily workflow]]></title>
+            <description><![CDATA[Lessons and takeaways from my experience of bringing apps to uses using affiliate marketers]]></description>
+            <link>https://achuth.dev/blog/automate-tasks-daily</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/automate-tasks-daily</guid>
             <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -40,6 +33,13 @@
             <link>https://achuth.dev/blog/building-in-public</link>
             <guid isPermaLink="true">https://achuth.dev/blog/building-in-public</guid>
             <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Personal branding is more influential than long list of portfolio projects]]></title>
+            <description><![CDATA[Portfolio projects help you undertand the design problems in the existing design project. but personal branding helps you create a design system]]></description>
+            <link>https://achuth.dev/blog/personal-branding-over-portfolios</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/personal-branding-over-portfolios</guid>
+            <pubDate>Wed, 28 Apr 2021 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
