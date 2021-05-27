@@ -4,27 +4,13 @@
         <description><![CDATA[Achuth Hadnoor]]></description>
         <link>https://achuth.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 27 May 2021 14:45:43 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 May 2021 14:16:49 GMT</lastBuildDate>
         <atom:link href="https://achuth.dev/feed.xml" rel="self" type="application/rss+xml"/>
-        <item>
-            <title><![CDATA[Use Affiliate marketing for your first project]]></title>
-            <description><![CDATA[One of the many ways to make money online is with affiliate marketing.]]></description>
-            <link>https://achuth.dev/blog/affliate-marketing-for-first-project</link>
-            <guid isPermaLink="true">https://achuth.dev/blog/affliate-marketing-for-first-project</guid>
-            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
         <item>
             <title><![CDATA[Automate your daily workflow]]></title>
             <description><![CDATA[Lessons and takeaways from my experience of bringing apps to uses using affiliate marketers]]></description>
             <link>https://achuth.dev/blog/automate-tasks-daily</link>
             <guid isPermaLink="true">https://achuth.dev/blog/automate-tasks-daily</guid>
-            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[How sometimes positive feedback is dangerous]]></title>
-            <description><![CDATA[Asking close friends and family for feedback is a mistake instead ask your potential users ]]></description>
-            <link>https://achuth.dev/blog/do-not-take-positive-feedback</link>
-            <guid isPermaLink="true">https://achuth.dev/blog/do-not-take-positive-feedback</guid>
             <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -40,6 +26,20 @@
             <link>https://achuth.dev/blog/personal-branding-over-portfolios</link>
             <guid isPermaLink="true">https://achuth.dev/blog/personal-branding-over-portfolios</guid>
             <pubDate>Wed, 28 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How sometimes positive feedback is dangerous]]></title>
+            <description><![CDATA[Asking close friends and family for feedback is a mistake instead ask your potential users ]]></description>
+            <link>https://achuth.dev/blog/do-not-take-positive-feedback</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/do-not-take-positive-feedback</guid>
+            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Use Affiliate marketing for your first project]]></title>
+            <description><![CDATA[One of the many ways to make money online is with affiliate marketing.]]></description>
+            <link>https://achuth.dev/blog/affliate-marketing-for-first-project</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/affliate-marketing-for-first-project</guid>
+            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

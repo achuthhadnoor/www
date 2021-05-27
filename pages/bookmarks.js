@@ -7,7 +7,7 @@ export default function Bookmarks() {
             description="A collection of items on my confused mind 😜"
             image="/images/bookmarks.png"
        >
-           <h1 class="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white"> 
+           <h1 className="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white"> 
                 Bookmarks
             </h1>
             <p className="px-2 py-4">

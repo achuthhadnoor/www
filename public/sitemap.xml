@@ -33,6 +33,10 @@
   </url>
 
   <url>
+    <loc>https://achuth.dev/apps/[slug]</loc>
+  </url>
+
+  <url>
     <loc>https://achuth.dev/blog/[slug]</loc>
   </url>
 
