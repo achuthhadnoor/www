@@ -25,7 +25,7 @@ const Resources = ({ tab, tabs, resources }) => {
                             tabs.map((t, i) => ( 
                                     <li 
                                         key={`t-${i}-${t}`}
-                                        onClick={() => setSelectedTab(t.replace(/ /g, ''))}
+                                        onClick={() =>setSelectedTab(t)}
                                         className={`${t.replace(/ /g, '') === selectedTab ? 'bg-indigo-50 text-indigo-600  sm:border-indigo-600 sm:border-r-4' : 'hover:bg-indigo-50 '} mt-2 p-2 hover:text-indigo-600 hover:bg-indigo-50 cursor-pointer  rounded-md  text-left`}>
                                         {t}
                                     </li> 
