@@ -26,7 +26,7 @@ const Resources = ({ tab, tabs, resources }) => {
                                     <li 
                                         key={`t-${i}-${t}`}
                                         onClick={() =>setSelectedTab(t)}
-                                        className={`${t.replace(/ /g, '') === selectedTab ? 'bg-indigo-50 text-indigo-600  sm:border-indigo-600 sm:border-r-4' : 'hover:bg-indigo-50 '} mt-2 p-2 hover:text-indigo-600 hover:bg-indigo-50 cursor-pointer  rounded-md  text-left`}>
+                                        className={`${t === selectedTab ? 'bg-indigo-50 text-indigo-600  sm:border-indigo-600 sm:border-r-4' : 'hover:bg-indigo-50 '} mt-2 p-2 hover:text-indigo-600 hover:bg-indigo-50 cursor-pointer  rounded-md  text-left`}>
                                         {t}
                                     </li> 
                             ))
@@ -75,6 +75,7 @@ Resources.getInitialProps = ({ query }) => {
         "Books",
         "Blog",
         "Color",
+        "Color Generator",
         "Community",
         "Design Patterns",
         "Design Systems",
