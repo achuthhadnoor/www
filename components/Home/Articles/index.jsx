@@ -7,7 +7,7 @@ const Articles = ({ list, view }) => {
         <>{view === 'grid' && (
             <div className="flex items-center mt-5">
                 <h1 className="text-xl font-semibold flex-1">Recent Articles</h1>
-                <Link href="/blog"><a className="p-1 text-gray-400 hover:text-gray-700 text-sm">Read all posts →</a></Link>
+                <Link href="/blog"><a className="p-1 text-gray-400 hover:text-gray-700 text-md">Read all posts →</a></Link>
             </div>
         )}
             <div className={`grid ${view === 'grid' ? ` mb-10 sm:grid-cols-2 ` : `w-full`} sm:mx-0`}>
@@ -32,7 +32,7 @@ const Articles = ({ list, view }) => {
                                                                 )}
                                                         </div>
                                                     </div>
-                                                    <p className={`text-gray-600 ${view === 'grid' && `text-sm`}`}>{article.summary}</p>
+                                                    <p className={`text-gray-600 ${view === 'grid' && `text-md`}`}>{article.summary}</p>
                                                 </div>
                                             </a>
                                         </Link>)
@@ -53,7 +53,7 @@ const Articles = ({ list, view }) => {
                                                         )}
                                                 </div>
                                             </div>
-                                            <p className={`text-gray-600 ${view === 'grid' && `text-sm`}`}>{article.summary}</p>
+                                            <p className={`text-gray-600 ${view === 'grid' && `text-md`}`}>{article.summary}</p>
                                         </div>
                                     </a>
                                 </Link>)

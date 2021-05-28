@@ -39,8 +39,4 @@
   <url>
     <loc>https://achuth.dev/blog/[slug]</loc>
   </url>
-
-  <url>
-    <loc>https://achuth.dev/app/lapse</loc>
-  </url>
 </urlset>
