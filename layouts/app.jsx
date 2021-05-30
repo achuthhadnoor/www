@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns';
-
 import Container from '../components/Container';
 import Subscribe from '../components/Subscribe';
 

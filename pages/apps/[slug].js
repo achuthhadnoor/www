@@ -2,11 +2,12 @@ import { getFileBySlug, getFiles } from "../../lib/mdx";
 import hydrate from 'next-mdx-remote/hydrate';
 import AppView from '@/layouts/app';
 import MDXComponents from '@/components/MDXComponents'
-
+import {LapseLogo} from '@/components/icons/apps'
 export default function Post({ mdxSource, frontMatter }) {
     const content = hydrate(mdxSource, {
         components: {
               ...MDXComponents,
+              LapseLogo
         }
     }); 
     return (
