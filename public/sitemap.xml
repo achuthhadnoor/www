@@ -37,6 +37,10 @@
   </url>
 
   <url>
+    <loc>https://achuth.dev/apps/fetcher</loc>
+  </url>
+
+  <url>
     <loc>https://achuth.dev/blog/[slug]</loc>
   </url>
 </urlset>

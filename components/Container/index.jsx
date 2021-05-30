@@ -11,7 +11,7 @@ export default function Container(props) {
   const meta = {
     title: 'Achuth Hadnoor – Developer, writer, maker.',
     description: 'Developer, JavaScript enthusiast, and product maker.',
-    image: 'https://achuth.dev/images/og-personal.png',
+    image: 'https://achuth.dev/images/blog/og-personal.png',
     type: 'website',
     ...customMeta
   };
