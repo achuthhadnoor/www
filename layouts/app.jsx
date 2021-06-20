@@ -12,7 +12,6 @@ const discussUrl = (slug) =>
     )}`;
 
 export default function AppLayout({ children, frontMatter }) {
-    console.log(frontMatter.image);
     return (
         <Container
             title={`${frontMatter.title} – Achuth Hadnoor`}
