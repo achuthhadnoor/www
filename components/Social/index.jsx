@@ -30,7 +30,7 @@ const Social = () => (
                 <defs>
                     <clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h18v18H0z"></path></clipPath>
                 </defs></svg></a
-        ><a href="mailto:achuth.hadnoor123@gmail.com" target="_blank" title="Email"
+        ><a href="mailto:hey@achuth.dev" target="_blank" title="Email"
         ><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M17 13.5c0 4.142-2.502 4-6.645 4-4.142 0-8.355.142-8.355-4S7.858 7 12 7s5 2.358 5 6.5z" fill="#DDE4FF"></path>
                 <path d="M3 3h12c.825 0 1.5.675 1.5 1.5v9c0 .825-.675 1.5-1.5 1.5H3c-.825 0-1.5-.675-1.5-1.5v-9C1.5 3.675 2.175 3 3 3z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
