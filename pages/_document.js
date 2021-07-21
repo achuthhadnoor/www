@@ -48,6 +48,7 @@ class MyDocument extends Document {
         `,
             }}
           />
+          <script async src="https://cdn.splitbee.io/sb.js"></script>
         </Head>
         <body className="antialiased font-sans bg-gray-50 border-blue-900 border-8">
           <Main />
