@@ -4,7 +4,7 @@
         <description><![CDATA[Achuth Hadnoor]]></description>
         <link>https://achuth.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 03 Jul 2021 07:46:58 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Jul 2021 15:23:15 GMT</lastBuildDate>
         <atom:link href="https://achuth.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Use Affiliate marketing for your first project]]></title>
@@ -21,17 +21,17 @@
             <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[What is Building in public?]]></title>
-            <description><![CDATA[Have you got started on an idea and want to bootrsap it? Then build in public by showcasing what you are building feature by feature.]]></description>
-            <link>https://achuth.dev/blog/building-in-public</link>
-            <guid isPermaLink="true">https://achuth.dev/blog/building-in-public</guid>
-            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[How sometimes positive feedback is dangerous]]></title>
             <description><![CDATA[Asking close friends and family for feedback is a mistake instead ask your potential users ]]></description>
             <link>https://achuth.dev/blog/do-not-take-positive-feedback</link>
             <guid isPermaLink="true">https://achuth.dev/blog/do-not-take-positive-feedback</guid>
+            <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What is Building in public?]]></title>
+            <description><![CDATA[Have you got started on an idea and want to bootrsap it? Then build in public by showcasing what you are building feature by feature.]]></description>
+            <link>https://achuth.dev/blog/building-in-public</link>
+            <guid isPermaLink="true">https://achuth.dev/blog/building-in-public</guid>
             <pubDate>Fri, 23 Apr 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
