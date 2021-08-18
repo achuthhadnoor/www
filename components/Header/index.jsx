@@ -37,7 +37,7 @@ export default function Header() {
                             <Link href={link.to} key={`name-${i}`} ><li className="my-3 mx-2  px-2 py-1 outline-none focus:ring-indigo-600  focus:text-indigo-700    hover:text-indigo-700 rounded-md text-xs   transform uppercase cursor-pointer">{link.name}</li></Link>
                         ))
                     }
-                    <li href="https://blog.achuth.dev?ref='portfolio'" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-indigo-600 focus:ring-1    focus:text-indigo-700   hover:text-indigo-700 rounded-md text-xs focus:bg-indigo-50 transform uppercase cursor-pointer">blog</li>
+                    <a href="https://blog.achuth.dev?ref=portfolio" target="_blank" className="ml-2 px-2 py-1 outline-none focus:ring-indigo-600 focus:ring-1    focus:text-indigo-700   hover:text-indigo-700 rounded-md text-xs focus:bg-indigo-50 transform uppercase cursor-pointer">blog</a>
                     {/* <button
                         aria-label="Toggle Dark Mode"
                         type="button"
