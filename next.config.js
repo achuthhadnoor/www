@@ -23,5 +23,9 @@ module.exports = withContentlayer()({
     }
 
     return config;
-  }
+  },
+  async redirects() {
+    return [
+    ]
+  },
 });
