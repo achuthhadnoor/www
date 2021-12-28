@@ -16,7 +16,7 @@ export default function Container(props) {
         ...customMeta
     };
     return (
-        <div className="bg-gray-50 dark:bg-gray-900 print:dark:bg-gray-500 ">
+        <div className="bg-gray-0 dark:bg-gray-900 print:dark:bg-gray-500 px-4 sm:px-10">
             <Head>
                 <title>{meta.title}</title>
                 <meta name="robots" content="follow, index" />
@@ -40,7 +40,7 @@ export default function Container(props) {
             <Header />
             <main
                 id="skip"
-                className="flex flex-col justify-center px-8 sm:p-0 bg-gray-50 dark:bg-gray-900 max-w-6xl mx-auto print:sm:px-4 print:sm:pt-24"
+                className="flex flex-col justify-center sm:p-0  max-w-6xl mx-auto print:sm:px-4 print:sm:pt-24"
             >
                 {children}
             </main>

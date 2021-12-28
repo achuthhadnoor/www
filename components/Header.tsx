@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import NextLink from 'next/link';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
-
+import Link from 'next/link'
 
 
 function NavItem({ href, text }) {
@@ -15,9 +15,9 @@ function NavItem({ href, text }) {
             <a
                 className={cn(
                     isActive
-                        ? 'font-semibold text-gray-800 dark:text-gray-200'
-                        : 'font-normal text-gray-600 dark:text-gray-400',
-                    'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
+                        ? 'font-semibold text-gray-800 hover:text-gray-400 dark:text-gray-100 dark:hover:text-gray-300'
+                        : 'font-normal text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200',
+                    'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all'
                 )}
             >
                 <span className="capsize">{text}</span>
@@ -58,15 +58,17 @@ export default function Header() {
         applyTheme();
     }, [mounted, resolvedTheme])
     return (
-        <div className="flex flex-col justify-center px-8  bg-gray-100 dark:bg-gray-900 print:hidden">
-            <nav className="flex items-center justify-between w-full relative max-w-6xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24.1666 23L18.1045 12.5002L30.2287 12.5002L24.1666 23Z" fill="currentColor" />
-                    <path d="M16.0002 12.5001L21.8335 23L10.167 23L16.0002 12.5001Z" fill="currentColor" />
-                    <path d="M7.83361 23L1.77153 12.5002L13.8957 12.5002L7.83361 23Z" fill="currentColor" />
-                </svg>
-
-                <div className="ml-[-0.60rem]">
+        <div className="flex flex-col justify-center print:hidden">
+            <nav className="flex items-center justify-between w-full relative max-w-6xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900  bg-opacity-60 dark:text-gray-100">
+              <Link href="/"><a className='transform scale-150 hover:scale-90 transition cursor:pointer'>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.1666 23L18.1045 12.5002L30.2287 12.5002L24.1666 23Z" fill="currentColor" />
+                        <path d="M16.0002 12.5001L21.8335 23L10.167 23L16.0002 12.5001Z" fill="currentColor" />
+                        <path d="M7.83361 23L1.77153 12.5002L13.8957 12.5002L7.83361 23Z" fill="currentColor" />
+                    </svg>
+                </a>
+                </Link>
+                <div className="ml-[-0.60rem] space-x-2 flex">
                     {/* <MobileMenu /> */}
                     <NavItem href="/" text="Home" />
                     <NavItem href="/apps" text="Apps" />

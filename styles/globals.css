@@ -2,17 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    accent-color:#2326a6;
+}
 
-::selection {
-    background-color: #47a3f3;
+*::selection {
+    /* @apply bg-blue-500 text-gray-100; */
+    background-color: #2326a6;
     color: #fefefe;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply rounded bg-blue-700;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 html {
     min-width: 360px;
     scroll-behavior: smooth;
     @apply font-mono ;
-
 }
 
 #__next {
