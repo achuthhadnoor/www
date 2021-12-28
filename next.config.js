@@ -1,7 +1,26 @@
 const { withContentlayer } = require('next-contentlayer')
 
 module.exports = withContentlayer()({
-  // Your Next.js config...
+  swcMinify: true,
+  reactStrictMode: true,
+  images: {
+    domains: [
+      'i.scdn.co', // Spotify Album Art
+      'pbs.twimg.com' // Twitter Profile Picture
+    ]
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Replace React with Preact only in client production build
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat'
+      });
+    }
+
+    return config;
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
