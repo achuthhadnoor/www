@@ -65,17 +65,17 @@ export default function Footer() {
                     </Link>
                     <Link href="/guestbook">
                         <a className="text-gray-500 hover:text-gray-600 transition">
-                            Guestbook
+                            Apps
                         </a>
                     </Link>
                     <Link href="/snippets">
                         <a className="text-gray-500 hover:text-gray-600 transition">
-                            Snippets
+                            Bookmarks
                         </a>
                     </Link>
                     <Link href="/tweets">
                         <a className="text-gray-500 hover:text-gray-600 transition">
-                            Tweets
+                            Resources
                         </a>
                     </Link>
                 </div>

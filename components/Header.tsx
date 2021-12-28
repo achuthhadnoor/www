@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 
 
-function NavItem({ href, text}) {
+function NavItem({ href, text }) {
     const router = useRouter();
     const isActive = router.asPath === href;
 
@@ -58,26 +58,20 @@ export default function Header() {
         applyTheme();
     }, [mounted, resolvedTheme])
     return (
-        <div className="flex flex-col justify-center px-8 sticky top-0 bg-gray-100 dark:bg-gray-900 print:hidden">
+        <div className="flex flex-col justify-center px-8  bg-gray-100 dark:bg-gray-900 print:hidden">
             <nav className="flex items-center justify-between w-full relative max-w-6xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clipPath="url(#clip0_3651_7446)">
-                        <path d="M18.4615 17.5386L13.6651 9.23088L23.258 9.23088L18.4615 17.5386Z" fill="currentColor" />
-                        <path d="M12.0001 9.23083L16.6155 17.5385L7.38477 17.5385L12.0001 9.23083Z" fill="currentColor" />
-                        <path d="M5.53869 17.5386L0.742237 9.23088L10.3351 9.23088L5.53869 17.5386Z" fill="currentColor" />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_3651_7446">
-                            <rect width="24" height="24" fill="white" transform="translate(24 24) rotate(180)" />
-                        </clipPath>
-                    </defs>
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.1666 23L18.1045 12.5002L30.2287 12.5002L24.1666 23Z" fill="currentColor" />
+                    <path d="M16.0002 12.5001L21.8335 23L10.167 23L16.0002 12.5001Z" fill="currentColor" />
+                    <path d="M7.83361 23L1.77153 12.5002L13.8957 12.5002L7.83361 23Z" fill="currentColor" />
                 </svg>
+
                 <div className="ml-[-0.60rem]">
                     {/* <MobileMenu /> */}
                     <NavItem href="/" text="Home" />
                     <NavItem href="/apps" text="Apps" />
                     <NavItem href="/bookmarks" text="Bookmarks" />
-                    <NavItem href="/resources" text="resources" />
+                    <NavItem href="/resources" text="Resources" />
                     <NavItem href="/setup" text="Setup" />
                 </div>
                 <button

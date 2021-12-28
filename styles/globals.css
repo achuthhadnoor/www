@@ -11,7 +11,8 @@
 html {
     min-width: 360px;
     scroll-behavior: smooth;
-    @apply font-mono
+    @apply font-mono ;
+
 }
 
 #__next {

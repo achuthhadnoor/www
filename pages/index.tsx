@@ -23,9 +23,11 @@ export default function Home() {
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">Developer {'&'} UI/UX Designer</h2>
             <p className="text-md max-w-prose leading-loose text-gray-400">
               👋 Hey, I am a
-              <a target="_blank" rel="noopener" href="https://achuth.dev/dribbble" className="p-1 ml-1 bg-yellow-50 dark:bg-yellow-600 hover:bg-yellow-100 dark:text-yellow-100 rounded text-yellow-600">designer</a>, <a target="_blank" rel="noopener" href="https://achuth.dev/github" className="p-1 ml-1 bg-yellow-50 dark:bg-yellow-600 hover:bg-yellow-100 dark:text-yellow-100 rounded text-yellow-600">developer</a>,
-              <a target="_blank" rel="noopener" href="https://achuth.dev/medium" className="p-1 ml-1 bg-yellow-50 dark:bg-yellow-600 hover:bg-yellow-100 dark:text-yellow-100 rounded text-yellow-600">writer</a>
-              and <a target="_blank" rel="noopener" href="https://achuth.dev/producthunt" className="p-1 ml-1 bg-yellow-50 dark:bg-yellow-600 hover:bg-yellow-100 dark:text-yellow-100 rounded text-yellow-600">maker</a>. I craft digital products that are used by hundreds of creators
+              <a target="_blank" rel="noopener" href="https://achuth.dev/dribbble" className="p-1 ml-1 bg-blue-50 dark:bg-gray-800 rounded text-blue-600">designer</a>, 
+              <a target="_blank" rel="noopener" href="https://achuth.dev/github" className="p-1 ml-1 bg-blue-50 dark:bg-gray-800 rounded text-blue-600">developer</a>,
+              <a target="_blank" rel="noopener" href="https://achuth.dev/medium" className="p-1 ml-1 bg-blue-50 dark:bg-gray-800 rounded text-blue-600">writer</a>
+              and <a target="_blank" rel="noopener" href="https://achuth.dev/producthunt" className="p-1 ml-1 bg-blue-50 dark:bg-gray-800 rounded text-blue-600">maker</a>. <br/>
+              I craft digital products that are used by creators.
             </p>
             <div className="mt-5 flex items-center">
               <hr className="w-16" />
@@ -42,19 +44,19 @@ export default function Home() {
         <div className="grid mb-10 sm:grid-cols-2 sm:mx-0">
           <a className="border-b-2 pb-4 sm:border-b-0 sm:pr-2" href="/blog/personal-branding-over-portfolios">
             <div className="mt-5 max-w-md text-sm">
-              <h4 className="font-semibold  hover:bg-yellow-100 text-gray-600 dark:text-gray-200 ">
+              <h4 className="font-semibold  dark:text-gray-100 hover:dark:text-blue-500 hover:text-blue-600 transition">
                 Personal branding is more influential than long list of portfolio projects
               </h4>
-              <div className="my-2 text-xs flex flex-col sm:flex-row">
+              <div className="my-2 text-xs flex flex-col">
                 <span className="text-gray-500 py-1">April 28, 2021</span>
                 <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm">
-                  <span className="uppercase p-1 mx-2 rounded-md bg-gray-200 text-gray-600 text-xs inline-block">
+                  <span className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs inline-block">
                     design
                   </span>
-                  <span className="uppercase p-1 mx-2 rounded-md bg-gray-200 text-gray-600 text-xs inline-block"> personal</span>
+                  <span className=" p-1 mx-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs inline-block"> personal</span>
                 </div>
               </div>
-              <p className="text-gray-600 text-md">Portfolio projects help you understand the design problems in the existing design project. but personal branding helps you create a design system</p>
+              <p className="text-gray-300 text-md">Portfolio projects help you understand the design problems in the existing design project. but personal branding helps you create a design system</p>
             </div>
           </a>
         </div>
