@@ -58,7 +58,7 @@ export default function Header() {
         applyTheme();
     }, [mounted, resolvedTheme])
     return (
-        <div className="flex flex-col justify-center px-8">
+        <div className="flex flex-col justify-center px-8 sticky top-0 bg-gray-100 dark:bg-gray-900 print:hidden">
             <nav className="flex items-center justify-between w-full relative max-w-6xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_3651_7446)">
@@ -72,14 +72,13 @@ export default function Header() {
                         </clipPath>
                     </defs>
                 </svg>
-
                 <div className="ml-[-0.60rem]">
                     {/* <MobileMenu /> */}
                     <NavItem href="/" text="Home" />
                     <NavItem href="/apps" text="Apps" />
-                    <NavItem href="/dashboard" text="Dashboard" />
-                    <NavItem href="/blog" text="Blog" />
-                    <NavItem href="/nfts" text="NFT's" />
+                    <NavItem href="/bookmarks" text="Bookmarks" />
+                    <NavItem href="/resources" text="resources" />
+                    <NavItem href="/setup" text="Setup" />
                 </div>
                 <button
                     aria-label="Toggle Dark Mode"

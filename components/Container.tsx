@@ -37,14 +37,14 @@ export default function Container(props) {
                     <meta property="article:published_time" content={meta.date} />
                 )}
             </Head>
-            <Header/>
+            <Header />
             <main
                 id="skip"
-                className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
+                className="flex flex-col justify-center px-8 sm:p-0 bg-gray-50 dark:bg-gray-900 max-w-6xl mx-auto"
             >
                 {children}
-                <Footer />
             </main>
+            <Footer />
         </div>
     );
 }
