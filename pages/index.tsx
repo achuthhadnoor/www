@@ -13,12 +13,12 @@ const RecentArticles = ({ posts }) => {
           </h4>
           <div className="my-2 text-xs flex flex-col">
             <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
-              <span className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs inline-block">
+              <span className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-200 text-xs inline-block">
                 design
               </span>
-              <span className=" p-1 mx-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs inline-block"> personal</span>
+              <span className=" p-1 mx-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-200 text-xs inline-block"> personal</span>
             </div>
-            <span className="text-gray-500 py-1">April 28, 2021</span>
+            <span className="text-gray-500 py-1 dark:text-gray-300">April 28, 2021</span>
           </div>
           <p className="text-gray-300 text-md">Portfolio projects help you understand the design problems in the existing design project. but personal branding helps you create a design system</p>
         </div>
@@ -52,10 +52,10 @@ export default function Home() {
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">Developer {'&'} UI/UX Designer</h2>
             <p className="text-md max-w-prose leading-loose text-gray-400 flex-wrap">
               👋 Hey, I am a
-              <a target="_blank" rel="noopener" href="https://achuth.dev/dribbble" className="p-1 ml-1 bg-blue-50 dark:bg-gray-900 rounded text-blue-600">designer</a>,
-              <a target="_blank" rel="noopener" href="https://achuth.dev/github" className="p-1 ml-1 bg-blue-50 dark:bg-gray-900 rounded text-blue-600">developer</a>,<br className='show sm:hidden' />
-              <a target="_blank" rel="noopener" href="https://achuth.dev/medium" className="p-1 ml-1 mr-2 bg-blue-50 dark:bg-gray-900 rounded text-blue-600">writer</a>and
-              <a target="_blank" rel="noopener" href="https://achuth.dev/producthunt" className="p-1 ml-1 bg-blue-50 dark:bg-gray-900 rounded text-blue-600">maker</a>. <br />
+              <a target="_blank" rel="noopener" href="https://achuth.dev/dribbble" className="p-1 ml-1 bg-blue-50 dark:bg-gray-900 rounded text-blue-400">designer</a>,
+              <a target="_blank" rel="noopener" href="https://achuth.dev/github" className="p-1 ml-1 bg-blue-50 dark:bg-gray-900 rounded text-blue4600">developer</a>,<br className='show sm:hidden' />
+              <a target="_blank" rel="noopener" href="https://achuth.dev/medium" className="p-1 ml-1 mr-2 bg-blue-50 dark:bg-gray-900 rounded text-blue-400">writer</a>and
+              <a target="_blank" rel="noopener" href="https://achuth.dev/producthunt" className="p-1 ml-1 bg-blue-50 dark:bg-gray-900 rounded text-blue-400">maker</a>. <br />
               I craft digital products that are used by creators.
             </p>
             <div className="mt-5 flex items-center">
@@ -75,10 +75,10 @@ export default function Home() {
       <section>
         <div className="flex items-center mt-5">
           <h3 className=" font-bold flex-1 text-gray-600 dark:text-gray-200 text-2xl">Apps</h3>
-          <a className="p-1 text-gray-400 hover:text-gray-700 text-sm" href="https://achuth.dev/producthunt" target="_blank">View all apps →</a>
+          <a rel="noopener" className="p-1 text-gray-400 hover:text-gray-700 text-sm" href="https://achuth.dev/producthunt" target="_blank">View all apps →</a>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 px-2'>
-          <a href="https://lapse.achuth.dev" target="_blank">
+          <a rel="noopener" href="https://lapse.achuth.dev" target="_blank">
             <div className="mt-5 mb-3 flex items-center sm-pr-2"><div>
               <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="5" y="5" width="54.9331" height="54.9331" rx="10" fill="#63E697"></rect>
@@ -96,17 +96,17 @@ export default function Home() {
             </div>
               <div className="px-2">
                 <h3 className="font-semibold inline-block rounded-md px-2 text-sm text-gray-600 dark:text-gray-200 ">lapse</h3>
-                <p className="text-sm leading-relaxed text-gray-600  px-2">An instant time-lapse screen recording app for mac and windows.</p>
+                <p className="text-sm leading-relaxed text-gray-400  px-2">An instant time-lapse screen recording app for mac and windows.</p>
               </div>
             </div>
           </a>
-          <a href="https://lapse.achuth.dev" target="_blank">
+          <a rel="noopener" href="https://lapse.achuth.dev" target="_blank">
             <div className="mt-5 mb-3 flex items-center sm-pr-2"><div>
-              <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="54.9331" height="54.9331" rx="10" fill="white"></rect><rect x="12" y="18" width="29" height="3" rx="1" fill="black"></rect><rect x="12" y="26" width="15" height="3" rx="1" fill="black"></rect><rect x="12" y="33" width="26" height="3" rx="1" fill="black"></rect></svg>
+              <svg className=' shadow-md rounded' width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="54.9331" height="54.9331" rx="10" fill="white"></rect><rect x="12" y="18" width="29" height="3" rx="1" fill="black"></rect><rect x="12" y="26" width="15" height="3" rx="1" fill="black"></rect><rect x="12" y="33" width="26" height="3" rx="1" fill="black"></rect></svg>
             </div>
               <div className="px-2">
                 <h3 className="font-semibold inline-block rounded-md px-2 text-sm text-gray-600 dark:text-gray-200 ">Today HQ</h3>
-                <p className="text-sm leading-relaxed text-gray-600  px-2">Notes app for prodductive users.</p>
+                <p className="text-sm leading-relaxed text-gray-400  px-2">Notes app for prodductive users.</p>
               </div>
             </div>
           </a>

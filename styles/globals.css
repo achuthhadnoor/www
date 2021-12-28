@@ -19,17 +19,18 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
+    @apply bg-gray-0 dark:bg-gray-900;
 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply rounded bg-blue-700;
+  @apply absolute rounded bg-blue-700;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    @apply rounded bg-blue-700;
 }
 
 html {

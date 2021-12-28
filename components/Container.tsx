@@ -9,7 +9,7 @@ export default function Container(props) {
     const { children, ...customMeta } = props;
     const router = useRouter();
     const meta = {
-        title: 'Achuth Hadnoor – Developer, writer, creator.',
+        title: 'Achuth Hadnoor – Developer, writer, maker.',
         description: `Front-end developer, JavaScript enthusiast, and maker.`,
         image: 'https://achuth.dev/static/images/banner.png',
         type: 'website',
@@ -33,6 +33,14 @@ export default function Container(props) {
                 <meta name="twitter:title" content={meta.title} />
                 <meta name="twitter:description" content={meta.description} />
                 <meta name="twitter:image" content={meta.image} />
+                <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png"/>
+                <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png"/>
+                <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png"/>
+                <link rel="icon" type="image/x-icon" href="/images/favicons/favicon.ico"/>
+                <link rel="manifest" href="/favicons/site.webmanifest"/>
+                <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+                <meta name="msapplication-TileColor" content="#ffffff"/>
+                <meta name="theme-color" content="#ffffff"></meta>
                 {meta.date && (
                     <meta property="article:published_time" content={meta.date} />
                 )}

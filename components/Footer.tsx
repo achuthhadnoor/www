@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const ExternalLink = ({ href, children }) => (
     <a
-        className="text-gray-500 hover:text-gray-600 transition"
+        className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition"
         target="_blank"
         rel="noopener noreferrer"
         href={href}
@@ -19,7 +19,7 @@ export default function Footer() {
             <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
             {/* <NowPlaying /> */}
             <Link href="/">
-                <a className='dark:text-gray-200'>
+                <a className='dark:text-gray-200' aria-label="home">
                     <svg className='my-5' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_3651_7446)">
                         <path d="M18.4615 17.5386L13.6651 9.23088L23.258 9.23088L18.4615 17.5386Z" fill="currentColor" />
@@ -37,15 +37,15 @@ export default function Footer() {
             <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
                 <div className="flex flex-col space-y-4">
                     <Link href="/">
-                        <a className="text-gray-500 hover:text-gray-600 transition ">Home</a>
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition ">Home</a>
                     </Link>
                     <Link href="/about">
-                        <a className="text-gray-500 hover:text-gray-600 transition ">
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition ">
                             About
                         </a>
                     </Link>
                     <Link href="/newsletter">
-                        <a className="text-gray-500 hover:text-gray-600 transition ">
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition ">
                             Newsletter
                         </a>
                     </Link>
@@ -61,20 +61,20 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col space-y-4">
                     <Link href="/uses">
-                        <a className="text-gray-500 hover:text-gray-600 transition">Uses</a>
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">Uses</a>
                     </Link>
                     <Link href="/guestbook">
-                        <a className="text-gray-500 hover:text-gray-600 transition">
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
                             Apps
                         </a>
                     </Link>
                     <Link href="/snippets">
-                        <a className="text-gray-500 hover:text-gray-600 transition">
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
                             Bookmarks
                         </a>
                     </Link>
                     <Link href="/tweets">
-                        <a className="text-gray-500 hover:text-gray-600 transition">
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
                             Resources
                         </a>
                     </Link>

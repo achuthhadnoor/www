@@ -15,8 +15,8 @@ export default function Newletter() {
         <div className="mx-auto my-5 p-2 sm:p-8 max-w-2xl space-y-4 border-t border-b border-gray-300 border-dashed dark:border-gray-700 bg-elevated bg-gray-100 dark:bg-gray-800 dark:text-gray-200">
         <div className="space-y-2 ">
           <p className="flex items-center font-semibold text-primary">Subscribe to my newsletter</p>
-          <p className="text-tertiary text-sm dark:text-gray-400 leading-relaxed">In this weekly newsletter I'm going to share with you what's new and cool in the world of web development, with content for everyone, from beginners to pros. There's also an interview question of the week, where you can test your skills and I'll share the results the following week. I'll also send you jokes and stories. I won't spam though, I promise.
-            <a href="https://twitter.com/achuth_hadnoor/" className="ml-1 px-2 font-normal rounded-sm p-0.5 -mx-0.5 bg-blue-500 text-primary bg-opacity-20 hover:bg-opacity-30 dark:hover:bg-opacity-100 dark:text-gray-200">follow me on Twitter</a>
+          <p className="text-tertiary text-sm dark:text-gray-300 leading-relaxed">In this weekly newsletter I'm going to share with you what's new and cool in the world of web development, with content for everyone, from beginners to pros. There's also an interview question of the week, where you can test your skills and I'll share the results the following week. I'll also send you jokes and stories. I won't spam though, I promise.
+            <a rel="noopener" href="https://twitter.com/achuth_hadnoor/" className="ml-1 px-2 font-normal rounded-sm p-0.5 -mx-0.5 bg-blue-500 text-primary bg-opacity-20 hover:bg-opacity-30 dark:hover:bg-opacity-100 dark:text-gray-200">follow me on Twitter</a>
           </p>
         </div>
         <form className="grid grid-cols-1 gap-2 mt-2 md:grid-cols-3" onSubmit={SubmitValue}>
