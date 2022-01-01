@@ -14,31 +14,35 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const RecentArticles = ({ posts }: { posts: any }) => {
   return (
     <div className="grid sm:grid-cols-2 sm:mx-0 mb-2">
-      {posts.map(({ slug, title, summary, publishedAt }: any, i: number) => (
-        <Link href={slug} key={`link-${i}`}>
-          <a className="border-b-2 dark:border-slate-500 pb-4 sm:border-b-0 sm:pr-2">
-            <div className="mt-5 max-w-md text-sm">
-              <h4 className="font-semibold  dark:text-gray-100 hover:dark:text-yellow-500 hover:text-yellow-600 transition">
-                {title}
-              </h4>
-              <div className="my-2 text-xs flex flex-col">
-                <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
-                  <span className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-200 text-xs inline-block">
-                    design
-                  </span>
-                  <span className=" p-1 mx-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-200 text-xs inline-block">
-                    personal
+      {posts.map(
+        ({ slug, title, summary, publishedAt, tags }: any, i: number) => (
+          <Link href={`/${slug}`} key={`link-${i}`}>
+            <a className="border-b-2 dark:border-slate-500 pb-4 sm:border-b-0 sm:pr-2">
+              <div className="mt-5 max-w-md text-sm">
+                <h4 className="font-semibold  dark:text-gray-100 hover:dark:text-yellow-500 hover:text-yellow-600 transition">
+                  {title}
+                </h4>
+                <div className="my-2 text-xs flex flex-col">
+                  <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
+                    {JSON.parse(tags).map((tag: string, i: number) => (
+                      <span
+                        key={`tag-key-${i}`}
+                        className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-gray-500 py-1 dark:text-gray-300">
+                    {publishedAt}
                   </span>
                 </div>
-                <span className="text-gray-500 py-1 dark:text-gray-300">
-                  {publishedAt}
-                </span>
+                <p className="text-gray-300 text-md">{summary}</p>
               </div>
-              <p className="text-gray-300 text-md">{summary}</p>
-            </div>
-          </a>
-        </Link>
-      ))}
+            </a>
+          </Link>
+        )
+      )}
     </div>
   );
 };
@@ -280,15 +284,14 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const posts = allBlogs.map((post) =>
-    pick(post, ["slug", "title", "summary", "publishedAt", "image"])
+    pick(post, ["slug", "title", "summary", "publishedAt", "image", "tags"])
   );
 
   const sortedPosts = posts.sort(
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   );
-  console.log(posts);
 
-  return { props: { posts: posts } };
+  return { props: { posts: sortedPosts } };
 };
 
 export default Home;
