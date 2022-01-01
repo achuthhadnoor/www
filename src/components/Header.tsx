@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import cn from "classnames";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import MobileMenu from "@/components/Mobilemenu";
 
 function NavItem({ href, text }: any) {
   const router = useRouter();
@@ -14,8 +15,8 @@ function NavItem({ href, text }: any) {
       <a
         className={cn(
           isActive
-            ? "font-semibold text-gray-800 hover:text-gray-400 dark:text-gray-100 dark:hover:text-gray-300"
-            : "font-normal text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200",
+            ? "font-semibold bg-gray-200 hover:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+            : "font-normal text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200",
           "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all"
         )}
       >
@@ -59,10 +60,10 @@ export default function Header() {
   }, [mounted, resolvedTheme]);
   return (
     <div className="flex flex-col justify-center print:hidden">
-      <nav className="flex items-center justify-between w-full relative max-w-6xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900  bg-opacity-60 dark:text-gray-100">
+      <nav className="flex items-center justify-between w-full  max-w-6xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900  bg-opacity-60 dark:text-gray-100">
         <Link href="/">
           <a
-            className="transform scale-150 hover:scale-90 transition cursor:pointer"
+            className="hidden sm:block transform scale-150 hover:scale-90 transition cursor:pointer"
             aria-label="home"
           >
             <svg
@@ -88,17 +89,18 @@ export default function Header() {
           </a>
         </Link>
         <div className="ml-[-0.60rem] space-x-2 flex">
-          {/* <MobileMenu /> */}
+          <MobileMenu />
           <NavItem href="/" text="Home" />
           <NavItem href="/apps" text="Apps" />
           <NavItem href="/bookmarks" text="Bookmarks" />
           <NavItem href="/resources" text="Resources" />
           <NavItem href="/setup" text="Setup" />
         </div>
+        <span className="sm:hidden flex-1"></span>
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
+          className="w-9 h-9 bg-gray-200 rounded-full dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
           onClick={() => {
             setTheme(resolvedTheme === "dark" ? "light" : "dark");
           }}
