@@ -1,6 +1,9 @@
-import Container from 'components/Container';
+import Container from "@/components/Container";
+import React, { ReactNode } from "react";
 
-export default function UsesLayout({ children }) {
+export default function UsesLayout({
+  children,
+}: React.PropsWithChildren<ReactNode>) {
   return (
     <Container
       title="Uses – Achuth Hadnoor"
@@ -11,9 +14,9 @@ export default function UsesLayout({ children }) {
           My Gear
         </h1>
         <p className="text-gray-700 dark:text-gray-300 mt-2 mb-8">
-          Here's what tech I'm currently using for coding, videos, and music.
+          {`Here's what tech I'm currently using for coding, videos, and music.
           Most of these have been accumulated over the past few years, with a
-          recent office upgrade in 2020.
+          recent office upgrade in 2020.`}
         </p>
         <div className="prose dark:prose-dark w-full">{children}</div>
       </article>

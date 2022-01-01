@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://achuth.dev
+Host: https://imadatyatalah.vercel.app
 
 # Sitemaps
-Sitemap: https://achuth.dev/sitemap.xml
+Sitemap: https://imadatyatalah.vercel.app/sitemap.xml
