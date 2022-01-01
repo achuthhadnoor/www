@@ -40,22 +40,9 @@ const Blog = defineDocumentType(() => ({
   computedFields,
 }));
 
-const Guides = defineDocumentType(() => ({
-  name: "Guides",
-  filePathPattern: "guides/*.mdx",
-  bodyType: "mdx",
-  fields: {
-    title: { type: "string", required: true },
-    publishedAt: { type: "string", required: true },
-    description: { type: "string", required: true },
-    image: { type: "string", required: false },
-  },
-  computedFields,
-}));
-
 const contentLayerConfig = makeSource({
   contentDirPath: "data",
-  documentTypes: [Blog, Guides],
+  documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm, remarkToc],
     rehypePlugins: [

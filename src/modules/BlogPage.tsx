@@ -1,6 +1,5 @@
 import React from "react";
 
-import { baseUrl } from "@/lib/constants";
 import BlogPost from "@/components/BlogPost";
 
 import type { Blog } from ".contentlayer/types";
