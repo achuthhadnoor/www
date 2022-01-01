@@ -89,7 +89,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               >
                 developer
               </a>
-              ,<br className="show sm:hidden" />
+              ,<br className="sm:show hidden" />
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -291,7 +291,7 @@ export const getStaticProps = async () => {
     (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   );
 
-  return { props: { posts: sortedPosts } };
+  return { props: { posts: sortedPosts.slice(0, 4) } };
 };
 
 export default Home;
