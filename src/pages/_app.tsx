@@ -2,10 +2,7 @@ import React from "react";
 import Router from "next/router";
 import type { AppProps } from "next/app";
 
-import { DefaultSeo } from "next-seo";
 import NProgress from "nprogress";
-
-import SEO from "next-seo.config";
 
 import "nprogress/nprogress.css";
 import "@/styles/globals.css";
@@ -20,10 +17,7 @@ NProgress.configure({ showSpinner: false });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
-      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
-    </>
   );
 };
 

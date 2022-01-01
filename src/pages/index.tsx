@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NextSeo } from "next-seo";
+import Container from '@/components/Container'
 
 const Home = () => {
   const [mounted, setMounted] = useState(false);
@@ -9,10 +9,8 @@ const Home = () => {
   if (!mounted) return null;
 
   return (
-    <>
-      <NextSeo title="Home" />
-    </>
+    <Container
+    >
+    </Container>
   );
-};
-
-export default Home;
+}; 
