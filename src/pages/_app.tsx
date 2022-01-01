@@ -21,8 +21,8 @@ NProgress.configure({ showSpinner: false });
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-        <DefaultSeo {...SEO} />
-        <Component {...pageProps} />
+      <DefaultSeo {...SEO} />
+      <Component {...pageProps} />
     </>
   );
 };
