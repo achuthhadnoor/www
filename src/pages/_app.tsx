@@ -16,9 +16,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 NProgress.configure({ showSpinner: false });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-      <Component {...pageProps} />
-  );
+  return <Component {...pageProps} />;
 };
 
 export default MyApp;

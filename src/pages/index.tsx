@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Container from '@/components/Container'
+import Container from "@/components/Container";
 
 const Home = () => {
   const [mounted, setMounted] = useState(false);
@@ -8,9 +8,5 @@ const Home = () => {
 
   if (!mounted) return null;
 
-  return (
-    <Container
-    >
-    </Container>
-  );
-}; 
+  return <Container>test data</Container>;
+};

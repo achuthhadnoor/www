@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap --config next-sitemap.js",
-    "prettier-format": "npx prettier --write .",
-    "prettier-check": "npx prettier --check .",
+    "format": "npx prettier --write .",
+    "check": "npx prettier --check .",
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "prepare": "husky install"
