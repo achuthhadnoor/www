@@ -10,7 +10,7 @@ export default function Blogpost({
 }: any) {
   return (
     <div className="mt-5 max-w-2xl text-sm">
-      <Link href={`/${slug}`}>
+      <Link href={`/blog/${slug}`}>
         <a className="border-b-2 dark:border-slate-500 pb-4 sm:border-b-0 sm:pr-2">
           <h4 className="font-semibold text-lg dark:text-gray-100 hover:dark:text-yellow-500 hover:text-yellow-600 transition">
             {title}
@@ -24,7 +24,7 @@ export default function Blogpost({
               key={`tag-key-${i}`}
               className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-yellow-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
             >
-              {tag}
+              #{tag}
             </span>
           ))}
         </div>

@@ -8,10 +8,10 @@ import type { PropsWithChildren } from "react";
 import type { Blog } from ".contentlayer/types";
 
 const editUrl = (slug: string) =>
-  `https://github.com/leerob/leerob.io/edit/main/data/blog/${slug}.mdx`;
+  `https://github.com/achuthhadnoor/www/edit/main/data/blog/${slug}.mdx`;
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://leerob.io/blog/${slug}`
+    `https://achuth.dev/blog/${slug}`
   )}`;
 
 export default function BlogLayout({
@@ -20,28 +20,40 @@ export default function BlogLayout({
 }: PropsWithChildren<{ post: Blog }>) {
   return (
     <Container
-      title={`${post.title} – Lee Robinson`}
+      title={`${post.title} – Achuth Hadnoor`}
       description={post.summary}
-      image={`https://leerob.io${post.image}`}
+      image={`https://achuth.dev${post.image}`}
       date={new Date(post.publishedAt).toISOString()}
       type="article"
     >
-      <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
+      <article className="flex flex-col items-start justify-center w-full max-w-4xl mx-auto mb-16">
+        <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
+          {post.tags &&
+            JSON.parse(post.tags).map((tag: string, i: number) => (
+              <span
+                key={`tag-key-${i}`}
+                className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-yellow-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
+              >
+                #{tag}
+              </span>
+            ))}
+        </div>
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           {post.title}
         </h1>
         <div className="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
           <div className="flex items-center">
             <Image
-              alt="Lee Robinson"
+              alt="Achuth Hadnoor"
               height={24}
               width={24}
-              src="/avatar.jpg"
-              className="rounded-full"
+              src="/images/achuth.jpg"
+              className="rounded-full "
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              {"Lee Robinson / "}
-              {format(parseISO(post.publishedAt), "MMMM dd, yyyy")}
+              {"Achuth Hadnoor / "}
+              {/* {format(parseISO(post.publishedAt), "MMMM dd, yyyy")} */}
+              {post.publishedAt}
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
