@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/lib/*": ["src/lib/*"],
+      "@/data/*": ["data/*"],
       "@/pages/*": ["src/pages/*"],
       "@/types/*": ["src/types/*"],
       "@/icons/*": ["src/icons/*"],

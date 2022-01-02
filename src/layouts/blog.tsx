@@ -52,8 +52,8 @@ export default function BlogLayout({
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
               {"Achuth Hadnoor / "}
-              {/* {format(parseISO(post.publishedAt), "MMMM dd, yyyy")} */}
-              {post.publishedAt}
+              {format(parseISO(post.publishedAt), "MMMM dd, yyyy")}
+              {/* {post.publishedAt} */}
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
