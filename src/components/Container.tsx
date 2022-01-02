@@ -69,6 +69,17 @@ export default function Container(props: { [x: string]: any; children: any }) {
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config',  'UA-177599995-1');
+        `,
+          }}
+        />
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
       <Header />
       <main

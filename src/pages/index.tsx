@@ -16,31 +16,31 @@ const RecentArticles = ({ posts }: { posts: any }) => {
     <div className="grid sm:grid-cols-2 sm:mx-0 mb-2">
       {posts.map(
         ({ slug, title, summary, publishedAt, tags }: any, i: number) => (
-          <Link href={`/${slug}`} key={`link-${i}`}>
-            <a className="border-b-2 dark:border-slate-500 pb-4 sm:border-b-0 sm:pr-2">
-              <div className="mt-5 max-w-md text-sm">
+          <div className="mt-5 max-w-md text-sm" key={`link-${i}`}>
+            <Link href={`/${slug}`}>
+              <a className="border-b-2 dark:border-slate-500 pb-4 sm:border-b-0 sm:pr-2">
                 <h4 className="font-semibold  dark:text-gray-100 hover:dark:text-yellow-500 hover:text-yellow-600 transition">
                   {title}
                 </h4>
-                <div className="my-2 text-xs flex flex-col">
-                  <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
-                    {JSON.parse(tags).map((tag: string, i: number) => (
-                      <span
-                        key={`tag-key-${i}`}
-                        className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="text-gray-500 py-1 dark:text-gray-300">
-                    {publishedAt}
+              </a>
+            </Link>
+            <div className="my-2 text-xs flex flex-col">
+              <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
+                {JSON.parse(tags).map((tag: string, i: number) => (
+                  <span
+                    key={`tag-key-${i}`}
+                    className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-yellow-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
+                  >
+                    {tag}
                   </span>
-                </div>
-                <p className="text-gray-300 text-md">{summary}</p>
+                ))}
               </div>
-            </a>
-          </Link>
+              <span className="text-gray-500 py-1 dark:text-gray-300">
+                {publishedAt}
+              </span>
+            </div>
+            <p className="text-gray-300 text-md">{summary}</p>
+          </div>
         )
       )}
     </div>
@@ -122,7 +122,7 @@ const Home: NextPage<Props> = ({ posts }) => {
             Recent Articles
           </h3>
           <Link href="/blog">
-            <a className="p-1 text-gray-400 hover:text-gray-700 text-xs">
+            <a className="p-1 text-gray-400 hover:text-gray-500 text-xs">
               Read all posts →
             </a>
           </Link>
@@ -136,7 +136,7 @@ const Home: NextPage<Props> = ({ posts }) => {
           </h3>
           <a
             rel="noreferrer"
-            className="p-1 text-gray-400 hover:text-gray-700 text-sm"
+            className="p-1 text-gray-400 hover:text-gray-500  text-sm"
             href="https://achuth.dev/producthunt"
             target="_blank"
           >
