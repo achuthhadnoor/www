@@ -13,7 +13,7 @@ const Resources = ({ tab, tabs, resources }: any) => {
       description="A curated list of resources for web developers"
       image="/images/resources.png"
     >
-      <h1 className="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <h1 className="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:dark:bg-gray-800 text-gray-50">
         Resources
       </h1>
       <p className="px-2 py-4">
@@ -21,7 +21,9 @@ const Resources = ({ tab, tabs, resources }: any) => {
       </p>
       <div className="grid sm:grid-cols-3">
         <div className="col-span-2 p-4 sm:col-span-1">
-          <h2 className="text-indigo-600 font-semibold py-4">Categories</h2>
+          <h2 className="text-indigo-600 dark:text-yellow-600 font-semibold py-4">
+            Categories
+          </h2>
           <ul className="capitalize text-sm grid grid-cols-2 sm:grid-cols-1">
             {tabs.map((t: string, i: number) => (
               <li
@@ -29,9 +31,9 @@ const Resources = ({ tab, tabs, resources }: any) => {
                 onClick={() => setSelectedTab(t)}
                 className={`${
                   t === selectedTab
-                    ? "bg-indigo-50 text-indigo-600  sm:border-indigo-600 sm:border-r-4"
-                    : "hover:bg-indigo-50 "
-                } mt-2 p-2 hover:text-indigo-600 hover:bg-indigo-50 cursor-pointer  rounded-md  text-left`}
+                    ? "bg-indigo-50 dark:bg-gray-800 text-indigo-600 dark:text-yellow-600  sm:border-indigo-600 dark:sm:border-yellow-600 sm:border-r-4"
+                    : "hover:bg-indigo-50 dark:hover:bg-gray-800 "
+                } mt-2 p-2 hover:text-indigo-600 dark:hover:text-yellow-600  cursor-pointer  rounded-md  text-left`}
               >
                 {t}
               </li>
@@ -48,14 +50,15 @@ const Resources = ({ tab, tabs, resources }: any) => {
                     href={bookmark.link}
                     target="_blank"
                     key={`resources-${i}`}
-                    className="p-4 m-2 max-w-md overflow-auto bg-white text-a"
+                    className="rounnded p-4 m-2 max-w-md overflow-auto dark:bg-gray-800 bg-gray-50 text-a"
                     title={bookmark.url}
                   >
-                    <div className="p-1">{bookmark.title}</div>
+                    <div className="p-1 mb-4 text-2xl rounded">
+                      {bookmark.title}
+                    </div>
                     <span
-                      className={`uppercase p-1 mx-2 rounded-md bg-indigo-50 text-indigo-400 text-xs inline-block`}
+                      className={`uppercase p-1 mx-2 mb-4 rounded-md dark:bg-gray-700 bg-indigo-50 dark:text-yellow-400 text-indigo-400 text-xs inline-block`}
                     >
-                      {" "}
                       {bookmark.tag}
                     </span>
                     <div className="p-1 text-sm text-gray-400">
@@ -71,14 +74,15 @@ const Resources = ({ tab, tabs, resources }: any) => {
                     href={bookmark.link}
                     target="_blank"
                     key={`resources-${i}`}
-                    className="p-4 m-2 max-w-md overflow-auto bg-white"
+                    className="rounnded p-4 m-2 max-w-md overflow-auto dark:bg-gray-800 bg-gray-50 text-a"
                     title={bookmark.url}
                   >
-                    <div className="p-1">{bookmark.title}</div>
+                    <div className="p-1 mb-4 text-2xl rounded">
+                      {bookmark.title}
+                    </div>
                     <span
-                      className={`uppercase p-1 mx-2 rounded-md bg-indigo-50 text-indigo-400 text-xs inline-block`}
+                      className={`uppercase p-1 mx-2 mb-4 rounded-md dark:bg-gray-700 bg-indigo-50 dark:text-yellow-400 text-indigo-400 text-xs inline-block`}
                     >
-                      {" "}
                       {bookmark.tag}
                     </span>
                     <div className="p-1 text-sm text-gray-400">

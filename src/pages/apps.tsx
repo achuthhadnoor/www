@@ -11,7 +11,7 @@ const Apps = () => {
       <p className="px-2 py-4">Apps that help you during the day 👻</p>
       <div className="container grid grid-cols-1 sm:grid-cols-2">
         <Link href="/apps/lapse">
-          <a className="hover:bg-white hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+          <a className="bg-gray-50 hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
             <Image
               src="/images/apps/lapse.png"
               alt="Achuth Hadnoor"
@@ -34,7 +34,7 @@ const Apps = () => {
             <p className="p-1">Timelapse screen recording app </p>
           </a>
         </Link>
-        <div className="hover:bg-white hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+        <div className="bg-gray-50 hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
           <Image
             src="/images/apps/silentshot.png"
             alt="Achuth Hadnoor"
@@ -60,7 +60,7 @@ const Apps = () => {
           </p>
         </div>
 
-        <div className="hover:bg-white hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+        <div className="bg-gray-50 hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
           <Image
             src="/images/apps/mirror-2.png"
             alt="Achuth Hadnoor"
@@ -85,7 +85,7 @@ const Apps = () => {
             your zoom calls 🤭
           </p>
         </div>
-        <div className="hover:bg-white hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+        <div className="bg-gray-50 hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
           <Image
             src="/images/apps/today.png"
             alt="Achuth Hadnoor"
@@ -109,7 +109,7 @@ const Apps = () => {
             A simple notes app on menubar to jot down your thoughts 💭
           </p>
         </div>
-        <div className="hover:bg-white hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+        <div className="bg-gray-50 hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
           <Image
             src="/images/apps/snipcode.png"
             alt="Achuth Hadnoor"
@@ -137,7 +137,7 @@ const Apps = () => {
             any app instantly{" "}
           </p>
         </div>
-        <div className="hover:bg-white hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
+        <div className="bg-gray-50 hover:dark:bg-gray-800 p-4 m-2 rounded hover:transition hover:shadow-lg hover:duration-500 ease-in-out">
           <Image
             src="/images/apps/snippy.png"
             alt="Achuth Hadnoor"
