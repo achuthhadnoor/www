@@ -56,7 +56,7 @@ export default function Footer() {
         </a>
       </Link>
       <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
-        <div className="flex flex-col space-y-4">
+        {/* <div className="flex flex-col space-y-4">
           <Link href="/">
             <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition ">
               Home
@@ -72,7 +72,7 @@ export default function Footer() {
               Newsletter
             </a>
           </Link>
-        </div>
+        </div> */}
         <div className="flex flex-col space-y-4">
           <ExternalLink href="https://twitter.com/achuth_hadnoor">
             Twitter
@@ -85,11 +85,12 @@ export default function Footer() {
                     </ExternalLink> */}
         </div>
         <div className="flex flex-col space-y-4">
-          <Link href="/uses">
+          {/* <Link href="/uses">
             <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
               Uses
             </a>
-          </Link>
+          </Link> */}
+          <ExternalLink href="https://blog.achuth.dev">Blog</ExternalLink>
           <Link href="/guestbook">
             <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
               Apps

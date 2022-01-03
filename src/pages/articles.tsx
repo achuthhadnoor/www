@@ -21,7 +21,7 @@ export default function Blog({
     >
       <div className="flex flex-col items-start justify-center max-w-6xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-          Blog
+          Articles
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400 max-w-lg">
           {`I write mostly about web development and tech careers. In total, I've written ${posts.length} articles on this site. Use the search below to filter by title.`}

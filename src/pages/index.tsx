@@ -18,7 +18,7 @@ const RecentArticles = ({ posts }: { posts: any }) => {
       {posts.map(
         ({ slug, title, summary, publishedAt, tags }: any, i: number) => (
           <div
-            className=" my-2 sm:odd:mr-2py-4 sm:border-b-0 px-2 rounded"
+            className="my-2 sm:odd:mr-2  sm:border-b-0 sm:px-2 rounded"
             key={`link-${i}`}
           >
             <div className=" border-gray-50 dark:border-gray-800 border-2 text-sm border-b-2 p-2 rounded hover:shadow-md transition">

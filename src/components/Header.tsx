@@ -6,11 +6,24 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import MobileMenu from "@/components/Mobilemenu";
 
-function NavItem({ href, text }: any) {
+function NavItem({ href, text, external = false }: any) {
   const router = useRouter();
   const isActive = router.asPath === href;
-
-  return (
+  return external ? (
+    <a
+      rel="noreferrer"
+      href={href}
+      target="_blank"
+      className={cn(
+        isActive
+          ? "font-semibold bg-gray-200 hover:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+          : "font-normal text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200",
+        "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all"
+      )}
+    >
+      <span className="capsize">{text}</span>
+    </a>
+  ) : (
     <NextLink href={href}>
       <a
         className={cn(
@@ -92,8 +105,10 @@ export default function Header() {
           <MobileMenu />
           <NavItem href="/" text="Home" />
           <NavItem href="/apps" text="Apps" />
+          <NavItem href="/articles" text="Articles" />
           <NavItem href="/bookmarks" text="Bookmarks" />
           <NavItem href="/resources" text="Resources" />
+          <NavItem href="https://blog.achuth.dev" text="Blog" external={true} />
           {/* <NavItem href="/setup" text="Setup" /> */}
         </div>
         <span className="sm:hidden flex-1"></span>
