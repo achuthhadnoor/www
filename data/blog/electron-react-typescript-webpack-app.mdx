@@ -3,7 +3,7 @@ title: 'Getting Started with Electron, Typescript, React and Webpack'
 publishedAt: '2021-04-23'
 summary: 'Create a production ready native application with using web technologies and electronjs.'
 image: '/images/blog/electron-getting-started.png'
-tags: '["development" ]'
+tags: '["development"]'
 ---
 
 > If you are a web developer and you want to build a native app that solves a daily workflow problem or if you have a web app built completely and want to give users more of your app with native capabilities . Then there is an easy way to do that with electronJs.This tutorial will help you build a web application that works as a native app.
@@ -129,14 +129,14 @@ module.exports = [
 
 Here’s a breakdown of each piece of the configuration:
 
-- `mode: develop` Development build (as opposed to production).
-- `entry: './src/electron.ts` Location of the entry point
-- `target: 'electron-main'` Specifies which environment to target; Webpack knows about the electron main process specifically.
-- `test: /\.ts$/` Specifies that this rule should match all files that end with the `.ts` extension.
-- `include: /src/` Specifies that all files within `src` should be considered for matching this rule.
-- `use: [{ loader: 'ts-loader' }]` Specifies which loader(s) to use when this rule matches.
-- `path: __dirname + '/src'` Directory where all output files will be placed.
-- `filename: 'electron.js'` Primary output bundle filename.
+- `mode: develop`Development build (as opposed to production).
+- `entry: './src/electron.ts`Location of the entry point
+- `target: 'electron-main'`Specifies which environment to target; Webpack knows about the electron main process specifically.
+- `test: /\.ts$/`Specifies that this rule should match all files that end with the`.ts`extension.
+- `include: /src/`Specifies that all files within`src`should be considered for matching this rule.
+- `use: [{ loader: 'ts-loader' }]`Specifies which loader(s) to use when this rule matches.
+- `path: __dirname + '/src'`Directory where all output files will be placed.
+- `filename: 'electron.js'`Primary output bundle filename.
 
 Update npm scripts
 

@@ -14,11 +14,11 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const RecentArticles = ({ posts }: { posts: any }) => {
   return (
-    <div className="grid sm:grid-cols-2 sm:mx-0 mb-2">
+    <div className="grid sm:grid-cols-2 sm:mx-0 mb-2 ">
       {posts.map(
         ({ slug, title, summary, publishedAt, tags }: any, i: number) => (
           <div
-            className="mt-5 dark:border-slate-800 max-w-md text-sm border-b-2 pb-4 sm:border-b-0 sm:pr-2"
+            className=" sm:odd:mr-2 border-gray-50 dark:border-gray-800 border-2 text-sm border-b-2 py-4 sm:border-b-0 px-2 rounded"
             key={`link-${i}`}
           >
             <Link href={`/blog/${slug}`}>
@@ -34,7 +34,7 @@ const RecentArticles = ({ posts }: { posts: any }) => {
                   JSON.parse(tags).map((tag: string, i: number) => (
                     <span
                       key={`tag-key-${i}`}
-                      className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-yellow-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
+                      className="cursor-pointer select-none p-1 mr-2 rounded-md bg-gray-200 dark:bg-yellow-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
                     >
                       #{tag}
                     </span>
@@ -240,7 +240,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                     width="54.9331"
                     height="54.9331"
                     rx="10"
-                    fill="white"
+                    className="fill-gray-50"
                   ></rect>
                   <rect
                     x="12"

@@ -22,7 +22,7 @@ export default function Blogpost({
           {JSON.parse(tags).map((tag: string, i: number) => (
             <span
               key={`tag-key-${i}`}
-              className=" p-1 mr-2 rounded-md bg-gray-200 dark:bg-yellow-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
+              className="cursor-pointer select-none p-1 mr-2 rounded-md bg-gray-200 dark:bg-yellow-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
             >
               #{tag}
             </span>
