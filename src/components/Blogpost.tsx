@@ -9,15 +9,15 @@ export default function Blogpost({
   tags,
 }: any) {
   return (
-    <div className="mt-5 max-w-2xl text-sm">
+    <div className="mt-5 max-w-2xl w-full  border-gray-50 dark:border-gray-800 border-2 text-sm border-b-2 p-2 rounded hover:shadow-md transition">
       <Link href={`/blog/${slug}`}>
-        <a className="border-b-2 dark:border-slate-500 pb-4 sm:border-b-0 sm:pr-2">
-          <h4 className="font-semibold text-lg dark:text-gray-100 hover:dark:text-yellow-500 hover:text-yellow-600 transition">
+        <a className="border-b-2 dark:border-slate-500 sm:border-b-0 sm:pr-2">
+          <h4 className="font-semibold text-xl dark:text-gray-100 hover:dark:text-yellow-500 hover:text-yellow-600 transition">
             {title}
           </h4>
         </a>
       </Link>
-      <div className="my-2 text-xs flex flex-col">
+      <div className="mb-2 text-xs flex flex-col">
         <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
           {JSON.parse(tags).map((tag: string, i: number) => (
             <span
