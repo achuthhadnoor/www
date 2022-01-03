@@ -94,7 +94,7 @@ export default function Header() {
           <NavItem href="/apps" text="Apps" />
           <NavItem href="/bookmarks" text="Bookmarks" />
           <NavItem href="/resources" text="Resources" />
-          <NavItem href="/setup" text="Setup" />
+          {/* <NavItem href="/setup" text="Setup" /> */}
         </div>
         <span className="sm:hidden flex-1"></span>
         <button

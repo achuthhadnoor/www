@@ -13,7 +13,7 @@ const Resources = ({ tab, tabs, resources }: any) => {
       description="A curated list of resources for web developers"
       image="/images/resources.png"
     >
-      <h1 className="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:dark:bg-gray-800 text-gray-50">
+      <h1 className="px-2 font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:dark:bg-gray-800 text-gray-50">
         Resources
       </h1>
       <p className="px-2 py-4">
