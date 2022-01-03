@@ -20,11 +20,13 @@ export default function Bookmarks() {
                 href={bookmark.url}
                 target="_blank"
                 key={`bookmark-${i}`}
-                className="p-4 m-2 max-w-md overflow-auto bg-white"
+                className="p-4 m-2 max-w-md overflow-auto bg-white dark:bg-gray-800 rounded"
                 title={bookmark.url}
               >
                 <div className="p-1">{bookmark.title}</div>
-                <div className="text-xs text-gray-400">{bookmark.url}</div>
+                <div className="text-xs text-gray-400 max-w-md overflow-hidden">
+                  {bookmark.url}
+                </div>
               </a>
             )}
           </>
