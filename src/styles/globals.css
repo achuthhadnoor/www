@@ -19,8 +19,8 @@
 }
 
 *::selection {
-  /* @apply bg-yellow-500 text-gray-100; */
-  background-color: #a66d23;
+  @apply bg-gray-900 dark:bg-gray-100 text-gray-100 dark:text-gray-900;
+  /* background-color: #a66d23; */
   color: #fefefe;
 }
 
@@ -39,14 +39,16 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply absolute rounded bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500;
+  @apply absolute rounded bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-blue-500 dark:via-green-300 dark:to-green-500;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   @apply rounded bg-yellow-700;
 }
-
+::-webkit-search-cancel-button {
+  @apply bg-orange-400;
+}
 html {
   min-width: 360px;
   scroll-behavior: smooth;

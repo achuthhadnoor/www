@@ -104,6 +104,7 @@ export default function Header() {
         <div className="ml-[-0.60rem] space-x-2 flex">
           <MobileMenu />
           <NavItem href="/" text="Home" />
+          <NavItem href="/about" text="About" />
           <NavItem href="/apps" text="Apps" />
           <NavItem href="/articles" text="Articles" />
           <NavItem href="/bookmarks" text="Bookmarks" />

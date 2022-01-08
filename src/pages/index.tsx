@@ -99,7 +99,7 @@ const Articles = ({ posts }: any) => {
       <h3 className="mt-5 flex-1 text-gray-600 dark:text-gray-200 text-3xl heading leading-loose">
         ARTICLES
       </h3>
-      <div className="grid sm:grid-cols-3 sm:mx-0 mb-2  sm:space-x-2">
+      <div className="grid sm:grid-cols-3 sm:mx-0 mb-2 gap-4">
         {posts.map(
           (
             { slug, title, summary, publishedAt, tags, image }: any,
@@ -122,10 +122,7 @@ const Articles = ({ posts }: any) => {
                     />
                   </a>
                 </Link>
-                <div className="text-xs flex flex-col py-1 ">
-                  <div className="py-2 text-gray-500 dark:text-gray-300 text-xs">
-                    {format(parseISO(publishedAt), "MMMM dd, yyyy")}
-                  </div>
+                <div className="text-xs flex py-2 mt-4 text-gray-500 dark:text-gray-300">
                   <div className="flex flex-1 flex-wrap">
                     {tags &&
                       JSON.parse(tags).map((tag: string, i: number) => (
@@ -137,10 +134,11 @@ const Articles = ({ posts }: any) => {
                         </span>
                       ))}
                   </div>
+                  {format(parseISO(publishedAt), "MMMM dd, yyyy")}
                 </div>
                 <Link href={`/blog/${slug}`}>
-                  <a className="flex  ">
-                    <h4 className=" py-2 font-semibold text-sm  dark:text-gray-500 hover:dark:text-purple-400 hover:text-red-300 transition ">
+                  <a className="flex text-center ">
+                    <h4 className="flex-1 py-2 font-semibold text-sm  dark:text-gray-500 hover:dark:text-purple-400 hover:text-red-300 transition ">
                       {title}
                     </h4>
                   </a>
@@ -164,7 +162,7 @@ const NewsLetter = () => {
       <h3 className="mt-5 flex-1 text-gray-600 dark:text-gray-200 text-3xl heading leading-loose">
         THE NEWSLETTER
       </h3>
-      <p className="text-sm max-w-lg leading-loose mb-4">
+      <p className="text-sm max-w-lg leading-loose mb-4 text-gray-700 dark:text-gray-400">
         {` 1,000+ peeps subscribe to my newsletter. You’ll receive 1 issue per month. Topics include design, solopreneurship, and personal development.`}
       </p>
       <div className="flex flex-col sm:flex-row gap-2 ">
@@ -209,7 +207,7 @@ const Resources = () => {
           </p>
           <div className="my-4">
             <button className="mt-2 sm:mt-0 px-4 py-2 text-gray-50 rounded-full bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500">
-              Subscribe ⚡️
+              Request Now 👉
             </button>
           </div>
         </div>
