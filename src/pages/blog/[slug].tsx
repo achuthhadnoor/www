@@ -5,8 +5,9 @@ import BlogLayout from "@/layouts/blog";
 // import Tweet from '@/components/Tweet';
 import { allBlogs } from ".contentlayer/data";
 import type { Blog } from ".contentlayer/types";
+import { pick } from "contentlayer/client";
 
-export default function Post({ post }: { post: Blog }) {
+export default function Post({ post, posts }: { post: Blog; posts: Blog[] }) {
   const Component = useMDXComponent(post.body.code);
   //   const StaticTweet = ({ id }:any) => {
   //     const tweet = tweets.find((tweet) => tweet.id === id);
@@ -14,7 +15,7 @@ export default function Post({ post }: { post: Blog }) {
   //   };
 
   return (
-    <BlogLayout post={post}>
+    <BlogLayout post={post} posts={posts}>
       <Component
         components={
           {
@@ -37,6 +38,25 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: any) {
   const post = allBlogs.find((post) => post.slug === params.slug);
   //   const tweets = await getTweets(post.tweetIds);
+  const posts = allBlogs
+    .filter(
+      (postItem) =>
+        postItem._id !== post?._id &&
+        pick(postItem, [
+          "slug",
+          "title",
+          "summary",
+          "publishedAt",
+          "tags",
+          "image",
+          "readingTime",
+          "_id",
+        ])
+    )
+    .sort(
+      (a, b) =>
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    );
 
-  return { props: { post } };
+  return { props: { post, posts: posts.slice(0, 3) } };
 }
