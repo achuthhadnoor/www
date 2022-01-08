@@ -17,7 +17,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
     ...customMeta,
   };
   return (
-    <div className="bg-gray-0 dark:bg-gray-900 print:dark:bg-gray-500 px-4 sm:px-10">
+    <div className="bg-gray-0 dark:bg-gray-900 print:dark:bg-gray-500">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -84,7 +84,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
       <Header />
       <main
         id="skip"
-        className="flex flex-col justify-center sm:p-0  max-w-6xl mx-auto print:sm:px-4 print:sm:pt-24"
+        className="flex flex-col justify-center px-4  max-w-6xl mx-auto print:sm:px-4 print:sm:pt-24 mt-10 sm:mt-20"
       >
         {children}
       </main>
