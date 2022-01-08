@@ -24,7 +24,7 @@ export default function Newletter() {
           <a
             rel="noopener"
             href="https://twitter.com/achuth_hadnoor/"
-            className="ml-1 px-2 font-normal rounded-sm p-0.5 -mx-0.5 bg-blue-500 text-primary  dark:text-gray-200"
+            className="ml-1 px-2 font-normal rounded-sm p-0.5 -mx-0.5 bg-blue-500 text-white  dark:text-gray-200"
           >
             follow me on Twitter
           </a>
