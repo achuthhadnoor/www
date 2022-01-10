@@ -103,7 +103,7 @@ export default function MobileMenu() {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: "200ms" }}
           >
-            <Link href="/resources">
+            <Link href="/collection">
               <a className="flex w-auto pb-2">Resources</a>
             </Link>
           </li>
@@ -141,7 +141,7 @@ export default function MobileMenu() {
               },
               {
                 text: "Collection",
-                href: "/resources",
+                href: "/collection",
               },
               {
                 text: "Newsletter",

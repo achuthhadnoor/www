@@ -50,7 +50,7 @@ const MoreMenu = ({ text, items }: any) => (
   >
     <span>{text}</span>
     <Icon icon={chevronDown} />
-    <div className="pt-4 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
+    <div className="pt-4 px-1 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
       {items.map((item: any) => (
         <div key={`item-${item.name}`}>
           <NavItem {...item} />
@@ -126,7 +126,7 @@ export default function Header() {
           <MobileMenu />
           <NavItem href="/about" text="About" />
           <NavItem href="/blog" text="Blog" />
-          <NavItem href="/resources" text="Resources" />
+          <NavItem href="/collection" text="Resources" />
           <NavItem href="/faq" text="FAQ" />
           <MoreMenu
             items={[
@@ -153,7 +153,7 @@ export default function Header() {
               },
               {
                 text: "Collection",
-                href: "/resources",
+                href: "/collection",
               },
               {
                 text: "Newsletter",
