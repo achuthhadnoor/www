@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useState, useEffect } from "react";
 import NextLink from "next/link";
 import cn from "classnames";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import MobileMenu from "@/components/Mobilemenu";
+import Icon from "react-icons-kit";
+import { chevronDown } from "react-icons-kit/feather";
 
 function NavItem({ href, text, external = false }: any) {
   const router = useRouter();
@@ -38,6 +40,24 @@ function NavItem({ href, text, external = false }: any) {
     </NextLink>
   );
 }
+
+const MoreMenu = ({ text, items }: any) => (
+  <div
+    className={`header-menu cursor-pointer
+        relative font-normal text-gray-400 hover:text-red-500 dark:text-gray-400 dark:hover:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all
+        hover:font-semibold hover:bg-red-50 hover:dark:bg-gray-800  hover:dark:hover:bg-gray-700 flex-nowrap
+      `}
+  >
+    {text} <Icon icon={chevronDown} />
+    <div className="header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-900 shadow rounded">
+      {items.map((item: any) => (
+        <Fragment key={`item-${item.name}`}>
+          <NavItem {...item} />
+        </Fragment>
+      ))}
+    </div>
+  </div>
+);
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
@@ -107,9 +127,49 @@ export default function Header() {
           <NavItem href="/about" text="About" />
           <NavItem href="/apps" text="Apps" />
           <NavItem href="/articles" text="Articles" />
-          <NavItem href="/bookmarks" text="Bookmarks" />
-          <NavItem href="/resources" text="Resources" />
-          <NavItem href="https://blog.achuth.dev" text="Blog" external={true} />
+          <MoreMenu
+            items={[
+              {
+                text: "Design",
+                href: "/design",
+              },
+              {
+                text: "Development",
+                href: "/development",
+              },
+              {
+                text: "No-code Tools",
+                href: "/nocode",
+              },
+            ]}
+            text="Work"
+          />
+          <MoreMenu
+            items={[
+              {
+                text: "Bookmarks",
+                href: "/bookmarks",
+              },
+              {
+                text: "Collection",
+                href: "/resources",
+              },
+              {
+                text: "Newsletter",
+                href: "/newsletter",
+              },
+              {
+                text: "FAQ",
+                href: "/faq",
+              },
+              {
+                text: "Contact Me",
+                href: "/contact",
+              },
+            ]}
+            text="More"
+          />
+          {/* <NavItem href="https://blog.achuth.dev" text="Blog" external={true} /> */}
           {/* <NavItem href="/setup" text="Setup" /> */}
         </div>
         <span className="sm:hidden flex-1"></span>
