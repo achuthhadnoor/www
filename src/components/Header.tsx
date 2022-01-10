@@ -45,15 +45,16 @@ const MoreMenu = ({ text, items }: any) => (
   <div
     className={`header-menu cursor-pointer
         relative font-normal text-gray-400 hover:text-red-500 dark:text-gray-400 dark:hover:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all
-        hover:font-semibold hover:bg-red-50 hover:dark:bg-gray-800  hover:dark:hover:bg-gray-700 flex-nowrap
+      hover:bg-red-50 hover:dark:bg-gray-800  hover:dark:hover:bg-gray-700 flex-nowrap
       `}
   >
-    {text} <Icon icon={chevronDown} />
-    <div className="header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-900 shadow rounded">
+    <span>{text}</span>
+    <Icon icon={chevronDown} />
+    <div className="pt-4 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
       {items.map((item: any) => (
-        <Fragment key={`item-${item.name}`}>
+        <div key={`item-${item.name}`}>
           <NavItem {...item} />
-        </Fragment>
+        </div>
       ))}
     </div>
   </div>
@@ -123,10 +124,10 @@ export default function Header() {
         </Link>
         <div className="ml-[-0.60rem] space-x-2 flex">
           <MobileMenu />
-          <NavItem href="/" text="Home" />
           <NavItem href="/about" text="About" />
-          <NavItem href="/apps" text="Apps" />
-          <NavItem href="/articles" text="Articles" />
+          <NavItem href="/blog" text="Blog" />
+          <NavItem href="/resources" text="Resources" />
+          <NavItem href="/faq" text="FAQ" />
           <MoreMenu
             items={[
               {
@@ -138,7 +139,7 @@ export default function Header() {
                 href: "/development",
               },
               {
-                text: "No-code Tools",
+                text: "No-code",
                 href: "/nocode",
               },
             ]}
@@ -159,11 +160,7 @@ export default function Header() {
                 href: "/newsletter",
               },
               {
-                text: "FAQ",
-                href: "/faq",
-              },
-              {
-                text: "Contact Me",
+                text: "Contact",
                 href: "/contact",
               },
             ]}
@@ -172,7 +169,35 @@ export default function Header() {
           {/* <NavItem href="https://blog.achuth.dev" text="Blog" external={true} /> */}
           {/* <NavItem href="/setup" text="Setup" /> */}
         </div>
-        <span className="sm:hidden flex-1"></span>
+        <span className="flex flex-1 sm:hidden align-middle  justify-center">
+          <Link href="/">
+            <a
+              className="sm:hidden flex transition cursor:pointer"
+              aria-label="home"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24.1666 23L18.1045 12.5002L30.2287 12.5002L24.1666 23Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16.0002 12.5001L21.8335 23L10.167 23L16.0002 12.5001Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M7.83361 23L1.77153 12.5002L13.8957 12.5002L7.83361 23Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </Link>
+        </span>
         <button
           aria-label="Toggle Dark Mode"
           type="button"
