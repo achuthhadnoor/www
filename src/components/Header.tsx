@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useState, useEffect } from "react";
 import NextLink from "next/link";
 import cn from "classnames";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import MobileMenu from "@/components/Mobilemenu";
+import Icon from "react-icons-kit";
+import { chevronDown } from "react-icons-kit/feather";
 
 function NavItem({ href, text, external = false }: any) {
   const router = useRouter();
@@ -38,6 +40,25 @@ function NavItem({ href, text, external = false }: any) {
     </NextLink>
   );
 }
+
+const MoreMenu = ({ text, items }: any) => (
+  <div
+    className={`header-menu cursor-pointer
+        relative font-normal text-gray-400 hover:text-red-500 dark:text-gray-400 dark:hover:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all
+      hover:bg-red-50 hover:dark:bg-gray-800  hover:dark:hover:bg-gray-700 flex-nowrap
+      `}
+  >
+    <span>{text}</span>
+    <Icon icon={chevronDown} />
+    <div className="pt-4 px-1 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
+      {items.map((item: any) => (
+        <div key={`item-${item.name}`}>
+          <NavItem {...item} />
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
@@ -103,16 +124,80 @@ export default function Header() {
         </Link>
         <div className="ml-[-0.60rem] space-x-2 flex">
           <MobileMenu />
-          <NavItem href="/" text="Home" />
           <NavItem href="/about" text="About" />
-          <NavItem href="/apps" text="Apps" />
-          <NavItem href="/articles" text="Articles" />
-          <NavItem href="/bookmarks" text="Bookmarks" />
-          <NavItem href="/resources" text="Resources" />
-          <NavItem href="https://blog.achuth.dev" text="Blog" external={true} />
+          <NavItem href="/blog" text="Blog" />
+          <NavItem href="/collection" text="Resources" />
+          <NavItem href="/faq" text="FAQ" />
+          <MoreMenu
+            items={[
+              {
+                text: "Design",
+                href: "/design",
+              },
+              {
+                text: "Development",
+                href: "/development",
+              },
+              {
+                text: "No-code",
+                href: "/nocode",
+              },
+            ]}
+            text="Work"
+          />
+          <MoreMenu
+            items={[
+              {
+                text: "Bookmarks",
+                href: "/bookmarks",
+              },
+              {
+                text: "Collection",
+                href: "/collection",
+              },
+              {
+                text: "Newsletter",
+                href: "/newsletter",
+              },
+              {
+                text: "Contact",
+                href: "/contact",
+              },
+            ]}
+            text="More"
+          />
+          {/* <NavItem href="https://blog.achuth.dev" text="Blog" external={true} /> */}
           {/* <NavItem href="/setup" text="Setup" /> */}
         </div>
-        <span className="sm:hidden flex-1"></span>
+        <span className="flex flex-1 sm:hidden align-middle  justify-center">
+          <Link href="/">
+            <a
+              className="sm:hidden flex transition cursor:pointer"
+              aria-label="home"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24.1666 23L18.1045 12.5002L30.2287 12.5002L24.1666 23Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16.0002 12.5001L21.8335 23L10.167 23L16.0002 12.5001Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M7.83361 23L1.77153 12.5002L13.8957 12.5002L7.83361 23Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </Link>
+        </span>
         <button
           aria-label="Toggle Dark Mode"
           type="button"

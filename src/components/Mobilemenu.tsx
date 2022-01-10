@@ -1,8 +1,42 @@
 import cn from "classnames";
 import Link from "next/link";
 import useDelayedRender from "use-delayed-render";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import styles from "@/styles/mobile-menu.module.css";
+import Icon from "react-icons-kit";
+import { chevronDown } from "react-icons-kit/feather";
+
+const MoreMenu = ({ text, items }: any) => {
+  return (
+    <>
+      <li
+        className=" dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+        style={{ transitionDelay: "275ms" }}
+      >
+        <span className="flex w-auto pb-2 text-gray-400 dark:text-gray-300">
+          {text}
+        </span>
+      </li>
+      <>
+        {items.map((item: { text: string; href: string }) => {
+          return (
+            <Fragment key={`text-${item.text}`}>
+              <li
+                className="pl-4 border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+                style={{ transitionDelay: "275ms" }}
+              >
+                {" "}
+                <Link href="/resources">
+                  <a className="flex w-auto pb-2">{item.text}</a>
+                </Link>
+              </li>
+            </Fragment>
+          );
+        })}
+      </>
+    </>
+  );
+};
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,7 +79,7 @@ export default function MobileMenu() {
         <ul
           className={cn(
             styles.menu,
-            "flex flex-col absolute top-14  bg-gray-100 dark:bg-gray-900",
+            "flex flex-col absolute top-14  bg-gray-100 dark:bg-gray-900 overflow-x-hidden",
             isMenuRendered && styles.menuRendered
           )}
         >
@@ -53,62 +87,79 @@ export default function MobileMenu() {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: "150ms" }}
           >
-            <Link href="/">
-              <a className="flex w-auto pb-4">Home</a>
+            <Link href="/about">
+              <a className="flex w-auto pb-2">About</a>
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: "175ms" }}
           >
-            <Link href="/apps">
-              <a className="flex w-auto pb-4">Apps</a>
+            <Link href="/blog">
+              <a className="flex w-auto pb-2">Blog</a>
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: "200ms" }}
           >
-            <Link href="/articles">
-              <a className="flex w-auto pb-4">Articles</a>
-            </Link>
-          </li>
-
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: "275ms" }}
-          >
-            <Link href="/bookmarks">
-              <a className="flex w-auto pb-4">Bookmarks</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: "300ms" }}
-          >
-            <Link href="/resources">
-              <a className="flex w-auto pb-4">Resources</a>
+            <Link href="/collection">
+              <a className="flex w-auto pb-2">Resources</a>
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: "250ms" }}
           >
-            <a
-              href="https://achuth.dev"
-              rel="noreferrer"
-              target="_blank"
-              className="flex w-auto pb-4"
-            >
-              Blog
-            </a>
+            <Link href="/faq">
+              <a className="flex w-auto pb-2">FAQ</a>
+            </Link>
           </li>
+
+          <MoreMenu
+            items={[
+              {
+                text: "Design",
+                href: "/design",
+              },
+              {
+                text: "Development",
+                href: "/development",
+              },
+              {
+                text: "No-code",
+                href: "/nocode",
+              },
+            ]}
+            text="Work"
+          />
+          <MoreMenu
+            items={[
+              {
+                text: "Bookmarks",
+                href: "/bookmarks",
+              },
+              {
+                text: "Collection",
+                href: "/collection",
+              },
+              {
+                text: "Newsletter",
+                href: "/newsletter",
+              },
+              {
+                text: "Contact",
+                href: "/contact",
+              },
+            ]}
+            text="More"
+          />
           {/* <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: "350ms" }}
           >
             <Link href="/uses">
-              <a className="flex w-auto pb-4">Uses</a>
+              <a className="flex w-auto pb-2">Uses</a>
             </Link>
           </li> */}
         </ul>

@@ -66,6 +66,12 @@ html {
     @apply bg-opacity-100;
   }
 }
+.header-more-menu {
+  @apply hidden;
+}
+.header-menu:hover .header-more-menu {
+  @apply flex;
+}
 
 .heading {
   font-family: "Reenie Beanie", cursive;

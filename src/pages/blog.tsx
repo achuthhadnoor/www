@@ -19,11 +19,11 @@ export default function Blog({
       title="Blog – Achuth Hadnoor"
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
-      <h1 className="flex-1 my-4 font-semibold text-6xl text-center bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-blue-500 dark:via-green-300 dark:to-green-500 bg-clip-text text-transparent">
+      <h1 className="flex-1 my-2 sm:my-4 font-semibold text-2xl sm:text-6xl text-center bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-blue-500 dark:via-green-300 dark:to-green-500 bg-clip-text text-transparent">
         Learn. Unlearn. Relearn
       </h1>
-      <p className="my-6 text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-center">
-        {`I write mostly about web development and tech careers. In total, I've written ${posts.length} articles on this site. Use the search below to filter by title.`}
+      <p className="my-4 sm:my-6 text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-center">
+        {`I write mostly about web development and tech careers. In total, I've written ${posts.length} articles on this site.`}
       </p>
       <div className="relative w-full max-w-lg mb-2 mx-auto">
         <input
