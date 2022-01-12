@@ -54,7 +54,7 @@ const MoreMenu = ({ text, items }: any) => (
     </span>
     <div className="py-4 px-1 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
       {items.map((item: any) => (
-        <div key={`item-${item.name}`}>
+        <div key={`item-${item.text}`}>
           <NavItem {...item} />
         </div>
       ))}
