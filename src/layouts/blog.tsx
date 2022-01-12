@@ -41,14 +41,6 @@ export default function BlogLayout({
                 </span>
               ))}
           </div>
-          <Image
-            src={post.image || ""}
-            height={176}
-            width={176}
-            layout="responsive"
-            className="w-full"
-            alt={post.title}
-          />
           <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
             {post.title}
           </h1>
@@ -62,7 +54,7 @@ export default function BlogLayout({
                 className="rounded-full "
               />
               <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                {"Achuth Hadnoor / "}
+                {"Achuth Hadnoor •"}
                 {format(parseISO(post.publishedAt), "MMMM dd, yyyy")}
                 {/* {post.publishedAt} */}
               </p>
@@ -70,10 +62,11 @@ export default function BlogLayout({
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
               {post.readingTime.text}
               {` • `}
+              12,000 views
               {/* <ViewCounter slug={post.slug} /> */}
             </p>
           </div>
-          <div className="w-full mt-4 prose dark:prose-dark max-w-none">
+          <div className="w-full mt-4 prose dark:prose-dark max-w-none text-sm leading-relaxed">
             {children}
           </div>
           <div className="mt-8">
@@ -97,7 +90,7 @@ export default function BlogLayout({
             </a>
           </div>
         </article>
-        <div className="hidden sm:flex flex-col sm:px-2 sticky top-48">
+        <div className="hidden sm:flex flex-col sm:px-2 sticky top-48  transition-all">
           <h3 className="font-semibold text-xl px-2">Articles</h3>
           <div className="border-l-2 border-l-gray-900 dark:border-l-gray-50 px-2 mt-5 pb-2">
             <div className="flex flex-1 text-xs">
@@ -112,26 +105,24 @@ export default function BlogLayout({
           {posts.map((postItem) => (
             <Fragment key={`blog-${postItem._id}`}>
               <Link href={`/blog/${postItem.slug}`}>
-                <a>
-                  <div className="border-l border-l-gray-300 px-2 py-3">
-                    <div className="flex flex-1 pb-2">
-                      <span className="text-xs">
-                        {format(
-                          parseISO(postItem.publishedAt),
-                          "MMMM dd, yyyy"
-                        )}
-                      </span>
-                      <span className="flex-1" />
-                      <span className="text-xs">
-                        {postItem.readingTime.text}
-                      </span>
-                    </div>
-                    <div className="text-sm">{postItem.title}</div>
+                <a className="border-l px-2 py-3 bg-gradient-to-l hover:from-orange-50 dark:hover:from-indigo-900">
+                  <div className="flex flex-1 pb-2 border-l-gray-600 dark:text-gray-500">
+                    <span className="text-xs">
+                      {format(parseISO(postItem.publishedAt), "MMMM dd, yyyy")}
+                    </span>
+                    <span className="flex-1" />
+                    <span className="text-xs">{postItem.readingTime.text}</span>
+                  </div>
+                  <div className="text-sm  border-l-gray-300 dark:text-gray-400">
+                    {postItem.title}
                   </div>
                 </a>
               </Link>
             </Fragment>
           ))}
+          <Link href="/blog">
+            <a className="text-xs font-semibold mt-2 py-4">View More →</a>
+          </Link>
         </div>
       </div>
     </Container>

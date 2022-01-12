@@ -1,0 +1,162 @@
+---
+title: 'Production ready electron app setup with ReactJS'
+publishedAt: '2021-04-28'
+summary: 'If you are a designer and is looking for a perfect language to use for mobile app development then flutter is a saviour.'
+image: '/images/blog/personal-branding.png'
+tags: '["development","MacOS"]'
+---
+
+## Introduction
+
+
+Hey guys ,
+
+I have been playing around with electron to make a menubar app that is used to save single line code snippets .
+I wanted to ship the electron app faster and i was learning reactJS.So, i decided to use (Create React App ) CRA to build the app that runs on both browser and as an electron app this helped me to build a smooth web and native experience.
+Turns out that process is hard to set up .So i decided to simplify and share the experience to help anyone to easily setup.
+
+
+**Initial steps**
+
+
+```bash:Install
+  yarn add electron-is-dev
+```
+
+
+Create a file in public/electron.js so we can access the same file after build
+
+you might notice this file here _preload.js_
+
+
+```json:package.json
+  webPreferences: { 
+    nodeIntegration: false,  
+    preload: __dirname + ‘/preload.js’
+  }
+```
+
+
+this file actually helps you to attach electron to window object to access native modules like below…
+
+
+```js:public/electron.js
+window.remote = require("electron").remote
+```
+
+
+Now since its clear how to access native modules ..
+
+Let’s make some changes in package.json file
+
+1)first add the path of main to electronjs
+
+
+```json:package.json
+  "main":"public/electron.js"
+```
+
+
+2)Add scripts as below
+
+
+```json:package.json
+  "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
+```
+
+
+now when you type
+
+
+``` bash
+  yarn electron-dev
+```
+
+
+you will see the app runs in electron shell
+
+😱isn’t that insane!!!
+
+## **Now let’s do the actual shit 🤪(Build to production)**
+
+In package.json
+
+
+```json:package.json
+"build": { 
+   "appId": "com.example.exampleapp",
+    "compression": "normal",
+    "productName": "Example",
+    "directories": {
+      "buildResources": "build", 
+     "output": "dist"    }, 
+    "mac": {  
+     "icon": "assets/macos/logo.icns", 
+     "type": "distribution",
+      "target": [ 
+            "pkg",    
+            "dmg",     
+            "mas"    
+      ],      
+    "publish": {
+        "provider":"github",  
+        "token": "${GITHUB_TOKEN}"
+      }  
+ },  
+  "mas": {  
+    "entitlements": "assets/entitlements.mas.plist",              
+    "entitlementsInherit": "assets/entitlements.mas.inherit.plist",      
+    "provisioningProfile": "assets/embedded.provisionprofile"    
+},    
+"win": {
+      "target": "nsis",   
+   "icon": "assets/windows/logo.ico",
+     "publish": {      
+  "provider": "github"  
+    } 
+   },   
+ "linux": { 
+     "icon": "assets/logo.png",
+      "target": [   
+     "snap",     
+   "AppImage"   
+   ],     
+ "description": "Example", 
+     "category": "Network;Feed",   
+   "publish": {  
+      "provider": "github" 
+     }  
+  } 
+ },
+```
+
+
+add below files to _scripts_ in _package.json_
+
+
+```json:package.json
+  "react-build": "react-scripts build",
+  "release": "yarn react-build && electron-builder --publish=always",    
+  "build": "yarn react-build && yarn electron-build",
+```
+
+
+And add homepage url
+
+
+```json:package.json
+  "homepage":"./"   
+```
+
+
+After running _yarn build_ you will get the electron app in the dist folder
+how ever you can only build native versions on particular OS .
+Like
+.exe on windows and
+.dmg and .app on macos
+
+You can know more on build for multiple OS on [electron.build](https://www.electron.build/multi-platform-build.html).
+
+Thank you ,
+
+[Achuth Hadnoor](https://twitter.com/achuth_hadnoor)

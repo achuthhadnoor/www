@@ -18,8 +18,8 @@ function NavItem({ href, text, external = false }: any) {
       target="_blank"
       className={cn(
         isActive
-          ? "font-semibold bg-red-200 hover:text-red-400 dark:bg-red-800 dark:hover:bg-red-700"
-          : "font-normal text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200",
+          ? " bg-red-200 hover:text-red-400 dark:bg-red-800 dark:hover:bg-red-700"
+          : "  hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200",
         "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all"
       )}
     >
@@ -30,9 +30,9 @@ function NavItem({ href, text, external = false }: any) {
       <a
         className={cn(
           isActive
-            ? "font-semibold bg-red-50 text-red-600 dark:text-gray-300 dark:bg-gray-800  dark:hover:bg-gray-700"
-            : "font-normal text-gray-400 hover:text-red-500 dark:text-gray-400 dark:hover:text-gray-200",
-          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all"
+            ? "dark:bg-gray-800 bg-gray-200"
+            : "hover:bg-gray-200 hover:dark:bg-gray-800",
+          " hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all"
         )}
       >
         <span className="capsize">{text}</span>
@@ -44,15 +44,17 @@ function NavItem({ href, text, external = false }: any) {
 const MoreMenu = ({ text, items }: any) => (
   <div
     className={`header-menu cursor-pointer
-        relative font-normal text-gray-400 hover:text-red-500 dark:text-gray-400 dark:hover:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all
-      hover:bg-red-50 hover:dark:bg-gray-800  hover:dark:hover:bg-gray-700 flex-nowrap
+        relative hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all
+      hover:bg-gray-200 hover:dark:bg-gray-800 flex-nowrap
       `}
   >
-    <span>{text}</span>
-    <Icon icon={chevronDown} />
-    <div className="pt-4 px-1 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
+    <span className=" dark:hover:text-gray-200 ">
+      {text}
+      <Icon icon={chevronDown} />
+    </span>
+    <div className="py-4 px-1 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
       {items.map((item: any) => (
-        <div key={`item-${item.name}`}>
+        <div key={`item-${item.text}`}>
           <NavItem {...item} />
         </div>
       ))}
@@ -93,11 +95,11 @@ export default function Header() {
     initialTheme();
   }, [mounted, resolvedTheme]);
   return (
-    <div className="text-xs sticky top-0 flex flex-col justify-center print:hidden backdrop-blur-md bg-white/70 dark:bg-black/80 shadow-sm dark:border-b-2 dark:border-gray-800 z-10">
+    <div className="text-xs sticky top-0 flex flex-col justify-center print:hidden backdrop-blur-md bg-white/50 dark:bg-black/60 shadow-sm dark:border-b-2 dark:border-gray-800 z-10">
       <nav className="flex items-center justify-between w-full max-w-6xl border-gray-200 dark:border-gray-700 mx-auto py-2 px-4 text-gray-900  bg-opacity-60 dark:text-gray-100">
         <Link href="/">
           <a
-            className="hidden sm:block transform scale-150 hover:scale-90 transition cursor:pointer"
+            className="hidden sm:block transform scale-125 cursor:pointer"
             aria-label="home"
           >
             <svg

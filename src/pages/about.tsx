@@ -27,6 +27,7 @@ const Home = () => {
             Currently, he works at DBS. he is known for his{" "}
             <b>applications, beautiful designs and the drive to hustle</b>.
             <br />
+            <br />
             Achuth’s proudest achievement is his applications hit{" "}
             <b>#1 twice on producthunt</b>. During the pendamic he created a{" "}
             <b>time-lapse screen recording app</b> that helps{" "}
@@ -34,12 +35,15 @@ const Home = () => {
             <b>digital work</b> and share them on platforms like youtube{" "}
             <b>20X faster</b>.
             <br />
+            <br />
             Achuth believes in becoming 1% better every day. His bucket list is
             to build an indie product and impact 1B people by making{" "}
             <b>tools for creators accessible to everyone in the world</b>.
             <br />
+            <br />
             When Achuth is not working, he makes pencil art, write poems and
             travel photography.
+            <br />
             <br />
             You can find Achuth on{" "}
             <a href="https://achuth.dev/instagram" aria-label="@uiuxdx">
