@@ -99,14 +99,14 @@ const Articles = ({ posts }: any) => {
       <h3 className="mt-5 flex-1 text-gray-600 dark:text-gray-200 text-3xl heading leading-loose">
         ARTICLES
       </h3>
-      <div className="grid sm:grid-cols-3 sm:mx-0 mb-2 gap-4">
+      <div className="grid sm:grid-cols-3 sm:mx-0 mb-2 gap-4 ">
         {posts.map(
           (
             { slug, title, summary, publishedAt, tags, image }: any,
             i: number
           ) => (
             <div
-              className="my-2 sm:odd:mr-2  sm:border-b-0  border-b border-b-gray-200 dark:border-b-gray-800"
+              className="my-2 sm:odd:mr-2  sm:border-b-0  border-b border-b-gray-200 dark:border-b-gray-800 "
               key={`link-${i}`}
             >
               <div className="text-sm ">
@@ -122,7 +122,14 @@ const Articles = ({ posts }: any) => {
                     />
                   </a>
                 </Link>
-                <div className="text-xs flex py-2 mt-4 text-gray-500 dark:text-gray-300">
+                <Link href={`/blog/${slug}`}>
+                  <a className="flex ">
+                    <h4 className="flex-1 mt-2 py-2 font-semibold text-sm  dark:text-gray-500 hover:dark:text-purple-400 hover:text-red-300 transition ">
+                      {title}
+                    </h4>
+                  </a>
+                </Link>
+                <div className="text-xs flex py-2 text-gray-500 dark:text-gray-300">
                   <div className="flex flex-1 flex-wrap">
                     {tags &&
                       JSON.parse(tags).map((tag: string, i: number) => (
@@ -136,13 +143,6 @@ const Articles = ({ posts }: any) => {
                   </div>
                   {format(parseISO(publishedAt), "MMMM dd, yyyy")}
                 </div>
-                <Link href={`/blog/${slug}`}>
-                  <a className="flex text-center ">
-                    <h4 className="flex-1 py-2 font-semibold text-sm  dark:text-gray-500 hover:dark:text-purple-400 hover:text-red-300 transition ">
-                      {title}
-                    </h4>
-                  </a>
-                </Link>
                 {/* <p className="text-gray-300 text-md">{summary}</p> */}
               </div>
             </div>
