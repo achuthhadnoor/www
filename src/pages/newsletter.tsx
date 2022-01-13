@@ -21,7 +21,7 @@ export default function Newsletter() {
       </div>
       <Subscribe />
       <h3 className="text-xl py-2">{`What's inside?`}</h3>
-      {`Every issue, I'll share:`}
+      <p className="text-sm">{`Every issue, I'll share:`}</p>
       <ul className="list-disc text-xs pl-10 pt-2 mb-10 gap-2 flex- flex-col">
         <li>1 UI/UX design tip</li>
         <li>1 productivity tip to help you do more in less time</li>
@@ -29,14 +29,12 @@ export default function Newsletter() {
         <li>Learnings on design, solopreneurship, self-development</li>
       </ul>
       <h3 className="text-xl py-2">{`Past Issues`}</h3>
-      {`Wish to read the issues before you subscribe then 👇 here are few`}
+      <p className="text-sm">{`Wish to read the issues before you subscribe then 👇 here are few`}</p>
       <div className="flex flex-col my-4 gap-2 mb-10">
         <div className="font-semibold text-sm">
-          {" "}
-          Issue 1 --- Wealthy NFT loosers!{" "}
+          Issue 1 --- Wealthy NFT loosers!
         </div>
         <div className="font-semibold text-sm">
-          {" "}
           Issue 2 --- Investing in javascript for web 3.0!{" "}
         </div>
       </div>

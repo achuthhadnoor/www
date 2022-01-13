@@ -107,16 +107,16 @@ export default function MobileMenu() {
               <a className="flex w-auto pb-2">Resources</a>
             </Link>
           </li>
-          <li
+          {/* <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: "250ms" }}
           >
             <Link href="/faq">
               <a className="flex w-auto pb-2">FAQ</a>
             </Link>
-          </li>
+          </li> */}
 
-          <MoreMenu
+          {/* <MoreMenu
             items={[
               {
                 text: "Design",
@@ -132,7 +132,7 @@ export default function MobileMenu() {
               },
             ]}
             text="Work"
-          />
+          /> */}
           <MoreMenu
             items={[
               {

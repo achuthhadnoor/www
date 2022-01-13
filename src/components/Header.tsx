@@ -129,8 +129,8 @@ export default function Header() {
           <NavItem href="/about" text="About" />
           <NavItem href="/blog" text="Blog" />
           <NavItem href="/collection" text="Resources" />
-          <NavItem href="/faq" text="FAQ" />
-          <MoreMenu
+          {/* <NavItem href="/faq" text="FAQ" /> */}
+          {/* <MoreMenu
             items={[
               {
                 text: "Design",
@@ -146,7 +146,7 @@ export default function Header() {
               },
             ]}
             text="Work"
-          />
+          /> */}
           <MoreMenu
             items={[
               {
