@@ -34,7 +34,7 @@
     "use-delayed-render": "^0.0.7"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.38",
