@@ -85,7 +85,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
       <Header />
       <main
         id="skip"
-        className="flex flex-col justify-center px-4  max-w-6xl mx-auto print:sm:px-4 print:sm:pt-24 mt-10 sm:mt-20"
+        className="mx-auto mt-10 flex max-w-6xl  flex-col justify-center px-4 sm:mt-20 print:sm:px-4 print:sm:pt-24"
       >
         {children}
       </main>

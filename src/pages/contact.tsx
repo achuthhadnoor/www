@@ -5,11 +5,11 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   return (
     <Container title="Contact me | Achuth Hadnoor ">
-      <div className="shadow-lg py-10 px-4 rounded-2xl mb-10">
-        <h1 className="flex-1 my-2 sm:my-4 font-semibold text-xl sm:text-4xl sm:text-center bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-blue-500 dark:via-green-300 dark:to-green-500 bg-clip-text text-transparent">
+      <div className="mb-10 rounded-2xl py-10 px-4 shadow-lg">
+        <h1 className="my-2 flex-1 bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text text-xl font-semibold text-transparent  dark:from-blue-500 dark:via-green-300 dark:to-green-500 sm:my-4 sm:text-center sm:text-4xl">
           {`Let's Start an awesome project!`}
         </h1>
-        <p className="my-4 sm:my-6 text-gray-500 dark:text-gray-400 max-w-xl mx-auto  text-sm leading-relaxed">
+        <p className="my-4 mx-auto max-w-xl text-sm leading-relaxed text-gray-500  dark:text-gray-400 sm:my-6">
           Full transparency: The minimum project engagement is USD{" "}
           <b>$60/hour</b>—So I perform my best work while making a comfortable
           living out of doing what I love.
@@ -18,15 +18,15 @@ export default function Contact() {
           Time (IST).
         </p>
         {!submitted && (
-          <form className="max-w-xl mx-auto  flex flex-col">
-            <label className="text-xs px-1 " htmlFor="name">
+          <form className="mx-auto flex  max-w-xl flex-col">
+            <label className="px-1 text-xs " htmlFor="name">
               My Name is:
             </label>
             <input
               type={"text"}
               name="name"
               placeholder="Your name"
-              className="text-xs py-4 mb-4 px-1 border-b-2 dark:border-b-gray-400 w-full max-w-md outline-none bg-transparent"
+              className="mb-4 w-full max-w-md border-b-2 bg-transparent py-4 px-1 text-xs outline-none dark:border-b-gray-400"
             />
             <label className="text-xs " htmlFor="company">
               I work at:
@@ -35,7 +35,7 @@ export default function Contact() {
               type={"text"}
               name="company"
               placeholder="Company"
-              className="text-xs py-4 mb-5 px-1 border-b-2 dark:border-b-gray-400 w-full max-w-md outline-none bg-transparent"
+              className="mb-5 w-full max-w-md border-b-2 bg-transparent py-4 px-1 text-xs outline-none dark:border-b-gray-400"
             />
             <label className="text-xs " htmlFor="email">
               My Email is:
@@ -44,16 +44,16 @@ export default function Contact() {
               type={"text"}
               name="email"
               placeholder="Your e-mail"
-              className="text-xs py-4 mb-5 px-1 border-b-2 dark:border-b-gray-400 w-full max-w-md outline-none bg-transparent"
+              className="mb-5 w-full max-w-md border-b-2 bg-transparent py-4 px-1 text-xs outline-none dark:border-b-gray-400"
             />
             <label className="text-sm text-gray-800 dark:text-gray-400">
               I am looking for a partner to help me with
             </label>
-            <div className="py-4  flex flex-wrap gap-2">
-              <div className="flex align-middle  border dark:border-gray-700 p-2 rounded-full">
+            <div className="flex  flex-wrap gap-2 py-4">
+              <div className="flex rounded-full  border p-2 align-middle dark:border-gray-700">
                 <input
                   type="checkbox"
-                  className="mt-1 mx-2"
+                  className="mx-2 mt-1"
                   name="development"
                 />
                 <label
@@ -63,8 +63,8 @@ export default function Contact() {
                   Develoment
                 </label>
               </div>
-              <div className="flex align-middle border dark:border-gray-700 p-2 rounded-full">
-                <input type="checkbox" className="mt-1 mx-2" name="design" />
+              <div className="flex rounded-full border p-2 align-middle dark:border-gray-700">
+                <input type="checkbox" className="mx-2 mt-1" name="design" />
                 <label
                   htmlFor="design"
                   className="text-xs text-gray-800 dark:text-gray-400"
@@ -72,8 +72,8 @@ export default function Contact() {
                   UI/UX Design
                 </label>
               </div>
-              <div className="flex align-middle border dark:border-gray-700 p-2 rounded-full">
-                <input type="checkbox" className="mt-1 mx-2" name="design" />
+              <div className="flex rounded-full border p-2 align-middle dark:border-gray-700">
+                <input type="checkbox" className="mx-2 mt-1" name="design" />
                 <label
                   htmlFor="design"
                   className="text-xs text-gray-800 dark:text-gray-400"
@@ -81,8 +81,8 @@ export default function Contact() {
                   Consultation
                 </label>
               </div>
-              <div className="flex align-middle border dark:border-gray-700 p-2 rounded-full">
-                <input type="checkbox" className="mt-1 mx-2" name="design" />
+              <div className="flex rounded-full border p-2 align-middle dark:border-gray-700">
+                <input type="checkbox" className="mx-2 mt-1" name="design" />
                 <label
                   htmlFor="design"
                   className="text-xs text-gray-800 dark:text-gray-400"
@@ -94,61 +94,61 @@ export default function Contact() {
             <label className="text-sm text-gray-800 dark:text-gray-400">
               My Budget range is
             </label>
-            <div className="py-4 flex flex-wrap gap-2">
-              <span className="flex align-middle  border dark:border-gray-700 p-2 rounded-full">
+            <div className="flex flex-wrap gap-2 py-4">
+              <span className="flex rounded-full  border p-2 align-middle dark:border-gray-700">
                 <input
                   type="checkbox"
-                  className="mt-1 mx-2"
+                  className="mx-2 mt-1"
                   name="development"
                 />
                 <label
                   htmlFor="development"
-                  className="text-xs text-gray-800 dark:text-gray-400 p-1"
+                  className="p-1 text-xs text-gray-800 dark:text-gray-400"
                 >
                   USD $2,000 - $5,000
                 </label>
               </span>
-              <span className="flex align-middle border dark:border-gray-700 p-2 rounded-full">
-                <input type="checkbox" className="mt-1 mx-2" name="design" />
+              <span className="flex rounded-full border p-2 align-middle dark:border-gray-700">
+                <input type="checkbox" className="mx-2 mt-1" name="design" />
                 <label
                   htmlFor="design"
-                  className="text-xs text-gray-800 dark:text-gray-400 p-1"
+                  className="p-1 text-xs text-gray-800 dark:text-gray-400"
                 >
                   USD $5,000 - $10,000
                 </label>
               </span>
-              <span className="flex align-middle border dark:border-gray-700 p-2 rounded-full">
-                <input type="checkbox" className="mt-1 mx-2" name="design" />
+              <span className="flex rounded-full border p-2 align-middle dark:border-gray-700">
+                <input type="checkbox" className="mx-2 mt-1" name="design" />
                 <label
                   htmlFor="design"
-                  className="text-xs text-gray-800 dark:text-gray-400 p-1"
+                  className="p-1 text-xs text-gray-800 dark:text-gray-400"
                 >
                   USD $10,000 and up
                 </label>
               </span>
-              <span className="flex align-middle border dark:border-gray-700 p-2 rounded-full">
-                <input type="checkbox" className="mt-1 mx-2" name="design" />
+              <span className="flex rounded-full border p-2 align-middle dark:border-gray-700">
+                <input type="checkbox" className="mx-2 mt-1" name="design" />
                 <label
                   htmlFor="design"
-                  className="text-xs text-gray-800 dark:text-gray-400 p-1"
+                  className="p-1 text-xs text-gray-800 dark:text-gray-400"
                 >
                   Other
                 </label>
               </span>
             </div>
-            <label className="text-xs mt-4" htmlFor="details">
+            <label className="mt-4 text-xs" htmlFor="details">
               More details about the project( brief, summary,deadline etc..)
             </label>
             <input
               type={"text"}
               name="details"
               placeholder="More details"
-              className="text-xs py-4 mb-5 px-1 border-b-2 dark:border-b-gray-400 w-full max-w-md outline-none bg-transparent"
+              className="mb-5 w-full max-w-md border-b-2 bg-transparent py-4 px-1 text-xs outline-none dark:border-b-gray-400"
             />
             <div>
               <button
                 type="submit"
-                className="bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500 rounded-full py-2 px-4 text-gray-50"
+                className="rounded-full bg-gradient-to-r  from-yellow-400 to-pink-500 py-2 px-4 text-gray-50 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500"
               >
                 Submit
               </button>

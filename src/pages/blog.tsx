@@ -19,22 +19,22 @@ export default function Blog({
       title="Blog – Achuth Hadnoor"
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
-      <h1 className="flex-1 my-2 sm:my-4 font-semibold text-2xl sm:text-6xl text-center bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-blue-500 dark:via-green-300 dark:to-green-500 bg-clip-text text-transparent">
+      <h1 className="my-2 flex-1 bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text text-center text-2xl font-semibold  text-transparent dark:from-blue-500 dark:via-green-300 dark:to-green-500 sm:my-4 sm:text-6xl">
         Learn. Unlearn. Relearn
       </h1>
-      <p className="my-4 sm:my-6 text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-center">
+      <p className="my-4 mx-auto max-w-xl text-center text-gray-600 dark:text-gray-400 sm:my-6">
         {`I write mostly about web development and tech careers. In total, I've written ${posts.length} articles on this site.`}
       </p>
-      <div className="relative w-full max-w-lg mb-2 mx-auto">
+      <div className="relative mx-auto mb-2 w-full max-w-lg">
         <input
           aria-label="Search articles"
           type="search"
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search articles"
-          className="outline-none block w-full px-4 py-2 pr-10 accent-orange-300 text-gray-900 bg-white border border-gray-200 rounded-full dark:border-gray-900 focus:ring-orange-500 focus:border-orange-500 dark:focus:ring-purple-800 dark:focus:border-purple-800 dark:bg-gray-800 dark:text-gray-100"
+          className="block w-full rounded-full border border-gray-200 bg-white px-4 py-2 pr-10 text-gray-900 accent-orange-300 outline-none focus:border-orange-500 focus:ring-orange-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100 dark:focus:border-purple-800 dark:focus:ring-purple-800"
         />
         <svg
-          className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+          className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -48,15 +48,15 @@ export default function Blog({
           />
         </svg>
       </div>
-      <div className="relative w-full max-w-lg mb-4 mx-auto text-xs text-center text-gray-400">
+      <div className="relative mx-auto mb-4 w-full max-w-lg text-center text-xs text-gray-400">
         Search by hashtags or keywords
       </div>
       {!filteredBlogPosts.length && (
-        <p className="mb-4 text-gray-600 dark:text-gray-400 text-center w-full">
+        <p className="mb-4 w-full text-center text-gray-600 dark:text-gray-400">
           No posts found.
         </p>
       )}
-      <div className="grid gap-4 grid-col-1 sm:grid-cols-2 items-start justify-center mx-auto mb-16 w-full">
+      <div className="grid-col-1 mx-auto mb-16 grid w-full items-start justify-center gap-4 sm:grid-cols-2">
         {/* {!searchValue && (
           <>
             <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">

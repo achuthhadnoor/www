@@ -4,7 +4,7 @@ import Link, { LinkProps } from "next/link";
 
 const ExternalLink = ({ href, children }: any) => (
   <a
-    className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition"
+    className="text-gray-500 transition hover:text-gray-600 dark:text-gray-400"
     target="_blank"
     rel="noopener noreferrer"
     href={href}
@@ -15,8 +15,8 @@ const ExternalLink = ({ href, children }: any) => (
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-start max-w-6xl mx-auto w-full mb-8 align-middle px-4 sm:p-0 print:hidden">
-      <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+    <footer className="mx-auto mb-8 flex w-full max-w-6xl flex-col items-start justify-center px-4 align-middle print:hidden sm:p-0">
+      <hr className="border-1 w-full border-gray-200 dark:border-gray-800" />
       {/* <NowPlaying /> */}
       <Link href="/">
         <a className="dark:text-gray-200" aria-label="home">
@@ -55,7 +55,7 @@ export default function Footer() {
           </svg>
         </a>
       </Link>
-      <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
+      <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         {/* <div className="flex flex-col space-y-4">
           <Link href="/">
             <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition ">
@@ -92,17 +92,17 @@ export default function Footer() {
           </Link> */}
           <ExternalLink href="https://blog.achuth.dev">Blog</ExternalLink>
           <Link href="/guestbook">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600 dark:text-gray-400">
               Apps
             </a>
           </Link>
           <Link href="/snippets">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600 dark:text-gray-400">
               Bookmarks
             </a>
           </Link>
           <Link href="/tweets">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600 dark:text-gray-400">
               Resources
             </a>
           </Link>

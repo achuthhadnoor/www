@@ -20,7 +20,7 @@ function NavItem({ href, text, external = false }: any) {
         isActive
           ? " bg-red-200 hover:text-red-400 dark:bg-red-800 dark:hover:bg-red-700"
           : "  hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200",
-        "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all"
+        "hidden rounded-lg p-1 transition-all sm:px-3 sm:py-2 md:inline-block"
       )}
     >
       <span className="capsize">{text}</span>
@@ -30,9 +30,9 @@ function NavItem({ href, text, external = false }: any) {
       <a
         className={cn(
           isActive
-            ? "dark:bg-gray-800 bg-gray-200"
+            ? "bg-gray-200 dark:bg-gray-800"
             : "hover:bg-gray-200 hover:dark:bg-gray-800",
-          " hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all"
+          " hidden rounded-lg p-1 transition-all sm:px-3 sm:py-2 md:inline-block"
         )}
       >
         <span className="capsize">{text}</span>
@@ -43,16 +43,16 @@ function NavItem({ href, text, external = false }: any) {
 
 const MoreMenu = ({ text, items }: any) => (
   <div
-    className={`header-menu cursor-pointer
-        relative hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg transition-all
-      hover:bg-gray-200 hover:dark:bg-gray-800 flex-nowrap
+    className={`header-menu relative
+        hidden cursor-pointer flex-nowrap rounded-lg p-1 transition-all hover:bg-gray-200 hover:dark:bg-gray-800
+      sm:px-3 sm:py-2 md:inline-block
       `}
   >
     <span className=" dark:hover:text-gray-200 ">
       {text}
       <Icon icon={chevronDown} />
     </span>
-    <div className="py-4 px-1 header-more-menu absolute flex flex-col left-0 mt-2 bg-white dark:bg-gray-800 shadow rounded">
+    <div className="header-more-menu absolute left-0 mt-2 flex flex-col rounded bg-white py-4 px-1 shadow dark:bg-gray-800">
       {items.map((item: any) => (
         <div key={`item-${item.text}`}>
           <NavItem {...item} />
@@ -95,11 +95,11 @@ export default function Header() {
     initialTheme();
   }, [mounted, resolvedTheme]);
   return (
-    <div className="text-xs sticky top-0 flex flex-col justify-center print:hidden backdrop-blur-md bg-white/50 dark:bg-black/60 shadow-sm dark:border-b-2 dark:border-gray-800 z-10">
-      <nav className="flex items-center justify-between w-full max-w-6xl border-gray-200 dark:border-gray-700 mx-auto py-2 px-4 text-gray-900  bg-opacity-60 dark:text-gray-100">
+    <div className="sticky top-0 z-10 flex flex-col justify-center bg-white/50 text-xs shadow-sm backdrop-blur-md dark:border-b-2 dark:border-gray-800 dark:bg-black/60 print:hidden">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between border-gray-200 bg-opacity-60 py-2 px-4 text-gray-900  dark:border-gray-700 dark:text-gray-100">
         <Link href="/">
           <a
-            className="hidden sm:block transform scale-125 cursor:pointer"
+            className="cursor:pointer hidden scale-125 transform sm:block"
             aria-label="home"
           >
             <svg
@@ -124,7 +124,7 @@ export default function Header() {
             </svg>
           </a>
         </Link>
-        <div className="ml-[-0.60rem] space-x-2 flex">
+        <div className="ml-[-0.60rem] flex space-x-2">
           <MobileMenu />
           <NavItem href="/about" text="About" />
           <NavItem href="/blog" text="Blog" />
@@ -171,10 +171,10 @@ export default function Header() {
           {/* <NavItem href="https://blog.achuth.dev" text="Blog" external={true} /> */}
           {/* <NavItem href="/setup" text="Setup" /> */}
         </div>
-        <span className="flex flex-1 sm:hidden align-middle  justify-center">
+        <span className="flex flex-1 justify-center align-middle  sm:hidden">
           <Link href="/">
             <a
-              className="sm:hidden flex transition cursor:pointer"
+              className="cursor:pointer flex transition sm:hidden"
               aria-label="home"
             >
               <svg
@@ -203,7 +203,7 @@ export default function Header() {
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="w-9 h-9 bg-gray-200 rounded-full dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 ring-gray-300  transition-all hover:ring-2  dark:bg-gray-600"
           onClick={() => {
             setTheme(resolvedTheme === "dark" ? "light" : "dark");
           }}
@@ -214,7 +214,7 @@ export default function Header() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              className="w-5 h-5 text-gray-800 dark:text-gray-200"
+              className="h-5 w-5 text-gray-800 dark:text-gray-200"
               onClick={() => {
                 setTheme(resolvedTheme === "light" ? "dark" : "light");
               }}

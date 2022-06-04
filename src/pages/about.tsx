@@ -8,8 +8,8 @@ const Home = () => {
       title="About – Achuth Hadnoor"
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
-      <div className="flex flex-col sm:flex-row gap-6 mb-20">
-        <div className="align-middle sm:justify-center h-[400] w-[400]">
+      <div className="mb-20 flex flex-col gap-6 sm:flex-row">
+        <div className="h-[400] w-[400] align-middle sm:justify-center">
           <Image
             src="/images/achuth.jpg"
             alt="Achuth Hadnoor"
@@ -19,10 +19,10 @@ const Home = () => {
           />
         </div>
         <div>
-          <h1 className="my-4 font-semibold text-2xl bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-blue-500 dark:via-green-300 dark:to-green-500 bg-clip-text text-transparent">
+          <h1 className="my-4 bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text  text-2xl font-semibold text-transparent dark:from-blue-500 dark:via-green-300 dark:to-green-500">
             Hi! You can call me Achuth.
           </h1>
-          <p className="text-sm leading-loose max-w-lg">
+          <p className="max-w-lg text-sm leading-loose">
             Achuth Hadnoor is a self-taught Designer, Developer, Maker.
             Currently, he works at DBS. he is known for his{" "}
             <b>applications, beautiful designs and the drive to hustle</b>.

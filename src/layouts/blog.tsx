@@ -28,23 +28,23 @@ export default function BlogLayout({
       date={new Date(post.publishedAt).toISOString()}
       type="article"
     >
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
-        <article className="col-span-2 flex flex-col items-start justify-center flex-1 mb-16 flex-wrap w-fill max-w-full">
-          <div className="flex space-x-2 flex-1 flex-wrap items-center text-sm pb-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <article className="w-fill col-span-2 mb-16 flex max-w-full flex-1 flex-col flex-wrap items-start justify-center">
+          <div className="flex flex-1 flex-wrap items-center space-x-2 pb-2 text-sm">
             {post.tags &&
               JSON.parse(post.tags).map((tag: string, i: number) => (
                 <span
                   key={`tag-key-${i}`}
-                  className=" p-1 mr-2 rounded-md  text-white text-xs inline-block bg-gradient-to-r from-yellow-400  to-pink-500 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500"
+                  className=" mr-2 inline-block rounded-md  bg-gradient-to-r from-yellow-400 to-pink-500 p-1 text-xs  text-white dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500"
                 >
                   #{tag}
                 </span>
               ))}
           </div>
-          <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
             {post.title}
           </h1>
-          <div className="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
+          <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
             <div className="flex items-center">
               <Image
                 alt="Achuth Hadnoor"
@@ -59,14 +59,14 @@ export default function BlogLayout({
                 {/* {post.publishedAt} */}
               </p>
             </div>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
+            <p className="min-w-32 mt-2 text-sm text-gray-600 dark:text-gray-400 md:mt-0">
               {post.readingTime.text}
               {` • `}
               12,000 views
               {/* <ViewCounter slug={post.slug} /> */}
             </p>
           </div>
-          <div className="w-full mt-4 prose dark:prose-dark max-w-none text-sm leading-relaxed">
+          <div className="prose mt-4 w-full max-w-none text-sm leading-relaxed dark:prose-dark">
             {children}
           </div>
           <div className="mt-8">
@@ -90,9 +90,9 @@ export default function BlogLayout({
             </a>
           </div>
         </article>
-        <div className="hidden sm:flex flex-col sm:px-2 sticky top-48  transition-all">
-          <h3 className="font-semibold text-xl px-2">Articles</h3>
-          <div className="border-l-2 border-l-gray-900 dark:border-l-gray-50 px-2 mt-5 pb-2">
+        <div className="sticky top-48 hidden flex-col transition-all sm:flex  sm:px-2">
+          <h3 className="px-2 text-xl font-semibold">Articles</h3>
+          <div className="mt-5 border-l-2 border-l-gray-900 px-2 pb-2 dark:border-l-gray-50">
             <div className="flex flex-1 text-xs">
               <span className="text-xs">
                 {format(parseISO(post.publishedAt), "MMMM dd, yyyy")}
@@ -105,15 +105,15 @@ export default function BlogLayout({
           {posts.map((postItem) => (
             <Fragment key={`blog-${postItem._id}`}>
               <Link href={`/blog/${postItem.slug}`}>
-                <a className="border-l px-2 py-3 bg-gradient-to-l hover:from-orange-50 dark:hover:from-indigo-900">
-                  <div className="flex flex-1 pb-2 border-l-gray-600 dark:text-gray-500">
+                <a className="border-l bg-gradient-to-l px-2 py-3 hover:from-orange-50 dark:hover:from-indigo-900">
+                  <div className="flex flex-1 border-l-gray-600 pb-2 dark:text-gray-500">
                     <span className="text-xs">
                       {format(parseISO(postItem.publishedAt), "MMMM dd, yyyy")}
                     </span>
                     <span className="flex-1" />
                     <span className="text-xs">{postItem.readingTime.text}</span>
                   </div>
-                  <div className="text-sm  border-l-gray-300 dark:text-gray-400">
+                  <div className="border-l-gray-300  text-sm dark:text-gray-400">
                     {postItem.title}
                   </div>
                 </a>
@@ -121,7 +121,7 @@ export default function BlogLayout({
             </Fragment>
           ))}
           <Link href="/blog">
-            <a className="text-xs font-semibold mt-2 py-4">View More →</a>
+            <a className="mt-2 py-4 text-xs font-semibold">View More →</a>
           </Link>
         </div>
       </div>

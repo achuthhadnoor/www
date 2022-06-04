@@ -12,7 +12,7 @@ export default function Blogpost({
   image,
 }: any) {
   return (
-    <div className="my-2 sm:odd:mr-2  sm:border-b-0  border-b border-b-gray-200 dark:border-b-gray-800">
+    <div className="my-2 border-b  border-b-gray-200  dark:border-b-gray-800 sm:border-b-0 sm:odd:mr-2">
       <div className="text-sm ">
         <Link href={`/blog/${slug}`}>
           <a>
@@ -26,13 +26,13 @@ export default function Blogpost({
             />
           </a>
         </Link>
-        <div className="text-xs flex py-2 mt-4 text-gray-500 dark:text-gray-300">
+        <div className="mt-4 flex py-2 text-xs text-gray-500 dark:text-gray-300">
           <div className="flex flex-1 flex-wrap">
             {tags &&
               JSON.parse(tags).map((tag: string, i: number) => (
                 <span
                   key={`tag-key-${i}`}
-                  className="cursor-pointer select-none p-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-200 text-xs inline-block"
+                  className="mr-2 inline-block cursor-pointer select-none rounded-md bg-gray-200 p-1 text-xs text-gray-600 dark:bg-gray-800 dark:text-gray-200"
                 >
                   #{tag}
                 </span>
@@ -42,12 +42,12 @@ export default function Blogpost({
         </div>
         <Link href={`/blog/${slug}`}>
           <a className="flex  ">
-            <h4 className=" py-2 font-semibold text-sm  dark:text-gray-500 hover:dark:text-purple-400 hover:text-red-300 transition ">
+            <h4 className=" py-2 text-sm font-semibold  transition hover:text-red-300 dark:text-gray-500 hover:dark:text-purple-400 ">
               {title}
             </h4>
           </a>
         </Link>
-        <p className="text-gray-300 text-md">{summary}</p>
+        <p className="text-md text-gray-300">{summary}</p>
       </div>
     </div>
   );
