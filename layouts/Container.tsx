@@ -37,6 +37,38 @@ export default function Container(props) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/favicons/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicons/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/images/favicons/favicon.ico"
+        />
+        <link rel="manifest" href="/images/favicons/site.webmanifest" />
+        <meta
+          name="msapplication-config"
+          content="/favicons/browserconfig.xml"
+        />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff"></meta>
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
+        )}
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}
@@ -50,8 +82,8 @@ export default function Container(props) {
         `,
           }}
         />
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
-      <Script id="stripe-js" src="https://cdn.splitbee.io/sb.js" />
       <Header />
       <main className="mx-auto  mt-10 flex w-full max-w-6xl flex-col justify-center px-4 sm:mt-20 print:sm:px-4 print:sm:pt-24 xl:px-0">
         {children}
