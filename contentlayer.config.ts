@@ -30,7 +30,7 @@ const computedFields: ComputedFields = {
 const Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: "blog/*.mdx",
-  bodyType: "mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },
@@ -47,7 +47,7 @@ const Blog = defineDocumentType(() => ({
 const OtherPage = defineDocumentType(() => ({
   name: "OtherPage",
   filePathPattern: "*.mdx",
-  bodyType: "mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },
@@ -56,6 +56,7 @@ const OtherPage = defineDocumentType(() => ({
   },
   computedFields,
 }));
+
 const contentLayerConfig = makeSource({
   contentDirPath: "data",
   documentTypes: [Blog, OtherPage],
