@@ -30,8 +30,8 @@ const HeroBlock = () => {
           <h2 className="mt-2 mb-4 text-center text-xl  dark:text-gray-200 md:text-left">
             Developer {"&"} UI/UX Designer
           </h2>
-          <div className="mt-5 flex items-center">
-            <hr className="w-16" />
+          <div className="mt-5 flex flex-1 items-center">
+            <hr className="hidden w-16 md:inline-block" />
             <Social />
           </div>
           <p className="text-md mt-5 max-w-lg flex-wrap text-center leading-loose dark:text-gray-400 md:text-left">
@@ -39,44 +39,6 @@ const HeroBlock = () => {
             from India 🇮🇳. In short, I love creating and building stuff. ✨
             Welcome to my little slice of the internet—I hope you find something
             useful! If you’re curious, read more
-            {/* <div className="animate-role">
-                <a
-                  aria-label="Dribbble"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://achuth.dev/dribbble"
-                  className="ml-1 rounded  p-1 text-red-400 dark:text-purple-400"
-                >
-                  designer
-                </a>
-                <a
-                  aria-label="Github"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://achuth.dev/github"
-                  className="ml-1 rounded  p-1 text-red-400 dark:text-purple-400"
-                >
-                  developer
-                </a>
-                <a
-                  aria-label="medium"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://achuth.dev/medium"
-                  className="ml-1 mr-2 rounded  p-1 text-red-400 dark:text-purple-400"
-                >
-                  writer
-                </a>
-                <a
-                  aria-label="producthunt "
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://achuth.dev/producthunt"
-                  className="ml-1 rounded  p-1 text-red-400 dark:text-purple-400"
-                >
-                  maker
-                </a>
-              </div> */}
             <Link href={"/about"}>
               <a
                 aria-label="read more"
@@ -96,32 +58,6 @@ const HeroBlock = () => {
 };
 
 const ArticleBlock = ({ posts }) => {
-  // const posts = [
-  //   {
-  //     slug: "create-electron-app-with-nextjs",
-  //     title: "Create electron app with NextJs",
-  //     summary: "An easy way to create desktop apps",
-  //     publishedAt: "12, July, 2022",
-  //     tags: ["react", "next", "electron"],
-  //     image: "/images/achuth.jpg",
-  //   },
-  //   {
-  //     slug: "create-electron-app-with-nextjs",
-  //     title: "Create electron app with NextJs",
-  //     summary: "An easy way to create desktop apps",
-  //     publishedAt: "12, July, 2022",
-  //     tags: ["react", "next", "electron"],
-  //     image: "/images/achuth.jpg",
-  //   },
-  //   {
-  //     slug: "create-electron-app-with-nextjs",
-  //     title: "Create electron app with NextJs",
-  //     summary: "An easy way to create desktop apps",
-  //     publishedAt: "12, July, 2022",
-  //     tags: ["react", "next", "electron"],
-  //     image: "/images/achuth.jpg",
-  //   },
-  // ];
   return (
     <section className="mt-10 py-4" id="articles">
       <h3 className="main-titles">THE ARTICLES</h3>
@@ -137,7 +73,7 @@ const ArticleBlock = ({ posts }) => {
           ) => (
             <div
               key={`link-${i}`}
-              className="my-2 border-b  border-b-gray-200  dark:border-b-gray-800 sm:border-b-0 sm:odd:mr-2 "
+              className="my-2 border-b  border-b-gray-200  hover:scale-[1.01] dark:border-b-gray-800 sm:border-b-0 sm:odd:mr-2"
             >
               <div className="text-sm ">
                 <Link href={`/blog/${slug}`}>
@@ -263,14 +199,6 @@ const IndexPage = (props) => {
           <NewsletterForm />
         </div>
         <div className="text-md  max-w-2xl">
-          {/* <h3 className="main-titles mb-4 mt-16 text-sm font-semibold tracking-tight text-black dark:text-white md:text-2xl">
-            PAST ISSUES
-          </h3>
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
-            Build and deploy a modern SaaS application using the most popular
-            open-source software. This course is 12 hours long and is completely
-            live streamed.
-          </p> */}
           {issues.map((issue, index) => (
             <a
               className="w-full"
@@ -314,11 +242,6 @@ const IndexPage = (props) => {
         </div>
       </section>
       <ArticleBlock posts={props.posts} />
-      {/* 
-      <Resourses />
-      <section className="mt-10 py-4" id="newsletter">
-        <Newletter />
-      </section> */}
     </Container>
   );
 };

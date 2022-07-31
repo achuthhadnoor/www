@@ -1,5 +1,5 @@
 const Social = () => (
-  <div className="flex:1 align-items:center  mx-5  flex space-x-5">
+  <div className="flex:1 align-items:center  mx-5  flex w-full justify-center space-x-5 md:w-auto md:justify-start">
     <a
       rel="noreferrer"
       href="https://dribbble.com/achuth_hadnoor"

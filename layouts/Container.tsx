@@ -1,7 +1,9 @@
 import Footer from "components/Footer";
 import Header from "components/Header";
+import Newsletter from "components/Newsletter";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import React from "react";
 
 export default function Container(props) {
@@ -48,12 +50,13 @@ export default function Container(props) {
         `,
           }}
         />
-        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
+      <Script id="stripe-js" src="https://cdn.splitbee.io/sb.js" />
       <Header />
       <main className="mx-auto  mt-10 flex w-full max-w-6xl flex-col justify-center px-4 sm:mt-20 print:sm:px-4 print:sm:pt-24 xl:px-0">
         {children}
       </main>
+      <Newsletter />
       <Footer />
     </>
   );

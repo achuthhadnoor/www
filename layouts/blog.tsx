@@ -36,7 +36,7 @@ export default function BlogLayout({
               height={520}
               width={1080}
               src={post.image}
-              className="w-full"
+              className="w-full dark:grayscale"
             />
           </div>
           <h1 className="mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
@@ -75,7 +75,7 @@ export default function BlogLayout({
               {/* <ViewCounter slug={post.slug} /> */}
             </p>
           </div>
-          <div className="prose mt-4 w-full max-w-none text-sm leading-relaxed dark:prose-dark">
+          <div className="text-md prose mt-4 w-full max-w-none leading-relaxed dark:prose-dark">
             {children}
           </div>
           <div className="mt-8">
