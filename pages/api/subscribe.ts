@@ -5,42 +5,24 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { email } = req.body;
+
   if (!email) {
     return res.status(400).json({ error: "Email is required" });
   }
 
-  try {
-    const API_KEY = process.env.BUTTONDOWN_API_KEY;
-    const response = await fetch(
-      `https://api.buttondown.email/v1/subscribers`,
-      {
-        body: JSON.stringify({ email }),
-        headers: {
-          Authorization: `Token ${API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      }
-    );
-    console.log(response);
+  const result = await fetch("https://www.getrevue.co/api/v2/subscribers", {
+    method: "POST",
+    headers: {
+      Authorization: `Token ${process.env.REVUE_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email }),
+  });
+  const data = await result.json();
 
-    if (response.status >= 400) {
-      return res.status(400).json({
-        error: `There was an error subscribing to the newsletter.`,
-      });
-    }
-
-    res.setHeader(
-      "Cache-Control",
-      "public, s-maxage=1200, stale-while-revalidate=600"
-    );
-
-    return res.status(201).json({ error: "" });
-  } catch (error) {
-    res.setHeader(
-      "Cache-Control",
-      "public, s-maxage=1200, stale-while-revalidate=600"
-    );
-    return res.status(500).json({ error: error.message || error.toString() });
+  if (!result.ok) {
+    return res.status(500).json({ error: data.error.email[0] });
   }
+
+  return res.status(201).json({ error: "" });
 }
