@@ -8,7 +8,6 @@ export default function Document() {
           rel="preload"
           href="/fonts/slackside-one-regular.ttf"
           as="font"
-          type="font/ttf"
           crossOrigin="anonymous"
         />
       </Head>
