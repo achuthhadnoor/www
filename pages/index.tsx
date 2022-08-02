@@ -177,7 +177,6 @@ const Resourses = () => (
 );
 const IndexPage = (props) => {
   const { data } = useSWR<Issues>("/api/issues", fetcher);
-
   return (
     <Container>
       <HeroBlock />
@@ -192,7 +191,7 @@ const IndexPage = (props) => {
           <NewsletterForm />
         </div>
         <div className="text-md  max-w-2xl">
-          {data?.issues.map(
+          {data?.issues?.map(
             (issue, index) =>
               index < 3 && (
                 <a
