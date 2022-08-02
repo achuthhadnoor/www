@@ -7,6 +7,9 @@ import Social from "components/Social";
 import Newletter, { NewsletterForm } from "components/Newsletter";
 import { pick } from "contentlayer/client";
 import { allBlogs } from "contentlayer/generated";
+import fetcher from "lib/fetcher";
+import { Issues } from "lib/types";
+import useSWR from "swr";
 
 const HeroBlock = () => {
   return (
@@ -173,18 +176,8 @@ const Resourses = () => (
   </section>
 );
 const IndexPage = (props) => {
-  const issues = [
-    {
-      title: "Indie Product: An app that lets you create timelapse videos.",
-      date: "22 July 2022",
-      link: "/newsletter/issues/12072022",
-    },
-    {
-      title: "Indie Product: Contrast checker app for macOs and windows.",
-      date: "12 July 2022",
-      link: "/newsletter/issues/12072022",
-    },
-  ];
+  const { data } = useSWR<Issues>("/api/issues", fetcher);
+
   return (
     <Container>
       <HeroBlock />
@@ -199,30 +192,32 @@ const IndexPage = (props) => {
           <NewsletterForm />
         </div>
         <div className="text-md  max-w-2xl">
-          {issues.map((issue, index) => (
-            <a
-              className="w-full"
-              href={issue.link}
-              aria-label="Introduction to React 2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              key={`issue-num ${index}`}
-            >
-              <div className="w-full transform border-b border-gray-200 py-3 text-sm transition-all hover:scale-[1.01] dark:border-gray-700">
-                <div className="flex flex-col items-baseline justify-between sm:flex-row">
-                  <div className="flex items-center">
-                    <div className="mr-6 text-left text-gray-500 dark:text-gray-400">
-                      0{index + 1}
-                    </div>
-                    <h4 className="text-ld w-full font-medium text-gray-800 dark:text-gray-100">
-                      {issue.title}
-                    </h4>
-                  </div>
-                  <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                    <p className="mr-2 ml-10 w-32 text-left text-gray-500 dark:text-gray-400 sm:ml-0 sm:text-right md:mb-0">
-                      {issue.date}
-                    </p>
-                    {/* <svg
+          {data.issues.map(
+            (issue, index) =>
+              index < 3 && (
+                <a
+                  className="w-full"
+                  href={issue.url}
+                  aria-label="Introduction to React 2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={`issue-num ${index}`}
+                >
+                  <div className="w-full transform border-b border-gray-200 py-3 text-sm transition-all hover:scale-[1.01] dark:border-gray-700">
+                    <div className="flex flex-col items-baseline justify-between sm:flex-row">
+                      <div className="flex items-center">
+                        <div className="mr-6 text-left text-gray-500 dark:text-gray-400">
+                          0{index + 1}
+                        </div>
+                        <h4 className="text-ld w-full font-medium text-gray-800 dark:text-gray-100">
+                          {issue.title}
+                        </h4>
+                      </div>
+                      <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
+                        <p className="mr-2 ml-10 w-32 text-left text-gray-500 dark:text-gray-400 sm:ml-0 sm:text-right md:mb-0">
+                          {format(parseISO(issue.sent_at), "dd MMMM, yyyy")}
+                        </p>
+                        {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4 text-gray-500 dark:text-gray-100"
                     viewBox="0 0 20 20"
@@ -234,11 +229,12 @@ const IndexPage = (props) => {
                       clip-rule="evenodd"
                     ></path>
                   </svg> */}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </a>
-          ))}
+                </a>
+              )
+          )}
         </div>
       </section>
       <ArticleBlock posts={props.posts} />

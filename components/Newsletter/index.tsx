@@ -1,13 +1,15 @@
 import React, { useRef } from "react";
 import { useState } from "react";
-import { Form, FormState, Subscribers } from "lib/types";
+import { Form, FormState, Issues, Subscribers } from "lib/types";
 import useSWR from "swr";
 import fetcher from "lib/fetcher";
-
+import Icon from "react-icons-kit";
+import { xCircle } from "react-icons-kit/feather";
 export const NewsletterForm = () => {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
   const inputEl = useRef(null);
   const { data } = useSWR<Subscribers>("/api/subscribers", fetcher);
+
   const subscriberCount = new Number(data?.count);
 
   const subscribe = async (e: { preventDefault: () => void }) => {
@@ -34,7 +36,7 @@ export const NewsletterForm = () => {
     inputEl.current.value = "";
     setForm({
       state: Form.Success,
-      message: `Hooray! You're now on the list.`,
+      message: `Hooray! please check your email to confirm.`,
     });
   };
 
@@ -57,10 +59,26 @@ export const NewsletterForm = () => {
         </button>
       </form>
       {form.state === Form.Error ? (
-        <>{form.message}</>
+        <span className="flex items-center justify-start space-x-2  p-2 text-xs font-semibold text-red-700 dark:text-red-500">
+          <Icon icon={xCircle} /> <span>{form.message}</span>
+        </span>
       ) : // <ErrorMessage>{form.message}</ErrorMessage>
       form.state === Form.Success ? (
-        <>{form.message}</>
+        <span className="flex items-center justify-start p-2  text-xs font-semibold text-green-700 dark:text-green-500">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="mr-2 h-4 w-4"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
+          {form.message}
+        </span>
       ) : (
         // <SuccessMessage>{form.message}</SuccessMessage>
         <p className="space-x-2 p-2 text-sm text-gray-400 dark:text-gray-300">
@@ -68,7 +86,7 @@ export const NewsletterForm = () => {
             subscriberCount > 0 ? subscriberCount.toLocaleString() : "-"
           } subscribers – `}
           <a
-            href="https://buttondown.email/achuth"
+            href="https://www.getrevue.co/profile/achuth"
             target="_blank"
             rel="noopener noreferrer"
           >

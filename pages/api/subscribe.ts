@@ -9,6 +9,7 @@ export default async function handler(
   if (!email) {
     return res.status(400).json({ error: "Email is required" });
   }
+  console.log(process.env.REVUE_API_KEY);
 
   const result = await fetch("https://www.getrevue.co/api/v2/subscribers", {
     method: "POST",
@@ -19,6 +20,7 @@ export default async function handler(
     body: JSON.stringify({ email }),
   });
   const data = await result.json();
+  console.log(result.ok);
 
   if (!result.ok) {
     return res.status(500).json({ error: data.error.email[0] });

@@ -4,25 +4,20 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(process.env.REVUE_API_KEY);
-
-  const result = await fetch("https://www.getrevue.co/api/v2/subscribers", {
+  const result = await fetch("https://www.getrevue.co/api/v2/issues", {
     method: "GET",
     headers: {
       Authorization: `Token ${process.env.REVUE_API_KEY}`,
+      "Content-Type": "application/json",
     },
   });
   const data = await result.json();
-  console.log(result, data);
-
-  if (!result.ok) {
-    return res.status(500).json({ error: "Error retrieving subscribers" });
-  }
+  console.log(result.json());
 
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=1200, stale-while-revalidate=600"
   );
 
-  return res.status(200).json({ count: data.length });
+  return res.status(201).json({ issues: data });
 }
