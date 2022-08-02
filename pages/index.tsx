@@ -87,7 +87,7 @@ const ArticleBlock = ({ posts }) => {
                       height={100}
                       width={176}
                       layout="responsive"
-                      className="h-[100] w-[180]"
+                      className="h-[100] w-[180] rounded-md"
                     />
                   </a>
                 </Link>
@@ -192,7 +192,7 @@ const IndexPage = (props) => {
           <NewsletterForm />
         </div>
         <div className="text-md  max-w-2xl">
-          {data.issues.map(
+          {data?.issues.map(
             (issue, index) =>
               index < 3 && (
                 <a
