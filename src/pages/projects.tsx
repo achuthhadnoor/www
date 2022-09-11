@@ -38,6 +38,13 @@ export default function Home() {
       url: "snipnote.achuth.dev",
       image: "/assets/img/snipnote.png",
     },
+    {
+      id: "captur",
+      title: "Captur",
+      description: "A simple screen recording appr",
+      url: "captur.achuth.dev",
+      image: "/assets/img/captur.png",
+    },
   ];
   return (
     <Container>
