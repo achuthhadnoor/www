@@ -1,5 +1,26 @@
 import React from "react";
-import Link from "next/link";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import cn from "classnames";
+
+const Link = ({ href, name, ...props }) => {
+  const router = useRouter();
+  const isActive = router.asPath === href;
+  return (
+    <NextLink href={href}>
+      <a
+        className={cn(
+          isActive
+            ? "px-2 py-2 dark:bg-neutral-800 bg-neutral-300 rounded-md"
+            : "px-2 py-2 dark:hover:bg-neutral-800 hover:bg-neutral-300 rounded-md"
+        )}
+        {...props}
+      >
+        {name}
+      </a>
+    </NextLink>
+  );
+};
 
 export default function Header() {
   return (
@@ -29,28 +50,13 @@ export default function Header() {
           </svg>
         </span>
         <nav className="flex gap-2 sm:gap-4 capitalize items-center">
-          <Link href={"/"}>
-            <a className="px-2 py-2 dark:hover:bg-neutral-800 hover:bg-neutral-300 rounded-md">
-              home
-            </a>
-          </Link>
-          <Link href={"/about"}>
-            <a className="px-2 py-2 dark:hover:bg-neutral-800 hover:bg-neutral-300 rounded-md">
-              About
-            </a>
-          </Link>
-          <Link href={"/projects"}>
-            <a className="px-2 py-2 dark:hover:bg-neutral-800 hover:bg-neutral-300 rounded-md">
-              projects
-            </a>
-          </Link>
-          <Link href={"/tools"}>
-            <a className="px-2 py-2 dark:hover:bg-neutral-800 hover:bg-neutral-300 rounded-md">
-              Tools
-            </a>
-          </Link>
+          <Link href={"/"} name="home" />
+          <Link href={"/about"} name="About" />
+          <Link href={"/projects"} name="projects" />
+          <Link href={"/tools"} name="Tools" />
         </nav>
       </div>
+      {/* <div className=" hidden md:block p-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" /> */}
     </header>
   );
 }

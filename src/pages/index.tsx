@@ -9,7 +9,7 @@ export default function Home() {
   const { data } = useSWR<Issues>("/api/issues", fetcher);
   return (
     <Container>
-      <div className="my-10 md:my-20">
+      <div className="mb-10 md:mb-20">
         <h1 className="font-semibold my-4 dark:text-neutral-300 text-neutral-800 text-3xl">
           Achuth Hadnoor
         </h1>
