@@ -67,7 +67,7 @@ export default function Home() {
           </h2>
           <p className="my-5">{project.description}</p>
           <a
-            className="rounded-full py-1 px-4 bg-neutral-800 hover:bg-blue-600"
+            className="rounded-xl py-2 px-4 dark:bg-neutral-800 bg-neutral-200/50 hover:bg-blue-600 hover:text-neutral-100 text-sm"
             href={`https://${project.url}`}
           >
             <span>{project.url}</span>
