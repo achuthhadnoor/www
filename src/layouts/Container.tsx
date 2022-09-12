@@ -38,6 +38,21 @@ export default function Container(props: { [x: string]: any; children: any }) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
         <title>{meta.title}</title>
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config',  'UA-177599995-1');
+        `,
+              }}
+            />
+            <script async src="https://cdn.splitbee.io/sb.js"></script>
+          </>
+        )}
       </Head>
       <Header />
       <main className="container lg:max-w-5xl mx-auto tracking-wider dark:text-neutral-300 text-neutral-800 px-4 my-24 md:my-10">

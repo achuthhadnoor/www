@@ -7,6 +7,36 @@ import fetcher from "../lib/fetcher";
 import { format, parseISO } from "date-fns";
 export default function Home() {
   const { data } = useSWR<Issues>("/api/issues", fetcher);
+  const projects = [
+    {
+      id: "lapse",
+      title: "Lapse",
+      description: "A simple app to record screen in time-lapse.",
+      url: "getlapseapp.com",
+      image: "/assets/img/lapse.png",
+    },
+    {
+      id: "focus",
+      title: "Focus",
+      description: "Take timeoff from screen to focus",
+      url: "focus.achuth.dev",
+      image: "/assets/img/focus.png",
+    },
+    {
+      id: "snip",
+      title: "snip",
+      description: "Single line code snippet manager on menubar",
+      url: "snip.netlify.app",
+      image: "/assets/img/snip.png",
+    },
+    {
+      id: "snipnote",
+      title: "snipnote",
+      description: "Simple note taking on menubar",
+      url: "snipnote.achuth.dev",
+      image: "/assets/img/snipnote.png",
+    },
+  ];
   return (
     <Container>
       <div className="mb-10 md:mb-20">
@@ -20,49 +50,36 @@ export default function Home() {
         <p className="mt-5 text-sm leading-loose text-neutral-700 dark:text-neutral-500 ">
           👋 Hey, I am a Designer, Developer and maker from India 🇮🇳. In short,
           I love creating and building stuff. ✨ Welcome to my little slice of
-          the internet—I hope you find something useful! If you’re curious, read
-          more about me.
+          the internet. I hope you find something useful! If you’re curious,
+          read more about me.
         </p>
         <hr className="wave my-20" />
       </div>
       <div id="projects" className="mb-10 flex flex-col gap-2">
-        <h2 className="text-2xl py-2">Projects</h2>
+        <h2 className="text-2xl py-2">Recent Projects</h2>
         <p className="text-sm text-neutral-800 dark:text-neutral-400">
-          A collection of some side projects that have shipped recently.
+          Few projects that i currently work on.
         </p>
         <div className="flex flex-col py-5 gap-5">
-          <a href="https://getlapseapp.com/" rel="noreferrer" target="_blank">
-            <div
-            // className="p-[1px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded"
+          {projects.map(({ url, title, id, description }) => (
+            <a
+              href={`https://${url}/`}
+              rel="noreferrer"
+              target="_blank"
+              key={id}
             >
-              <div className="p-4 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70 bg-neutral-200/40 hover:bg-neutral-200/70   rounded flex flex-col gap-2">
-                <h3 className="text-xl">Lapse</h3>
-                <p className="text-sm py-2 dark:text-neutral-400 text-neutral-600 ">
-                  A simple app to record your screen in timelapse.
-                </p>
+              <div
+              // className="p-[1px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded"
+              >
+                <div className="p-4 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70 bg-neutral-200/40 hover:bg-neutral-200/70   rounded flex flex-col gap-2">
+                  <h3 className="text-xl">{title}</h3>
+                  <p className="text-sm py-2 dark:text-neutral-400 text-neutral-600 ">
+                    {description}
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-          <a
-            href="https://snipper.netlify.app/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <div className="p-4 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70 bg-neutral-200/40 hover:bg-neutral-200/70   rounded flex flex-col gap-2">
-              <h3 className="text-xl">snipper</h3>
-              <p className="text-sm py-2 dark:text-neutral-400 text-neutral-600 ">
-                A simple code snippet manager for mac and windows.
-              </p>
-            </div>
-          </a>
-          <a href="https://snip.netlify.app/" rel="noreferrer" target="_blank">
-            <div className="p-4 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70 bg-neutral-200/40 hover:bg-neutral-200/70   rounded flex flex-col gap-2">
-              <h3 className="text-xl">snip</h3>
-              <p className="text-sm py-2 dark:text-neutral-400 text-neutral-600 ">
-                A simple single line code snippet manager for mac and windows.
-              </p>
-            </div>
-          </a>
+            </a>
+          ))}
         </div>
         <hr className="wave my-20" />
       </div>
