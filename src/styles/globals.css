@@ -18,7 +18,21 @@ html {
   border-right: none;
   border-bottom: none;
   border-left: none;
-   {
-    /*bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500*/
-  }
+}
+::selection {
+  @apply bg-blue-700 text-neutral-200;
+}
+
+.menu-icon {
+  display: block;
+  padding: 2px;
+  width: 25px;
+  @apply bg-neutral-200;
+}
+.menu-icon::after {
+  content: "";
+  display: block;
+  padding: 2px;
+  width: 25px;
+  @apply bg-neutral-200;
 }

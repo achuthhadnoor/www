@@ -2,6 +2,7 @@ import React from "react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
+import MobileMenu from "./MobileHeader";
 
 const Link = ({ href, name, ...props }) => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const Link = ({ href, name, ...props }) => {
 
 export default function Header() {
   return (
-    <header className="fixed bottom-0 w-full md:sticky md:top-0 z-10  text-xs md:text-sm dark:text-neutral-400 text-neutral-500 bg-neutral-200/10 dark:bg-neutral-900/10 shadow-sm backdrop-blur-lg tracking-widest">
+    <header className="sticky top-0 z-10  text-xs md:text-sm dark:text-neutral-400 text-neutral-700 bg-neutral-200/10 dark:bg-neutral-900/10 shadow-sm backdrop-blur-lg tracking-widest">
       <div className="md:hidden p-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
       <div className="container mx-auto flex justify-between p-1 md:py-2">
         <NextLink href={"/"}>
@@ -51,12 +52,15 @@ export default function Header() {
             </svg>
           </a>
         </NextLink>
-        <nav className="flex gap-2 sm:gap-4 capitalize items-center">
+        <nav className="md:flex gap-2 sm:gap-4 capitalize items-center hidden ">
           <Link href={"/"} name="home" />
           <Link href={"/about"} name="About" />
           <Link href={"/projects"} name="projects" />
           <Link href={"/tools"} name="Tools" />
         </nav>
+        <div className="md:hidden">
+          <MobileMenu />
+        </div>
       </div>
       {/* <div className=" hidden md:block p-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" /> */}
     </header>

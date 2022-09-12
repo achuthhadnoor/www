@@ -4,7 +4,7 @@ export default function Social() {
   return (
     <div className="mt-5 flex flex-1 items-center dark:text-neutral-300 text-neutral-800">
       <hr className=" w-16 md:inline-block dark:text-neutral-500 text-neutral-200" />
-      <div className="flex:1 mx-5 flex w-full space-x-5 md:w-auto md:justify-start">
+      <div className="flex:1 mx-5 flex w-full gap-2 md:w-auto md:justify-start">
         <a
           rel="noreferrer"
           className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-pink-500 rounded"

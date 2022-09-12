@@ -55,7 +55,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
         )}
       </Head>
       <Header />
-      <main className="container lg:max-w-5xl mx-auto tracking-wider dark:text-neutral-300 text-neutral-800 px-4 my-24 md:my-10">
+      <main className="container lg:max-w-5xl mx-auto tracking-wider dark:text-neutral-300 text-neutral-800 px-4 my-10 md:my-10">
         {children}
         <div className="flex flex-col sm:flex-row justify-between text-sm text-neutral-500 gap-4">
           <span>made with ❤️ + 🥶</span>
