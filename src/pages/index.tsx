@@ -6,6 +6,8 @@ import { Issues } from "../lib/types";
 import fetcher from "../lib/fetcher";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
+import Image from "next/image";
+
 export default function Home() {
   const { data } = useSWR<Issues>("/api/issues", fetcher);
   const projects = [
@@ -40,35 +42,41 @@ export default function Home() {
   ];
   return (
     <Container>
-      <div className="mb-10 md:mb-20">
-        <h1 className="font-semibold my-4 dark:text-neutral-300 text-neutral-800 md:text-5xl text-3xl">
-          Achuth Hadnoor
-        </h1>
-        <h2 className="text-lg md:text-xl">Developer, UI / UX Designer</h2>
-        <div className="my-10 md:hidden block">
-          <Social />
-        </div>
-        <p className="mt-5 text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
-          {`👋 Hey, I am a Designer, Developer and maker from India 🇮🇳. In short,
+      <div className="mb-10 md:mt-36 md:mb-24">
+        <div className="flex flex-col md:flex-row-reverse">
+          <div className="flex items-center md:justify-center px-4 md:px-5">
+            <div className="top-36 h-[240] w-[240] rotate-6 transform ">
+              <Image
+                alt="Achuth Hadnoor"
+                height={240}
+                width={240}
+                src="/images/achuth.jpg"
+                className="absolute block rounded-lg filter dark:grayscale "
+              />
+            </div>
+          </div>
+          <div className="flex-1">
+            <h1 className="font-semibold my-4 dark:text-neutral-300 text-neutral-800 md:text-5xl text-3xl">
+              Achuth Hadnoor
+            </h1>
+            <h2 className="text-lg md:text-xl">Developer, UI / UX Designer</h2>
+            <div className="my-10 md:hidden block">
+              <Social />
+            </div>
+            <p className="mt-5 text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
+              {`👋 Hey, I am a Designer, Developer and maker from India 🇮🇳. In short,
           I love creating and building stuff. ✨ Welcome to my little slice of
           the internet. I hope you find something useful! If you’re curious,
           read more `}
-          <Link href="/about">
-            <i className="underline">about me</i>
-          </Link>
-          .
-        </p>
-        <p className="mt-5 text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
-          Innovative, task-driven professional with 6+ years of experience in
-          web design and development across diverse industries. Equipped with a
-          record of success in consistently identifying and providing the
-          technological needs of companies through ingenious innovation.
-          Proficient in developing applications, creating user interfaces,
-          writing and testing codes, troubleshooting simple/complex issues, and
-          implementing new features based on user feedback.
-        </p>
-        <div className="my-10 hidden md:block">
-          <Social />
+              <Link href="/about">
+                <i className="underline">about me</i>
+              </Link>
+              .
+            </p>
+            <div className="my-10 hidden md:block">
+              <Social />
+            </div>
+          </div>
         </div>
         <hr className="wave my-20" />
       </div>

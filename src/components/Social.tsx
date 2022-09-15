@@ -3,7 +3,7 @@ import React from "react";
 export default function Social() {
   return (
     <div className="mt-5 flex flex-1 items-center dark:text-neutral-300 text-neutral-800">
-      <hr className=" w-16 md:inline-block dark:text-neutral-500 text-neutral-200" />
+      <hr className=" w-16 md:inline-block dark:text-neutral-500 text-neutral-600" />
       <div className="flex:1 mx-5 flex w-full gap-2 md:w-auto md:justify-start">
         <a
           rel="noreferrer"
