@@ -55,6 +55,25 @@ export default function Container(props: { [x: string]: any; children: any }) {
           </>
         )}
       </Head>
+      <svg
+        className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light"
+        width="100%"
+        height="100%"
+      >
+        <filter id="pedroduarteisalegend">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.80"
+            numOctaves="4"
+            stitchTiles="stitch"
+          ></feTurbulence>
+        </filter>
+        <rect
+          width="100%"
+          height="100%"
+          filter="url(#pedroduarteisalegend)"
+        ></rect>
+      </svg>
       <Header />
       <main className="container lg:max-w-5xl mx-auto tracking-wider dark:text-neutral-300 text-neutral-800 px-4 my-10 md:my-10">
         {children}

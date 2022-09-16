@@ -15,7 +15,7 @@ export default function Document() {
           media="(prefers-color-scheme: dark)"
         />
       </Head>
-      <body className="leading-loose bg-neutral-100 dark:bg-neutral-900 ">
+      <body>
         <Main />
         <NextScript />
       </body>

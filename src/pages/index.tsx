@@ -40,6 +40,37 @@ export default function Home() {
       image: "/assets/img/snipnote.png",
     },
   ];
+  const articles = [
+    {
+      id: "1",
+      title: "Production ready electron app setup with ReactJS",
+      tags: ["development", "web", "desktop"],
+      date: "28 Apr",
+      year: "2022",
+      time: "2min 5s",
+      summary:
+        "If you are a designer and is looking for a perfect language to use for mobile app development then flutter is a saviour.",
+    },
+    {
+      id: "2",
+      title: "Automate your workflows to increase productivity",
+      tags: ["personal"],
+      date: "21 Feb",
+      year: "2022",
+      time: "2min 5s",
+      summary: "Highlights and reflections on 2019 and a look forward to 2020.",
+    },
+    {
+      id: "3",
+      title: "Time-boxing model: A complete guide to time management",
+      tags: ["personal", "productivity"],
+      date: "13 Jan",
+      year: "2022",
+      time: "2min 5s",
+      summary:
+        "Time boxing is a simple yet powerful technique of time management,That helps you to have control over your time and improves your productivity.This helpful technique is for practising self explain…",
+    },
+  ];
   return (
     <Container>
       <div className="mb-10 md:mt-20 md:mb-24">
@@ -87,106 +118,46 @@ export default function Home() {
         </div>
         <hr className="wave my-20" />
       </div>
-      <div id="articles" className="mb-10 flex flex-col gap-2">
+      <div id="articles" className="mb-10 flex flex-col gap-2 ">
         <h2 className="text-2xl py-2">Recent Articles</h2>
-        <p className="text-sm text-neutral-800 dark:text-neutral-400">
-          A small collection of thoughts, ideas, technology, design.
+        <p className="text-sm text-neutral-800 dark:text-neutral-400  leading-loose">
+          {`I write mostly about web development and tech careers. In total, I've
+          written ${articles.length} articles on this site.`}
         </p>
         <div>
-          <div className="flex items-center gap-2 mt-10">
-            <hr className=" w-16 md:inline-block dark:text-neutral-500 text-neutral-600" />
+          <div className="flex items-center gap-2 mt-10 dark:text-neutral-500 text-neutral-600">
+            <hr className=" w-16 md:inline-block " />
             <span>2022</span>
           </div>
           <div className="my-5 max-w-2xl">
-            <a
-              className="w-full"
-              href={"/"}
-              aria-label="Introduction to React 2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              key={`issue-num`}
-            >
-              <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01]">
-                <div className="flex flex-col items-center justify-between sm:flex-row ">
-                  <div className="flex items-center">
-                    <div className="text-neutral-500 dark:text-neutral-400">
-                      01 Aug
+            {articles.map(({ id, title, date, time }) => (
+              <Link
+                className="w-full"
+                href={"/"}
+                aria-label="Introduction to React 2025"
+                rel="noopener noreferrer"
+                key={`${id}-num`}
+              >
+                <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01]">
+                  <div className="flex flex-col items-center justify-between sm:flex-row ">
+                    <div className="flex items-center">
+                      <div className="text-neutral-500 dark:text-neutral-400">
+                        {date}
+                      </div>
+                      <h4 className="text-ld w-full font-medium text-neutral-800 dark:text-neutral-100 hover:text-blue-600">
+                        {title}
+                      </h4>
                     </div>
-                    <h4 className="text-ld w-full font-medium text-neutral-800 dark:text-neutral-100 hover:text-blue-600">
-                      Timeboxing for better productivity and GTD
-                    </h4>
-                  </div>
-                  <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                    <p className="mr-2 ml-10 text-xs  text-left text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
-                      {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
-                      2min 5s
-                    </p>
+                    <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
+                      <p className="mr-2 ml-10 text-xs  text-left text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
+                        {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
+                        {time}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-            <a
-              className="w-full"
-              href={"/"}
-              aria-label="Introduction to React 2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              key={`issue-num`}
-            >
-              <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01] ">
-                <div className="flex flex-col items-center justify-between sm:flex-row ">
-                  <div className="flex items-center">
-                    <div className="text-neutral-500 dark:text-neutral-400">
-                      01 Aug
-                    </div>
-                    <h4 className="text-ld w-full font-medium text-neutral-800 dark:text-neutral-100 hover:text-blue-600">
-                      Timeboxing for better productivity and GTD
-                    </h4>
-                  </div>
-                  <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                    <p className="mr-2 ml-10 text-xs  text-left text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
-                      {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
-                      2min 5s
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div>
-          <div className="flex items-center gap-2 mt-10">
-            <hr className=" w-16 md:inline-block dark:text-neutral-500 text-neutral-600" />
-            <span>2021</span>
-          </div>
-          <div className="my-5 max-w-2xl">
-            <a
-              className="w-full"
-              href={"/"}
-              aria-label="Introduction to React 2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              key={`issue-num`}
-            >
-              <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01] ">
-                <div className="flex flex-col items-center justify-between sm:flex-row ">
-                  <div className="flex items-center">
-                    <div className="text-neutral-500 dark:text-neutral-400">
-                      01 Aug
-                    </div>
-                    <h4 className="text-ld w-full font-medium text-neutral-800 dark:text-neutral-100 hover:text-blue-600">
-                      Timeboxing for better productivity and GTD
-                    </h4>
-                  </div>
-                  <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                    <p className="mr-2 ml-10 text-xs  text-left text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
-                      {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
-                      2min 5s
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
+              </Link>
+            ))}
           </div>
         </div>
         <hr className="wave my-20" />
