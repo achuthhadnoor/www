@@ -54,7 +54,7 @@ export default function Header() {
         </NextLink>
         <nav className="hidden items-center gap-2 capitalize sm:gap-4 md:flex ">
           <Link href={"/"} name="home" />
-          {/* <Link href={"/about"} name="About" /> */}
+          <Link href={"/about"} name="About" />
           <Link href={"/articles"} name="Articles" />
           <Link href={"/projects"} name="projects" />
           <Link href={"/tools"} name="Tools" />

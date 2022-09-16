@@ -78,7 +78,7 @@ export default function Post() {
             <div>SERIES</div>
             <div>Build an macOs menubar app using NextJs and eletronJS</div>
           </div>
-          <div>
+          <article>
             <div>
               <Image
                 className="rounded-md"
@@ -161,7 +161,7 @@ export default function Post() {
             <div>today we are going to learn more baout theo</div>
             <div>today we are going to learn more baout theo</div>
             <div>today we are going to learn more baout theo</div>
-          </div>
+          </article>
         </div>
         <div className="w-full px-4 md:max-w-xs">
           <div className="top-16  flex-col transition-all sm:flex sm:px-2  md:sticky">

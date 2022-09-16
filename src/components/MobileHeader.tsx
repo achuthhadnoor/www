@@ -98,6 +98,14 @@ export default function MobileMenu() {
           </li>
           <li
             className=" text-sm font-semibold text-neutral-900  dark:text-neutral-100"
+            style={{ transitionDelay: "185ms" }}
+          >
+            <Link href="/articles">
+              <a className="flex w-auto pb-2 text-3xl ">Articles</a>
+            </Link>
+          </li>
+          <li
+            className=" text-sm font-semibold text-neutral-900  dark:text-neutral-100"
             style={{ transitionDelay: "200ms" }}
           >
             <Link href="/projects">
