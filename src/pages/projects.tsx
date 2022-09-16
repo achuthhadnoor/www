@@ -45,6 +45,13 @@ export default function Home() {
       url: "captur.achuth.dev",
       image: "/assets/img/captur.png",
     },
+    {
+      id: "snippy",
+      title: "Snippy",
+      description: "A screenshot tool to get things done",
+      url: "snippy.achuth.dev",
+      image: "/assets/img/snippy.png",
+    },
   ];
   return (
     <Container>

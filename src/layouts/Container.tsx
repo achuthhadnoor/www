@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
+import Social from "src/components/Social";
 // import Footer from "../components/footer";
 import Header from "../components/Header";
 
@@ -61,6 +62,9 @@ export default function Container(props: { [x: string]: any; children: any }) {
           <span>made with ❤️ + 🥶</span>
           <span>© Achuth Hadnoor {new Date().getFullYear()}</span>
         </div>
+        <span>
+          <Social />
+        </span>
       </main>
       {/* <Footer /> */}
     </>

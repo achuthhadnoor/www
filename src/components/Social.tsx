@@ -7,6 +7,59 @@ export default function Social() {
       <div className="flex:1 mx-5 flex w-full gap-2 md:w-auto md:justify-start">
         <a
           rel="noreferrer"
+          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-blue-500 rounded"
+          href="https://twitter.com/achuth_hadnoor"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path
+              d="M17.25 2.25a8.174 8.174 0 01-2.355 1.147A3.36 3.36 0 009 5.647v.75A7.995 7.995 0 012.25 3s-3 6.75 3.75 9.75a8.73 8.73 0 01-5.25 1.5c6.75 3.75 15 0 15-8.625 0-.209-.02-.417-.06-.622a5.79 5.79 0 001.56-2.753v0z"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+        </a>
+        <a
+          rel="noreferrer"
+          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-gray-500 rounded"
+          href="https://github.com/achuthhadnoor"
+          target="_blank"
+          title="Github"
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path
+              d="M12 16.5v-2.902a2.53 2.53 0 00-.705-1.958c2.355-.263 4.83-1.155 4.83-5.25A4.08 4.08 0 0015 3.578 3.803 3.803 0 0014.932.75S14.047.487 12 1.86a10.035 10.035 0 00-5.25 0C4.702.487 3.817.75 3.817.75a3.803 3.803 0 00-.067 2.827 4.08 4.08 0 00-1.125 2.835c0 4.065 2.475 4.958 4.83 5.25a2.528 2.528 0 00-.705 1.935V16.5m0-2.25C3 15.375 3 12.375 1.5 12l5.25 2.25z"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+        </a>
+        <a
+          rel="noreferrer"
+          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-purple-500 rounded"
+          href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
+          target="_blank"
+          title="Linkedin"
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path
+              d="M12 6a4.5 4.5 0 014.5 4.5v5.25h-3V10.5a1.5 1.5 0 10-3 0v5.25h-3V10.5A4.5 4.5 0 0112 6v0zM4.5 6.75h-3v9h3v-9zM3 4.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+            <defs>
+              <clipPath id="prefix__clip0">
+                <path fill="#fff" d="M0 0h18v18H0z"></path>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+        <a
+          rel="noreferrer"
           className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-pink-500 rounded"
           href="https://dribbble.com/achuth_hadnoor"
           target="_blank"
@@ -39,59 +92,6 @@ export default function Social() {
               strokeLinecap="round"
               strokeLinejoin="round"
             ></path>
-          </svg>
-        </a>
-        <a
-          rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-gray-500 rounded"
-          href="https://github.com/achuthhadnoor"
-          target="_blank"
-          title="Github"
-        >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path
-              d="M12 16.5v-2.902a2.53 2.53 0 00-.705-1.958c2.355-.263 4.83-1.155 4.83-5.25A4.08 4.08 0 0015 3.578 3.803 3.803 0 0014.932.75S14.047.487 12 1.86a10.035 10.035 0 00-5.25 0C4.702.487 3.817.75 3.817.75a3.803 3.803 0 00-.067 2.827 4.08 4.08 0 00-1.125 2.835c0 4.065 2.475 4.958 4.83 5.25a2.528 2.528 0 00-.705 1.935V16.5m0-2.25C3 15.375 3 12.375 1.5 12l5.25 2.25z"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </svg>
-        </a>
-        <a
-          rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-blue-500 rounded"
-          href="https://twitter.com/achuth_hadnoor"
-          target="_blank"
-          title="Twitter"
-        >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path
-              d="M17.25 2.25a8.174 8.174 0 01-2.355 1.147A3.36 3.36 0 009 5.647v.75A7.995 7.995 0 012.25 3s-3 6.75 3.75 9.75a8.73 8.73 0 01-5.25 1.5c6.75 3.75 15 0 15-8.625 0-.209-.02-.417-.06-.622a5.79 5.79 0 001.56-2.753v0z"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </svg>
-        </a>
-        <a
-          rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-purple-500 rounded"
-          href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
-          target="_blank"
-          title="Linkedin"
-        >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path
-              d="M12 6a4.5 4.5 0 014.5 4.5v5.25h-3V10.5a1.5 1.5 0 10-3 0v5.25h-3V10.5A4.5 4.5 0 0112 6v0zM4.5 6.75h-3v9h3v-9zM3 4.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <defs>
-              <clipPath id="prefix__clip0">
-                <path fill="#fff" d="M0 0h18v18H0z"></path>
-              </clipPath>
-            </defs>
           </svg>
         </a>
         <a

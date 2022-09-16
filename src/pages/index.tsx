@@ -42,7 +42,7 @@ export default function Home() {
   ];
   return (
     <Container>
-      <div className="mb-10 md:mt-36 md:mb-24">
+      <div className="mb-10 md:mt-20 md:mb-24">
         <div className="flex flex-col md:flex-row-reverse">
           <div className="flex items-center md:justify-center px-4 md:px-5">
             <div className="top-36 h-[240] w-[240] rotate-6 transform ">
@@ -64,47 +64,26 @@ export default function Home() {
               <Social />
             </div>
             <p className="mt-5 text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
-              {`👋 Hey, I am a Designer, Developer and maker from India 🇮🇳. In short,
-          I love creating and building stuff. ✨ Welcome to my little slice of
-          the internet. I hope you find something useful! If you’re curious,
-          read more `}
+              👋 Welcome to my little slice of the internet — I hope you find
+              something useful here.
+            </p>
+            <p className="my-5 text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
+              Read more{" "}
               <Link href="/about">
-                <i className="underline">about me</i>
+                <a className="underline">about me</a>
               </Link>
               .
+            </p>
+            <p className=" text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
+              Thanks for dropping by
+            </p>
+            <p className=" text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
+              Achuth
             </p>
             <div className="my-10 hidden md:block">
               <Social />
             </div>
           </div>
-        </div>
-        <hr className="wave my-20" />
-      </div>
-      <div id="projects" className="mb-10 flex flex-col gap-2">
-        <h2 className="text-2xl py-2">Recent Projects</h2>
-        <p className="text-sm text-neutral-800 dark:text-neutral-400">
-          Few projects that I currently work on.
-        </p>
-        <div className="flex flex-col py-5 gap-5">
-          {projects.map(({ url, title, id, description }) => (
-            <a
-              href={`https://${url}/`}
-              rel="noreferrer"
-              target="_blank"
-              key={id}
-            >
-              <div
-              // className="p-[1px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded"
-              >
-                <div className="p-4 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70 bg-neutral-200/40 hover:bg-neutral-200/70   rounded flex flex-col gap-2">
-                  <h3 className="text-xl">{title}</h3>
-                  <p className="text-sm py-2 dark:text-neutral-400 text-neutral-600 ">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            </a>
-          ))}
         </div>
         <hr className="wave my-20" />
       </div>
@@ -127,8 +106,8 @@ export default function Home() {
               rel="noopener noreferrer"
               key={`issue-num`}
             >
-              <div className="w-full transform border-b border-neutral-200 py-3 my-4 text-sm transition-all hover:scale-[1.01] dark:border-neutral-700">
-                <div className="flex flex-col items-baseline justify-between sm:flex-row ">
+              <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01]">
+                <div className="flex flex-col items-center justify-between sm:flex-row ">
                   <div className="flex items-center">
                     <div className="text-neutral-500 dark:text-neutral-400">
                       01 Aug
@@ -154,8 +133,8 @@ export default function Home() {
               rel="noopener noreferrer"
               key={`issue-num`}
             >
-              <div className="w-full transform border-b border-neutral-200 py-3 my-4 text-sm transition-all hover:scale-[1.01] dark:border-neutral-700">
-                <div className="flex flex-col items-baseline justify-between sm:flex-row ">
+              <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01] ">
+                <div className="flex flex-col items-center justify-between sm:flex-row ">
                   <div className="flex items-center">
                     <div className="text-neutral-500 dark:text-neutral-400">
                       01 Aug
@@ -189,8 +168,8 @@ export default function Home() {
               rel="noopener noreferrer"
               key={`issue-num`}
             >
-              <div className="w-full transform border-b border-neutral-200 py-3 my-4 text-sm transition-all hover:scale-[1.01] dark:border-neutral-700">
-                <div className="flex flex-col items-baseline justify-between sm:flex-row ">
+              <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01] ">
+                <div className="flex flex-col items-center justify-between sm:flex-row ">
                   <div className="flex items-center">
                     <div className="text-neutral-500 dark:text-neutral-400">
                       01 Aug
@@ -209,6 +188,34 @@ export default function Home() {
               </div>
             </a>
           </div>
+        </div>
+        <hr className="wave my-20" />
+      </div>
+      <div id="projects" className="mb-10 flex flex-col gap-2">
+        <h2 className="text-2xl py-2">Recent Projects</h2>
+        <p className="text-sm text-neutral-800 dark:text-neutral-400">
+          Few projects that I currently work on.
+        </p>
+        <div className="flex flex-col py-5 gap-5">
+          {projects.map(({ url, title, id, description }) => (
+            <a
+              href={`https://${url}/`}
+              rel="noreferrer"
+              target="_blank"
+              key={id}
+            >
+              <div
+              // className="p-[1px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded"
+              >
+                <div className="p-4 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70 bg-neutral-200/40 hover:bg-neutral-200/70   rounded flex flex-col gap-2">
+                  <h3 className="text-xl">{title}</h3>
+                  <p className="text-sm py-2 dark:text-neutral-400 text-neutral-600 ">
+                    {description}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
         <hr className="wave my-20" />
       </div>

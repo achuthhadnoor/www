@@ -34,10 +34,17 @@ export default function Home() {
       <div className="my-5">
         <h2 className="text-2xl">Work</h2>
         <p className="mt-2 text-sm leading-loose text-neutral-700 dark:text-neutral-500">
-          I have an experience as a web developer working with React ecosystems
-          and AWS cloud.
+          I have an experience as a web developer working with Design systems,
+          React ecosystems and AWS cloud.
         </p>
         <div className="flex flex-col gap-2 text-sm my-5 space-y-4 md:space-y-2">
+          <div className="flex flex-col md:flex-row justify-between gap-2 md:items-center">
+            <span className="text-md text-blue-600">DBS Bank</span>
+            <div className="flex flex-col md:flex-row justify-between md:items-center">
+              <span className="py-2 md:px-4">Fontend Developer</span>
+              <span className="text-neutral-500 text-xs">2020 - present</span>
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row justify-between gap-2 md:items-center">
             <span className="text-md text-blue-600">EPAM Systems</span>
             <div className="flex flex-col md:flex-row justify-between md:items-center">
@@ -57,7 +64,19 @@ export default function Home() {
       <hr className="wave my-20" />
       <div className="my-5">
         <h2 className="text-2xl">About the site</h2>
+        <p className="mt-2 text-sm leading-loose text-neutral-700 dark:text-neutral-500">
+          This website contains all the work that is created, curated and
+          maintained by Achuth hadnoor. The goal of this website is to have a
+          single source of truth of the content that Achuth has on the internet.
+        </p>
+        <p className="mt-2 text-sm leading-loose text-neutral-700 dark:text-neutral-500">
+          For queries, suggestion and copy rights please contact.{" "}
+          <a className="underline" href="mailto:hey@achuth.dev">
+            hey@achuth.dev
+          </a>
+        </p>
       </div>
+      <hr className="wave my-10" />
     </Container>
   );
 }
