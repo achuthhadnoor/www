@@ -55,8 +55,8 @@ export default function Home() {
   ];
   return (
     <Container>
-      <h1 className="font-semibold text-3xl md:text-5xl mb-10">Projects</h1>
-      <p className="mt-2 text-md leading-loose text-neutral-700 dark:text-neutral-500">
+      <h1 className="mb-10 text-3xl font-semibold md:text-5xl">Projects</h1>
+      <p className="text-md mt-2 leading-loose text-neutral-700 dark:text-neutral-500">
         Here’s a small selection of some of my recent projects and experiences.
       </p>
       <hr className="wave my-10" />
@@ -69,16 +69,16 @@ export default function Home() {
             src={project.image}
             alt="Lapse app"
           />
-          <h2 className="font-semibold text-xl md:text-3xl my-10">
+          <h2 className="my-10 text-xl font-semibold md:text-3xl">
             {project.title}
           </h2>
           <p className="my-5">{project.description}</p>
           <a
-            className="rounded-xl py-2 px-4 dark:bg-neutral-800 bg-neutral-200/50 hover:bg-blue-600 hover:text-neutral-100 text-sm"
+            className="rounded-xl bg-neutral-200/50 py-2 px-4 text-sm hover:bg-blue-600 hover:text-neutral-100 dark:bg-neutral-800"
             href={`https://${project.url}`}
           >
             <span>{project.url}</span>
-            <span className="transform scale-110"> ↗ </span>
+            <span className="scale-110 transform"> ↗ </span>
           </a>
           <hr className="wave my-10" />
         </div>

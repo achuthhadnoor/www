@@ -75,9 +75,9 @@ export default function Container(props: { [x: string]: any; children: any }) {
         ></rect>
       </svg>
       <Header />
-      <main className="container lg:max-w-5xl mx-auto tracking-wider dark:text-neutral-300 text-neutral-800 px-4 my-10 md:my-10">
+      <main className="container mx-auto my-10 px-4 tracking-wider text-neutral-800 dark:text-neutral-300 md:my-10 lg:max-w-5xl">
         {children}
-        <div className="flex flex-col sm:flex-row justify-between text-sm text-neutral-500 gap-4">
+        <div className="flex flex-col justify-between gap-4 text-sm text-neutral-500 sm:flex-row">
           <span>made with ❤️ + 🥶</span>
           <span>© Achuth Hadnoor {new Date().getFullYear()}</span>
         </div>

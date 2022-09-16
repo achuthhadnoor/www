@@ -12,8 +12,8 @@ const Link = ({ href, name, ...props }) => {
       <a
         className={cn(
           isActive
-            ? "px-2 py-2 dark:bg-neutral-800 bg-neutral-300 rounded-md"
-            : "px-2 py-2 dark:hover:bg-neutral-800 hover:bg-neutral-300 rounded-md"
+            ? "rounded-md bg-neutral-300 px-2 py-2 dark:bg-neutral-800"
+            : "rounded-md px-2 py-2 hover:bg-neutral-300 dark:hover:bg-neutral-800"
         )}
         {...props}
       >
@@ -25,8 +25,8 @@ const Link = ({ href, name, ...props }) => {
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-10  text-xs md:text-sm dark:text-neutral-400 text-neutral-700 bg-neutral-200/10 dark:bg-neutral-900/10 shadow-sm backdrop-blur-lg tracking-widest">
-      <div className="md:hidden p-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
+    <header className="sticky top-0 z-10  bg-neutral-200/10 text-xs tracking-widest text-neutral-700 shadow-sm backdrop-blur-lg dark:bg-neutral-900/10 dark:text-neutral-400 md:text-sm">
+      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-[1px] md:hidden" />
       <div className="container mx-auto flex justify-between p-1 md:py-2">
         <NextLink href={"/"}>
           <a className="p-1 sm:px-2 sm:py-1">
@@ -52,9 +52,10 @@ export default function Header() {
             </svg>
           </a>
         </NextLink>
-        <nav className="md:flex gap-2 sm:gap-4 capitalize items-center hidden ">
+        <nav className="hidden items-center gap-2 capitalize sm:gap-4 md:flex ">
           <Link href={"/"} name="home" />
-          <Link href={"/about"} name="About" />
+          {/* <Link href={"/about"} name="About" /> */}
+          <Link href={"/articles"} name="Articles" />
           <Link href={"/projects"} name="projects" />
           <Link href={"/tools"} name="Tools" />
         </nav>

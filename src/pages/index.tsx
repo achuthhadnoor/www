@@ -75,7 +75,7 @@ export default function Home() {
     <Container>
       <div className="mb-10 md:mt-20 md:mb-24">
         <div className="flex flex-col md:flex-row-reverse">
-          <div className="flex items-center md:justify-center px-4 md:px-5">
+          <div className="flex items-center px-4 md:justify-center md:px-5">
             <div className="top-36 h-[240] w-[240] rotate-6 transform ">
               <Image
                 alt="Achuth Hadnoor"
@@ -87,18 +87,18 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1">
-            <h1 className="font-semibold my-4 dark:text-neutral-300 text-neutral-800 md:text-5xl text-3xl">
+            <h1 className="my-4 text-3xl font-semibold text-neutral-800 dark:text-neutral-300 md:text-5xl">
               Achuth Hadnoor
             </h1>
             <h2 className="text-lg md:text-xl">Developer, UI / UX Designer</h2>
-            <div className="my-10 md:hidden block">
+            <div className="my-10 block md:hidden">
               <Social />
             </div>
-            <p className="mt-5 text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
+            <p className="text-md mt-5 leading-loose text-neutral-700 dark:text-neutral-500 ">
               👋 Welcome to my little slice of the internet — I hope you find
               something useful here.
             </p>
-            <p className="my-5 text-md leading-loose text-neutral-700 dark:text-neutral-500 ">
+            <p className="text-md my-5 leading-loose text-neutral-700 dark:text-neutral-500 ">
               Read more{" "}
               <Link href="/about">
                 <a className="underline">about me</a>
@@ -119,13 +119,13 @@ export default function Home() {
         <hr className="wave my-20" />
       </div>
       <div id="articles" className="mb-10 flex flex-col gap-2 ">
-        <h2 className="text-2xl py-2">Recent Articles</h2>
-        <p className="text-sm text-neutral-800 dark:text-neutral-400  leading-loose">
+        <h2 className="py-2 text-2xl">Recent Articles</h2>
+        <p className="text-sm leading-loose text-neutral-800  dark:text-neutral-400">
           {`I write mostly about web development and tech careers. In total, I've
           written ${articles.length} articles on this site.`}
         </p>
         <div>
-          <div className="flex items-center gap-2 mt-10 dark:text-neutral-500 text-neutral-600">
+          <div className="mt-10 flex items-center gap-2 text-neutral-600 dark:text-neutral-500">
             <hr className=" w-16 md:inline-block " />
             <span>2022</span>
           </div>
@@ -138,18 +138,18 @@ export default function Home() {
                 rel="noopener noreferrer"
                 key={`${id}-num`}
               >
-                <div className="w-full transform  py-3 my-4 text-sm transition-all hover:scale-[1.01]">
+                <div className="my-4 w-full  transform py-3 text-sm transition-all hover:scale-[1.01]">
                   <div className="flex flex-col items-center justify-between sm:flex-row ">
                     <div className="flex items-center">
                       <div className="text-neutral-500 dark:text-neutral-400">
                         {date}
                       </div>
-                      <h4 className="text-ld w-full font-medium text-neutral-800 dark:text-neutral-100 hover:text-blue-600">
+                      <h4 className="text-ld w-full font-medium text-neutral-800 hover:text-blue-600 dark:text-neutral-100">
                         {title}
                       </h4>
                     </div>
                     <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                      <p className="mr-2 ml-10 text-xs  text-left text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
+                      <p className="mr-2 ml-10 text-left  text-xs text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
                         {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
                         {time}
                       </p>
@@ -163,11 +163,11 @@ export default function Home() {
         <hr className="wave my-20" />
       </div>
       <div id="projects" className="mb-10 flex flex-col gap-2">
-        <h2 className="text-2xl py-2">Recent Projects</h2>
+        <h2 className="py-2 text-2xl">Recent Projects</h2>
         <p className="text-sm text-neutral-800 dark:text-neutral-400">
           Few projects that I currently work on.
         </p>
-        <div className="flex flex-col py-5 gap-5">
+        <div className="flex flex-col gap-5 py-5">
           {projects.map(({ url, title, id, description }) => (
             <a
               href={`https://${url}/`}
@@ -178,9 +178,9 @@ export default function Home() {
               <div
               // className="p-[1px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded"
               >
-                <div className="p-4 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70 bg-neutral-200/40 hover:bg-neutral-200/70   rounded flex flex-col gap-2">
+                <div className="flex flex-col gap-2 rounded bg-neutral-200/40   p-4 hover:bg-neutral-200/70 dark:bg-neutral-800/40 dark:hover:bg-neutral-800/70">
                   <h3 className="text-xl">{title}</h3>
-                  <p className="text-sm py-2 dark:text-neutral-400 text-neutral-600 ">
+                  <p className="py-2 text-sm text-neutral-600 dark:text-neutral-400 ">
                     {description}
                   </p>
                 </div>
@@ -197,16 +197,16 @@ export default function Home() {
           month. Topics include design, marketing, solopreneurship, and personal
           development.
         </p>
-        <div className="subscribe-form flex flex-col md:flex-row gap-2 max-w-md py-5">
+        <div className="subscribe-form flex max-w-md flex-col gap-2 py-5 md:flex-row">
           <input
-            className="outline-none rounded-lg px-2 bg-neutral-200 dark:bg-neutral-800 flex-1 dark:placeholder-neutral-600 placeholder-neutral-400"
+            className="flex-1 rounded-lg bg-neutral-200 px-2 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:placeholder-neutral-600"
             type="email"
             placeholder="join@email.address"
             required={true}
           />
           <button
             type="submit"
-            className="bg-blue-600 dark:bg-blue-800 text-neutral-100 px-2 py-1 rounded "
+            className="rounded bg-blue-600 px-2 py-1 text-neutral-100 dark:bg-blue-800 "
             // className="px-4 py-2 rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
           >
             subscribe
@@ -230,7 +230,7 @@ export default function Home() {
                         <div className="mr-6 text-left text-neutral-500 dark:text-neutral-400">
                           0{index + 1}
                         </div>
-                        <h4 className="text-ld w-full font-medium text-neutral-800 dark:text-neutral-100 hover:text-blue-600">
+                        <h4 className="text-ld w-full font-medium text-neutral-800 hover:text-blue-600 dark:text-neutral-100">
                           {issue.title}
                         </h4>
                       </div>

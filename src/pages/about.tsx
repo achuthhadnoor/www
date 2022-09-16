@@ -37,26 +37,26 @@ export default function Home() {
           I have an experience as a web developer working with Design systems,
           React ecosystems and AWS cloud.
         </p>
-        <div className="flex flex-col gap-2 text-sm my-5 space-y-4 md:space-y-2">
-          <div className="flex flex-col md:flex-row justify-between gap-2 md:items-center">
+        <div className="my-5 flex flex-col gap-2 space-y-4 text-sm md:space-y-2">
+          <div className="flex flex-col justify-between gap-2 md:flex-row md:items-center">
             <span className="text-md text-blue-600">DBS Bank</span>
-            <div className="flex flex-col md:flex-row justify-between md:items-center">
+            <div className="flex flex-col justify-between md:flex-row md:items-center">
               <span className="py-2 md:px-4">Fontend Developer</span>
-              <span className="text-neutral-500 text-xs">2020 - present</span>
+              <span className="text-xs text-neutral-500">2020 - present</span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row justify-between gap-2 md:items-center">
+          <div className="flex flex-col justify-between gap-2 md:flex-row md:items-center">
             <span className="text-md text-blue-600">EPAM Systems</span>
-            <div className="flex flex-col md:flex-row justify-between md:items-center">
+            <div className="flex flex-col justify-between md:flex-row md:items-center">
               <span className="py-2 md:px-4">Software Engineer</span>
-              <span className="text-neutral-500 text-xs">2020 - present</span>
+              <span className="text-xs text-neutral-500">2020 - present</span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row justify-between gap-2 md:items-center">
+          <div className="flex flex-col justify-between gap-2 md:flex-row md:items-center">
             <span className="text-md text-blue-600">Vistex Asia Pacific</span>
-            <div className="flex flex-col md:flex-row justify-between md:items-center">
+            <div className="flex flex-col justify-between md:flex-row md:items-center">
               <span className="py-2 md:px-4">Developer</span>
-              <span className="text-neutral-500 text-xs">2016 - 2020</span>
+              <span className="text-xs text-neutral-500">2016 - 2020</span>
             </div>
           </div>
         </div>

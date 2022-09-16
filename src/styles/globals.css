@@ -5,7 +5,7 @@
 html,
 body {
   font-family: MonoLisa, Monaco, "DejaVu Sans Mono", "Lucida Console", monospace;
-  @apply leading-loose bg-neutral-100 dark:bg-neutral-900;
+  @apply bg-neutral-100 leading-loose dark:bg-neutral-900;
 }
 #nprogress .bar {
   @apply bg-gradient-to-r from-indigo-500 via-purple-500

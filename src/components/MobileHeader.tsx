@@ -105,7 +105,7 @@ export default function MobileMenu() {
             </Link>
           </li>
           <li
-            className=" text-neutral-900 dark:text-neutral-100 text-sm font-semibold"
+            className=" text-sm font-semibold text-neutral-900 dark:text-neutral-100"
             style={{ transitionDelay: "250ms" }}
           >
             <Link href="/tools">

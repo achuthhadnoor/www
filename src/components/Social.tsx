@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Social() {
   return (
-    <div className="mt-5 flex flex-1 items-center dark:text-neutral-300 text-neutral-800">
-      <hr className=" w-16 md:inline-block dark:text-neutral-500 text-neutral-600" />
+    <div className="mt-5 flex flex-1 items-center text-neutral-800 dark:text-neutral-300">
+      <hr className=" w-16 text-neutral-600 dark:text-neutral-500 md:inline-block" />
       <div className="flex:1 mx-5 flex w-full gap-2 md:w-auto md:justify-start">
         <a
           rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-blue-500 rounded"
+          className="rounded p-2 hover:bg-neutral-200/50 hover:text-blue-500 dark:hover:bg-neutral-800/50"
           href="https://twitter.com/achuth_hadnoor"
           target="_blank"
           title="Twitter"
@@ -23,7 +23,7 @@ export default function Social() {
         </a>
         <a
           rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-gray-500 rounded"
+          className="rounded p-2 hover:bg-neutral-200/50 hover:text-gray-500 dark:hover:bg-neutral-800/50"
           href="https://github.com/achuthhadnoor"
           target="_blank"
           title="Github"
@@ -39,7 +39,7 @@ export default function Social() {
         </a>
         <a
           rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-purple-500 rounded"
+          className="rounded p-2 hover:bg-neutral-200/50 hover:text-purple-500 dark:hover:bg-neutral-800/50"
           href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
           target="_blank"
           title="Linkedin"
@@ -60,7 +60,7 @@ export default function Social() {
         </a>
         <a
           rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-pink-500 rounded"
+          className="rounded p-2 hover:bg-neutral-200/50 hover:text-pink-500 dark:hover:bg-neutral-800/50"
           href="https://dribbble.com/achuth_hadnoor"
           target="_blank"
           title="Dribbble"
@@ -74,7 +74,7 @@ export default function Social() {
         </a>
         <a
           rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-indigo-500 rounded"
+          className="rounded p-2 hover:bg-neutral-200/50 hover:text-indigo-500 dark:hover:bg-neutral-800/50"
           href="https://instagram.com/uiuxdx"
           target="_blank"
           title="instagram"
@@ -96,7 +96,7 @@ export default function Social() {
         </a>
         <a
           rel="noreferrer"
-          className="p-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 hover:text-yellow-500 rounded"
+          className="rounded p-2 hover:bg-neutral-200/50 hover:text-yellow-500 dark:hover:bg-neutral-800/50"
           href="mailto:hey@achuth.dev"
           target="_blank"
           title="Email"
