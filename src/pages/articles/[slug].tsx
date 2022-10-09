@@ -17,21 +17,25 @@ export default function Post() {
     },
     {
       id: "2",
-      title: "Overview",
+      title: "What is a promise?",
       url: "/#sample",
       active: false,
     },
-    ,
     {
       id: "3",
-      title: "Overview",
+      title: "Usage of Promise",
       url: "/#sample",
       active: false,
     },
-    ,
     {
       id: "4",
-      title: "Overview",
+      title: "Advantages of using promise",
+      url: "/#sample",
+      active: false,
+    },
+    {
+      id: "5",
+      title: "Async await and conclusion.",
       url: "/#sample",
       active: false,
     },
@@ -78,7 +82,7 @@ export default function Post() {
             <div>SERIES</div>
             <div>Build an macOs menubar app using NextJs and eletronJS</div>
           </div>
-          <article>
+          <div>
             <div>
               <Image
                 className="rounded-md"
@@ -88,86 +92,13 @@ export default function Post() {
                 alt="Achuth Hadnoor"
               />
             </div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-            <div>today we are going to learn more baout theo</div>
-          </article>
+          </div>
         </div>
-        <div className="w-full px-4 md:max-w-xs">
-          <div className="top-16  flex-col transition-all sm:flex sm:px-2  md:sticky">
+        <div className="w-full px-2 md:max-w-[300px]">
+          <div className="top-16  flex-col transition-all sm:flex  md:sticky">
             <h3 className="px-2 py-5 text-xl font-semibold">On the page</h3>
             {pageOverview.map(({ id, title, url, active }) => (
-              <Link href={url} key={`sample-${id}`}>
+              <Link href={`/articles/${url}`} key={`sample-${id}`}>
                 <a className="border-l-neutral-300 text-sm ">
                   <div
                     className={cl(
@@ -183,9 +114,9 @@ export default function Post() {
             ))}
             <div className="hidden md:block">
               <h3 className="my-5 px-2 text-xl font-semibold">Articles</h3>
-              <div key={`blog-12`} className="flex">
+              <div key={`blog-12`} className="flex ">
                 <Link href={`/blog/sample`}>
-                  <a className="border-l bg-gradient-to-l px-2 py-3 hover:from-orange-50 dark:hover:from-indigo-900">
+                  <a className="flex-1 border-l bg-gradient-to-l px-2 py-3 hover:from-orange-50 dark:hover:from-indigo-900">
                     <div className="flex flex-1 border-l-neutral-600 pb-2 dark:text-neutral-500">
                       <span className="text-xs">
                         {/* {format(parseISO(postItem.publishedAt), "MMMM dd, yyyy")} */}
@@ -200,9 +131,9 @@ export default function Post() {
                   </a>
                 </Link>
               </div>
-              <div key={`blog-12`} className="flex">
+              <div key={`blog-12`} className="flex ">
                 <Link href={`/blog/sample`}>
-                  <a className="border-l bg-gradient-to-l px-2 py-3 hover:from-orange-50 dark:hover:from-indigo-900">
+                  <a className="flex-1 border-l bg-gradient-to-l px-2 py-3 hover:from-orange-50 dark:hover:from-indigo-900">
                     <div className="flex flex-1 border-l-neutral-600 pb-2 dark:text-neutral-500">
                       <span className="text-xs">
                         {/* {format(parseISO(postItem.publishedAt), "MMMM dd, yyyy")} */}
@@ -217,7 +148,7 @@ export default function Post() {
                   </a>
                 </Link>
               </div>
-              <div className="flex">
+              <div className="flex ">
                 <Link href="/blog">
                   <a className="mt-2 py-4 text-xs font-semibold">View More →</a>
                 </Link>

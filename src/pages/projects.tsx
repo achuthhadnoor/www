@@ -61,7 +61,7 @@ export default function Home() {
       </p>
       <hr className="wave my-10" />
       {projects.map((project) => (
-        <div key={project.id}>
+        <div key={project.id} id={project.id}>
           <Image
             className="rounded-2xl "
             height={750}
