@@ -54,9 +54,19 @@ export default function Home() {
     },
   ];
   return (
-    <Container>
-      <h1 className="mb-10 text-3xl font-semibold md:text-5xl">Projects</h1>
-      <p className="text-md mt-2 leading-loose text-neutral-700 dark:text-neutral-500">
+    <Container
+      title={
+        "Projects - A collection of experiments, designs, apps by Achuth Hadnoor"
+      }
+      description={
+        "Achuth hadnoor always tries to build stuff to solve problems and picks the stack that solves the problem.Most of them are designed in figma and built using Javascript."
+      }
+      image=""
+    >
+      <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
+        Design \ Code \ Ship
+      </h1>
+      <p className="text-md mt-2 text-center leading-loose text-neutral-700 dark:text-neutral-500">
         Here’s a small selection of some of my recent projects and experiences.
       </p>
       <hr className="wave my-10" />

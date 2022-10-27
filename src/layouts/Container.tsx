@@ -9,8 +9,8 @@ export default function Container(props: { [x: string]: any; children: any }) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Achuth Hadnoor – Designer,Developer, writer, creator.",
-    description: `Front-end developer, designer and maker.`,
+    title: "Achuth Hadnoor – UI/UX Design, Solopreneurship, App Development.",
+    description: `Achuth Hadnoor is a freelance designer, developer, and creator based in India. He shares about UI/UX design, Solopreneurship, App Development.`,
     image: "https://achuth.dev/static/images/achu-banner.png",
     type: "website",
     ...customMeta,
@@ -75,7 +75,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
         ></rect>
       </svg>
       <Header />
-      <main className="container mx-auto my-10 px-4 tracking-wider text-neutral-800 dark:text-neutral-300 md:my-10 lg:max-w-5xl">
+      <main className="container mx-auto my-10 px-4 leading-loose tracking-wider text-neutral-800 dark:text-neutral-300 md:my-10 lg:max-w-5xl">
         {children}
         <div className="flex flex-col justify-between gap-4 text-sm text-neutral-500 sm:flex-row">
           <span>made with ❤️ + 🥶</span>

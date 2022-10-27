@@ -42,17 +42,12 @@ export default function Post() {
   ];
   return (
     <Container>
+      <span className="bold text-md mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center font-semibold text-transparent ">
+        Blog
+      </span>
       <h1 className="mb-5 text-3xl">
         How to turn side projects into an actual product?
       </h1>
-      <div className="my-2 flex flex-wrap gap-2 text-xs">
-        <span className="rounded-full bg-neutral-200 px-2 py-1 dark:bg-neutral-700">
-          # productivity
-        </span>
-        <span className="rounded-full bg-neutral-200 px-2 py-1 dark:bg-neutral-700">
-          # time
-        </span>
-      </div>
       <div className="flex gap-4 py-4 align-middle">
         <span className="">
           <Image
@@ -75,6 +70,14 @@ export default function Post() {
           </div>
         </div>
       </div>
+      <div className="my-2 flex flex-wrap gap-2 text-xs">
+        <span className="rounded-full bg-neutral-200 px-2 py-1 dark:bg-neutral-700">
+          # productivity
+        </span>
+        <span className="rounded-full bg-neutral-200 px-2 py-1 dark:bg-neutral-700">
+          # time
+        </span>
+      </div>
       <hr className="wave my-5" />
       <div className="flex flex-col-reverse md:flex-row">
         <div>
@@ -95,10 +98,10 @@ export default function Post() {
           </div>
         </div>
         <div className="w-full px-2 md:max-w-[300px]">
-          <div className="top-16  flex-col transition-all sm:flex  md:sticky">
-            <h3 className="px-2 py-5 text-xl font-semibold">On the page</h3>
+          <div className="top-16  flex-col pl-2 transition-all  sm:flex md:sticky">
+            <h3 className="py-5 text-xl font-semibold">On the page</h3>
             {pageOverview.map(({ id, title, url, active }) => (
-              <Link href={`/articles/${url}`} key={`sample-${id}`}>
+              <Link href={`${url}`} key={`sample-${id}`}>
                 <a className="border-l-neutral-300 text-sm ">
                   <div
                     className={cl(

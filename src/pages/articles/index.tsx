@@ -36,8 +36,8 @@ export default function Articles() {
   ];
   return (
     <Container>
-      <h1 className="mt-5 mb-10 text-3xl font-semibold md:text-5xl">
-        Learn. Unlearn. Relearn.
+      <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
+        Learn \ Unlearn \ Relearn.
       </h1>
       <div className="my-5">
         <p className="text-md mt-2 mb-5 max-w-2xl leading-loose text-neutral-800 dark:text-neutral-500">
@@ -75,33 +75,36 @@ export default function Articles() {
         </div>
         <hr className="wave mt-10" />
       </div>
+      <div className="mt-10 flex items-center gap-2 text-neutral-600 dark:text-neutral-500">
+        <hr className=" w-16 md:inline-block " />
+        <span>2022</span>
+      </div>
       <div className="my-5 max-w-2xl">
         {articles.map(({ id, title, date, time }) => (
           <Link
-            className="w-full"
+            className="my-5 w-full"
             href={"/"}
             aria-label="Introduction to React 2025"
             rel="noopener noreferrer"
             key={`${id}-num`}
           >
-            <div className="my-4 w-full  transform py-3 text-sm transition-all hover:scale-[1.01]">
-              <div className="flex flex-col items-center justify-between sm:flex-row ">
-                <div className="flex items-center">
-                  <div className="text-neutral-500 dark:text-neutral-400">
-                    {date}
-                  </div>
-                  <h4 className="text-ld w-full font-medium text-neutral-800 hover:text-blue-600 dark:text-neutral-100">
-                    {title}
-                  </h4>
+            {/* <div className="my-4 w-full  transform py-3 text-sm transition-all hover:scale-[1.01]"> */}
+            <a className="my-5 flex flex-col items-center justify-between text-sm transition-all hover:scale-[1.01] sm:flex-row">
+              <div className="flex flex-1 items-center gap-4">
+                <div className=" text-neutral-500 dark:text-neutral-400">
+                  {date}
                 </div>
-                <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                  <p className="mr-2 ml-10 text-left  text-xs text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
-                    {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
-                    {time}
-                  </p>
-                </div>
+                <h4 className="text-ld flex-1 font-medium text-neutral-800 hover:text-blue-600 dark:text-neutral-100">
+                  {title}
+                </h4>
               </div>
-            </div>
+              <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
+                <p className="mr-2 ml-10 text-left  text-xs text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
+                  {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
+                  {time}
+                </p>
+              </div>
+            </a>
           </Link>
         ))}
       </div>
