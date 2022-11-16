@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: MonoLisa, Monaco, "DejaVu Sans Mono", "Lucida Console", monospace;
+  @apply bg-neutral-100 leading-loose dark:bg-neutral-900;
+  scroll-behavior: smooth;
+}
+#nprogress .bar {
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500
+    to-pink-500;
+}
+.wave {
+  height: 6px;
+  background-image: url("/assets/img/divider.svg");
+  background-repeat: repeat-x;
+  background-position: left center;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+}
+::selection {
+  @apply bg-blue-700 text-neutral-200;
+}
+
+.menu-icon {
+  display: block;
+  padding: 2px;
+  width: 25px;
+  @apply bg-neutral-200;
+}
+.menu-icon::after {
+  content: "";
+  display: block;
+  padding: 2px;
+  width: 25px;
+  @apply bg-neutral-200;
+}
