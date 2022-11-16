@@ -11,7 +11,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
   const meta = {
     title: "Achuth Hadnoor – UI/UX Design, Solopreneurship, App Development.",
     description: `Achuth Hadnoor is a freelance designer, developer, and creator based in India. He shares about UI/UX design, Solopreneurship, App Development.`,
-    image: "https://achuth.dev/static/images/achu-banner.png",
+    image: "https://achuth.dev/images/achu-banner.png",
     type: "website",
     ...customMeta,
   };
