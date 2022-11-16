@@ -75,7 +75,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
         ></rect>
       </svg>
       <Header />
-      <main className="container mx-auto my-10 px-4 leading-loose tracking-wider text-neutral-800 dark:text-neutral-300 md:my-10 lg:max-w-5xl">
+      <main className="slide-up container mx-auto my-10 px-4 leading-loose tracking-wider text-neutral-800 dark:text-neutral-300 md:my-10 lg:max-w-5xl">
         {children}
         <div className="flex flex-col justify-between gap-4 text-sm text-neutral-500 sm:flex-row">
           <span>made with ❤️ + 🥶</span>

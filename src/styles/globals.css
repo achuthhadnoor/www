@@ -39,3 +39,33 @@ body {
   width: 25px;
   @apply bg-neutral-200;
 }
+
+.slide-up {
+  @apply relative transition-all ease-linear;
+  animation: slideup 0.65s ease-in-out;
+}
+.slide-down {
+  @apply relative transition-all ease-linear;
+  animation: slidedown 0.65s ease-in-out;
+}
+
+@keyframes slideup {
+  from {
+    transform: translate3d(0px, 30px, 0px);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+@keyframes slidedown {
+  from {
+    transform: translate3d(0px, -30px, 0px);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
