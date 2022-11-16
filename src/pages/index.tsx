@@ -167,7 +167,7 @@ export default function Home() {
           >
             {/* <div className="my-4 w-full  transform py-3 text-sm transition-all hover:scale-[1.01]"> */}
             <a className="my-5 flex flex-col items-center justify-between text-sm transition-all hover:scale-[1.01] sm:flex-row">
-              <div className="flex flex-1 items-center gap-4">
+              <div className="flex w-full flex-1 items-center gap-4">
                 <div className=" text-neutral-500 dark:text-neutral-400">
                   {date}
                 </div>
@@ -176,7 +176,7 @@ export default function Home() {
                 </h4>
               </div>
               <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                <p className="mr-2 ml-10 text-left  text-xs text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
+                <p className="ml-[4.5rem] mr-2 text-left text-xs  text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:ml-0 md:mb-0">
                   {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
                   {time}
                 </p>
@@ -230,25 +230,10 @@ export default function Home() {
     <div id="newsletter" className="mb-10 flex flex-col gap-2">
       <h2 className="text-2xl">The newsletter</h2>
       <p className="mt-5 text-sm leading-loose text-neutral-700 dark:text-neutral-500">
-        1,000+ peeps subscribe to my newsletter. You’ll receive an issue per
-        month. Topics include design, marketing, solopreneurship, and personal
+        10+ peeps subscribe to my newsletter. You’ll receive an issue per month.
+        Topics include design, marketing, solopreneurship, and personal
         development.
       </p>
-      {/* <div className="subscribe-form flex max-w-md flex-col gap-2 py-5 md:flex-row">
-          <input
-            className="flex-1 rounded-lg bg-neutral-200 px-2 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:placeholder-neutral-600"
-            type="email"
-            placeholder="join@email.address"
-            required={true}
-          />
-          <button
-            type="submit"
-            className="rounded bg-blue-600 px-2 py-1 text-neutral-100 dark:bg-blue-800 "
-            // className="px-4 py-2 rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
-          >
-            subscribe
-          </button>
-        </div> */}
       <NewsletterForm />
       <div className="text-md  max-w-2xl">
         {data?.issues?.map(
