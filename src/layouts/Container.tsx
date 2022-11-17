@@ -13,6 +13,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
     description: `Achuth Hadnoor is a freelance designer, developer, and creator based in India. He shares about UI/UX design, Solopreneurship, App Development.`,
     image: "https://achuth.dev/images/achu-banner.png",
     type: "website",
+    keywords: "Designer, Developer, UI, UX",
     ...customMeta,
   };
   return (
@@ -26,6 +27,7 @@ export default function Container(props: { [x: string]: any; children: any }) {
           property="og:url"
           content={`https://achuth.dev${router.asPath}`}
         />
+        <meta name="keywords" content={meta.keywords}></meta>
         <meta name="description" content={meta.description} />
         <link rel="canonical" href={`https://achuth.dev${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
@@ -44,11 +46,11 @@ export default function Container(props: { [x: string]: any; children: any }) {
             <script
               dangerouslySetInnerHTML={{
                 __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config',  'UA-177599995-1');
-        `,
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                      gtag('config',  'UA-177599995-1');
+                      `,
               }}
             />
             <script async src="https://cdn.splitbee.io/sb.js"></script>

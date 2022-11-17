@@ -45,7 +45,7 @@ body {
   animation: slideup 0.65s ease-in-out;
 }
 .slide-down {
-  @apply relative transition-all ease-linear;
+  @apply relative transition-transform ease-linear;
   animation: slidedown 0.65s ease-in-out;
 }
 

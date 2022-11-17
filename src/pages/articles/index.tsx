@@ -39,12 +39,12 @@ export default function Articles() {
       <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
         Learn \ Unlearn \ Relearn.
       </h1>
-      <div className="my-5">
-        <p className="text-md mt-2 mb-5 max-w-2xl leading-loose text-neutral-800 dark:text-neutral-500">
+      <div className="my-5 text-center">
+        <p className="text-md mx-auto mt-2 mb-5 max-w-2xl leading-loose text-neutral-800 dark:text-neutral-500">
           A collection of articles to help you learn, grow, build yourself to
           reach full potential.
         </p>
-        <div className="my-4 flex max-w-2xl rounded-full bg-neutral-700/20 px-4 py-2  text-neutral-400">
+        <div className="my-4 mx-auto flex max-w-2xl rounded-full bg-neutral-700/20 px-4  py-2 text-neutral-400">
           <input
             type={"search"}
             placeholder="Search for inspiration, articles"
