@@ -24,9 +24,18 @@ export type FormState = {
 };
 
 export type Subscribers = {
-  count: number;
+  email: string;
+  first_name: string | null;
+  id: number;
+  last_changed: string;
+  last_name: string | null;
+  list_id: number;
 };
 
 export type Views = {
   total: any;
+};
+
+export type NewsletterForm = {
+  showIssues?: boolean;
 };

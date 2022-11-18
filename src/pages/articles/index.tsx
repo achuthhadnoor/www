@@ -79,10 +79,10 @@ export default function Articles() {
         <hr className=" w-16 md:inline-block " />
         <span>2022</span>
       </div>
-      <div className="my-5 max-w-2xl">
+      <div className="my-5 ">
         {articles.map(({ id, title, date, time }) => (
           <Link
-            className="my-5 w-full"
+            className="w-full "
             href={"/"}
             aria-label="Introduction to React 2025"
             rel="noopener noreferrer"
@@ -90,7 +90,7 @@ export default function Articles() {
           >
             {/* <div className="my-4 w-full  transform py-3 text-sm transition-all hover:scale-[1.01]"> */}
             <a className="my-5 flex flex-col items-center justify-between text-sm transition-all hover:scale-[1.01] sm:flex-row">
-              <div className="flex flex-1 items-center gap-4">
+              <div className="flex w-full flex-1 items-center gap-4">
                 <div className=" text-neutral-500 dark:text-neutral-400">
                   {date}
                 </div>
@@ -99,7 +99,7 @@ export default function Articles() {
                 </h4>
               </div>
               <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                <p className="mr-2 ml-10 text-left  text-xs text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
+                <p className="ml-[4.5rem] mr-2 text-left text-xs  text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:ml-0 md:mb-0">
                   {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
                   {time}
                 </p>

@@ -226,64 +226,6 @@ export default function Home() {
     </div>
   );
 
-  const NewsLetter = () => (
-    <div id="newsletter" className="mb-10 flex flex-col gap-2">
-      <h2 className="text-2xl">The newsletter</h2>
-      <p className="mt-5 text-sm leading-loose text-neutral-700 dark:text-neutral-500">
-        10+ peeps subscribe to my newsletter. You’ll receive an issue per month.
-        Topics include design, marketing, solopreneurship, and personal
-        development.
-      </p>
-      <NewsletterForm />
-      <div className="text-md  max-w-2xl">
-        {data?.issues?.map(
-          (issue, index) =>
-            index < 3 && (
-              <a
-                className="w-full"
-                href={issue.url}
-                aria-label="Introduction to React 2025"
-                target="_blank"
-                rel="noopener noreferrer"
-                key={`issue-num ${index}`}
-              >
-                <div className="w-full transform border-b border-neutral-200 py-3 text-sm transition-all hover:scale-[1.01] dark:border-neutral-700">
-                  <div className="flex flex-col items-baseline justify-between sm:flex-row ">
-                    <div className="flex items-center">
-                      <div className="mr-6 text-left text-neutral-500 dark:text-neutral-400">
-                        0{index + 1}
-                      </div>
-                      <h4 className="text-ld w-full font-medium text-neutral-800 hover:text-blue-600 dark:text-neutral-100">
-                        {issue.title}
-                      </h4>
-                    </div>
-                    <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                      <p className="mr-2 ml-10  text-left text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:mb-0">
-                        {format(parseISO(issue.sent_at), "dd MMMM, yyyy")}
-                      </p>
-                      {/* <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-neutral-500 dark:text-neutral-100"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg> */}
-                    </div>
-                  </div>
-                </div>
-              </a>
-            )
-        )}
-      </div>
-      {/* <hr className="wave my-20" /> */}
-    </div>
-  );
-
   // const Resources = () => (
   //   <div className="mb-10 flex flex-col gap-5">
   //     <h2 className="text-2xl">Resources</h2>
@@ -566,7 +508,7 @@ export default function Home() {
       <Articles />
       <Projects />
       {/* <Resources /> */}
-      <NewsLetter />
+      <NewsletterForm showIssues={true} />
       <hr className="wave my-20" />
     </Container>
   );
