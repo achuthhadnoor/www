@@ -9,7 +9,6 @@ import {
   Subscribers,
   NewsletterForm,
 } from "../lib/types";
-import is from "date-fns/esm/locale/is/index.js";
 
 const NewsletterFormElement = ({ showIssues = false }: NewsletterForm) => {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
