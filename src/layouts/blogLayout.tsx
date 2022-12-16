@@ -84,7 +84,7 @@ export default function Post({ post, posts, ...props }) {
 
       <div className="mb-5 flex flex-col-reverse text-sm md:flex-row">
         <div className="max-w-2xl overflow-auto">
-          <Series description={post.summary} />
+          <Series description={post.series} />
           <div>
             <div>
               <Image

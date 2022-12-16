@@ -3,5 +3,8 @@ const { withContentlayer } = require("next-contentlayer");
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ["cdn.hashnode.com"],
+  },
 };
 module.exports = withContentlayer(nextConfig);

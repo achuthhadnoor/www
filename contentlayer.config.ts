@@ -40,6 +40,7 @@ const Blog = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
+    series: { type: "string", required: false },
   },
   computedFields,
 }));
@@ -54,6 +55,7 @@ const OtherPage = defineDocumentType(() => ({
     summary: { type: "string", required: true },
     image: { type: "string", required: false },
   },
+  series: { type: "string", required: false },
   computedFields,
 }));
 

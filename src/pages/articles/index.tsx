@@ -1,39 +1,14 @@
-import Image from "next/image";
+import { useCallback, useEffect, useState, Fragment } from "react";
+import { format, parseISO } from "date-fns";
 import Link from "next/link";
+import fetcher from "src/lib/fetcher";
+import { Issues } from "src/lib/types";
+import useSWR from "swr";
 import Container from "../../layouts/Container";
+import Image from "next/image";
 
 export default function Articles() {
-  const articles = [
-    {
-      id: "1",
-      title: "Production ready electron app setup with ReactJS",
-      tags: ["development", "web", "desktop"],
-      date: "28 Apr",
-      year: "2022",
-      time: "2min 5s",
-      summary:
-        "If you are a designer and is looking for a perfect language to use for mobile app development then flutter is a saviour.",
-    },
-    {
-      id: "2",
-      title: "Automate your workflows to increase productivity",
-      tags: ["personal"],
-      date: "21 Feb",
-      year: "2022",
-      time: "2min 5s",
-      summary: "Highlights and reflections on 2019 and a look forward to 2020.",
-    },
-    {
-      id: "3",
-      title: "Time-boxing model: A complete guide to time management",
-      tags: ["personal", "productivity"],
-      date: "13 Jan",
-      year: "2022",
-      time: "2min 5s",
-      summary:
-        "Time boxing is a simple yet powerful technique of time management,That helps you to have control over your time and improves your productivity.This helpful technique is for practising self explain…",
-    },
-  ];
+  const { data } = useSWR<any>("/api/articles", fetcher);
   return (
     <Container>
       <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
@@ -79,33 +54,48 @@ export default function Articles() {
         <hr className=" w-16 md:inline-block " />
         <span>2022</span>
       </div>
-      <div className="my-5 ">
-        {articles.map(({ id, title, date, time }) => (
-          <Link
-            className="w-full "
-            href={"/"}
-            aria-label="Introduction to React 2025"
-            rel="noopener noreferrer"
-            key={`${id}-num`}
-          >
-            {/* <div className="my-4 w-full  transform py-3 text-sm transition-all hover:scale-[1.01]"> */}
-            <a className="my-5 flex flex-col items-center justify-between text-sm transition-all hover:scale-[1.01] sm:flex-row">
-              <div className="flex w-full flex-1 items-center gap-4">
-                <div className=" text-neutral-500 dark:text-neutral-400">
-                  {date}
-                </div>
-                <h4 className="text-ld flex-1 font-medium text-neutral-800 hover:text-blue-600 dark:text-neutral-100">
-                  {title}
-                </h4>
-              </div>
-              <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
-                <p className="ml-[4.5rem] mr-2 text-left text-xs  text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:ml-0 md:mb-0">
-                  {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
-                  {time}
-                </p>
-              </div>
-            </a>
-          </Link>
+      <div className="my-5">
+        {data?.map(({ _id, title, brief, dateAdded, slug, coverImage }) => (
+          <div key={`${_id}-num`} className="mb-4 flex">
+            <div>
+              <Link
+                className="w-full "
+                href={`https://blog.achuth.dev/${slug}`}
+                aria-label="Introduction to React 2025"
+                rel="noopener noreferrer"
+              >
+                {/* <div className="my-4 w-full  transform py-3 text-sm transition-all hover:scale-[1.01]"> */}
+                <a className="my-5 flex origin-center transform flex-col items-center justify-between text-sm transition-all hover:scale-[1.01] sm:flex-row ">
+                  <div className="flex w-full flex-1 flex-col-reverse  gap-4">
+                    <div className=" text-neutral-500 dark:text-neutral-400">
+                      {format(parseISO(dateAdded), "dd MMM, yyyy")}
+                    </div>
+                    <h4 className="flex-1 text-lg font-medium text-neutral-800 hover:text-blue-600 dark:text-neutral-100">
+                      {title}
+                    </h4>
+                  </div>
+                  <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
+                    <p className="ml-[4.5rem] mr-2 text-left text-xs  text-neutral-500 dark:text-neutral-400 sm:ml-0 sm:text-right md:ml-0 md:mb-0">
+                      {/* {format(parseISO(issue.sent_at), "dd MMMM, yyyy")} */}
+                      {/* {time} */}
+                    </p>
+                  </div>
+                </a>
+              </Link>
+              <p className="border-b border-b-neutral-800 pb-2 text-sm text-neutral-500">
+                {brief}
+              </p>
+            </div>
+            {coverImage.length > 0 && (
+              <Image
+                className="rounded-md"
+                height={650}
+                width={1080}
+                src={coverImage}
+                alt={title}
+              />
+            )}
+          </div>
         ))}
       </div>
       <hr className="wave my-10" />
