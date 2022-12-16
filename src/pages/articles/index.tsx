@@ -56,7 +56,10 @@ export default function Articles() {
       </div>
       <div className="my-5">
         {data?.map(({ _id, title, brief, dateAdded, slug, coverImage }) => (
-          <div key={`${_id}-num`} className="mb-4 flex">
+          <div
+            key={`${_id}-num`}
+            className="mb-4 flex flex-col-reverse md:flex-row"
+          >
             <div>
               <Link
                 className="w-full "

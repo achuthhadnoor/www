@@ -469,9 +469,6 @@ export default function Home() {
 }
 
 export async function getStaticProps({ params }: any) {
-  console.log("====================================");
-  console.log(params, allBlogs);
-  console.log("====================================");
   //   const tweets = await getTweets(post.tweetIds);
   const posts = allBlogs
     .filter((postItem) =>
