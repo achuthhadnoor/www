@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Social from "../components/Social";
 import Container from "../layouts/Container";
 import useSWR from "swr";
@@ -13,7 +13,13 @@ import { pick } from "contentlayer/client";
 
 export default function Home() {
   // const { data } = useSWR<Issues>("/api/issues", fetcher);
-  const articles = useSWR<any>("/api/articles", fetcher);
+  const { data, isValidating } = useSWR<any>("/api/articles", fetcher);
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    if (data) {
+      setArticles(data);
+    }
+  }, [data]);
   const projects = [
     {
       id: "lapse",
@@ -101,15 +107,39 @@ export default function Home() {
       <h2 className="py-2 text-2xl">Recent Articles</h2>
       <p className="text-sm leading-loose text-neutral-800  dark:text-neutral-400">
         {`A collection of thoughts, experiments, technology, design and more. In total, I've
-          written ${articles?.data?.length} articles on this site.`}
+          written ${articles?.length} articles on this site.`}
       </p>
       {/* <div className="mt-10 flex items-center gap-2 text-neutral-600 dark:text-neutral-500">
         <hr className=" w-16 md:inline-block " />
         <span>2022</span>
       </div> */}
       <div className="my-5 flex-1">
-        {articles.data?.map(
-          ({ _id, title, brief, dateAdded, slug, coverImage }) => (
+        {isValidating ? (
+          <>
+            {" "}
+            <svg
+              className="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </>
+        ) : (
+          articles?.map(({ _id, title, dateAdded, slug }) => (
             <Link
               className="w-full "
               href={`https://blog.achuth.dev/${slug}`}
@@ -136,7 +166,7 @@ export default function Home() {
                 </div>
               </a>
             </Link>
-          )
+          ))
         )}
       </div>
       <Link href="/articles">
