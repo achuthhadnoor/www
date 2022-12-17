@@ -63,7 +63,7 @@ export default function Home() {
       }
       image=""
     >
-      <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
+      <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
         Design \ Code \ Ship
       </h1>
       <p className="text-md mt-2 text-center leading-loose text-neutral-700 dark:text-neutral-500">

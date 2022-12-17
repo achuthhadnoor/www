@@ -39,7 +39,7 @@ export default function Social() {
         </a>
         <a
           rel="noreferrer"
-          className="rounded p-2 hover:bg-neutral-200/50 hover:text-purple-500 dark:hover:bg-neutral-800/50"
+          className="rounded p-2 hover:bg-neutral-200/50 hover:text-indigo-500 dark:hover:bg-neutral-800/50"
           href="https://www.linkedin.com/in/achuth-hadnoor-49223ba6/"
           target="_blank"
           title="Linkedin"

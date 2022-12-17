@@ -9,7 +9,7 @@ body {
   scroll-behavior: smooth;
 }
 #nprogress .bar {
-  @apply bg-gradient-to-r from-indigo-500 via-purple-500
+  @apply bg-gradient-to-r from-indigo-500 via-indigo-500
     to-pink-500;
 }
 
@@ -178,7 +178,7 @@ body {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-purple-500;
+  @apply text-indigo-500;
 }
 
 .token.operator,

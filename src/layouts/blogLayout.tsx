@@ -12,7 +12,7 @@ export const Series = ({ description }) => {
   return (
     <Link href={`/articles?q=${description}`}>
       <a className="series my-5 flex flex-1 flex-col gap-2 rounded-lg bg-neutral-200 p-4 text-sm dark:bg-neutral-800">
-        <div className="bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-xs text-transparent ">
+        <div className="bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-xs text-transparent ">
           SERIES
         </div>
         <div>{description}</div>
@@ -44,7 +44,7 @@ export default function Post({ post, posts, ...props }) {
   return (
     <Container>
       <div id="blog-header">
-        <span className="text-md bold mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center text-transparent ">
+        <span className="text-md bold mb-10 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-center text-transparent ">
           Blog
         </span>
         <h1 className="mb-5 text-2xl md:text-3xl">{post.title}</h1>

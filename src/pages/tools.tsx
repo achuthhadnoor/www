@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   return (
     <Container>
-      <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
+      <h1 className="mb-10 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl ">
         Tools \ Products \ Services
       </h1>
       <p className="mt-2 text-center text-sm leading-loose text-neutral-700 dark:text-neutral-500">

@@ -1,4 +1,5 @@
 import Link, { LinkProps } from "next/link";
+import * as Icons from "../components/icons";
 
 // import NowPlaying from 'components/NowPlaying';
 

@@ -6,18 +6,25 @@ import MobileMenu from "./MobileHeader";
 
 const Link = ({ href, name, ...props }) => {
   const router = useRouter();
-  const isActive = router.asPath === href;
+  const isActive =
+    href === "/" ? router.asPath === href : router.asPath.includes(href);
   return (
     <NextLink href={href}>
       <a
         className={cn(
           isActive
-            ? "rounded-md bg-neutral-300 px-2 py-2 dark:bg-neutral-800"
-            : "rounded-md px-2 py-2 hover:bg-neutral-300 dark:hover:bg-neutral-800"
+            ? // ? "bg-neutral-300  dark:bg-neutral-800"
+              // : " hover:bg-neutral-300 dark:hover:bg-neutral-800",
+              "text-indigo-400"
+            : " hover:text-indigo-500 dark:hover:text-indigo-500",
+          "relative rounded-md p-2"
         )}
         {...props}
       >
         {name}
+        {isActive && (
+          <span className="absolute inset-x-1 -bottom-3 h-px select-none bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 focus:outline-none dark:from-indigo-400/0 dark:via-indigo-400/40 dark:to-indigo-400/0"></span>
+        )}
       </a>
     </NextLink>
   );
@@ -26,7 +33,7 @@ const Link = ({ href, name, ...props }) => {
 export default function Header() {
   return (
     <header className="sticky top-0 z-10  bg-neutral-200/10 text-xs tracking-widest text-neutral-700 shadow-sm backdrop-blur-lg dark:bg-neutral-900/10 dark:text-neutral-400 md:text-sm">
-      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-[1px] md:hidden" />
+      <div className="bg-gradient-to-r from-indigo-500 via-indigo-500 to-pink-500 p-[1px] md:hidden" />
       <div className="container mx-auto flex justify-between p-1 md:py-2">
         <NextLink href={"/"}>
           <a className="p-1 sm:px-2 sm:py-1">
@@ -63,7 +70,7 @@ export default function Header() {
           <MobileMenu />
         </div>
       </div>
-      {/* <div className=" hidden md:block p-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" /> */}
+      {/* <div className=" hidden md:block p-[1px] bg-gradient-to-r from-indigo-500 via-indigo-500 to-pink-500" /> */}
     </header>
   );
 }
