@@ -191,93 +191,93 @@ export default function Home() {
     </div>
   );
 
-  const Resources = () => (
-    <div className="mb-10 flex flex-col gap-5">
-      <h2 className="text-2xl">Resources</h2>
-      <p className="mt-5 text-sm leading-loose text-neutral-700 dark:text-neutral-500">
-        - A collection of helfull links, blogs, articles, digital products,
-        wallpapers and more..
-      </p>
-      <div className="col-span-1 mt-5 grid gap-5 md:grid-cols-3 ">
-        <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
-          <div className="fon-bold py-2 text-lg">Illustration pack</div>
-          <span className="text-blue-500">Figma</span>
-          <p className="my-2">
-            - A collection of minimal illustrations for your next project
-          </p>
-          <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
-            <span>22</span>
-            <span>
-              <Icons.Views />
-            </span>
-            <span>15</span>
-            <span>
-              <Icons.Download />
-            </span>
-          </div>
-        </div>
-        <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
-          <div className="fon-bold py-2 text-lg">Illustration pack</div>
-          <span className="text-blue-500">Figma</span>
-          <p className="my-2">
-            - A collection of minimal illustrations for your next project
-          </p>
-          <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
-            <span>22</span>
-            <span>
-              <Icons.Views />
-            </span>
-            <span>15</span>
-            <span>
-              <Icons.Download />
-            </span>
-          </div>
-        </div>
-        <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
-          <div className="fon-bold py-2 text-lg">Illustration pack</div>
-          <span className="text-blue-500">Figma</span>
-          <p className="my-2">
-            - A collection of minimal illustrations for your next project
-          </p>
-          <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
-            <span>22</span>
-            <span>
-              <Icons.Views />
-            </span>
-            <span>15</span>
-            <span>
-              <Icons.Download />
-            </span>
-          </div>
-        </div>
-        <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
-          <div className="fon-bold py-2 text-lg">Illustration pack</div>
-          <span className="text-blue-500">Figma</span>
-          <p className="my-2">
-            - A collection of minimal illustrations for your next project
-          </p>
-          <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
-            <span>22</span>
-            <span>
-              <Icons.Views />
-            </span>
-            <span>15</span>
-            <span>
-              <Icons.Download />
-            </span>
-          </div>
-        </div>
-      </div>
-      <hr className="wave my-20" />
-    </div>
-  );
+  // const Resources = () => (
+  //   <div className="mb-10 flex flex-col gap-5">
+  //     <h2 className="text-2xl">Resources</h2>
+  //     <p className="mt-5 text-sm leading-loose text-neutral-700 dark:text-neutral-500">
+  //       - A collection of helfull links, blogs, articles, digital products,
+  //       wallpapers and more..
+  //     </p>
+  //     <div className="col-span-1 mt-5 grid gap-5 md:grid-cols-3 ">
+  //       <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
+  //         <div className="fon-bold py-2 text-lg">Illustration pack</div>
+  //         <span className="text-blue-500">Figma</span>
+  //         <p className="my-2">
+  //           - A collection of minimal illustrations for your next project
+  //         </p>
+  //         <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
+  //           <span>22</span>
+  //           <span>
+  //             <Icons.Views />
+  //           </span>
+  //           <span>15</span>
+  //           <span>
+  //             <Icons.Download />
+  //           </span>
+  //         </div>
+  //       </div>
+  //       <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
+  //         <div className="fon-bold py-2 text-lg">Illustration pack</div>
+  //         <span className="text-blue-500">Figma</span>
+  //         <p className="my-2">
+  //           - A collection of minimal illustrations for your next project
+  //         </p>
+  //         <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
+  //           <span>22</span>
+  //           <span>
+  //             <Icons.Views />
+  //           </span>
+  //           <span>15</span>
+  //           <span>
+  //             <Icons.Download />
+  //           </span>
+  //         </div>
+  //       </div>
+  //       <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
+  //         <div className="fon-bold py-2 text-lg">Illustration pack</div>
+  //         <span className="text-blue-500">Figma</span>
+  //         <p className="my-2">
+  //           - A collection of minimal illustrations for your next project
+  //         </p>
+  //         <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
+  //           <span>22</span>
+  //           <span>
+  //             <Icons.Views />
+  //           </span>
+  //           <span>15</span>
+  //           <span>
+  //             <Icons.Download />
+  //           </span>
+  //         </div>
+  //       </div>
+  //       <div className="rounded-md bg-neutral-200 p-2 text-sm dark:bg-neutral-800">
+  //         <div className="fon-bold py-2 text-lg">Illustration pack</div>
+  //         <span className="text-blue-500">Figma</span>
+  //         <p className="my-2">
+  //           - A collection of minimal illustrations for your next project
+  //         </p>
+  //         <div className="flex items-center space-x-2 py-2 text-neutral-700 dark:text-neutral-500">
+  //           <span>22</span>
+  //           <span>
+  //             <Icons.Views />
+  //           </span>
+  //           <span>15</span>
+  //           <span>
+  //             <Icons.Download />
+  //           </span>
+  //         </div>
+  //       </div>
+  //     </div>
+  //     <hr className="wave my-20" />
+  //   </div>
+  // );
 
   return (
     <Container>
       <HeroSection />
       <Articles />
       <Projects />
-      <Resources />
+      {/* <Resources /> */}
       <NewsletterForm showIssues={true} />
       <hr className="wave my-20" />
     </Container>
