@@ -1,84 +1,167 @@
-import {
-  ComputedFields,
-  defineDocumentType,
-  makeSource,
-} from "contentlayer/source-files";
-
-import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
-import readingTime from "reading-time";
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import remarkGfm from "remark-gfm";
-import remarkToc from "remark-toc";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
-import rehypeCodeTitles from "rehype-code-titles";
+import GithubSlugger from "github-slugger";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrism from "rehype-prism-plus";
 
-const computedFields: ComputedFields = {
-  readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
+export function capitalize(str: string) {
+  if (!str || typeof str !== "string") return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-  wordCount: {
-    type: "number",
-    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
+export const BlogPost = defineDocumentType(() => ({
+  name: "BlogPost",
+  filePathPattern: `**/blog/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    publishedAt: {
+      type: "string",
+      required: true,
+    },
+    summary: {
+      type: "string",
+      required: true,
+    },
+    image: {
+      type: "string",
+      required: true,
+    },
+    author: {
+      type: "string",
+      required: true,
+    },
+    categories: {
+      type: "list",
+      of: {
+        type: "enum",
+        options: ["company", "education", "customer-stories"],
+        default: "company",
+      },
+      required: true,
+    },
+    related: {
+      type: "list",
+      of: {
+        type: "string",
+      },
+    },
   },
+  // @ts-ignore
+  computedFields: computedFields("blog"),
+}));
 
+const computedFields = (type: "blog" | "changelog" | "help" | "legal") => ({
   slug: {
     type: "string",
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
+    resolve: (doc: any) => doc._raw.flattenedPath.replace(`${type}/`, ""),
   },
-};
-
-const Blog = defineDocumentType(() => ({
-  name: "Blog",
-  filePathPattern: "Blog/*.mdx",
-  contentType: "mdx",
-  fields: {
-    title: { type: "string", required: true },
-    publishedAt: { type: "string", required: true },
-    summary: { type: "string", required: true },
-    image: { type: "string", required: false },
-    tags: {
-      type: "string",
-      required: false,
+  tableOfContents: {
+    type: "array",
+    resolve: (doc: any) => {
+      // get all markdown heading 2 nodes (##)
+      const headings = doc.body.raw.match(/^##\s.+/gm);
+      const slugger = new GithubSlugger();
+      return (
+        headings?.map((heading: any) => {
+          const title = heading.replace(/^##\s/, "");
+          return {
+            title,
+            slug: slugger.slug(title),
+          };
+        }) || []
+      );
     },
-    series: { type: "string", required: false },
   },
-  computedFields,
-}));
-
-const OtherPage = defineDocumentType(() => ({
-  name: "OtherPage",
-  filePathPattern: "*.mdx",
-  contentType: "mdx",
-  fields: {
-    title: { type: "string", required: true },
-    publishedAt: { type: "string", required: true },
-    summary: { type: "string", required: true },
-    image: { type: "string", required: false },
+  images: {
+    type: "array",
+    resolve: (doc: any) => {
+      return (
+        doc.body.raw.match(/(?<=<Image[^>]*\bsrc=")[^"]+(?="[^>]*\/>)/g) || []
+      );
+    },
   },
-  series: { type: "string", required: false },
-  computedFields,
-}));
+  tweetIds: {
+    type: "array",
+    resolve: (doc: any) => {
+      const tweetMatches = doc.body.raw.match(/<Tweet\sid="[0-9]+"\s\/>/g);
+      return tweetMatches?.map((tweet: any) => tweet.match(/[0-9]+/g)[0]) || [];
+    },
+  },
+  githubRepos: {
+    type: "array",
+    resolve: (doc: any) => {
+      // match all <GithubRepo url=""/> and extract the url
+      return doc.body.raw.match(
+        /(?<=<GithubRepo[^>]*\burl=")[^"]+(?="[^>]*\/>)/g
+      );
+    },
+  },
+  structuredData: {
+    type: "object",
+    resolve: (doc: any) => ({
+      "@context": "https://schema.org",
+      "@type": `${capitalize(type)}Posting`,
+      headline: doc.title,
+      datePublished: doc.publishedAt,
+      dateModified: doc.publishedAt,
+      description: doc.summary,
+      image: doc.image,
+      url: `https://achuth.dev/${doc._raw.flattenedPath}`,
+      author: {
+        "@type": "Person",
+        name: doc.author,
+      },
+    }),
+  },
+});
 
-const contentLayerConfig = makeSource({
-  contentDirPath: "data",
-  documentTypes: [Blog, OtherPage],
+export default makeSource({
+  contentDirPath: "content",
+  documentTypes: [
+    BlogPost,
+    //, ChangelogPost, LegalPost, HelpPost
+  ],
   mdx: {
-    remarkPlugins: [remarkGfm, remarkToc],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
-      rehypeAccessibleEmojis,
       rehypeSlug,
-      rehypeCodeTitles,
-      rehypePrism,
+      [
+        rehypePrettyCode,
+        {
+          theme: "one-dark-pro",
+          onVisitLine(node: { children: string | any[] }) {
+            // Prevent lines from collapsing in `display: grid` mode, and allow empty
+            // lines to be copy/pasted
+            if (node.children.length === 0) {
+              node.children = [{ type: "text", value: " " }];
+            }
+          },
+          onVisitHighlightedLine(node: {
+            properties: { className: string[] };
+          }) {
+            node.properties.className.push("line--highlighted");
+          },
+          onVisitHighlightedWord(node: {
+            properties: { className: string[] };
+          }) {
+            node.properties.className = ["word--highlighted"];
+          },
+        },
+      ],
       [
         rehypeAutolinkHeadings,
         {
           properties: {
             className: ["anchor"],
+            "data-mdx-heading": "",
           },
         },
       ],
     ],
   },
 });
-
-export default contentLayerConfig;
