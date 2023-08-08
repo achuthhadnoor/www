@@ -2,7 +2,7 @@ import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <>
+    <div className="container mx-auto">
       <Header />
       <main className="flex flex-col gap-5 p-4 ">
         <h1>Work WORK </h1>
@@ -126,6 +126,6 @@ export default function Home() {
           <u className="cursor-pointer">submit here</u>
         </p>
       </main>
-    </>
+    </div>
   );
 }
