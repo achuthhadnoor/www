@@ -14,8 +14,8 @@ const Link = ({ href, name, ...props }) => {
         className={cn(
           isActive
             ? // ? "bg-neutral-300  dark:bg-neutral-800"
-              // : " hover:bg-neutral-300 dark:hover:bg-neutral-800",
-              "text-indigo-400"
+            // : " hover:bg-neutral-300 dark:hover:bg-neutral-800",
+            "text-indigo-400"
             : " hover:text-indigo-500 dark:hover:text-indigo-500",
           "relative rounded-md p-2"
         )}
@@ -62,7 +62,7 @@ export default function Header() {
         <nav className="hidden items-center gap-2 capitalize sm:gap-4 md:flex ">
           <Link href={"/"} name="home" />
           <Link href={"/about"} name="About" />
-          <Link href={"/articles"} name="Articles" />
+          {/* <Link href={"/articles"} name="Articles" /> */}
           <Link href={"/projects"} name="projects" />
           <Link href={"/tools"} name="Tools" />
         </nav>

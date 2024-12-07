@@ -275,10 +275,10 @@ export default function Home() {
   return (
     <Container>
       <HeroSection />
-      <Articles />
+      {/* <Articles /> */}
       <Projects />
       {/* <Resources /> */}
-      <NewsletterForm showIssues={true} />
+      {/* <NewsletterForm showIssues={true} /> */}
       <hr className="wave my-20" />
     </Container>
   );
